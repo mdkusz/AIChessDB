@@ -1,0 +1,206 @@
+﻿En la aplicación AIChessDB, algunos formularios son automatizables.
+Esto quiere decir que pueden proporcionar información sobre elementos relevantes de la interfaz de usuario.
+Este es el esquema Json para uno cualquiera de estos elementos:
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UIRelevantElement",
+  "description": "Class to encapsulate information about a UI element.",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to locate the element in the UI tree. Use this element to reference a control in function calls."
+    },
+    "position-x": {
+      "type": "integer",
+      "description": "Horizontal position of the element in the UI. Relative to the parent container."
+    },
+    "position-y": {
+      "type": "integer",
+      "description": "Vertical position of the element in the UI. Relative to the parent container."
+    },
+    "width": {
+      "type": "integer",
+      "description": "Width of the element in the UI."
+    },
+    "height": {
+      "type": "integer",
+      "description": "Height of the element in the UI."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role of the element in the UI. As defined in the AccesibleRole enum of .NET Framework."
+    },
+    "friendly_name": {
+      "type": "string",
+      "description": "Friendly name of the element, which is a human-readable identifier."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the element, providing additional context or information."
+    },
+    "state": {
+      "type": "string",
+      "description": "Element current state."
+    },
+    "value": {
+      "type": "string",
+      "description": "Current value of the element, if any."
+    },
+    "has_children": {
+      "type": "boolean",
+      "description": "True if the element has child elements, false otherwise."
+    },
+    "element_class": {
+      "type": "string",
+      "description": "Generic element class.",
+      "enum" : {
+        "Control", "UserControl", "ToolStripItem", "ToolStripDropDownItem"
+      }
+    }
+  },
+  "required": [
+    "path",
+    "position-x",
+    "position-y",
+    "width",
+    "height",
+    "role",
+    "friendly_name",
+    "description",
+    "state",
+    "has_children"
+  ]
+}
+```
+
+De todos estos datos, los únicos que tienen algún interés o significado para el usuario son los siguientes:
+- friendly_name: es un nombre identificativo.
+- description: es una descripción del elemento.
+- state: es el estado del elemento, por ejemplo, si está habilitado o deshabilitado.
+- value: es el valor del elemento, por ejemplo, el texto de un TextBox o la selección de una ListBox.
+- role: es el rol del elemento, por ejemplo, si es un botón, una etiqueta, etc.
+El resto de los datos son útiles para la automatización, pero no tienen un significado relevante para el usuario, no debes darle esta información a menos que la pida de forma explícita.
+*** No uses nunca los nombres de los controles o los formularios para hablar con el usuario, porque son nombres técnicos que no tienen sentido para el usuario. Usa siempre el friendly_name y la description. En caso de no dsiponer de esos nombres, utiliza el 'nombre para el usuario' que aparece entre paréntesis. ***
+No le menciones al usuario este archivo de controles. Es de uso interno para ti. El usuario desconoce su existencia y saberlo no le sirve de nada.
+Mediante la automatización, es posible consultar la lista de controles de un formulario.
+También, dado un Path a un control o ToolStripItem, se pueden obtener sus controles o ToolStripItem hijos.
+Usando el Path como referencia, se puede resaltar el control o ToolStripItem en la interfaz de usaurio para que el usuario lo localice.
+Otra opción es situar un ToolTip sobre el control o ToolStripItem, mostrando un texto cualquiera como explicación.
+Puedes interactuar con los controles individuales con estos tipos de comandos (no aplicables a todos los elementos):
+- Hacer clic
+- Establecer texto
+- Recuperar texto
+- Seleccionar un elemento de una lista
+- Obtener los elementos de una lista
+- Desplegar una lista desplegable o menú, o expandir un nodo de árbol
+** Cuando interactúes con la consola APIConsole, normalmente los controles estarán en estado Unavailable. Eso no debe importarte, porque se guardan las llamadas y se ejecutan cuando vuelven a estar disponibles. Eso sí, no podrás obtener datos de los controles en ese estado. **
+Todas estas acciones se realizan mediante llamadas a funciones (function calling).
+Cuando el usuario solicita información sobre el funcionamiento de un formulario, puedes usar estas funciones para realizar un recorrido por los controles, explicando su función mediante ToolTips.
+# Formularios y cuadros de diálogo que admiten automatización.
+Todos los formularios listados a continuación admiten automatización.
+Cuando abres uno de estos formularios, se subirá un documento Json a tus documentos con la información sobre todos sus controles. Recibirás el nombre del documento en la respuesta a la petición de apertura del formulario.
+En caso de no obtener este documento, todavía puedes usar funciones para obtener los controles del formulario.
+Los controles de primer nivel se pueden obtener mediante una llamada a función, proporcionando el nombre del formulario o cuadro de diálogo (Path).
+Es posible obtener los controles hijos de un control o ToolStripItem, proporcionando el Path del control o ToolStripItem.
+Si la función no devuleve nada, es que no se ha encontrado el formulario o cuadro de diálogo, o no se encuentra abierto.
+## DlgNewMatch (nombre para el usuario: cuadro de diálogo para nueva partida)
+En este cuadro de diálog se introduce información básica de cabecera de una partida:
+- Descripción de la partida.
+- Nombre del jugador blanco.
+- Nombre del jigador negro.
+- Fecha de la partida
+- Resultado de la partida.
+## AIAssistantConsole (nombre para el usuario: consola de asistentes IA)
+Esta es la consola de asistentes IA. En esta consola estás tu como asistente IA.
+Puedes utilizar las mismas funciones que para cualquier otro formulario para explicarle al usuario cómo funciona la consola.
+Básicamente consta de los siguinetes elementos: 
+- Una barra de herramientas con los distintos botones de comando.
+- Un área de texto para escribir el prompt. Este área tiene a su vez una barra de botones en las que se pueden seleccionar herramientas de asistente para forzar su uso en la petición actual.
+- Una lista de asistentes a los que dirigir la petición.
+- Una lista de asistentes más el usuatrio donde se puede seleccionar qúién recibe la respuesta. Esto permite que los asistentes puedan entablar conversaciones entre ellos.
+- Un panel de respuestas donde se muestran las peticiones y las respuestas, con un sangrado similar al de un chat de Watsapp.
+Para enviar el prompt, se utiliza la combinación de teclas Ctrl+Enter. El prompt queda en estado de solo lectura hasta que la petición se responde.
+Los mensajes tienen una barra de título con el nombre del usuario o asistente que ha realizado la petición y del que ha respondido.
+Los mensajes también tienen botones en su barra de título para copiar el mensaje, o eliminarlo.
+Cada asistente o usuario tiene un color diferente en su barra de título, para que se puedan distinguir fácilmente.
+## DlgBulkCopyDB (nombre para el usuario: cuadro de diálogo para copia en bloque de base de datos)
+Este cuadro de diálogo permite copiar una base de datos completa a otra base de datos.
+Se seleccionar la base de datos destino y un número de partidas para copiar en bloque (transacción).
+## DlgBulkImportPGN (nombre para el usuario: cuadro de diálogo para importación en bloque de archivos PGN)
+Este cuadro de diálogo permite importar partidas en formato PGN a la base de datos desde un número arbitrario de archivos.
+## DlgKeywordConsolidation (nombre para el usuario: cuadro de diálogo para consolidación de etiquetas)
+Cuadro de diálogo para consolidar valores de etiquetas de partida.
+Esta consolidación es necesaria porque pueden existir muchas formas de escribir el valor de una etiqueta, como el nombre de un jugador, por ejemplo.
+Al unificar los valores bajo un mismo valor canónico, se facilitan mucho las labores de búsqueda y filtrado de partidas por valortes de etiquetas.
+## DlgLabelMatch (nombre para el usuario: cuadro de diálogo para etiquetar una partida)
+Cuadro de diálogo para añadir etiquetas a una partida.
+Las etiquetas son pares nombre / valor que se pueden añadir a una partida para clasificarla, categorizarla, o añadir información extra.
+Existen etiquetas estándar para las partidas con formato PGN, pero también se pueden añadir etiquetas personalizadas.
+Este cuadro de diálogo no actualiza directamente la base de datos. Esta operación la realiza el formulario principal que abre este cuadro de diálogo. Actualmente, el formulario de consulta de partidas.
+Aquí, el usuario solo selecciona un nombre de etiqueta y escribe un valor. El nombre de etiqueta puede ser uno existente o uno nuevo.
+## DlgMatch (nombre para el usuario: cuadro de diálogo para ver una partida)
+Es un cuadro de diálogo auxiliar con el que se puede ver una partida y sus movimientos.
+Presenta un tablero de ajedrez, un panel de movimientos, una lista de comentarios para la posición actual, y un panel de etiquetas de la partida.
+El usuario puede navegar por los movimientos de la partida, y ver los comentarios y etiquetas.
+## EditMatchWindow (nombre para el usuario: formulario para editar partidas))
+Es una ventana MDI para editar partidas. Dispone de un tablero, un panel con los movimientos de la partida, una lista de comentarios y un panel de etiquetas. Permite jugar las partidas.
+## PlayMatchWindow (nombre para el usuario: formulario para jugar partidas)
+Es una ventana MDI para jugar partidas. Es como EditMatchWindow, pero añade la posibilidad de buscar la posición actual en la base de datos, y de buscar partidas en las que se ha producido dicha posición.
+## PGNWindow (nombre para el usuario: formulario para importar y visualizar partidas desde un archivo PGN)
+Es una ventana MDI para importar las partidas desde archivos PGN. Un archivo PGN puede contener varias partidas, y este formulario permite importar todas las partidas de un archivo PGN a la base de datos. También permite visualizar y jugar las partidas.
+## QueryWindow (nombre para el usuario: formulario para consultar partidas)
+Es una ventana MDI para consultar partidas. También permite visualizar y jugar las partidas.
+No es posible ejecutar SQL directamente. En lugar de eso, se utilizan consultas predefinidas con filtros configurables.
+Existen tres tipos de consultas, cada una de las cuales corresponde a una de las tres vistas que hay definidas en la base de datos (ver el archivo Base_de_datos.txt).
+Todas las consultas presentan los mismos datos, que son la descripción de la partida, el nombre de los jugadores, el resultado de la partida, la fecha, y el número de jugadas.
+Sin embargo, dependiendo de la vista seleccionada, es posible filtrar por diferentes conjuntos de campos:
+- Consulta por etiquetas: permite filtrar por etiquetas o estadísticas de partida y sus valores.
+- Consulta por movimientos: permite filtrar por movimientos de la partida.
+- Consulta por posiciones: permite filtrar por posiciones de piezas en la partida.
+*** Antes de realizar cualquier consulta es imprescindible pulsar el botón de la modalidad de filtro a emplear: etiquetas, posiciones o movimientos. Si no se pulsa ninguno, el botón de consulta permanece desactivado. ***
+Para algunos de los filtros, existen editores especializados:
+- Editor de eventos: permite seleccionar eventos en los movimientos y posiciones, como jaques, capturas, enroques, etc.
+- Editor de posiciones: permite seleccionar posiciones de piezas en el tablero. Se pueden definir posiciones fijas, o el equivaleente a expresiones regulares, con disitintas piezas en cada casilla, estructuras de peones, casillas vacías, o posiciones parciales, que abarcan solo un rectángulo del tablero, que puede estar situado en cualquier lugar.
+## DlgAppConfiguration (nombre para el usuario: cuadro de diálogo para configuración de la aplicación)
+Este cuadro de diálogo permite configurar los parámetros de la aplicación que se encuentran en el archivo AIChessDB.exe.config. Concretamente, los parámetros de la sección appSettings.
+## PlayEditor (nombre para el usuario: editor de configuración de equpos de asistentes IA)
+Este es el editor de configuración de los equipos de la consola de asistentes IA. Aquí se pueden configurar los asistentes y sus herramientas. También es posible crear nuevos asistentes y herramientas, o eliminar los existentes y crear nuevos conjuntos alternativos de asistentes.
+Los equipos de asistentes están denominados como "equipos" en español, y como "plays" en inglés. Este es el nombre que ve el usuario en la interfaz de usuario y el que debes usar para hablar con él. Internamente nos referimos a ellos como Play.
+Existe un equipo por defecto, que se carga al iniciar la aplicación. Su identificador se indica en el parámetro AppConfig *defaultPlay* del archivo AIChessDB.exe.config.
+Desde este editor se pueden crear nuevas Play. También se puede cambiar la Play por defecto y cambiar la Play activa. Esto cambia los asistentes de la consola, pero también reinicia la conversación y se pierde el contexto.
+En un equipo, existen los siguientes elementos:
+- Ususario: es el usuario humano de la aplicación. Tiene un nombre y un color de texto y de fondo para sus burbujas de mensaje en el chat de la consola.
+- Aplicaciones: son usuario especiales que representan a la aplicación o aplicaciones. En este caso solo existe una aplicación, que es AIChessDB. El usuario de la aplicación no aparece en la consola, pero sus mensajes sí. También tiene un nombre y colores como el usuario humano.
+- Asistentes: son asistentes API. En el caso de esta aplicación, como solo existe un proveedor, que es OpenAI, son o bien Assistants API o Responses API. Tienen nombre y colores, como el usaurio, pero además unas instrucciones iniciales. Se puede escribir un texto o proporcionar un enlace a archivo escribiendo file:ruta del archivo. Uno de los asistentes se puede marcar como asistente por defecto para que sea el inicialmente seleccionado.
+- Servicios: los servicios son, internamente, conjuntos de funciones que llaman los asistentes para tareas concretas. Para el usuario son cadenas de texto con el nombre.Existen los siguientes servicios:
+    - userinterface: ayuda con la interfaz de usaurio.
+    - automation: permite al asistennte interactuar con los formularios de la aplicación.
+    - chessplayer: permite interactuar con los tableros de ajedrez, ver las partidas y sus movimientos, mover las piezas, y enviar comentarios sobre el tablero.
+    - configuration: ayuda al usuario a configurar la aplicación.
+    - memoryandnotes: permite al asistente guardar notas y recordar información.
+- Assets: los asistentes pueden tener herramientas auxiliares:
+    - Almacén de archivos: son vector stores asociados con el asistente.
+    - Sonido: permite al asistente convertir texto a voz. Esto es bastante caro si se usa, hay que advertir al usuario.
+Inicialmente, existen tres asistentes. Estos son sus cometidos:
+- Ayudar al usuario con la aplicación, sus servicios asociados son: userinterface, automation, y memoryandnotes.
+- Configuración del aplicación. Sus servicios asociados son configuration, automation y memoryandnotes.
+- Asistente de ajedrez. Sus servicios asociados son chessplayer, automation y memoryandnotes.
+## AssistantsEditor (nombre para el usuario: editor de asistentes IA)
+Este es el editor de asistentes IA. Aquí se pueden configurar los asistentes IA y sus herramientas.
+Es posible crear nuevos asistentes y herramientas para añadir a las Play, o eliminar los existentes.
+También es posible ver desde aquí los asistentes creados en la nube en la cuenta del usuario, y añadirlos a la configuración de la aplicación.
+En esta aplicación solo se trabaja con las API de OpenAI. El usuario debe proporcionar su clave de API para poder usar los asistentes desde su cuenta.
+## ObjectSelectionDialog (nombre para el usuario: cuadro de diálogo para seleccionar objetos)
+Este cuadro de diálogo genérico se utiliza para editar propiedades que son colecciones de objetos. Un ejemplo típico es una lista de archivos.
+Con este diálogo, podemos añadir y eliminar objetos de la coleción.
+En algunos casos, es posible también eliminar el contenedor de los objetos, dejando la propiedad con valor null.
+## AssistantsUpdates (nombre para el usuario: editor de actualización de documentos de asistentes IA)
+Este es el editor de actualizaciones de los asistentes y sus servicios.
+Permite actualizar la documentación e instrucciones de sistema de los asistentes.
+El usuario puede añadir nuevos documentos tanto a los asistentes como a los servicios.
+El usuario puede abrir los documentos de texto desde el propio formulario para editarlos y guardar los cambios:
+- Instrucciones del asistente: se debe seleccionar el nodo del asistente en el TreeView para que se active el botón de edición.
+- Documentos de los servicios y los asistentes: se debe seleccionar el nodo del documento en el TreeView para que se active el botón de edición.

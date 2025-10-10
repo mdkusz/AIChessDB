@@ -1,0 +1,1885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CAP_Confirm" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="CAP_XMLObjDesc" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="CAP_XMLObjName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="CAP_XMLObjProv" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="CAP_XMLObjSer" xml:space="preserve">
+    <value>Serializador</value>
+  </data>
+  <data name="CAP_XMLObjType" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="CAP_XMLObjUID" xml:space="preserve">
+    <value>UID</value>
+  </data>
+  <data name="CAP_XMLObjVer" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="CATEGORY_AppInfo" xml:space="preserve">
+    <value>Applicación</value>
+  </data>
+  <data name="CATEGORY_CmdForm" xml:space="preserve">
+    <value>Configuración de formulario</value>
+  </data>
+  <data name="CATEGORY_CmdInfo" xml:space="preserve">
+    <value>Configuración de interfaz de usuario</value>
+  </data>
+  <data name="CATEGORY_ColSpecific" xml:space="preserve">
+    <value>Configuración específica</value>
+  </data>
+  <data name="CATEGORY_ColumnInfo" xml:space="preserve">
+    <value>Columna de consulta</value>
+  </data>
+  <data name="CATEGORY_ColumnLink" xml:space="preserve">
+    <value>Enlace entre columnas</value>
+  </data>
+  <data name="CATEGORY_ColumnSet" xml:space="preserve">
+    <value>Conjunto de columnas</value>
+  </data>
+  <data name="CATEGORY_Database" xml:space="preserve">
+    <value>Base de datos</value>
+  </data>
+  <data name="CATEGORY_Databases" xml:space="preserve">
+    <value>Bases de datos</value>
+  </data>
+  <data name="CATEGORY_DataImport" xml:space="preserve">
+    <value>Importación de datos</value>
+  </data>
+  <data name="CATEGORY_DBConnectors" xml:space="preserve">
+    <value>Conector con base de datos</value>
+  </data>
+  <data name="CATEGORY_DMLCommand" xml:space="preserve">
+    <value>Comando DML</value>
+  </data>
+  <data name="CATEGORY_DMLQuery" xml:space="preserve">
+    <value>Grupos de comandos de consulta</value>
+  </data>
+  <data name="CATEGORY_DMLTable" xml:space="preserve">
+    <value>DML de tabla</value>
+  </data>
+  <data name="CATEGORY_ElementProvider" xml:space="preserve">
+    <value>Factoría de objetos</value>
+  </data>
+  <data name="CATEGORY_ExportTemplate" xml:space="preserve">
+    <value>Plantilla de exportación</value>
+  </data>
+  <data name="CATEGORY_Filter" xml:space="preserve">
+    <value>Filtro</value>
+  </data>
+  <data name="CATEGORY_Formatter" xml:space="preserve">
+    <value>Formateador</value>
+  </data>
+  <data name="CATEGORY_FormInfo" xml:space="preserve">
+    <value>Configuración de formulario</value>
+  </data>
+  <data name="CATEGORY_Having" xml:space="preserve">
+    <value>Filtros por agregados</value>
+  </data>
+  <data name="CATEGORY_ImportColumn" xml:space="preserve">
+    <value>Configuración de columna</value>
+  </data>
+  <data name="CATEGORY_ObjectSerializer" xml:space="preserve">
+    <value>Serializador del objeto</value>
+  </data>
+  <data name="CATEGORY_Order" xml:space="preserve">
+    <value>Orden</value>
+  </data>
+  <data name="CATEGORY_Parameters" xml:space="preserve">
+    <value>Parámetros</value>
+  </data>
+  <data name="CATEGORY_Programmability" xml:space="preserve">
+    <value>Procedimientos</value>
+  </data>
+  <data name="CATEGORY_QueryCmd" xml:space="preserve">
+    <value>Comandos de consulta</value>
+  </data>
+  <data name="CATEGORY_QueryLink" xml:space="preserve">
+    <value>Enlace entre consultas</value>
+  </data>
+  <data name="CATEGORY_QueryParser" xml:space="preserve">
+    <value>Parser de consulta</value>
+  </data>
+  <data name="CATEGORY_QuerySerializer" xml:space="preserve">
+    <value>Serializador de consulta</value>
+  </data>
+  <data name="CATEGORY_QueryValueListProvider" xml:space="preserve">
+    <value>Lista de valores desde consulta</value>
+  </data>
+  <data name="CATEGORY_StoredProc" xml:space="preserve">
+    <value>Procedimiento almacenado</value>
+  </data>
+  <data name="CATEGORY_UserInterface" xml:space="preserve">
+    <value>Interfaz de usuario</value>
+  </data>
+  <data name="CATEGORY_Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="CATEGORY_ValueType" xml:space="preserve">
+    <value>Tipo de datos</value>
+  </data>
+  <data name="CATEGORY_Where" xml:space="preserve">
+    <value>Filtros por columna</value>
+  </data>
+  <data name="DESCRIPTION_ActiveLinks" xml:space="preserve">
+    <value>Enlaces con consultas de detalle usados en el formulario actual</value>
+  </data>
+  <data name="DESCRIPTION_AppIcon" xml:space="preserve">
+    <value>Nombre del recurso de icono de la aplicación</value>
+  </data>
+  <data name="DESCRIPTION_AppPEStyle" xml:space="preserve">
+    <value>Establecer el estilo por defecto de edición de propiedades</value>
+  </data>
+  <data name="DESCRIPTION_AppTitle" xml:space="preserve">
+    <value>Título del formulario principal de la aplicación. Puede ser un nombre de recurso.</value>
+  </data>
+  <data name="DESCRIPTION_AppUID" xml:space="preserve">
+    <value>Identificador úncio de la aplicación</value>
+  </data>
+  <data name="DESCRIPTION_AppVersion" xml:space="preserve">
+    <value>Número de versión de la aplicación. Permite almacenar diferentes configuraciones para la misma aplicación.</value>
+  </data>
+  <data name="DESCRIPTION_Caption" xml:space="preserve">
+    <value>Encabezado de columna</value>
+  </data>
+  <data name="DESCRIPTION_CellValColName" xml:space="preserve">
+    <value>Identificador del parámetro que pas el nombre de la columna modificada al procedimiento de validación de celda</value>
+  </data>
+  <data name="DESCRIPTION_CellValError" xml:space="preserve">
+    <value>Nombre del parámetro que devuelve un mensaje de error después de validar un cambio en una celda</value>
+  </data>
+  <data name="DESCRIPTION_CellValOverload" xml:space="preserve">
+    <value>Identificador de sobrecarga de procedimiento de validación de celda</value>
+  </data>
+  <data name="DESCRIPTION_CellValParameter" xml:space="preserve">
+    <value>Seleccione un parámetro del procedimiento de validación de celda para configurarlo</value>
+  </data>
+  <data name="DESCRIPTION_CellValProcName" xml:space="preserve">
+    <value>Nombre del procedimiento almacenado de validación de celda</value>
+  </data>
+  <data name="DESCRIPTION_CfgConString" xml:space="preserve">
+    <value>Cadena de conexión con el esquema de configuración</value>
+  </data>
+  <data name="DESCRIPTION_CfgDatabaseManager" xml:space="preserve">
+    <value>Gestor de base de datos especializado en el esquema CONFIGURATION</value>
+  </data>
+  <data name="DESCRIPTION_CheckMode" xml:space="preserve">
+    <value>Seleccionar una operación para comprobar el valor de la fila</value>
+  </data>
+  <data name="DESCRIPTION_CmdCaption" xml:space="preserve">
+    <value>Texto para mostrar en los controles que ejecutan el comando</value>
+  </data>
+  <data name="DESCRIPTION_CmdCommitBlockSize" xml:space="preserve">
+    <value>Especificar el númeor de registros a procesar antes de confirmar, 0 o menos para confirmar cada registro individual</value>
+  </data>
+  <data name="DESCRIPTION_CmdCommitHandling" xml:space="preserve">
+    <value>Especificar el comportamiento de la aplicación para confirmar el trabajo</value>
+  </data>
+  <data name="DESCRIPTION_CmdDescription" xml:space="preserve">
+    <value>Descripción del comando para mostrar en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_CmdErrorHandling" xml:space="preserve">
+    <value>Especificar el comprotamiento de la aplicación ante un error del comando</value>
+  </data>
+  <data name="DESCRIPTION_CmdErrorMessage" xml:space="preserve">
+    <value>Mensaje a mostrar cuando se produce un error</value>
+  </data>
+  <data name="DESCRIPTION_CmdFormInfo" xml:space="preserve">
+    <value>Seleccione uno de los tipos de formulario si es necesario</value>
+  </data>
+  <data name="DESCRIPTION_CmdGroup" xml:space="preserve">
+    <value>Grupo de comandos actual a configurar</value>
+  </data>
+  <data name="DESCRIPTION_CmdGroupDesc" xml:space="preserve">
+    <value>Descripción del grupo de comandos de consulta actual para mostrar al usuario</value>
+  </data>
+  <data name="DESCRIPTION_CmdGroupIndex" xml:space="preserve">
+    <value>Índice de orden del grupo de comandos de consulta actual</value>
+  </data>
+  <data name="DESCRIPTION_CmdGroupName" xml:space="preserve">
+    <value>Nombre del grupo de comandos de consulta actual para mostrar al usuario</value>
+  </data>
+  <data name="DESCRIPTION_CmdIcoActive" xml:space="preserve">
+    <value>Identificador del recurso de imagen activa del comando (Nombre de recurso, clase css, etc.)</value>
+  </data>
+  <data name="DESCRIPTION_CmdIcoInactive" xml:space="preserve">
+    <value>Identificador del recurso de imagen inactiva del comando (Nombre de recurso, clase css, etc.)</value>
+  </data>
+  <data name="DESCRIPTION_CmdIndex" xml:space="preserve">
+    <value>Índice para ordenar los comandos en el grupo</value>
+  </data>
+  <data name="DESCRIPTION_CmdMainSelCount" xml:space="preserve">
+    <value>Cuenta de selección múltiple de registros en la consulta principal. Número fijo de registros = cuenta obligatoria, Hasta un determinado número = cuenta máxima, Otros = se ignora el valor</value>
+  </data>
+  <data name="DESCRIPTION_CmdMainSelectionType" xml:space="preserve">
+    <value>Tipo de selección de registros en la consulta principal necesaria para activar el comando</value>
+  </data>
+  <data name="DESCRIPTION_CmdMergeAction" xml:space="preserve">
+    <value>Modo de intercalación con otros comandos</value>
+  </data>
+  <data name="DESCRIPTION_CmdMergeIndex" xml:space="preserve">
+    <value>Índice de intercalación con otros comandos</value>
+  </data>
+  <data name="DESCRIPTION_CmdPath" xml:space="preserve">
+    <value>Ruta completa del comando hasta la ráiz</value>
+  </data>
+  <data name="DESCRIPTION_CmdSelCount" xml:space="preserve">
+    <value>Cuenta de selección múltiple de registros en la consulta. Número fijo de registros = cuenta obligatoria, Hasta un determinado número = cuenta máxima, Otros = se ignora el valor</value>
+  </data>
+  <data name="DESCRIPTION_CmdSelectionType" xml:space="preserve">
+    <value>Tipo de selección de registros necesaria para activar el comando</value>
+  </data>
+  <data name="DESCRIPTION_CmdSuccessMessage" xml:space="preserve">
+    <value>Mensaje a mostrar al usuario conado el comando ha terminado con éxito</value>
+  </data>
+  <data name="DESCRIPTION_CmdWarningMessage" xml:space="preserve">
+    <value>Mensaje a mostrar al usuario antes de ejecutar el comando para permitirle cancelar la operación</value>
+  </data>
+  <data name="DESCRIPTION_CodeBuilder" xml:space="preserve">
+    <value>Seleccioanr un gestor de procedimientos almacenados</value>
+  </data>
+  <data name="DESCRIPTION_ColumnCfg" xml:space="preserve">
+    <value>Configuración de la columna en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_ColumnDescription" xml:space="preserve">
+    <value>Descripción del contenido de la columna</value>
+  </data>
+  <data name="DESCRIPTION_ColumnIndex" xml:space="preserve">
+    <value>Índice de la columna en la fila de datos</value>
+  </data>
+  <data name="DESCRIPTION_ColumnLink" xml:space="preserve">
+    <value>Definición actual de columna clave o enlace entre columnas</value>
+  </data>
+  <data name="DESCRIPTION_ColumnLinkKey" xml:space="preserve">
+    <value>Este elemento es una clave o un enlace</value>
+  </data>
+  <data name="DESCRIPTION_ColumnLinkKeyColumn" xml:space="preserve">
+    <value>Columna clave o de enlace</value>
+  </data>
+  <data name="DESCRIPTION_ColumnLinkMasterColumn" xml:space="preserve">
+    <value>Columna clave del registro padre</value>
+  </data>
+  <data name="DESCRIPTION_ColumnLinkName" xml:space="preserve">
+    <value>Identificador del enlace entre columnas</value>
+  </data>
+  <data name="DESCRIPTION_ColumnMatch" xml:space="preserve">
+    <value>Tipo de emparejamiento de columnas en la fuente de datos</value>
+  </data>
+  <data name="DESCRIPTION_ColumnName" xml:space="preserve">
+    <value>Nombre o encabezado de columna</value>
+  </data>
+  <data name="DESCRIPTION_ColumnSet" xml:space="preserve">
+    <value>Conjunto de columnas que define un objeto como un nuevo elemento de jaerarquía</value>
+  </data>
+  <data name="DESCRIPTION_ColumnSetDesc" xml:space="preserve">
+    <value>Descripción de conjunto de columnas para mostrar al usuario</value>
+  </data>
+  <data name="DESCRIPTION_ColumnSetFilterCol" xml:space="preserve">
+    <value>Identifiador de la columna usada para filtrar este objeto</value>
+  </data>
+  <data name="DESCRIPTION_ColumnSetName" xml:space="preserve">
+    <value>Nombre del conjunto de columnas para mostrar al usuario</value>
+  </data>
+  <data name="DESCRIPTION_ColumnSetNameCol" xml:space="preserve">
+    <value>Identifiador de la consulta poara obtener el nombre del objeto en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_ColumnType" xml:space="preserve">
+    <value>Tipo de datos de la columna</value>
+  </data>
+  <data name="DESCRIPTION_ColumnVisible" xml:space="preserve">
+    <value>La columna es visible inicialmente en la interfaz de usuario. Los usuarios pueden ocultarla y mostrarla</value>
+  </data>
+  <data name="DESCRIPTION_Command" xml:space="preserve">
+    <value>Comando de consulta actual</value>
+  </data>
+  <data name="DESCRIPTION_Condition" xml:space="preserve">
+    <value>Escriba una expresión. Solo se admiten operadores lógicos y aritméticos estándar, valores literales o nombres de columna. Las funciones no están permitidas</value>
+  </data>
+  <data name="DESCRIPTION_ConString" xml:space="preserve">
+    <value>Cadena de conexión con la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_CustomFormat" xml:space="preserve">
+    <value>Establezca una cadena de formato de fecha adecuada</value>
+  </data>
+  <data name="DESCRIPTION_DateStyle" xml:space="preserve">
+    <value>Establecer el estilo de fecha en el editor</value>
+  </data>
+  <data name="DESCRIPTION_DBConnectors" xml:space="preserve">
+    <value>Seleccione el conector adecuado para la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_DBProviderList" xml:space="preserve">
+    <value>Lista de proveedores de base de datos disponibles</value>
+  </data>
+  <data name="DESCRIPTION_DelError" xml:space="preserve">
+    <value>Parametro de salida de error del procedimiento almacenado de borrado</value>
+  </data>
+  <data name="DESCRIPTION_DelOverload" xml:space="preserve">
+    <value>Identificador de sobrecarga del procedimiento almacenado de borrado</value>
+  </data>
+  <data name="DESCRIPTION_DelParameter" xml:space="preserve">
+    <value>Parámetros del procedimiento almacenado de borrado</value>
+  </data>
+  <data name="DESCRIPTION_DelProcName" xml:space="preserve">
+    <value>Nombre del procedimiento almacenado de borrado</value>
+  </data>
+  <data name="DESCRIPTION_DesktopControls.Forms.BasicImportForm" xml:space="preserve">
+    <value>Formulario básico de importación de datos con selección de origen y destino</value>
+  </data>
+  <data name="DESCRIPTION_DesktopControls.Forms.MasterDetailForm" xml:space="preserve">
+    <value>Formulario con dos tablas para consultas maestro-detalle, con paneles de comando y editores de propiedades opcionales</value>
+  </data>
+  <data name="DESCRIPTION_DesktopControls.Forms.MasterDetailHGForm" xml:space="preserve">
+    <value>Formulario con una tablas y un árbol para consultas maestro-detalle jerárquicas, con paneles de comando y editores de propiedades opcionales</value>
+  </data>
+  <data name="DESCRIPTION_DesktopControls.Forms.MasterMultiDetailForm" xml:space="preserve">
+    <value>Formulario con una tabla principal y múltiples secundarias para consultas maestro-detalle con varias consultas de detalle, con paneles de comando y editores de propiedades opcionales</value>
+  </data>
+  <data name="DESCRIPTION_DesktopControls.Forms.SingleQueryForm" xml:space="preserve">
+    <value>Formulario con una tabla para consulta simple, con paneles de comando y editor de propiedades opcionales</value>
+  </data>
+  <data name="DESCRIPTION_DetailDBProvider" xml:space="preserve">
+    <value>Proveedor de base de datos de la consulta enlazada</value>
+  </data>
+  <data name="DESCRIPTION_DetailQuery" xml:space="preserve">
+    <value>Nombre de la consulta enlazada</value>
+  </data>
+  <data name="DESCRIPTION_DMLCmdFDesc" xml:space="preserve">
+    <value>Desctipción del comando DML para motrar en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_DMLCmdFName" xml:space="preserve">
+    <value>Nombre del comando DML para motrar en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_DMLCmdParameters" xml:space="preserve">
+    <value>Lista de parámetros del comando DML</value>
+  </data>
+  <data name="DESCRIPTION_DMLCommands" xml:space="preserve">
+    <value>Comando DML actual</value>
+  </data>
+  <data name="DESCRIPTION_DMLParameter" xml:space="preserve">
+    <value>Seleccioanr un parámetro del comando seleccionado para configurarlo</value>
+  </data>
+  <data name="DESCRIPTION_EditMask" xml:space="preserve">
+    <value>Máscara para formatear el valor en el editor del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_EditorSubtypeSource" xml:space="preserve">
+    <value>Elemento que proporciona un subtipo de editor para configurar el editor del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_EditorValueProvider" xml:space="preserve">
+    <value>Objeto que proporciona una lista de valores fijos al editor del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_EditPosition" xml:space="preserve">
+    <value>Posición de tabulación del editor del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_ExpConnString" xml:space="preserve">
+    <value>Nombre de la cadena de conexión con la base de datos de destino</value>
+  </data>
+  <data name="DESCRIPTION_Export" xml:space="preserve">
+    <value>Esta columna se incluye al exportar los resultados de la consulta</value>
+  </data>
+  <data name="DESCRIPTION_FormatString" xml:space="preserve">
+    <value>Esciba una cadena de formato apropiada para el tipo de formateador. Use cadens de formato .NET para números y fechas, y enteros o números hexadecimales para colores</value>
+  </data>
+  <data name="DESCRIPTION_FormatValue" xml:space="preserve">
+    <value>Valor (en formato de texto) a comprobar para aplicar el formato</value>
+  </data>
+  <data name="DESCRIPTION_FormatValueType" xml:space="preserve">
+    <value>Tipo del valor a comprobar</value>
+  </data>
+  <data name="DESCRIPTION_FormFOManagerType" xml:space="preserve">
+    <value>Seleccione un tipo de editor de filtros y orden para el formulario de la consulta</value>
+  </data>
+  <data name="DESCRIPTION_FormIcon" xml:space="preserve">
+    <value>Nombre del recurso que contiene el icono del formulario</value>
+  </data>
+  <data name="DESCRIPTION_FormQuery" xml:space="preserve">
+    <value>Consulta gestionada por el formulario</value>
+  </data>
+  <data name="DESCRIPTION_FormQueryConnection" xml:space="preserve">
+    <value>Nombre de la cadena de conexión de la consulta</value>
+  </data>
+  <data name="DESCRIPTION_FormShowingType" xml:space="preserve">
+    <value>Seleccionar el modo de apertura del formulario</value>
+  </data>
+  <data name="DESCRIPTION_FormTitle" xml:space="preserve">
+    <value>Texto para mostrar en la barra de título del formulario</value>
+  </data>
+  <data name="DESCRIPTION_FormType" xml:space="preserve">
+    <value>Al ejecutar el comando se muestra este formulario</value>
+  </data>
+  <data name="DESCRIPTION_FriendlyDescription" xml:space="preserve">
+    <value>Descripción del elemento en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_FriendlyName" xml:space="preserve">
+    <value>Nombre del elemento en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_GenericDataImportManager" xml:space="preserve">
+    <value>Gestor de importación de datos genérico</value>
+  </data>
+  <data name="DESCRIPTION_GenericQueryUpdateManager" xml:space="preserve">
+    <value>Gestor de actualización de datos genérica</value>
+  </data>
+  <data name="DESCRIPTION_GridColumnType" xml:space="preserve">
+    <value>Seleccionar un tipo de control de edición para editar los datos de esta columna</value>
+  </data>
+  <data name="DESCRIPTION_Having" xml:space="preserve">
+    <value>Por defecto los filtros se aplican en la cláusula WHERE. Active este valor para usarlos en la cláusula HAVING</value>
+  </data>
+  <data name="DESCRIPTION_HiddenColumn" xml:space="preserve">
+    <value>La columna siempre está oculta al usuario. El usuario no la puede hacer visible.</value>
+  </data>
+  <data name="DESCRIPTION_IgnoreCase" xml:space="preserve">
+    <value>Comparar los valores sin diferenciar mayúsculas y minúsculas</value>
+  </data>
+  <data name="DESCRIPTION_ImpError" xml:space="preserve">
+    <value>Parametro de salida de error del procedimiento de importación</value>
+  </data>
+  <data name="DESCRIPTION_ImportBehaviour" xml:space="preserve">
+    <value>Seleccionar cuándo se confirman los datos modificados en la base de datos de destino</value>
+  </data>
+  <data name="DESCRIPTION_ImportColumns" xml:space="preserve">
+    <value>Definición de columnas de datos de importación</value>
+  </data>
+  <data name="DESCRIPTION_ImportQuery" xml:space="preserve">
+    <value>Consulta para obtener los datos a exportar / importar</value>
+  </data>
+  <data name="DESCRIPTION_ImportStoredProc" xml:space="preserve">
+    <value>Configuración del procedimiento de importación o validación</value>
+  </data>
+  <data name="DESCRIPTION_ImportTarget" xml:space="preserve">
+    <value>Consulta para seleccionar un destino de importación de datos</value>
+  </data>
+  <data name="DESCRIPTION_ImpOverload" xml:space="preserve">
+    <value>Identificador de sobrecarga del procedimiento de importación de datos</value>
+  </data>
+  <data name="DESCRIPTION_ImpParameter" xml:space="preserve">
+    <value>Seleccione un parámetro del procedimiento de importación de datos para configurar</value>
+  </data>
+  <data name="DESCRIPTION_ImpProcName" xml:space="preserve">
+    <value>Nombre del procedimiento almacenado de importación de datos</value>
+  </data>
+  <data name="DESCRIPTION_IntConnString" xml:space="preserve">
+    <value>Nombre de la cadena de conexión con la base de datos de destino</value>
+  </data>
+  <data name="DESCRIPTION_Interactive" xml:space="preserve">
+    <value>Los usuarios pueden interactuar con el elemento, añadiendo o modificando filtros o cambiando el orden de los resultados</value>
+  </data>
+  <data name="DESCRIPTION_InteractiveDataImportManager" xml:space="preserve">
+    <value>Gestor de improtación de datos con interacción del usuario</value>
+  </data>
+  <data name="DESCRIPTION_IsPassword" xml:space="preserve">
+    <value>Enmascarar el texto en los editores</value>
+  </data>
+  <data name="DESCRIPTION_Locked" xml:space="preserve">
+    <value>La columna está bloqueada para el desplazamiento horizontal</value>
+  </data>
+  <data name="DESCRIPTION_Mandatory" xml:space="preserve">
+    <value>El valor es obligatorio</value>
+  </data>
+  <data name="DESCRIPTION_ModalDialogBox" xml:space="preserve">
+    <value>Usar un cuadro de diálogo modal o no modal para seleccionar</value>
+  </data>
+  <data name="DESCRIPTION_Modifiers" xml:space="preserve">
+    <value>Establecer cómo se ordenan los resultados, en orden ascendente o descendente, y la posición de los valores nulos</value>
+  </data>
+  <data name="DESCRIPTION_NotNull" xml:space="preserve">
+    <value>El valor no puede ser nulo</value>
+  </data>
+  <data name="DESCRIPTION_ObjectDescription" xml:space="preserve">
+    <value>Descripción del objeto a almacenar en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_ObjectFileName" xml:space="preserve">
+    <value>Proporcione un nombre de archivo para abrir o guardar el objeto, o déjelo en blanco para seleccionarlo en el cuadro de diálogo</value>
+  </data>
+  <data name="DESCRIPTION_ObjectName" xml:space="preserve">
+    <value>Nombre del objeto a almacenar en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_ObjectSerializer" xml:space="preserve">
+    <value>Seleccione un serializador para leer o escribir el objeto</value>
+  </data>
+  <data name="DESCRIPTION_Overload" xml:space="preserve">
+    <value>Identificador de versión del procedimiento</value>
+  </data>
+  <data name="DESCRIPTION_ParamDataType" xml:space="preserve">
+    <value>Establecer el tipo de datos del parámetro para editarlo adecuadamente</value>
+  </data>
+  <data name="DESCRIPTION_ParamDataTypeAs" xml:space="preserve">
+    <value>Establecer el tipo del parámetro como el de esta columna</value>
+  </data>
+  <data name="DESCRIPTION_ParamDefValue" xml:space="preserve">
+    <value>Valor por defecto del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_ParameterEditor" xml:space="preserve">
+    <value>Tipo de editor del parámetro</value>
+  </data>
+  <data name="DESCRIPTION_ParamImportError" xml:space="preserve">
+    <value>Parámetro de retorno de error del procedimiento de importación de fila</value>
+  </data>
+  <data name="DESCRIPTION_ParamLength" xml:space="preserve">
+    <value>Longitud máxima en caracteres</value>
+  </data>
+  <data name="DESCRIPTION_ParamNativeType" xml:space="preserve">
+    <value>Tipo de datos del parámetro en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_ParamPrecision" xml:space="preserve">
+    <value>Precisión numérica (número de dígitos)</value>
+  </data>
+  <data name="DESCRIPTION_ParamScale" xml:space="preserve">
+    <value>Escala numérica (número de dígitos decimales)</value>
+  </data>
+  <data name="DESCRIPTION_ParamValidationError" xml:space="preserve">
+    <value>Parámetro de retorno de error del procedimiento de validación de fila</value>
+  </data>
+  <data name="DESCRIPTION_ProcedureFDesc" xml:space="preserve">
+    <value>Descripción del procedimiento para mostrar en la interfaz de usuario cuando sea necesario explicar el uso del mismo</value>
+  </data>
+  <data name="DESCRIPTION_ProcedureFName" xml:space="preserve">
+    <value>Nombre del procedimiento que se mostrará en la interfaz de usuario para referirse al procedimiento</value>
+  </data>
+  <data name="DESCRIPTION_ProcedureName" xml:space="preserve">
+    <value>Escribir el nombre del procedimiento</value>
+  </data>
+  <data name="DESCRIPTION_ProcedureParameters" xml:space="preserve">
+    <value>Lista de parámetros del procedimiento</value>
+  </data>
+  <data name="DESCRIPTION_QColunID" xml:space="preserve">
+    <value>Índice en base 1 de la columna en la lista de columnas</value>
+  </data>
+  <data name="DESCRIPTION_QColunName" xml:space="preserve">
+    <value>Nombre de la coluna de consulta</value>
+  </data>
+  <data name="DESCRIPTION_QueryDescription" xml:space="preserve">
+    <value>Descripción de la consulta a almacenar en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_QueryFileName" xml:space="preserve">
+    <value>Escriba un nombre de archivo para leer o guardar la consulta, o déjelo en blanco para seleccionarlo con un cuadro de diálogo</value>
+  </data>
+  <data name="DESCRIPTION_QueryLink" xml:space="preserve">
+    <value>Enlace de consulta actual</value>
+  </data>
+  <data name="DESCRIPTION_QueryLinkDesc" xml:space="preserve">
+    <value>Descripción del enlace de consulta en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_QueryLinkName" xml:space="preserve">
+    <value>Nombre del enlace de consulta en la interfaz de usuario</value>
+  </data>
+  <data name="DESCRIPTION_QueryName" xml:space="preserve">
+    <value>Nombre de la consulta a almacenar en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_QuerySerializer" xml:space="preserve">
+    <value>Seleccionar un serializador para leer o escribir la consulta en un archivo o en la base de datos</value>
+  </data>
+  <data name="DESCRIPTION_QueryVersion" xml:space="preserve">
+    <value>Número de versión de la consulta, para poder tener diferentes configuraciones para la misma consulta</value>
+  </data>
+  <data name="DESCRIPTION_ReadOnly" xml:space="preserve">
+    <value>El valor no se puede cambiar</value>
+  </data>
+  <data name="DESCRIPTION_SelectionChangedNotification" xml:space="preserve">
+    <value>Tipo de notificación de cambio de selección para el grupo de comandos actual</value>
+  </data>
+  <data name="DESCRIPTION_Server" xml:space="preserve">
+    <value>Servidor de base de datos para compilar y ejecutar consultas</value>
+  </data>
+  <data name="DESCRIPTION_SpecificColumnCfg" xml:space="preserve">
+    <value>Configuración específica en función del estilo de edición de la columna</value>
+  </data>
+  <data name="DESCRIPTION_TableDML" xml:space="preserve">
+    <value>Seleccione un comando DML de tabla para añadir al grupo de comandos actual</value>
+  </data>
+  <data name="DESCRIPTION_Tables" xml:space="preserve">
+    <value>Seleccione una tabla para generar sentencias DML</value>
+  </data>
+  <data name="DESCRIPTION_TargetLink" xml:space="preserve">
+    <value>Consulta de selección de cadena de conexión de enlace con la base de datos de destino</value>
+  </data>
+  <data name="DESCRIPTION_TemplateName" xml:space="preserve">
+    <value>Nombre de la plantilla</value>
+  </data>
+  <data name="DESCRIPTION_TextReadOnly" xml:space="preserve">
+    <value>Los usuarios pueden o no escribir texto manualmente</value>
+  </data>
+  <data name="DESCRIPTION_ValError" xml:space="preserve">
+    <value>Parametro de retorno del error de validación</value>
+  </data>
+  <data name="DESCRIPTION_ValOverload" xml:space="preserve">
+    <value>Identificador de sobrecarga del procedimiento de validación</value>
+  </data>
+  <data name="DESCRIPTION_ValParameter" xml:space="preserve">
+    <value>Seleccione un parámetro del procedimiento de validación para configurar</value>
+  </data>
+  <data name="DESCRIPTION_ValProcName" xml:space="preserve">
+    <value>Nombre del procedimiento almacenado de validación</value>
+  </data>
+  <data name="DESCRIPTION_ValueSource" xml:space="preserve">
+    <value>Proveedor de valores para el parámetro</value>
+  </data>
+  <data name="DESCRIPTION_ValueSourceType" xml:space="preserve">
+    <value>Poveedor de valor por defecto para el parámetro</value>
+  </data>
+  <data name="DESCRIPTION_ValuesQuery" xml:space="preserve">
+    <value>Seleccione una consulta para proprocionar los valores admitidos</value>
+  </data>
+  <data name="DESCRIPTION_Visible" xml:space="preserve">
+    <value>Visible en la interfaz de usuario y los resultados de la consulta</value>
+  </data>
+  <data name="ENUM_ColumnMatch.All" xml:space="preserve">
+    <value>Coincidir nombres, tipo de datos, cuenta y posiciónes de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.Count" xml:space="preserve">
+    <value>Coincidir cuenta de columnas</value>
+  </data>
+  <data name="ENUM_ColumnMatch.CountAndPositions" xml:space="preserve">
+    <value>Coincidir cuenta y posiciones de columnas</value>
+  </data>
+  <data name="ENUM_ColumnMatch.Names" xml:space="preserve">
+    <value>Coincidir nombres de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesAndCount" xml:space="preserve">
+    <value>Coincidir nombres y cuenta de columnas</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesAndPositions" xml:space="preserve">
+    <value>Coincidir nombres y posiciones de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesAndTypes" xml:space="preserve">
+    <value>Coincidir nombres y tipos de dato de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesCountAndPositions" xml:space="preserve">
+    <value>Coincidir nombres, cuenta y posiciónes de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesTypesAndCount" xml:space="preserve">
+    <value>Coincidir nombres, tipo de datos y cuenta de columnas</value>
+  </data>
+  <data name="ENUM_ColumnMatch.NamesTypesAndPositions" xml:space="preserve">
+    <value>Coincidir nombres, tipo de datos y posiciónes de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.None" xml:space="preserve">
+    <value>No requiere coincidencia</value>
+  </data>
+  <data name="ENUM_ColumnMatch.Positions" xml:space="preserve">
+    <value>Coincidir posiciones de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.Types" xml:space="preserve">
+    <value>Coincidir tipo de datos de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.TypesAndCount" xml:space="preserve">
+    <value>Coincidir posiciones y cuenta de columnas</value>
+  </data>
+  <data name="ENUM_ColumnMatch.TypesAndPositions" xml:space="preserve">
+    <value>Coincidir tipo de datos y posiciones de columna</value>
+  </data>
+  <data name="ENUM_ColumnMatch.TypesCountAndPositions" xml:space="preserve">
+    <value>Coincidir posiciones, tipo de datos y cuenta de columnas</value>
+  </data>
+  <data name="ENUM_CommitHandling.AtEnding" xml:space="preserve">
+    <value>Confirmar cuando se hayan procesado todos los registros</value>
+  </data>
+  <data name="ENUM_CommitHandling.ByBlock" xml:space="preserve">
+    <value>Confirmar después de procesar un cierto número de registros</value>
+  </data>
+  <data name="ENUM_CommitHandling.None" xml:space="preserve">
+    <value>Confirmar al procesar cada registro</value>
+  </data>
+  <data name="ENUM_DataRowStatus.Changed" xml:space="preserve">
+    <value>Modificado</value>
+  </data>
+  <data name="ENUM_DataRowStatus.Error" xml:space="preserve">
+    <value>Error de validación</value>
+  </data>
+  <data name="ENUM_DataRowStatus.NewRow" xml:space="preserve">
+    <value>Nueva fila</value>
+  </data>
+  <data name="ENUM_DataRowStatus.Unchanged" xml:space="preserve">
+    <value>Sin cambios</value>
+  </data>
+  <data name="ENUM_DataRowStatus.Validated" xml:space="preserve">
+    <value>Validada</value>
+  </data>
+  <data name="ENUM_DateFormat.Custom" xml:space="preserve">
+    <value>A medida</value>
+  </data>
+  <data name="ENUM_DateFormat.Long" xml:space="preserve">
+    <value>Largo</value>
+  </data>
+  <data name="ENUM_DateFormat.Short" xml:space="preserve">
+    <value>Corto</value>
+  </data>
+  <data name="ENUM_ErrorHandling.RollbackAndContinue" xml:space="preserve">
+    <value>Deshacer y continuar, informar de errores al terminar</value>
+  </data>
+  <data name="ENUM_ErrorHandling.RollbackReportAndContinue" xml:space="preserve">
+    <value>Deshacer, informar del error y continuar</value>
+  </data>
+  <data name="ENUM_ErrorHandling.StopOnFirstError" xml:space="preserve">
+    <value>Terminar al primer error</value>
+  </data>
+  <data name="ENUM_FormShowingMode.MDI" xml:space="preserve">
+    <value>Formulario MDI hijo</value>
+  </data>
+  <data name="ENUM_FormShowingMode.Modal" xml:space="preserve">
+    <value>Formulario modal</value>
+  </data>
+  <data name="ENUM_FormShowingMode.None" xml:space="preserve">
+    <value>SIn configurar</value>
+  </data>
+  <data name="ENUM_FormShowingMode.NonModal" xml:space="preserve">
+    <value>Formulario no modal</value>
+  </data>
+  <data name="ENUM_GridColumnType.CheckBox" xml:space="preserve">
+    <value>Casilla para marcar</value>
+  </data>
+  <data name="ENUM_GridColumnType.ComboBox" xml:space="preserve">
+    <value>Lista desplegable</value>
+  </data>
+  <data name="ENUM_GridColumnType.DateTime" xml:space="preserve">
+    <value>Fecha y hora</value>
+  </data>
+  <data name="ENUM_GridColumnType.DetailComboBox" xml:space="preserve">
+    <value>Lista desplegable de detalle</value>
+  </data>
+  <data name="ENUM_GridColumnType.Image" xml:space="preserve">
+    <value>Imagen</value>
+  </data>
+  <data name="ENUM_GridColumnType.ModalText" xml:space="preserve">
+    <value>Texto con selector modal</value>
+  </data>
+  <data name="ENUM_GridColumnType.None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="ENUM_GridColumnType.Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="ENUM_ImportBehaviour.AutoByRow" xml:space="preserve">
+    <value>Confirmar después de validar</value>
+  </data>
+  <data name="ENUM_ImportBehaviour.ByUserCommand" xml:space="preserve">
+    <value>Confirmar a petición del usuario</value>
+  </data>
+  <data name="ENUM_ImportBehaviour.None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="ENUM_ParameterDataType.DateTime" xml:space="preserve">
+    <value>Fecha y hora</value>
+  </data>
+  <data name="ENUM_ParameterDataType.Number" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="ENUM_ParameterDataType.Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="ENUM_PropertyEditorStyle.PropertyGrid" xml:space="preserve">
+    <value>Property Grid</value>
+  </data>
+  <data name="ENUM_PropertyEditorStyle.PropertyTable" xml:space="preserve">
+    <value>Property Table</value>
+  </data>
+  <data name="ENUM_QueryDataGridView.Mode.Filters" xml:space="preserve">
+    <value>Filtros</value>
+  </data>
+  <data name="ENUM_QueryDataGridView.Mode.Results" xml:space="preserve">
+    <value>Resultados</value>
+  </data>
+  <data name="ENUM_SelectionChangedNotification.Count" xml:space="preserve">
+    <value>Cuenta de filas</value>
+  </data>
+  <data name="ENUM_SelectionChangedNotification.CountAndData" xml:space="preserve">
+    <value>Datos seleccionados y cuenta de filas</value>
+  </data>
+  <data name="ENUM_SelectionChangedNotification.Data" xml:space="preserve">
+    <value>Datos seleccionados</value>
+  </data>
+  <data name="ENUM_SelectionChangedNotification.None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="ENUM_SelectionType.Multiple" xml:space="preserve">
+    <value>Cualquier número de filas</value>
+  </data>
+  <data name="ENUM_SelectionType.MultipleFixed" xml:space="preserve">
+    <value>Número fijo de filas</value>
+  </data>
+  <data name="ENUM_SelectionType.MultipleLimited" xml:space="preserve">
+    <value>Hasta un máximo número de filas</value>
+  </data>
+  <data name="ENUM_SelectionType.None" xml:space="preserve">
+    <value>No requiere selección</value>
+  </data>
+  <data name="ENUM_SelectionType.Single" xml:space="preserve">
+    <value>Una sola fila</value>
+  </data>
+  <data name="ENUM_ValueSourceType.Application" xml:space="preserve">
+    <value>Aplicación actual</value>
+  </data>
+  <data name="ENUM_ValueSourceType.CommandQuery" xml:space="preserve">
+    <value>Consulta de selección de valores del comando</value>
+  </data>
+  <data name="ENUM_ValueSourceType.MasterQuery" xml:space="preserve">
+    <value>Consulta principal</value>
+  </data>
+  <data name="ENUM_ValueSourceType.None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="ENUM_ValueSourceType.OwnerObject" xml:space="preserve">
+    <value>Objeto propietario</value>
+  </data>
+  <data name="ENUM_ValueSourceType.Query" xml:space="preserve">
+    <value>Consula propietaria</value>
+  </data>
+  <data name="ENUM_ValueSourceType.User" xml:space="preserve">
+    <value>Entrada del usuario</value>
+  </data>
+  <data name="ERROR_ColMandatory" xml:space="preserve">
+    <value>El valor es obligatorio</value>
+  </data>
+  <data name="ERROR_ColNullValue" xml:space="preserve">
+    <value>Los valores vacíos no se admiten</value>
+  </data>
+  <data name="ERROR_DML" xml:space="preserve">
+    <value>No se admiten sentencias DML en las consultas</value>
+  </data>
+  <data name="ERROR_DuplicateUID" xml:space="preserve">
+    <value>Identificador dupilcado: {0}</value>
+  </data>
+  <data name="ERROR_FunctionNotAllowed" xml:space="preserve">
+    <value>Función no admitida aquí</value>
+  </data>
+  <data name="ERROR_InvalidArgument" xml:space="preserve">
+    <value>El argumento {0} no es válido</value>
+  </data>
+  <data name="ERROR_InvalidArgumentNumber" xml:space="preserve">
+    <value>Número de argumentos incorrecto</value>
+  </data>
+  <data name="ERROR_InvalidDataType" xml:space="preserve">
+    <value>Tipo de datos incorrecto</value>
+  </data>
+  <data name="ERROR_InvalidDateTime" xml:space="preserve">
+    <value>Formato de fecha y hora incorrecto</value>
+  </data>
+  <data name="ERROR_InvalidFilterType" xml:space="preserve">
+    <value>Tipo de expresión de filtro incorrecto</value>
+  </data>
+  <data name="ERROR_MixedCategories" xml:space="preserve">
+    <value>No se pueden mezclar elementos de diferentes categorías</value>
+  </data>
+  <data name="ERROR_NoDetailParameters" xml:space="preserve">
+    <value>La consulta secundaria debe tener alún parámetro para enlazar</value>
+  </data>
+  <data name="ERROR_NonExpandable" xml:space="preserve">
+    <value>Las propiedades de dsolo lectura no pueden ser expandibles</value>
+  </data>
+  <data name="ERROR_NonLogicExpression" xml:space="preserve">
+    <value>No es una expresión lógica</value>
+  </data>
+  <data name="ERROR_NumberNotValid" xml:space="preserve">
+    <value>Número incorrecto</value>
+  </data>
+  <data name="ERROR_OBJECTNE" xml:space="preserve">
+    <value>El objeto {0} no existe</value>
+  </data>
+  <data name="ERROR_QueryNotFound" xml:space="preserve">
+    <value>No se ha encontrado la consulta en la base de datos</value>
+  </data>
+  <data name="ERROR_TypedElementRequired" xml:space="preserve">
+    <value>Se requiere un elemento con tipo de datos para la expresión de filtro</value>
+  </data>
+  <data name="ERROR_TypeUndefinded" xml:space="preserve">
+    <value>No se ha definido el tipo de datos de la columna</value>
+  </data>
+  <data name="ERR_NotInTableColumn" xml:space="preserve">
+    <value>La columna {0} no pertenece a la tabla {1}</value>
+  </data>
+  <data name="FILTER_XMLFiles" xml:space="preserve">
+    <value>Archivos XML (*.xml)|*.xml|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FIL_ExcelFiles" xml:space="preserve">
+    <value>Archivos Excel (*.xlsx)|*.xlsx|Archivos Excel 97-2003 (*.xls)|*.xls</value>
+  </data>
+  <data name="FNAME_avg" xml:space="preserve">
+    <value>Valor promedio de la columna</value>
+  </data>
+  <data name="FNAME_length" xml:space="preserve">
+    <value>Longitud del texto de la columna</value>
+  </data>
+  <data name="FNAME_lower" xml:space="preserve">
+    <value>Valor en minúscula</value>
+  </data>
+  <data name="FNAME_max" xml:space="preserve">
+    <value>Valor máximo de la columna</value>
+  </data>
+  <data name="FNAME_min" xml:space="preserve">
+    <value>Valor mínimo de la columna</value>
+  </data>
+  <data name="FNAME_sum" xml:space="preserve">
+    <value>Suma de los valores de la columna</value>
+  </data>
+  <data name="FNAME_upper" xml:space="preserve">
+    <value>Valor en mayúscula</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ICO_CD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\165.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_Drive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\133.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\101.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_NetDrive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\149.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_RAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\173.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_Unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\465.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_USB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\286.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LAB_And" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="LAB_False" xml:space="preserve">
+    <value>Falso</value>
+  </data>
+  <data name="LAB_IgnoreCase" xml:space="preserve">
+    <value>No diferenciar mayúsculas de minúsculas</value>
+  </data>
+  <data name="LAB_None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="LAB_Or" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="LAB_Tabs" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LAB_True" xml:space="preserve">
+    <value>Verdadero</value>
+  </data>
+  <data name="LAB_Unknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="MNU_ObjectDB" xml:space="preserve">
+    <value>Base de datos de objetos</value>
+  </data>
+  <data name="MNU_Parameters" xml:space="preserve">
+    <value>Parámetros</value>
+  </data>
+  <data name="MNU_Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="MSG_CreateAllUIItems" xml:space="preserve">
+    <value>Crear configuración de interfaz de usuario para {0} elementos. ¿Continuar?</value>
+  </data>
+  <data name="MSG_NumberTruncated" xml:space="preserve">
+    <value>Número truncado</value>
+  </data>
+  <data name="MSG_ProcInGroup" xml:space="preserve">
+    <value>El procedimiento o fnción ya está en el grupo de comandos</value>
+  </data>
+  <data name="MSG_StringTruncated" xml:space="preserve">
+    <value>Longitud de texto truncada</value>
+  </data>
+  <data name="NAME_ActiveLinks" xml:space="preserve">
+    <value>Enlaces con consultas de detalle</value>
+  </data>
+  <data name="NAME_AppIcon" xml:space="preserve">
+    <value>Icono de la aplicación</value>
+  </data>
+  <data name="NAME_AppPEStyle" xml:space="preserve">
+    <value>Estilo de edición de propiedades</value>
+  </data>
+  <data name="NAME_AppTitle" xml:space="preserve">
+    <value>Título de la aplicación</value>
+  </data>
+  <data name="NAME_AppUID" xml:space="preserve">
+    <value>Identificador único</value>
+  </data>
+  <data name="NAME_AppVersion" xml:space="preserve">
+    <value>Versión de la aplicación</value>
+  </data>
+  <data name="NAME_BackColorFormatter" xml:space="preserve">
+    <value>Color de fondo</value>
+  </data>
+  <data name="NAME_BackColorFormatterByValue" xml:space="preserve">
+    <value>Color de fondo según valor</value>
+  </data>
+  <data name="NAME_BackColorFormatterIf" xml:space="preserve">
+    <value>Color de fondo condicional</value>
+  </data>
+  <data name="NAME_BasicQueryConsole" xml:space="preserve">
+    <value>Consola de comandos de consulta básica</value>
+  </data>
+  <data name="NAME_BoldFormatter" xml:space="preserve">
+    <value>Negrita</value>
+  </data>
+  <data name="NAME_BoldFormatterByValue" xml:space="preserve">
+    <value>Negrita según valor</value>
+  </data>
+  <data name="NAME_BoldFormatterIf" xml:space="preserve">
+    <value>Negrita condicional</value>
+  </data>
+  <data name="NAME_Caption" xml:space="preserve">
+    <value>Encabezado</value>
+  </data>
+  <data name="NAME_CellValColName" xml:space="preserve">
+    <value>Parámetro de nombre de columna modificada</value>
+  </data>
+  <data name="NAME_CellValError" xml:space="preserve">
+    <value>Parámetro con el error de validación de celda</value>
+  </data>
+  <data name="NAME_CellValOverload" xml:space="preserve">
+    <value>Sobrecarga de procedimiento de validación de celda</value>
+  </data>
+  <data name="NAME_CellValParameter" xml:space="preserve">
+    <value>Parámetros de validación de celda</value>
+  </data>
+  <data name="NAME_CellValProcName" xml:space="preserve">
+    <value>Procedimiento de validación de celda</value>
+  </data>
+  <data name="NAME_CfgConString" xml:space="preserve">
+    <value>Cadena de conexión de configuración</value>
+  </data>
+  <data name="NAME_CfgDatabaseManager" xml:space="preserve">
+    <value>Esquema CONFIGURATION</value>
+  </data>
+  <data name="NAME_CheckMode" xml:space="preserve">
+    <value>Modo de comprobación</value>
+  </data>
+  <data name="NAME_CmdCaption" xml:space="preserve">
+    <value>Encabezado</value>
+  </data>
+  <data name="NAME_CmdCommitBlockSize" xml:space="preserve">
+    <value>Tamaño del bloque de confirmación</value>
+  </data>
+  <data name="NAME_CmdCommitHandling" xml:space="preserve">
+    <value>Gestión de confirmación</value>
+  </data>
+  <data name="NAME_CmdDescription" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="NAME_CmdErrorHandling" xml:space="preserve">
+    <value>Gestión de errores</value>
+  </data>
+  <data name="NAME_CmdErrorMessage" xml:space="preserve">
+    <value>Mensaje de error</value>
+  </data>
+  <data name="NAME_CmdFormInfo" xml:space="preserve">
+    <value>Tipo de formulario de comando</value>
+  </data>
+  <data name="NAME_CmdGroup" xml:space="preserve">
+    <value>Grupo de comandos</value>
+  </data>
+  <data name="NAME_CmdGroupDesc" xml:space="preserve">
+    <value>Descripción del grupo de comandos</value>
+  </data>
+  <data name="NAME_CmdGroupIndex" xml:space="preserve">
+    <value>Índice del grupo de comandos</value>
+  </data>
+  <data name="NAME_CmdGroupName" xml:space="preserve">
+    <value>Nombre del grupo de comandos</value>
+  </data>
+  <data name="NAME_CmdIcoActive" xml:space="preserve">
+    <value>Icono activo</value>
+  </data>
+  <data name="NAME_CmdIcoInactive" xml:space="preserve">
+    <value>Icono inactivo</value>
+  </data>
+  <data name="NAME_CmdIndex" xml:space="preserve">
+    <value>Índice del comando</value>
+  </data>
+  <data name="NAME_CmdMainSelCount" xml:space="preserve">
+    <value>Cuenta de selección en consulta principal</value>
+  </data>
+  <data name="NAME_CmdMainSelectionType" xml:space="preserve">
+    <value>Tipo de selección en consulta principal</value>
+  </data>
+  <data name="NAME_CmdMergeAction" xml:space="preserve">
+    <value>Acción de intercalado</value>
+  </data>
+  <data name="NAME_CmdMergeIndex" xml:space="preserve">
+    <value>Índice de intercalado</value>
+  </data>
+  <data name="NAME_CmdPath" xml:space="preserve">
+    <value>Ruta del comando</value>
+  </data>
+  <data name="NAME_CmdSelCount" xml:space="preserve">
+    <value>Cuenta de seleccionados</value>
+  </data>
+  <data name="NAME_CmdSelectionType" xml:space="preserve">
+    <value>Tipo de selección</value>
+  </data>
+  <data name="NAME_CmdSuccessMessage" xml:space="preserve">
+    <value>Mensaje de éxito</value>
+  </data>
+  <data name="NAME_CmdWarningMessage" xml:space="preserve">
+    <value>Mensaje de aviso</value>
+  </data>
+  <data name="NAME_CodeBuilder" xml:space="preserve">
+    <value>Gestor de procedimientos</value>
+  </data>
+  <data name="NAME_ColumnCfg" xml:space="preserve">
+    <value>Configuración de columna</value>
+  </data>
+  <data name="NAME_ColumnIndex" xml:space="preserve">
+    <value>Índice</value>
+  </data>
+  <data name="NAME_ColumnLink" xml:space="preserve">
+    <value>Enlace actual</value>
+  </data>
+  <data name="NAME_ColumnLinkKey" xml:space="preserve">
+    <value>Clave</value>
+  </data>
+  <data name="NAME_ColumnLinkKeyColumn" xml:space="preserve">
+    <value>Nombre de columna</value>
+  </data>
+  <data name="NAME_ColumnLinkMasterColumn" xml:space="preserve">
+    <value>Columna padre</value>
+  </data>
+  <data name="NAME_ColumnLinkName" xml:space="preserve">
+    <value>Nombre de clave o enlace</value>
+  </data>
+  <data name="NAME_ColumnMatch" xml:space="preserve">
+    <value>Emparejamiento de columnas</value>
+  </data>
+  <data name="NAME_ColumnName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NAME_ColumnSet" xml:space="preserve">
+    <value>Conjunto de columnas</value>
+  </data>
+  <data name="NAME_ColumnSetDesc" xml:space="preserve">
+    <value>Descripción de conjunto de columnas</value>
+  </data>
+  <data name="NAME_ColumnSetFilterCol" xml:space="preserve">
+    <value>Columna de filtrado</value>
+  </data>
+  <data name="NAME_ColumnSetName" xml:space="preserve">
+    <value>Nombre del conjutno de columnas</value>
+  </data>
+  <data name="NAME_ColumnSetNameCol" xml:space="preserve">
+    <value>Columna de nombre</value>
+  </data>
+  <data name="NAME_ColumnType" xml:space="preserve">
+    <value>Tipo de datos</value>
+  </data>
+  <data name="NAME_Command" xml:space="preserve">
+    <value>Comando</value>
+  </data>
+  <data name="NAME_CommandList" xml:space="preserve">
+    <value>Contenedor de listas de comandos</value>
+  </data>
+  <data name="NAME_CommandSeparator" xml:space="preserve">
+    <value>Separador de comandos</value>
+  </data>
+  <data name="NAME_Condition" xml:space="preserve">
+    <value>Expresión condicional</value>
+  </data>
+  <data name="NAME_Connector" xml:space="preserve">
+    <value>Conexión</value>
+  </data>
+  <data name="NAME_ConString" xml:space="preserve">
+    <value>Cadena de conexión</value>
+  </data>
+  <data name="NAME_CSSFormatter" xml:space="preserve">
+    <value>Clase CSS</value>
+  </data>
+  <data name="NAME_CSSFormatterByValue" xml:space="preserve">
+    <value>Clase CSS según valor</value>
+  </data>
+  <data name="NAME_CSSFormatterIf" xml:space="preserve">
+    <value>Clase CSS condicional</value>
+  </data>
+  <data name="NAME_CustomFormat" xml:space="preserve">
+    <value>Cadena de formato personalizado</value>
+  </data>
+  <data name="NAME_DatabaseFormatter" xml:space="preserve">
+    <value>Exportar a base de datos</value>
+  </data>
+  <data name="NAME_DataExportCmdGroup" xml:space="preserve">
+    <value>Grupo de comandos de exportación de datos</value>
+  </data>
+  <data name="NAME_DateAndTimeCfg" xml:space="preserve">
+    <value>Configuración de fecha</value>
+  </data>
+  <data name="NAME_DateFormatter" xml:space="preserve">
+    <value>Formato de fecha y hora</value>
+  </data>
+  <data name="NAME_DateFormatterByValue" xml:space="preserve">
+    <value>Formato de fecha y hora por valor</value>
+  </data>
+  <data name="NAME_DateFormatterIf" xml:space="preserve">
+    <value>Formato de fecha y hora condicional</value>
+  </data>
+  <data name="NAME_DateStyle" xml:space="preserve">
+    <value>Estilo de fecha</value>
+  </data>
+  <data name="NAME_DBProviderList" xml:space="preserve">
+    <value>Lista de proveedores de base de datos</value>
+  </data>
+  <data name="NAME_DelError" xml:space="preserve">
+    <value>Error de borrado de fila</value>
+  </data>
+  <data name="NAME_DelOverload" xml:space="preserve">
+    <value>Sobrecarga de procedimiento de borrado</value>
+  </data>
+  <data name="NAME_DelParameter" xml:space="preserve">
+    <value>Parámetros de borrado</value>
+  </data>
+  <data name="NAME_DelProcName" xml:space="preserve">
+    <value>Procedimiento de borrado</value>
+  </data>
+  <data name="NAME_Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.BasicImportForm" xml:space="preserve">
+    <value>Formulario de importación de datos</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.MasterDetailForm" xml:space="preserve">
+    <value>Formulario maestro-detalle</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.MasterDetailHGForm" xml:space="preserve">
+    <value>Formulario jerárquico maestro-detalle</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.MasterMultiDetailForm" xml:space="preserve">
+    <value>Formulario maestro-múltiple detale</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.SelectionDialogBox" xml:space="preserve">
+    <value>Cuadro de diálogo de selección de valores</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.SingleGridEditForm" xml:space="preserve">
+    <value>Formulario para edición manual de datos</value>
+  </data>
+  <data name="NAME_DesktopControls.Forms.SingleQueryForm" xml:space="preserve">
+    <value>Formulario de consulta simple</value>
+  </data>
+  <data name="NAME_DetailDBProvider" xml:space="preserve">
+    <value>Proveedor de conexión</value>
+  </data>
+  <data name="NAME_DetailQuery" xml:space="preserve">
+    <value>Consulta enlazada</value>
+  </data>
+  <data name="NAME_DMLCmdFDesc" xml:space="preserve">
+    <value>Descripción del comando DML para mostrar al usuario</value>
+  </data>
+  <data name="NAME_DMLCmdFName" xml:space="preserve">
+    <value>Nombre del comando DML para mostrar al usuario</value>
+  </data>
+  <data name="NAME_DMLCmdParameters" xml:space="preserve">
+    <value>Parámetros del comando DML</value>
+  </data>
+  <data name="NAME_DMLCommands" xml:space="preserve">
+    <value>Comando</value>
+  </data>
+  <data name="NAME_DMLParameter" xml:space="preserve">
+    <value>Parámetros del comando</value>
+  </data>
+  <data name="NAME_EditMask" xml:space="preserve">
+    <value>Máscara de edición</value>
+  </data>
+  <data name="NAME_EditorSubtypeSource" xml:space="preserve">
+    <value>Origen de subtipos de editor</value>
+  </data>
+  <data name="NAME_EditorValueProvider" xml:space="preserve">
+    <value>Proveedor de valores del editor</value>
+  </data>
+  <data name="NAME_EditPosition" xml:space="preserve">
+    <value>Posición de edición</value>
+  </data>
+  <data name="NAME_ExcelFormatter" xml:space="preserve">
+    <value>Exportar datos formateados a Excel</value>
+  </data>
+  <data name="NAME_ExpConnString" xml:space="preserve">
+    <value>Conexión de destino</value>
+  </data>
+  <data name="NAME_Export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="NAME_FileName" xml:space="preserve">
+    <value>Nombre de archivo</value>
+  </data>
+  <data name="NAME_ForeColorFormatter" xml:space="preserve">
+    <value>Color de primer plano</value>
+  </data>
+  <data name="NAME_ForeColorFormatterByValue" xml:space="preserve">
+    <value>Color de primer plano según valor</value>
+  </data>
+  <data name="NAME_ForeColorFormatterIf" xml:space="preserve">
+    <value>Color de primer plano condicional</value>
+  </data>
+  <data name="NAME_FormatString" xml:space="preserve">
+    <value>Cadena de formato</value>
+  </data>
+  <data name="NAME_FormatValue" xml:space="preserve">
+    <value>Valor coincidente</value>
+  </data>
+  <data name="NAME_FormatValueType" xml:space="preserve">
+    <value>Tipo de datos genérico de valor coincidente</value>
+  </data>
+  <data name="NAME_FormFOManagerType" xml:space="preserve">
+    <value>Tipo de gestor de filtrado</value>
+  </data>
+  <data name="NAME_FormIcon" xml:space="preserve">
+    <value>Icono del formulario</value>
+  </data>
+  <data name="NAME_FormQuery" xml:space="preserve">
+    <value>Consulta del formulario</value>
+  </data>
+  <data name="NAME_FormQueryConnection" xml:space="preserve">
+    <value>Conexión de la consulta</value>
+  </data>
+  <data name="NAME_FormShowingType" xml:space="preserve">
+    <value>Modo de apertura del formulario</value>
+  </data>
+  <data name="NAME_FormTitle" xml:space="preserve">
+    <value>Titulo del formulario</value>
+  </data>
+  <data name="NAME_FormType" xml:space="preserve">
+    <value>Tipo del formulario</value>
+  </data>
+  <data name="NAME_FriendlyDescription" xml:space="preserve">
+    <value>Description para mostrar al usuario</value>
+  </data>
+  <data name="NAME_FriendlyName" xml:space="preserve">
+    <value>Nombre para mostrar al usuario</value>
+  </data>
+  <data name="NAME_GenericDataImportManager" xml:space="preserve">
+    <value>Importación genérica de datos</value>
+  </data>
+  <data name="NAME_GenericQueryUpdateManager" xml:space="preserve">
+    <value>Actualización de datos genérica</value>
+  </data>
+  <data name="NAME_GridColumnType" xml:space="preserve">
+    <value>Tipo de editor para la columna</value>
+  </data>
+  <data name="NAME_Having" xml:space="preserve">
+    <value>Cláiusula Having</value>
+  </data>
+  <data name="NAME_Hidden" xml:space="preserve">
+    <value>Oculto</value>
+  </data>
+  <data name="NAME_IgnoreCase" xml:space="preserve">
+    <value>No diferenciar mayúsculas y minúsculas</value>
+  </data>
+  <data name="NAME_ImpError" xml:space="preserve">
+    <value>Error de importación</value>
+  </data>
+  <data name="NAME_ImportBehaviour" xml:space="preserve">
+    <value>Comportamiento al importar</value>
+  </data>
+  <data name="NAME_ImportColumns" xml:space="preserve">
+    <value>Columnas</value>
+  </data>
+  <data name="NAME_ImportQuery" xml:space="preserve">
+    <value>Consulta de importación</value>
+  </data>
+  <data name="NAME_ImportStoredProc" xml:space="preserve">
+    <value>Procedimiento almacenado</value>
+  </data>
+  <data name="NAME_ImportTarget" xml:space="preserve">
+    <value>Selección de destino</value>
+  </data>
+  <data name="NAME_ImpOverload" xml:space="preserve">
+    <value>Sobrecarga del procedimiento de importación</value>
+  </data>
+  <data name="NAME_ImpParameter" xml:space="preserve">
+    <value>Parámetros de importación</value>
+  </data>
+  <data name="NAME_ImpProcName" xml:space="preserve">
+    <value>Procedimient de importación</value>
+  </data>
+  <data name="NAME_IntConnString" xml:space="preserve">
+    <value>Cadena de conexión</value>
+  </data>
+  <data name="NAME_Interactive" xml:space="preserve">
+    <value>Interactivo</value>
+  </data>
+  <data name="NAME_InteractiveDataImportManager" xml:space="preserve">
+    <value>Gestor de importación interactivo</value>
+  </data>
+  <data name="NAME_IsPassword" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="NAME_ItalicFormatter" xml:space="preserve">
+    <value>Itálica</value>
+  </data>
+  <data name="NAME_ItalicFormatterByValue" xml:space="preserve">
+    <value>Itálica según valor</value>
+  </data>
+  <data name="NAME_ItalicFormatterIf" xml:space="preserve">
+    <value>Itálica condicional</value>
+  </data>
+  <data name="NAME_Locked" xml:space="preserve">
+    <value>Bloqueada</value>
+  </data>
+  <data name="NAME_Mandatory" xml:space="preserve">
+    <value>Obligatorio</value>
+  </data>
+  <data name="NAME_ModalDialogBox" xml:space="preserve">
+    <value>Cuadro de diálogo modal</value>
+  </data>
+  <data name="NAME_ModalTextCfg" xml:space="preserve">
+    <value>Configuración de cuadro de diálogo de selección</value>
+  </data>
+  <data name="NAME_Modifiers" xml:space="preserve">
+    <value>Modificadores</value>
+  </data>
+  <data name="NAME_NoSpecificCfg" xml:space="preserve">
+    <value>Configuración inespecífica</value>
+  </data>
+  <data name="NAME_NotNull" xml:space="preserve">
+    <value>No nulo</value>
+  </data>
+  <data name="NAME_NumberFormatter" xml:space="preserve">
+    <value>Fromato de número</value>
+  </data>
+  <data name="NAME_NumberFormatterByValue" xml:space="preserve">
+    <value>Formato de número según valor</value>
+  </data>
+  <data name="NAME_NumberFormatterIf" xml:space="preserve">
+    <value>Formato de número condicional</value>
+  </data>
+  <data name="NAME_ObjectDescription" xml:space="preserve">
+    <value>Descripción del objeto</value>
+  </data>
+  <data name="NAME_ObjectName" xml:space="preserve">
+    <value>Nombre del objeto</value>
+  </data>
+  <data name="NAME_Overload" xml:space="preserve">
+    <value>Sobrecarga</value>
+  </data>
+  <data name="NAME_ParamDataType" xml:space="preserve">
+    <value>Tipo de parámetro</value>
+  </data>
+  <data name="NAME_ParamDataTypeAs" xml:space="preserve">
+    <value>Establecer tipo de datos</value>
+  </data>
+  <data name="NAME_ParamDefValue" xml:space="preserve">
+    <value>Valor por defecto</value>
+  </data>
+  <data name="NAME_ParameterEditor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="NAME_ParamImportError" xml:space="preserve">
+    <value>Error de importación</value>
+  </data>
+  <data name="NAME_ParamLength" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="NAME_ParamNativeType" xml:space="preserve">
+    <value>Tipo nativo</value>
+  </data>
+  <data name="NAME_ParamPrecision" xml:space="preserve">
+    <value>Precisión</value>
+  </data>
+  <data name="NAME_ParamScale" xml:space="preserve">
+    <value>Escala</value>
+  </data>
+  <data name="NAME_ParamValidationError" xml:space="preserve">
+    <value>Error de validación</value>
+  </data>
+  <data name="NAME_ProcedureFDesc" xml:space="preserve">
+    <value>Descripción del procedimiento en la interfaz de usuario</value>
+  </data>
+  <data name="NAME_ProcedureFName" xml:space="preserve">
+    <value>Nombre del procedimiento en la interfaz de usuario</value>
+  </data>
+  <data name="NAME_ProcedureName" xml:space="preserve">
+    <value>Nombre del procedimiento</value>
+  </data>
+  <data name="NAME_ProcedureParameters" xml:space="preserve">
+    <value>Parámetros</value>
+  </data>
+  <data name="NAME_QColunID" xml:space="preserve">
+    <value>Índice</value>
+  </data>
+  <data name="NAME_QColunName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NAME_Query" xml:space="preserve">
+    <value>Consulta</value>
+  </data>
+  <data name="NAME_QueryCommand" xml:space="preserve">
+    <value>Comando de consulta</value>
+  </data>
+  <data name="NAME_QueryDescription" xml:space="preserve">
+    <value>Descripción de consulta</value>
+  </data>
+  <data name="NAME_QueryLink" xml:space="preserve">
+    <value>Enlace de consulta</value>
+  </data>
+  <data name="NAME_QueryLinkDesc" xml:space="preserve">
+    <value>Descripción del enlace</value>
+  </data>
+  <data name="NAME_QueryLinkName" xml:space="preserve">
+    <value>Nombre del enlace</value>
+  </data>
+  <data name="NAME_QueryName" xml:space="preserve">
+    <value>Nombre de la consulta</value>
+  </data>
+  <data name="NAME_QueryVersion" xml:space="preserve">
+    <value>Versión de la consulta</value>
+  </data>
+  <data name="NAME_ReadOnly" xml:space="preserve">
+    <value>Solo lectura</value>
+  </data>
+  <data name="NAME_Result" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="NAME_RowBackColorFormatterByValue" xml:space="preserve">
+    <value>Color de fondo de fila según valor</value>
+  </data>
+  <data name="NAME_RowBackColorFormatterIf" xml:space="preserve">
+    <value>Color de fondo de fila condicional</value>
+  </data>
+  <data name="NAME_RowForeColorFormatterByValue" xml:space="preserve">
+    <value>Color de texto de fila dsegún valor</value>
+  </data>
+  <data name="NAME_RowForeColorFormatterIf" xml:space="preserve">
+    <value>Color de texto de fila condicional</value>
+  </data>
+  <data name="NAME_SelectionChangedNotification" xml:space="preserve">
+    <value>Tipo de notificaicón de cambio de selección</value>
+  </data>
+  <data name="NAME_Serializer" xml:space="preserve">
+    <value>Tipo de serializador</value>
+  </data>
+  <data name="NAME_Server" xml:space="preserve">
+    <value>Servidor</value>
+  </data>
+  <data name="NAME_SpecificColumnCfg" xml:space="preserve">
+    <value>Configuración específica</value>
+  </data>
+  <data name="NAME_SQLQueryBuilder" xml:space="preserve">
+    <value>Constructor de consultas ISO</value>
+  </data>
+  <data name="NAME_StoredProcedure" xml:space="preserve">
+    <value>Procedimiento almacenado o función</value>
+  </data>
+  <data name="NAME_TableDML" xml:space="preserve">
+    <value>DML de tabla</value>
+  </data>
+  <data name="NAME_Tables" xml:space="preserve">
+    <value>Tabla</value>
+  </data>
+  <data name="NAME_TargetLink" xml:space="preserve">
+    <value>Selección de base de datos destino</value>
+  </data>
+  <data name="NAME_TemplateName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="NAME_TextReadOnly" xml:space="preserve">
+    <value>Texto de solo lectura</value>
+  </data>
+  <data name="NAME_TranslateFormatter" xml:space="preserve">
+    <value>Traducir desde recurso</value>
+  </data>
+  <data name="NAME_ValError" xml:space="preserve">
+    <value>Error de validación</value>
+  </data>
+  <data name="NAME_ValOverload" xml:space="preserve">
+    <value>Sobrecarga de validación</value>
+  </data>
+  <data name="NAME_ValParameter" xml:space="preserve">
+    <value>Parametros de validación</value>
+  </data>
+  <data name="NAME_ValProcName" xml:space="preserve">
+    <value>Procedimiento de validación</value>
+  </data>
+  <data name="NAME_ValueSource" xml:space="preserve">
+    <value>Origen de valores</value>
+  </data>
+  <data name="NAME_ValueSourceType" xml:space="preserve">
+    <value>Origen de valor por defecto</value>
+  </data>
+  <data name="NAME_ValuesQuery" xml:space="preserve">
+    <value>Selector de valor</value>
+  </data>
+  <data name="NAME_Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="OPER_And" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="OPER_Asc" xml:space="preserve">
+    <value>Ascendente</value>
+  </data>
+  <data name="OPER_Between" xml:space="preserve">
+    <value>entre</value>
+  </data>
+  <data name="OPER_Desc" xml:space="preserve">
+    <value>Descendente</value>
+  </data>
+  <data name="OPER_EndsWith" xml:space="preserve">
+    <value>termina en</value>
+  </data>
+  <data name="OPER_Equals" xml:space="preserve">
+    <value>igual a</value>
+  </data>
+  <data name="OPER_Finite" xml:space="preserve">
+    <value>es finito</value>
+  </data>
+  <data name="OPER_GreaterThan" xml:space="preserve">
+    <value>mayor que</value>
+  </data>
+  <data name="OPER_GreaterThanOrEqual" xml:space="preserve">
+    <value>mayor o gual que</value>
+  </data>
+  <data name="OPER_In" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="OPER_Infinite" xml:space="preserve">
+    <value>es infinito</value>
+  </data>
+  <data name="OPER_Is" xml:space="preserve">
+    <value>es</value>
+  </data>
+  <data name="OPER_IsNaN" xml:space="preserve">
+    <value>no es un número</value>
+  </data>
+  <data name="OPER_IsNot" xml:space="preserve">
+    <value>no es</value>
+  </data>
+  <data name="OPER_IsNotNaN" xml:space="preserve">
+    <value>es un número</value>
+  </data>
+  <data name="OPER_IsNotNull" xml:space="preserve">
+    <value>no vacío</value>
+  </data>
+  <data name="OPER_IsNull" xml:space="preserve">
+    <value>vacío</value>
+  </data>
+  <data name="OPER_LessThan" xml:space="preserve">
+    <value>menor que</value>
+  </data>
+  <data name="OPER_LessThanOrEqual" xml:space="preserve">
+    <value>menor o igual que</value>
+  </data>
+  <data name="OPER_Like" xml:space="preserve">
+    <value>contiene</value>
+  </data>
+  <data name="OPER_NotBetween" xml:space="preserve">
+    <value>no entre</value>
+  </data>
+  <data name="OPER_NotEndsWith" xml:space="preserve">
+    <value>no termina en</value>
+  </data>
+  <data name="OPER_NotEqual" xml:space="preserve">
+    <value>distinto a</value>
+  </data>
+  <data name="OPER_NotIn" xml:space="preserve">
+    <value>no en</value>
+  </data>
+  <data name="OPER_NotLike" xml:space="preserve">
+    <value>no contiene</value>
+  </data>
+  <data name="OPER_NotRegexp" xml:space="preserve">
+    <value>no cumple</value>
+  </data>
+  <data name="OPER_NotSounds" xml:space="preserve">
+    <value>no suena como</value>
+  </data>
+  <data name="OPER_NotStartsWith" xml:space="preserve">
+    <value>en empieza con</value>
+  </data>
+  <data name="OPER_NullsFirst" xml:space="preserve">
+    <value>Valores vacíos primero</value>
+  </data>
+  <data name="OPER_NullsLast" xml:space="preserve">
+    <value>Valores vacíos al final</value>
+  </data>
+  <data name="OPER_Or" xml:space="preserve">
+    <value>o</value>
+  </data>
+  <data name="OPER_Regexp" xml:space="preserve">
+    <value>cumple</value>
+  </data>
+  <data name="OPER_Sounds" xml:space="preserve">
+    <value>suena como</value>
+  </data>
+  <data name="OPER_StartsWith" xml:space="preserve">
+    <value>empieza con</value>
+  </data>
+  <data name="OP_GroupsUsers" xml:space="preserve">
+    <value>Grupos y usuarios</value>
+  </data>
+  <data name="OP_ObjectPermissions" xml:space="preserve">
+    <value>Objetos y permisos</value>
+  </data>
+  <data name="OP_ParamValues" xml:space="preserve">
+    <value>Parámetros y valores</value>
+  </data>
+  <data name="OP_Connections" xml:space="preserve">
+    <value>Conexiones</value>
+  </data>
+  <data name="ENUM_Comparison.Equal" xml:space="preserve">
+    <value>Igual</value>
+  </data>
+  <data name="ENUM_Comparison.GreaterThan" xml:space="preserve">
+    <value>Mayor</value>
+  </data>
+  <data name="ENUM_Comparison.GreaterThanOrEqual" xml:space="preserve">
+    <value>Mayor o igual</value>
+  </data>
+  <data name="ENUM_Comparison.LessThan" xml:space="preserve">
+    <value>Menor</value>
+  </data>
+  <data name="ENUM_Comparison.LessThanOrEqual" xml:space="preserve">
+    <value>Menor o igual</value>
+  </data>
+  <data name="ENUM_Comparison.NotEqual" xml:space="preserve">
+    <value>Diferente</value>
+  </data>
+  <data name="ENUM_ValueType.DateTime" xml:space="preserve">
+    <value>Fecha y hora</value>
+  </data>
+  <data name="ENUM_ValueType.Numeric" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="ENUM_ValueType.String" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="PSOPER_NotRegexpLike" xml:space="preserve">
+    <value>no cumple</value>
+  </data>
+  <data name="PSOPER_RegexpLike" xml:space="preserve">
+    <value>cumple</value>
+  </data>
+  <data name="OPER_BitAnd" xml:space="preserve">
+    <value>and bits</value>
+  </data>
+  <data name="OPER_Not_Bitand" xml:space="preserve">
+    <value>no and bits</value>
+  </data>
+  <data name="OPER_BitXor" xml:space="preserve">
+    <value>o exclusivo bits</value>
+  </data>
+  <data name="OPER_NotBXor" xml:space="preserve">
+    <value>no o exclusivo bit</value>
+  </data>
+</root>

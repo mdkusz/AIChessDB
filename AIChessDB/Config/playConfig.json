@@ -1,0 +1,24 @@
+{
+  "plays": [
+    {
+      "id": "AIChessDatabase_play",
+      "name": "",
+      "description": "",
+      "presentation": "",
+      "user": {
+        "name": "Zug Zuang",
+        "backColor": 4282811060,
+        "foreColor": 4294967295
+      },
+      "applications": [
+        {
+          "name": "AIChessDB",
+          "backColor": 4278190080,
+          "foreColor": 4294967295
+        }
+      ],
+      "cast": [
+      ]
+    }
+  ]
+}

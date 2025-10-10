@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bbishop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bbishop.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bking.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bknight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bknight.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Board" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Board.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bpawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bpawn.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bqueen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bqueen.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="brook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brook.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwbishop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwbishop.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwking.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwknight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwknight.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwpawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwpawn.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwqueen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwqueen.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bwrook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bwrook.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CAT_MATCH" xml:space="preserve">
+    <value>MATCH</value>
+  </data>
+  <data name="CAT_MOVE" xml:space="preserve">
+    <value>MOVE</value>
+  </data>
+  <data name="ChessPiecesArray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChessPiecesArray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChessPiecesArraySmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChessPiecesArraySmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FCAT_MATCH" xml:space="preserve">
+    <value>MATCH</value>
+  </data>
+  <data name="FCAT_MOVE" xml:space="preserve">
+    <value>MOVE</value>
+  </data>
+  <data name="FILE_DocumentRepository" xml:space="preserve">
+    <value>documents.json</value>
+  </data>
+  <data name="FunctionCalling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CallFunction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_CodeInterpreter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CodeInterpreter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_Console" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\40.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_FileSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FileSearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICO_WebSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\181.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ID_BOARDWINDOW" xml:space="preserve">
+    <value>BOARDWINDOW</value>
+  </data>
+  <data name="ID_DATABASEWINDOW" xml:space="preserve">
+    <value>DATABASEWINDOW</value>
+  </data>
+  <data name="ID_FILTEREDITORWINDOW" xml:space="preserve">
+    <value>FILTERDITORWINDOW</value>
+  </data>
+  <data name="ID_MATCHWINDOW" xml:space="preserve">
+    <value>MATCHWINDOW</value>
+  </data>
+  <data name="ID_MOVEDBWINDOW" xml:space="preserve">
+    <value>MOVEWINDOW</value>
+  </data>
+  <data name="ID_PGNWINDOW" xml:space="preserve">
+    <value>PGNWINDOW</value>
+  </data>
+  <data name="ID_PLAYWINDOW" xml:space="preserve">
+    <value>PLAYWINDOW</value>
+  </data>
+  <data name="ID_QUERYWINDOW" xml:space="preserve">
+    <value>QUERYWINDOW</value>
+  </data>
+  <data name="INITIAL_BOARD" xml:space="preserve">
+    <value>rnbqkbnrpppppppp00000000000000000000000000000000PPPPPPPPRNBQKBNR</value>
+  </data>
+  <data name="INITIAL_BOARD_STANDARD" xml:space="preserve">
+    <value>rnbqkbnrpppppppp00000000000000000000000000000000PPPPPPPPRNBQKBNR</value>
+  </data>
+  <data name="KEY_BLACK" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="KEY_DATE" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="KEY_DATE1" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="KEY_EVENT" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="KEY_RESULT" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="KEY_ROUND" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="KEY_SITE" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="KEY_WHITE" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="NULL_VALUE" xml:space="preserve">
+    <value>*null*</value>
+  </data>
+  <data name="PLATFORM_WINDOWSDESK" xml:space="preserve">
+    <value>WINDOWSDESKTOP</value>
+  </data>
+  <data name="SETTING_appFunctions" xml:space="preserve">
+    <value>appFunctions</value>
+  </data>
+  <data name="SETTING_ConfigPath" xml:space="preserve">
+    <value>ConfigPath</value>
+  </data>
+  <data name="SETTING_ConsoleLog" xml:space="preserve">
+    <value>ConsoleLog</value>
+  </data>
+  <data name="SETTING_CredentialStore" xml:space="preserve">
+    <value>CredentialStore</value>
+  </data>
+  <data name="SETTING_CredentialStoreKeyData" xml:space="preserve">
+    <value>CredentialStoreKeyData</value>
+  </data>
+  <data name="SETTING_dataPath" xml:space="preserve">
+    <value>dataPath</value>
+  </data>
+  <data name="SETTING_dbconnections" xml:space="preserve">
+    <value>dbconnections</value>
+  </data>
+  <data name="SETTING_dbconstring" xml:space="preserve">
+    <value>dbconstring</value>
+  </data>
+  <data name="SETTING_defaultPlay" xml:space="preserve">
+    <value>defaultPlay</value>
+  </data>
+  <data name="SETTING_filesAPI" xml:space="preserve">
+    <value>filesAPI</value>
+  </data>
+  <data name="SETTING_FunctionCallLog" xml:space="preserve">
+    <value>FunctionCallLog</value>
+  </data>
+  <data name="SETTING_LogPathBase" xml:space="preserve">
+    <value>LogPathBase</value>
+  </data>
+  <data name="SETTING_nsQueries" xml:space="preserve">
+    <value>nsQueries</value>
+  </data>
+  <data name="SETTING_playCollection" xml:space="preserve">
+    <value>playCollection</value>
+  </data>
+  <data name="SETTING_tokenUsageLog" xml:space="preserve">
+    <value>tokenUsageLog</value>
+  </data>
+  <data name="SETTING_updateConfiguration" xml:space="preserve">
+    <value>updateConfiguration</value>
+  </data>
+  <data name="TXT_PGNSTART" xml:space="preserve">
+    <value>[Event </value>
+  </data>
+  <data name="TYPE_MATCHKEYWORD" xml:space="preserve">
+    <value>MKW</value>
+  </data>
+  <data name="TYPE_MATCHSTATISTIC" xml:space="preserve">
+    <value>MST</value>
+  </data>
+  <data name="TYPE_POSSTATISTIC" xml:space="preserve">
+    <value>PST</value>
+  </data>
+  <data name="wbishop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wbishop.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wking.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wknight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wknight.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wpawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wpawn.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wqueen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wqueen.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wrook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrook.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="XML_BLACK" xml:space="preserve">
+    <value>black</value>
+  </data>
+  <data name="XML_BLACKORWHITE" xml:space="preserve">
+    <value>blackorwhite</value>
+  </data>
+  <data name="XML_BOARD" xml:space="preserve">
+    <value>board</value>
+  </data>
+  <data name="XML_CAPTURES" xml:space="preserve">
+    <value>captures</value>
+  </data>
+  <data name="XML_CATEGORIES" xml:space="preserve">
+    <value>categories</value>
+  </data>
+  <data name="XML_CBOARD" xml:space="preserve">
+    <value>customboard</value>
+  </data>
+  <data name="XML_COLOR" xml:space="preserve">
+    <value>color</value>
+  </data>
+  <data name="XML_CONTAINER" xml:space="preserve">
+    <value>filtercontainer</value>
+  </data>
+  <data name="XML_CONTAINERS" xml:space="preserve">
+    <value>containers</value>
+  </data>
+  <data name="XML_DATE" xml:space="preserve">
+    <value>date</value>
+  </data>
+  <data name="XML_DESCRIPTION" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="XML_ELEMENT" xml:space="preserve">
+    <value>filterelement</value>
+  </data>
+  <data name="XML_ELEMENTS" xml:space="preserve">
+    <value>elements</value>
+  </data>
+  <data name="XML_EVENT" xml:space="preserve">
+    <value>event</value>
+  </data>
+  <data name="XML_FMOVCOUNT" xml:space="preserve">
+    <value>movecount</value>
+  </data>
+  <data name="XML_FMOVES" xml:space="preserve">
+    <value>fullmoves</value>
+  </data>
+  <data name="XML_FROM" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="XML_JOIN" xml:space="preserve">
+    <value>join</value>
+  </data>
+  <data name="XML_MAXCOUNT" xml:space="preserve">
+    <value>maxcount</value>
+  </data>
+  <data name="XML_MCFKEYWORD" xml:space="preserve">
+    <value>keyword</value>
+  </data>
+  <data name="XML_MFC" xml:space="preserve">
+    <value>matchkeywordfilter</value>
+  </data>
+  <data name="XML_MIF" xml:space="preserve">
+    <value>matchinfofilter</value>
+  </data>
+  <data name="XML_MIFDESC" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="XML_MINCOUNT" xml:space="preserve">
+    <value>mincount</value>
+  </data>
+  <data name="XML_MOVCOUNT" xml:space="preserve">
+    <value>plycount</value>
+  </data>
+  <data name="XML_MOVES" xml:space="preserve">
+    <value>moves</value>
+  </data>
+  <data name="XML_MPF" xml:space="preserve">
+    <value>moveplayerfilter</value>
+  </data>
+  <data name="XML_MPOSF" xml:space="preserve">
+    <value>movepositionfilter</value>
+  </data>
+  <data name="XML_MPZF" xml:space="preserve">
+    <value>movepiecefilter</value>
+  </data>
+  <data name="XML_MSF" xml:space="preserve">
+    <value>matchstatisticsfilter</value>
+  </data>
+  <data name="XML_MSQF" xml:space="preserve">
+    <value>movesquarefilter</value>
+  </data>
+  <data name="XML_NAME" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="XML_OPERATOR" xml:space="preserve">
+    <value>operator</value>
+  </data>
+  <data name="XML_PIECE" xml:space="preserve">
+    <value>piece</value>
+  </data>
+  <data name="XML_PIECES" xml:space="preserve">
+    <value>pieces</value>
+  </data>
+  <data name="XML_PROMOTED" xml:space="preserve">
+    <value>promoted</value>
+  </data>
+  <data name="XML_PSF" xml:space="preserve">
+    <value>posstatisticsfilter</value>
+  </data>
+  <data name="XML_PZCF" xml:space="preserve">
+    <value>piecescountfilter</value>
+  </data>
+  <data name="XML_REGEX" xml:space="preserve">
+    <value>regex</value>
+  </data>
+  <data name="XML_RESULT" xml:space="preserve">
+    <value>result</value>
+  </data>
+  <data name="XML_ROOT" xml:space="preserve">
+    <value>filterdatabase</value>
+  </data>
+  <data name="XML_SELECTION" xml:space="preserve">
+    <value>selection</value>
+  </data>
+  <data name="XML_TO" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="XML_TYPE" xml:space="preserve">
+    <value>realtype</value>
+  </data>
+  <data name="XML_UID" xml:space="preserve">
+    <value>uid</value>
+  </data>
+  <data name="XML_VALUE" xml:space="preserve">
+    <value>value</value>
+  </data>
+  <data name="XML_WHITE" xml:space="preserve">
+    <value>white</value>
+  </data>
+  <data name="SETTING_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SETTING_supportedLanguages" xml:space="preserve">
+    <value>supportedLanguages</value>
+  </data>
+  <data name="SETTING_PGNdir" xml:space="preserve">
+    <value>PGNdir</value>
+  </data>
+</root>

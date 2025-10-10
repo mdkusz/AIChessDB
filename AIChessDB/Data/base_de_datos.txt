@@ -1,0 +1,435 @@
+Esta es una base de datos de partidas de ajedrez. Contiene las partidas y sus movimientos, las posiciones de cada movimiento, las estadísticas de las posiciones y de las partidas, y los comentarios de los movimientos.
+Con esta base de datos se pueden hacer análisis de las partidas, como por ejemplo, determinar cuál es la mejor jugada en una posición dada, o cuál es la mejor jugada en una partida dada.
+También se pueden representar gráficamente las partidas y reproducirlas movimiento a movimiento.
+Permite buscar partidas por posición, por jugador, por resultado, por fecha, por número de movimientos, por número de jugadas, por eventos, por comentarios, por estadísticas, etc.
+También permite buscar posiciones totales o parciales en todas las partidas.
+
+La tabla match_events contiene los eventos que pueden ocurrir en una partida de ajedrez.
+Los eventos etán representados por potencias de 2, en el campo COD_EVENT. De esta forma se pueden combinar en eventos más complejos.
+El código de evento siempre es una suma de valores (piezas implicadas, movimiento, etc.), por lo que, si se busca uno determinado, hay que utilizar la función BITAND (Oracle) o el operador & (SQL Server, MySQL). Si se desconoce el servidor, hay que preguntarlo antes de contestar.
+DESCRIPTION es el nombre del evento. No se usa en SQL, pero sí en la aplicación, para nombrar recursos de texto traducibles.
+```sql
+create table match_events(
+	COD_EVENT NUMBER(16) NOT NULL,
+	DESCRIPTION VARCHAR2(50) NOT NULL,
+    constraint PK_EVENTS
+        PRIMARY KEY(COD_EVENT)	
+);
+insert into match_events(cod_event,description)
+values(1,'EVENT_CHECK');  -- Este evento representa un jaque
+insert into match_events(cod_event,description)
+values(2,'EVENT_CHECK_MATE'); -- Este evento representa un jaque mate
+insert into match_events(cod_event,description)
+values(4,'EVENT_MULTIPLE_CHECK'); -- Este evento representa un jaque múltiple
+insert into match_events(cod_event,description)
+values(8,'EVENT_DISCOVERED_CHECK'); -- Este evento representa un jaque descubierto
+insert into match_events(cod_event,description)
+values(16,'EVENT_DRAW_OFFER');  -- Este evento representa una oferta de tablas  
+insert into match_events(cod_event,description)
+values(32,'EVENT_PAWN_PROMOTED');  -- Este evento representa una promoción de peón
+insert into match_events(cod_event,description)
+values(64,'EVENT_PAWN_PASSANT');   -- Este evento representa una captura de peón al paso
+insert into match_events(cod_event,description)
+values(128,'EVENT_CAPTURE');  -- Este evento representa una captura
+insert into match_events(cod_event,description)
+values(256,'EVENT_CASTLEK');  -- Este evento representa un enroque corto
+insert into match_events(cod_event,description)
+values(512,'EVENT_CASTLEQ');  -- Este evento representa un enroque largo
+insert into match_events(cod_event,description)
+values(1024,'EVENT_PAWN1');  -- Este evento representa un peón. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(2048,'EVENT_WBISHOP1');  -- Este evento representa un alfil de casillas claras. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(4096,'EVENT_KNIGHT1'); -- Este evento representa un caballo. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(8192,'EVENT_ROOK1');  -- Este evento representa una torre. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(16384,'EVENT_QUEEN1');  -- Este evento representa una reina. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(32768,'EVENT_KING1'); -- Este evento representa un rey. En un movimiento puede haber hasta tres piezas implicadas, solo una puede ser un rey, la pieza que se mueve o captura.
+insert into match_events(cod_event,description)
+values(65536,'EVENT_PAWN2'); -- Este evento representa un peón. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(131072,'EVENT_WBISHOP2');  -- Este evento representa un alfil de casillas claras. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(262144,'EVENT_KNIGHT2');  -- Este evento representa un caballo. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(524288,'EVENT_ROOK2');  -- Este evento representa una torre. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(1048576,'EVENT_QUEEN2');  -- Este evento representa una reina. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(2097152,'EVENT_MOVE');  -- Este evento representa un movimiento.
+insert into match_events(cod_event,description)
+values(4194304,'EVENT_BBISHOP1');  -- Este evento representa un alfil de casillas oscuras. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que se mueve, captura o da jaque.
+insert into match_events(cod_event,description)
+values(8388608,'EVENT_BBISHOP2');  -- Este evento representa un alfil de casillas oscuras. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar una de ellas, la pieza que es capturada.
+insert into match_events(cod_event,description)
+values(16777216,'EVENT_BISHOP3');  -- Este evento representa un alfil genérico. En un movimiento puede haber hasta tres piezas implicadas, por ejemplo, se puede usar para indicar la pieza a la que promociona un peón.
+insert into match_events(cod_event,description)
+values(33554432,'EVENT_KNIGHT3');  -- Este evento representa un caballo genérico. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar la pieza a la que promociona un peón.
+insert into match_events(cod_event,description)
+values(67108864,'EVENT_ROOK3');  -- Este evento representa una torre genérica. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar la pieza a la que promociona un peón.
+insert into match_events(cod_event,description)
+values(134217728,'EVENT_QUEEN3');  -- Este evento representa una reina genérica. En un movimiento puede haber hasta tres piezas implicadas, este evento permite identificar la pieza a la que promociona un peón.
+```
+Estos son ejemplos reales de valores de eventos:
+
+- 2113538 = EVENT_CHECK_MATE + EVENT_QUEEN1 + EVENT_MOVE (La dama mueve y da jaque mate).
+- 2098176 = EVENT_PAWN1 + EVENT_MOVE (un peón se mueve).
+- 4259968 = EVENT_CAPTURE + EVENT_PAWN2 + EVENT_BBISHOP1 (un alfil captura un peón).
+- 136315937 = EVENT_CHECK + EVENT_PAWN_PROMOTED + EVENT_PAWN1 + EVENT_MOVE + EVENT_QUEEN3 (un peón se mueve, promociona a reina y da jaque).
+- 136315938 = EVENT_CHECK_MATE + EVENT_PAWN_PROMOTED + EVENT_PAWN1 + EVENT_MOVE + EVENT_QUEEN3 (un peón se mueve, promociona a reina y da jaque mate).
+
+Estos valores de eventos son imposibles:
+
+1 = EVENT_CHECK (no puede haber un jaque sin una pieza que lo dé).
+2097154 = EVENT_MOVE + EVENT_CHECK_MATE (no se indica la pieza que se mueve).
+1024 = EVENT_PAWN1 (no se indica si el peón se mueve, captura o da jaque).
+
+La tabla keywords contiene las palabras clave que se utilizan para clasificar las posiciones, las estadísticas y las partidas.
+```sql
+create table keywords(
+    COD_KEYWORD NUMBER(32) NOT NULL,            -- Clave surrogada
+    KEYWORD VARCHAR2(250) NOT NULL,             -- Esta es la palabra clave
+	KEYWORD_TYPE VARCHAR2(3) DEFAULT 'MKW',     -- Los tipos de keyword puedenser MKW (Match Keyword), PST (Position Statistics Keyword) o MST (Match Statistics Keyword)
+    DESCRIPTION VARCHAR2(4000),                 -- Esta es un adescripción del uso de la palabra clave
+    CONSTRAINT PK_KEYWORDS
+        PRIMARY KEY(COD_KEYWORD),               -- Esta es la clave primaria
+	CONSTRAINT UK_KEYWORDS
+		UNIQUE(KEYWORD,KEYWORD_TYPE)            -- Esta es una clave única
+);	
+```
+En la tabla keyword_vallues se guardan los valores de las palabras clave.
+```sql
+create table keyword_values(
+	COD_VALUE NUMBER(32) NOT NULL,  		-- Clave surrogada  
+    KW_VALUE VARCHAR2(500),                 -- Valor de la palabra clave, siempre se guarda en formato texto, por simplicidad, aunque el valor puede ser numérico.
+    CONSTRAINT PK_KEY_VALUES
+        PRIMARY KEY(COD_VALUE)              -- Esta es la clave primaria
+);
+```
+La tabla positions contiene cada una de las posiciones de la partida, es decir, la disposición del tablero en cada movimiento, y algunos recuentos básicos para optimizar consultas.
+Cada partida contien una de estas posiciones para cad uno de los movimientos de los jugadores.
+El tablero se guarda usando el siguiente formato:
+64 caracteres , uno por cada casilla del tablero, de izquierda a derecha y de arriba a abajo.
+- 0 = casilla vacía
+- p = peón negro
+- k = rey negro
+- q = dama negra
+- r = torre negra
+- n = caballo negro
+- b = alfil negro
+- P = peón blanco
+- K = rey blanco
+- Q = dama blanca
+- R = torre blanca
+- N = caballo blanco
+- B = alfil blanco
+
+Puedes usar la función 'draw_board' para que genere una imagen de un tablero a partir de la cadena de texto del campo 'board'.
+```sql
+create table positions(
+    cod_position number(32) not null,       -- Clave surrogada
+	board varchar2(64) not null,            -- Este es el tablero. Este es un ejemplo: 00b000000pP00QN00n0p000q00bPp00000PkPp0p0P000P0000K00P0000000000. Para pedirle a la acción draw_image que genere ua imagen de este tablero, debes usar este drawerId: 
+	black_pawns number(1) default 0,        -- número de peones negros
+	white_pawns number(1) default 0,        -- número de peones blancos
+	black_rooks number(1) default 0,        -- número de torres negras
+	white_rooks number(1) default 0,        -- número de torres blancas
+	black_bishops number(1) default 0,      -- número de alfiles negros
+	white_bishops number(1) default 0,      -- número de alfiles blancos
+	black_knights number(1) default 0,      -- número de caballos negros
+	white_knights number(1) default 0,      -- número de caballos blancos
+	black_queens number(1) default 0,       -- número de reinas negras
+	white_queens number(1) default 0,       -- número de reinas blancas
+	sts_date date,                          -- Fecha de recogida de estadísticas
+    constraint PK_POSITIONS
+        PRIMARY KEY(COD_POSITION),          -- Esta es la clave primaria
+	constraint UK_BOARD                     -- Esta es una clave única. Una posición determinada solo se guarda una vez, diferentes partidas pueden hacer referencia a la misma posición, si han pasado por ella.
+		UNIQUE(BOARD)
+);
+```
+La tabla position_statistics contiene algunos recuentos de estadísticas de la posición.
+Las estadísticas se identifican por palabras claves. hay dos para las posiciones: 
+COD_KEYWORD = 3, cuenta de partidas en las que ha aparecido esta posición.
+COD_KEYWORD = 4, cuenta de las veces en las que ha aparecido esta posición.
+```sql
+create table position_statistics(
+	COD_KEYWORD NUMBER(32) NOT NULL,        -- Código de la palabra clave
+	COD_POSITION NUMBER(32) NOT NULL,       -- Código de la posición
+	ST_VALUE NUMBER,                        -- Valor de la estadística
+    CONSTRAINT PK_POSSTS
+        PRIMARY KEY(COD_KEYWORD,COD_POSITION),      -- Esta es la clave primaria
+    CONSTRAINT FK_PS_POSITION
+        FOREIGN KEY(COD_POSITION) 
+        REFERENCES positions(COD_POSITION),         -- Esta es la clave foránea con la tabla positions
+    CONSTRAINT FK_PS_KEYWORD
+        FOREIGN KEY(COD_KEYWORD) 
+        REFERENCES keywords(COD_KEYWORD)            -- Eesta es la clave foránea con la tabla keywords
+);
+```
+La tabla matches contiene un registro por cada partida.
+Las partidas pueden ser solo parciales. Pueden no haber terminado, o pueden empezar por un movimiento cualquiera. Eso depende de cómo se han grabado con el programna. En general, están completas, pero no necesariamente.
+La tabla contiene algunos datos básicos de la partida, como la fecha, los jugadores, el resultado, el número de movimientos, el número de jugadas, etc.
+Los nombres de los jugadores pueden tener variantes. Esto es incorrecto en una consulta:
+WHITE = 'Kasparov' o BLACK = 'Karpov'
+Lo correcto es esto:
+LOWER(WHITE) LIKE '%kasparov%' o LOWER(BLACK) LIKE '%karpov%'
+```sql
+create table matches(
+    COD_MATCH NUMBER(32) NOT NULL,              -- Clave surrogada
+	INITIAL_POSITION NUMBER(32) NOT NULL,       -- El código de la posición en la que empieza la partida (tabla positions)
+	MATCH_DESCRIPTION VARCHAR2(1000),           -- Descripción de la partida, es un campo de texto libre
+	MATCH_DATE VARCHAR2(30),                    -- La fecha de la partida, en formato texto. El formato suele ser yyyy/mm/dd o yyyy.mm.dd. Si el mes o el día son desconocidos, se pone ??.
+	WHITE VARCHAR2(100),                        -- El nombre del jugador con blancas. Aunque sea el mismo jugador, el nombre puede variar, usando nombre, nombre y apellido, mayúsculas, minúsculas, etc. Busca siempre usando like, wildcards y lower.
+	BLACK VARCHAR2(100),                        -- El nombre del jugador con negras. Aunque sea el mismo jugador, el nombre puede variar, usando nombre, nombre y apellido, mayúsculas, minúsculas, etc. Busca siempre usando like,wildcards y lower.
+    RESULT NUMBER(1) NOT NULL,                  -- Resultado expresado como número: 1 = victoria de blancas, 2 = victoria de negras, 3 = tablas, 0 = partida no terminada
+	RESULT_TEXT VARCHAR2(8) NOT NULL,           -- Resultado expresado como texto: '1-0' = victoria de blancas, '0-1' = victoria de negras, '1/2-1/2' = tablas, '*' = partida no terminada
+	MOVE_COUNT NUMBER(3) NOT NULL,              -- Cuenta de movimiento parciales, es decir, el número de movimientos de las blancas + el número de movimientos de las negras
+	FULLMOVE_COUNT NUMBER(3) NOT NULL,          -- Cuenta de movimientos completos, es decir, el número pares de jugadas blancas - negras
+	sts_date date,                              -- Fecha de recogida de estadísticas
+	creation_date date default sysdate,         -- Fecha de creación del registro
+    sha256 RAW(32),							    -- checksum SHA-256 de todas las posiciones del match, para evitar insertar duplicados (esto es opcional, los usuarios pueden querer insertar duplicados). varbinary(32) en SQL Server y MySQL
+    CONSTRAINT PK_MATCHES
+        PRIMARY KEY(COD_MATCH),                 -- Esta es la clave primaria
+    CONSTRAINT FK_INITIAL_POSITION 
+        FOREIGN KEY(INITIAL_POSITION) 
+        REFERENCES positions(COD_POSITION)      -- Esta es la clave foránea con la tabla positions
+);
+```
+La tabla match_statistics contiene las estadísticas de las partidas.
+Las keywords para las estadístcias de partida son las siguientes:
+- COD_KEYWORD = 29: 	Cuenta de jaques blancos
+- COD_KEYWORD = 30:	Cuenta de jaques múltiples blancos
+- COD_KEYWORD = 31:	Cuenta de jaques descubiertos blancos
+- COD_KEYWORD = 32:   Cuenta de jaques de las negras
+- COD_KEYWORD = 33:   Cuanta de jaques múltiples de las negras
+- COD_KEYWORD = 34:	Cuenta de jaques descubiertos de las negras
+- COD_KEYWORD = 35:	Cuenta de jaques totales
+- COD_KEYWORD = 36:	Cuenta de jaques múltiples totales
+- COD_KEYWORD = 37:	Cuenta de jaques descubiertos totales
+```sql
+create table match_statistics(
+	COD_KEYWORD NUMBER(32) NOT NULL,        -- Código de la palabra clave
+	COD_MATCH NUMBER(32) NOT NULL,          -- Código de la partida
+	ST_VALUE NUMBER,                        -- Valor de la estadística
+    CONSTRAINT PK_MATCHSTS
+        PRIMARY KEY(COD_KEYWORD,COD_MATCH), -- Esta es la clave primaria
+    CONSTRAINT FK_MS_MATCH
+        FOREIGN KEY(COD_MATCH) 
+        REFERENCES matches(COD_MATCH),      -- Esta es la clave foránea con la tabla matches
+    CONSTRAINT FK_MS_KEYWORD
+        FOREIGN KEY(COD_KEYWORD) 
+        REFERENCES keywords(COD_KEYWORD)    -- Esta es la clave foránea con la tabla keywords
+);
+```
+La tabla match_positions relaciona las posiciones con las partidas.
+```sql
+create table match_positions (
+    COD_MATCH NUMBER(32) NOT NULL,          -- Código de la partida
+    COD_POSITION NUMBER(32) NOT NULL,       -- Código de la posición
+    POSITION_ORDER NUMBER(3) NOT NULL,      -- Orden de la posición en la partida
+	POSITION_EVENTS NUMBER(16) default 0,   -- Suma de eventos producidos para pasar a esta posición desde la anterior. El código de evento siempre es una suma de valores (piezas implicadas, movimiento, etc.), por lo que, si se busca uno determinado, hay que utilizar la función BITAND (Oracle) o el operador & (SQL Server, MySQL). Si se desconoce el servidor, hay que preguntarlo antes de contestar. No hace falta cruzar con match_events, a menos que quieras desglosar los nombres de los eventos.
+    SCORE number(11,10),                    -- Puntuación de la posición. Suele estar vacía, es decir, a 0.
+	sts_date date,                          -- Feha de recogida de estadísticas
+    CONSTRAINT PK_MATCH_POSITIONS
+        PRIMARY KEY(COD_MATCH,COD_POSITION,POSITION_ORDER),         -- Esta es la clave primaria
+    CONSTRAINT FK_MP_POSITION
+        FOREIGN KEY(COD_POSITION) 
+        REFERENCES positions(COD_POSITION),                         -- Esta es la clave foránea con la tabla positions
+    CONSTRAINT FK_MP_MATCH
+        FOREIGN KEY(COD_MATCH) 
+        REFERENCES matches(COD_MATCH)                               -- Esta es la clave foránea con la tabla matches
+);  
+```
+La tabla match_moves contiene los movimientos de las partidas.
+Esta tabla permite obtener información sobre los movimientos que se han realizado para pasar de una posición a otra.
+```sql
+create table match_moves(
+	COD_MATCH NUMBER(32) NOT NULL,              -- Código de la partida
+    FROM_POSITION NUMBER(32) NOT NULL,          -- Código de la posición de la que se parte
+	TO_POSITION NUMBER(32) NOT NULL,            -- Código de la posición a la que se llega
+	MOVE_ORDER NUMBER(3) NOT NULL,              -- Es el número del movimiento. El primer movimiento de las blancas es el 1, el primero de las negras es el 2, el segundo de las blancas es el 3, etc.
+	MOVE_NUMBER NUMBER(3) NOT NULL,             -- Es el número de la jugada . El primer movimiento de las blancas es el 1, el primero de las negras es el 1, el segundo de las blancas es el 2, etc.
+	MOVE_PLAYER NUMBER(1) NOT NULL,             -- 0 = blancas, 1 = negras
+	MOVE_EVENTS NUMBER(16) default 0,           -- Suma de eventos producidos en este movimiento. No hace falta cruzar con match_events, a menos que quieras desglosar los nombres de los eventos. El código de evento siempre es una suma de valores (piezas implicadas, movimiento, etc.), por lo que, si se busca uno determinado, hay que utilizar la función BITAND (Oracle) o el operador & (SQL Server, MySQL). Si se desconoce el servidor, hay que preguntarlo antes de contestar.
+	MOVE_FROM NUMBER(2) NOT NULL,               -- Número de la casilla de origen, es un número de 0 a 63 (columna - 1) + (8 * (fila - 1))
+	MOVE_TO NUMBER(2) NOT NULL,                 -- Número de la casilla de destino, es un número de 0 a 63 (columna - 1) + (8 * (fila - 1))
+	MOVE_AN_TEXT VARCHAR2(10),                  -- Notación algebraica normal. Texto con el que se puede representar el movimiento al imprimir la partida.
+	COMMENTS NUMBER(1) default 0,               -- 0 = el movimiento no tiene comentarios, 1 = el movimiento tiene comentarios en la tabla move_comments
+    SCORE number(11,10),                        -- Puntuación de la posición. Suele estar vacía, es decir, a 0.
+	CONSTRAINT PK_MATCH_MOVES
+		PRIMARY KEY(COD_MATCH,MOVE_ORDER),                                      -- Esta es la clave primaria
+	CONSTRAINT UK_MOVEPLAYER
+		UNIQUE(COD_MATCH,MOVE_NUMBER,MOVE_PLAYER),                              -- esta es una clave única
+    CONSTRAINT FK_FROM_POSITION
+        FOREIGN KEY(FROM_POSITION) 
+        REFERENCES positions(COD_POSITION),                                     -- Esta es la clave foránea con la tabla positions
+    CONSTRAINT FK_MMT_POSITION
+        FOREIGN KEY(COD_MATCH,TO_POSITION,MOVE_ORDER) 
+        REFERENCES match_positions(COD_MATCH,COD_POSITION,POSITION_ORDER),      -- Esta es la clave foránea con la tabla match_positions
+    CONSTRAINT FK_MM_MATCH
+        FOREIGN KEY(COD_MATCH) 
+        REFERENCES matches(COD_MATCH)                                           -- Esta es la clave foránea con la tabla matches
+);
+```
+La distinción entre los campos MOVE_ORDER y MOVE_NUMBER es fundamental para obtener resultados correctos. En esta tabla cada fila contiene un movimiento, que puede ser de la blancas o de las negras. Una jugada comprende dos filas: el movimiento de las blancas y la respuesta de las negras.
+Eso quiere decir que las dos filas tendrán valores diferentes para MOVE_ORDER, pero el mismo valor para MOVE_NUMBER.
+El usuario no siempre preguntará usando el término correcto. Es posible que diga jugada para referirse a movimiento o movimiento para referirse a jugada. Por eso, si te hablan por ejemplo de la jugada o del movimiento 20, resulta conveniente pedir aclaraciones 
+al usuario, explicando la diferencia entre estos dos términos. En inglés resulta más dificil, porque ambos se pueden traducir como move. En español, jugada es move y movimiento es movement.
+La idea es que siempre tengas claro si estamos hablando de un movimiento o de una jugada. Le movimiento 7 pertenece a la jugada 4, por ejemplo. Confundir una cosa con la otra, lleva a resultados incorrectos.
+
+La tabla match_keywords contiene los valores de las palabras clave de las partidas.
+Esta es una tabla de las claves de keywords de partida y sus nombres:
+45	Opening
+46	Annotator
+49	WhiteFideId
+50	BlackFideId
+51	WhiteClock
+52	BlackClock
+53	BlackTitle
+54	Variation
+55	WhiteTitle
+48	Apertura
+47	Plycount
+5	Event
+6	Site
+7	Date
+8	Round
+9	White
+10	Black
+11	Result
+12	EventDate
+13	SetUp
+14	PlyCount
+15	FEN
+16	ECO
+17	EventType
+18	EventRounds
+19	EventCountry
+20	Source
+21	SourceDate
+22	WhiteElo
+23	BlackElo
+24	EventCategory
+25	WhiteTeam
+26	BlackTeam
+27	WhiteTeamCountry
+28	BlackTeamCountry
+```sql
+create table match_keywords(
+    COD_KEYWORD NUMBER(32) NOT NULL,            -- Código de la palabra clave
+	COD_VALUE NUMBER(32) NOT NULL,              -- Código del valor de la palabra clave
+	COD_MATCH NUMBER(32) NOT NULL,              -- Código de la partida
+    CONSTRAINT PK_MKEYWORDS
+        PRIMARY KEY(COD_KEYWORD, COD_MATCH),    -- Esta es la clave primaria
+	CONSTRAINT FK_MKV_KEYWORD
+		FOREIGN KEY(COD_KEYWORD)
+		REFERENCES KEYWORDS(COD_KEYWORD),       -- Esta es la clave foránea con la tabla keywords
+	CONSTRAINT FK_MKV_VALUE
+		FOREIGN KEY(COD_VALUE)
+		REFERENCES KEYWORD_VALUES(COD_VALUE),   -- Esta es la clave foránea con la tabla keyword_values
+	CONSTRAINT FK_MKV_MATCH
+		FOREIGN KEY(COD_MATCH)
+		REFERENCES MATCHES(COD_MATCH)           -- Esta es la clave foránea con la tabla matches
+);
+```
+La tabla move_comments contiene comentarios sobre algunos movimientos.
+```sql
+create table move_comments(
+    COD_COMMENT NUMBER(32) NOT NULL,        -- Clave surrogada
+    COD_MATCH NUMBER(32) NOT NULL,          -- Código de la partida
+	MOVE_ORDER NUMBER(3) NOT NULL,          -- Orden del movimiento en la partida
+    COMMENT_TEXT VARCHAR2(4000) NOT NULL,   -- Texto del comentario
+	COMMENT_ORDER NUMBER(3) DEFAULT 0,      -- Orden del comentario en el movimiento. Puede haber varios comentarios para un mismo movimiento.
+    CONSTRAINT PK_MOVE_COMMENTS
+        PRIMARY KEY(COD_COMMENT),                       -- Esta es la clave primaria
+    CONSTRAINT FK_MOVE_COMMENT
+        FOREIGN KEY(COD_MATCH,MOVE_ORDER) 
+        REFERENCES match_moves(COD_MATCH,MOVE_ORDER)    -- Esta es la clave foránea con la tabla match_moves
+);
+```
+
+# Estos son algunos índices para optimizar las consultas
+```sql
+create index IX_MATCHMOVECOUNT on matches(move_count);
+
+create index IX_POSPZCOUNT on positions(white_queens,black_queens,white_rooks,black_rooks,white_bishops,black_bishops,white_knights,black_knights,white_pawns,black_pawns);
+
+create index IX_POSITIONSTATS on positions(0,sts_date);
+
+create index IX_KEYVALUE on keyword_values(cod_value,kw_value);
+
+CREATE INDEX ix_matches_sha256 ON matches(sha256);
+```
+
+Existen tres vistas para presentar las partidas desde tres perspectivas diferentes: las etiquetas de las partidas, las posiciones y los movimientos.
+Con cada una de ellas se pueden emplear filtros diferentes para seleccionar las partidas.
+Los campos que se muestran en la ventana de consulta de partidas de la aplicación son los siguientes:
+
+m.COD_MATCH                             -- Clave primparia de la partida
+m.MATCH_DESCRIPTION                     -- Descripción de la partida
+m.MATCH_DATE                            -- Fecha de la partida. Está en formato texto, porque procede de archivos de partida en formato PGN. Existen fechas como ????, por ejemplo, no se puede usar un tipo de datos DateTime.
+m.WHITE                                 -- Nombre del jugador con blancas
+m.BLACK                                 -- Nombre del jugador con negras
+m.RESULT                                -- Resultado de la partida en formato numérico.
+m.RESULT_TEXT                           -- Resultado de la partida en formato texto.
+m.MOVE_COUNT                            -- Cuenta de movimientos parciales, es decir, el número de movimientos de las blancas + el número de movimientos de las negras
+m.FULLMOVE_COUNT                        -- Cuenta de jugadas completas, es decir, el número pares de jugadas blancas - negras
+
+El resto de campos es diferente en las tres vistas, y depende del objetivo de la vista. Se utilizan exclusivamente para filtrar las partidas.
+Existe una ventana de consulta general en la que se pueden usar consultas SQL arbitrarias para mostrar datos de las tablas o de las vistas.
+
+# Esta vista permite obtener los datos de las partidas junto con los de todas sus posiciones, incluyendo la posición inicial de la partida.
+```sql
+create or replace view VW_MATCH_POSITIONS AS
+select m.COD_MATCH,m.INITIAL_POSITION,pi.board as initial_board,pi.black_pawns as initial_black_pawns,pi.white_pawns as initial_white_pawns,pi.black_rooks as initial_black_rooks,
+pi.white_rooks as initial_white_rooks,pi.black_bishops as initial_black_bishops,pi.white_bishops as initial_white_bishops,pi.black_knights as initial_black_knights,
+pi.white_knights as initial_white_knights,pi.black_queens as initial_black_queens,pi.white_queens as initial_white_queens,m.MATCH_DESCRIPTION,m.MATCH_DATE,m.WHITE,m.BLACK,
+m.RESULT,m.RESULT_TEXT,m.MOVE_COUNT,m.FULLMOVE_COUNT,mp.POSITION_ORDER,mp.POSITION_EVENTS,mp.SCORE,mpn.board,mpn.black_pawns,mpn.white_pawns,mpn.black_rooks,
+mpn.white_rooks,mpn.black_bishops,mpn.white_bishops,mpn.black_knights,mpn.white_knights,mpn.black_queens,mpn.white_queens
+from matches m join positions pi on m.initial_position = pi.cod_position
+join match_positions mp on mp.cod_match = m.cod_match join positions mpn on mp.cod_position = mpn.cod_position;
+```
+# Esta vista permite obtener los datos de las partidas junto con los de todos sus movimientos y posiciones, incluyendo la posición inicial de la partida y las posiciones de inicio y final de cada movimiento.
+```sql
+create or replace view VW_MATCH_MOVES AS
+select m.COD_MATCH,m.INITIAL_POSITION,pi.board as initial_board,pi.black_pawns as initial_black_pawns,pi.white_pawns as initial_white_pawns,pi.black_rooks as initial_black_rooks,
+pi.white_rooks as initial_white_rooks,pi.black_bishops as initial_black_bishops,pi.white_bishops as initial_white_bishops,pi.black_knights as initial_black_knights,
+pi.white_knights as initial_white_knights,pi.black_queens as initial_black_queens,pi.white_queens as initial_white_queens,m.MATCH_DESCRIPTION,m.MATCH_DATE,m.WHITE,m.BLACK,
+m.RESULT,m.RESULT_TEXT,m.MOVE_COUNT,m.FULLMOVE_COUNT,mm.MOVE_ORDER,mm.MOVE_NUMBER,mm.MOVE_PLAYER,mm.MOVE_EVENTS,mm.MOVE_AN_TEXT,mm.COMMENTS,mm.SCORE,mm.MOVE_FROM,mm.FROM_POSITION,fp.board as from_board,fp.black_pawns as from_black_pawns,fp.white_pawns as from_white_pawns,fp.black_rooks as from_black_rooks,
+fp.white_rooks as from_white_rooks,fp.black_bishops as from_black_bishops,fp.white_bishops as from_white_bishops,fp.black_knights as from_black_knights,fp.white_knights as from_white_knights,fp.black_queens as from_black_queens,fp.white_queens as from_white_queens,
+mm.MOVE_TO,mm.TO_POSITION,tp.board as to_board,tp.black_pawns as to_black_pawns,tp.white_pawns as to_white_pawns,tp.black_rooks as to_black_rooks,
+tp.white_rooks as to_white_rooks,tp.black_bishops as to_black_bishops,tp.white_bishops as to_white_bishops,tp.black_knights as to_black_knights,tp.white_knights as to_white_knights,tp.black_queens as to_black_queens,tp.white_queens as to_white_queens
+from matches m join positions pi on m.initial_position = pi.cod_position
+join match_moves mm on mm.cod_match = m.cod_match join positions fp on mm.from_position = fp.cod_position join positions tp on mm.to_position = tp.cod_position;
+```
+# Esta vista permite obtener los datos de las partidas junto con sus palabras clave y estadísticas.
+```sql
+create or replace view VW_MATCH_KEYWORDS as
+select m.COD_MATCH,m.MATCH_DESCRIPTION,m.MATCH_DATE,m.WHITE,m.BLACK,m.RESULT,m.RESULT_TEXT,m.MOVE_COUNT,m.FULLMOVE_COUNT,mk.COD_KEYWORD,k.KEYWORD,kv.kw_value,ks.KEYWORD statistic,ms.st_value 
+from matches m join match_keywords mk on mk.COD_MATCH = m.COD_MATCH
+join keywords k on k.COD_KEYWORD = mk.COD_KEYWORD
+join keyword_values kv on kv.COD_VALUE = mk.COD_VALUE
+join match_statistics ms on ms.COD_MATCH = m.COD_MATCH
+join keywords ks on ks.COD_KEYWORD = ms.COD_KEYWORD;
+```
+
+# En esta tabla se pueden guardar los datos de uso de tokens de los diferentes asistentes.
+```sql
+create table token_usage(
+    COD_USAGE NUMBER(32) DEFAULT seq_token_usage.nextval not null primary key,  -- Clave surrogada
+    USAGE_DATE date not null,                           -- Fecha de uso
+	PLAYER_NAME varchar2(50) not null,                  -- Nonmbre del asistente
+    MODEL_NAME varchar2(50) not null,                   -- Nombre del modelo
+    TEMPERATURE NUMBER(3,2),                            -- Valor de temperatura
+	TOP_P NUMBER(3,2),                                  -- Valor de top_p    
+	INPUT_TOKENS NUMBER(8) default 0,                   -- Número de tokens de entrada
+	OUTPUT_TOKENS NUMBER(8) default 0,                  -- Número de tokens de salida
+	AUDIO_INPUT_TOKENS NUMBER(8) default 0,             -- Número de tokens de entrada de audio
+	AUDIO_OUTPUT_TOKENS NUMBER(8) default 0,            -- Número de tokens de salida de audio
+	REASONING_TOKENS NUMBER(8) default 0,               -- Número de tokens de razonamiento
+	INPUT_CACHED_TOKENS NUMBER(8) default 0,            -- Número de tokens de entrada en caché
+	INPUT_IMAGE_TOKENS NUMBER(8) default 0,             -- Número de tokens de entrada de imagen
+	INPUT_TEXT_TOKENS NUMBER(8) default 0               -- Número de tokens de entrada de texto
+);
+```

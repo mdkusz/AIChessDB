@@ -1,0 +1,935 @@
+[
+  {
+    "name": "get_available_database_providers",
+    "description": "Get a list with all the available database providers for this application. It is a list of generic database server names, like Oracle or MySQL.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "get_database_connections",
+    "description": "Get a list with all the available database connections. It is a list of connection string names with the corresponding database server name.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "draw_board",
+    "description": "Show a board with a position in the chat. The board will be printed as a bitmap and it will be added to the chat, for the user to see it. No visual explanations are needed, just chess-related ones, if needed.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "board": {
+          "type": "string",
+          "description": "Board position: a single 64-character ASCII string with no spaces or line breaks. Squares are enumerated rank by rank from a8→h8, then a7→h7, … down to a1→h1 (white at the bottom). Allowed chars: 0 (empty), p n b r q k (black), P N B R Q K (white). No other characters are valid."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "board"
+      ]
+    }
+  },
+  {
+    "name": "copy_text_to_clipboard",
+    "description": "Put a text on the clipboard so that the user can paste it wherever it wants.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text to copy to the clipboard. You can use formatted text when requested."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "userinterface.open_new_querywindow",
+    "description": "Open a new QueryWindow MDI child window to make database queries on matches.",
+    "x-displayName": "OPT_NEWQUERY",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omit to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.import_pgn_file",
+    "description": "Open an Open File Dialog to select a PGN file and then a new PGNWindow MDI child window to import the matches contained in the file.",
+    "x-displayName": "OPT_IMPORTPGN",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omit to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.import_multiple_pgn_files",
+    "description": "Open an Open File Dialog to select multiple PGN files and then a new DlgBulkImportPGN dialog to import all the matches contained in the files.",
+    "x-displayName": "OPT_BULKIMPORTPGN",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omot to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.copy_database",
+    "description": "Open a dialog box to copy all the matches in the current database to a different one.",
+    "x-displayName": "OPT_BULKCOPYDB",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omit to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.create_new_match",
+    "description": "Open a DlgNewMatch Dialog to provide the match header data and then a PlayMatchWindow to edit the movements and positions.",
+    "x-displayName": "OPT_NEWMATCH",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omit to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.normalize_match_labels",
+    "description": "Open a DlgKeywordConsolidation Dialog to unify match label values with the same meaning, but different spelling or case.",
+    "x-displayName": "OPT_CONSOLIDATE",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. Omit to use the default connection string. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "userinterface.arrange_windows",
+    "description": "Organize MDI child windows.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "cascade",
+            "tile_horizontal",
+            "tile_vertical"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ]
+    }
+  },
+  {
+    "name": "automation.list_open_automation_forms",
+    "description": "Get a list of open forms that allow automatization of their controls. For each window you get a friendly name (to use with the user), and a unique identifier (to use in function calls).",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "automation.get_form_controls",
+    "description": "Get the first-level controls of a Form or Dialog Box shown in the user interface.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the automation Form or Dialog Box as returned by the function 'list_open_automation_forms. Call 'list_open_automation_forms' first to get a valid list of form names."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  },
+  {
+    "name": "automation.get_children_controls",
+    "description": "Get all the first-level-children of a given Control or ToolStripDropDownItem.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The path to the Control or ToolStripDropDownItem."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.send_text_to_editor",
+    "description": "Send text to a text editor, like a Text Box. You can use formatted text if the control accepts RTF, HTML or whatever else (you must deduct this from the control type, not by asking the user).",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        },
+        "text": {
+          "type": "string",
+          "description": "Text to put in the text input editor."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "automation.read_editor_text",
+    "description": "Get text from a text editor, like a Text Box. You can get formatted text if the control accepts RTF, HTML or whatever else (you must deduct this from the results, not by asking the user).",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.click_control",
+    "description": "Send a click to a control capable to accept it.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.dropdown_or_expand",
+    "description": "Open a dropdown control (Combobox, Menu item, etc.) or expand a node (TreeView, etc.) to show it and its subitems to the user.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.get_list_items",
+    "description": "Get a list of strings representing the items of an item collection control (Listbox, Combobox, Menu, etc.) Items will be returned in order so you can use they index to send a select command to the control later.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.select_list_item",
+    "description": "Select an item in a control by its index. The item must be a selectable one, not a command item, like a menu option. You can perform multiple calls for multiple items for multi-selection controls.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        },
+        "index": {
+          "type": "number",
+          "description": "Zero-based index of the item to select. Call 'get_list_items' first to get the list of items and their indexes."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "index"
+      ]
+    }
+  },
+  {
+    "name": "automation.highlight_control",
+    "description": "Highlight a control to show its position to the user. If your intention is to explain the control to the user, you better use 'highlight_and_comment_control' instead.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        },
+        "seconds": {
+          "type": "number",
+          "description": "Number of seconds to highlight the control. The default is 2 seconds."
+        },
+        "highlight_mode": {
+          "type": "string",
+          "description": "The highlight mode to use. flash: flip back and foreground colors; circle: put a red circle over the control; rectangle: put a red rectangle over the control. Default mode: flash.",
+          "enum": [
+            "rectangle",
+            "circle",
+            "flash"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  },
+  {
+    "name": "automation.highlight_and_comment_control",
+    "description": "Highlight a control and show a comment balloon over it with an explanation or message to the user. Do not make parallel calls to this function, for there can be only one tooltip at once in the system.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the control."
+        },
+        "title": {
+          "type": "string",
+          "description": "Tooltip title."
+        },
+        "message": {
+          "type": "string",
+          "description": "Message to show in the tooltip."
+        },
+        "seconds": {
+          "type": "number",
+          "description": "Number of seconds to show the tooltip over the control. The default is 5 seconds."
+        },
+        "highlight_mode": {
+          "type": "string",
+          "description": "Additionally, you can highlight the control: flash: flip back and foreground colors; circle: put a red circle over the control; rectangle: put a red rectangle over the control.",
+          "enum": [
+            "rectangle",
+            "circle",
+            "flash"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "message"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.create_new_match",
+    "description": "Open a DlgNewMatch Dialog to provide the match header data and then a PlayMatchWindow to edit the movements and positions.",
+    "x-displayName": "OPT_NEWMATCH",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. If not provided, the default connection string is used. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.get_windows_with_open_matches",
+    "description": "Get a list of windows with open games to analyze. All windows returned have a valid match open, no matter its main function is. For each window you get a friendly name (to use with the user), and a unique identifier (to use in function calls).",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.get_current_match_info",
+    "description": "Get information on the current match open in a given play window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.get_all_match_moves",
+    "description": "Get all the moves of the current match open in a given play window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.get_current_match_move",
+    "description": "Get the last move (ply) in the current match open in a given play window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.go_to_next_match_move",
+    "description": "Go to the next move (ply) in the current match open in a given play window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        },
+        "execution_order": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 999,
+          "description": "If you are making multiple parallel calls to this function in a batch, provide a sequential number here to execute calls in the proper order. Duplicated numbers will produce the rejection of the whole batch."
+        },
+        "comment": {
+          "type": "string",
+          "description": "Provide a comment about this move to show it in a tooltip over the moved piece."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id",
+        "execution_order"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.go_to_previous_match_move",
+    "description": "Go to the previous move (ply) in the current match open in a given play window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.add_new_match_move",
+    "description": "Add a new move (ply) to the current match open in a given play window. Use this function to play with the user.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        },
+        "move_text": {
+          "type": "string",
+          "description": "SAN text for the new move."
+        },
+        "move_comment": {
+          "type": "string",
+          "description": "You can add comments to the move when needed."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id",
+        "move_text"
+      ]
+    }
+  },
+  {
+    "name": "chessplayer.send_complete_pgn_match",
+    "description": "Add a complete game in a single string in PGN format to a given chess window.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "play_window_id": {
+          "type": "string",
+          "description": "Play window identifier, as obtained by calling to get_open_match_windows."
+        },
+        "pgn_match": {
+          "type": "string",
+          "description": "The whole match in PGN format."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "play_window_id",
+        "pgn_match"
+      ]
+    }
+  },
+  {
+    "name": "configuration.show_application_configuration",
+    "description": "Open a dialog box with all the appSettings parameters for the user to modify the application settings.",
+    "x-displayName": "OPT_CONFIGAPP",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "configuration.new_connection_string",
+    "description": "Open a dialog box for the user to create a new connection string.",
+    "x-displayName": "OPT_NEWCONNSTRING",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "configuration.edit_connection_string",
+    "description": "Open a dialog box for the user to modify an existing connection string.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "The name of the connection string to modify. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "connection_name"
+      ]
+    }
+  },
+  {
+    "name": "configuration.show_play_editor",
+    "description": "Open a MDI child window to edit the application list of Play schemas. Users can add new schemas or change the existing ones, adding new players, for instance.",
+    "x-displayName": "OPT_CONFIGPLAY",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "configuration.show_assistants_editor",
+    "description": "Open a MDI child window to edit AI assistants and tools.",
+    "x-displayName": "OPT_CONFIGASSISTANTS",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "configuration.show_updates_editor",
+    "description": "Open a MDI child window to update the asistants system instructions and documentation.",
+    "x-displayName": "OPT_CONFIGAUPDATES",
+    "x-user-calling": true,
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "memoryandnotes.add_new_note",
+    "description": "Add a new note to the assistant notes document. Notes are read and written exclusively by assistants to remember important things.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Note text to add at the end of the notes file."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "memoryandnotes.rewrite_all_notes",
+    "description": "Rewrite the whole assistant notes document. Notes are read and written exclusively by assistants to remember important things.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "New notes file content."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.list_open_query_forms",
+    "description": "Get a list of open forms that allow performa database queries. For each window you get a friendly name (to use with the user), and a unique identifier (to use in function calls).",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.open_new_querywindow",
+    "description": "Open a new QueryWindow MDI child window to make database queries on matches.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "connection_name": {
+          "type": "string",
+          "description": "Optional connection string name to open the query window with. If not provided, the default connection string is used. Call 'get_database_connections' to get the available connection list."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.set_query_view",
+    "description": "Set the name of the database view used to query database.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        },
+        "view_name": {
+          "type": "string",
+          "description": "The name of the database view to use for queries. There are three views in the database. Read your database documentation to select that which best fits the user needs.",
+          "enum": [
+            "VW_MATCH_KEYWORDS",
+            "VW_MATCH_MOVES",
+            "VW_MATCH_POSITIONS"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid",
+        "view_name"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.add_filter_expression",
+    "description": "Add a filter for the currently selected database view. You can only use existing field names in the current view, read your database documentation first.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        },
+        "filter_expression": {
+          "type": "string",
+          "description": "Valid SQL expression for the current database server to be added to the WHERE clause of the query. This expression will be joined to other existing expressions using the AND operator."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid",
+        "filter_expression"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.get_current_filters",
+    "description": "Get a list of existing filter expressions. All of those expressions are joined using AND operators. You can remove or change individual expressions. Automatic query launching may be deactivated depending on the authomatic refresh button state.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.remove_filter_expressions",
+    "description": "Remove some or all filters for the current query. Automatic query launching may be deactivated depending on the authomatic refresh button state.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        },
+        "expression_indexes": {
+          "type": "array",
+          "description": "List of filter expression indexes, as returned by 'get_current_filters'. Omit this parameter to clear all filters.",
+          "items": {
+            "type": "integer"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.set_order_by_list",
+    "description": "Set a list of fileds in the order by query clause. Automatic query launching may be deactivated depending on the authomatic refresh button state.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        },
+        "field_list": {
+          "type": "array",
+          "description": "List of field names. Omit to clear order by clause. Mandatory order by fields (predefined order by) will not be removed.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.get_order_by_list",
+    "description": "Get a list of fileds in the order by query clause. Mandatory order by fields (predefined order by) will not be returned.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  },
+  {
+    "name": "querydatabase.refresh_query_data",
+    "description": "Launch the query using the current filters.",
+    "strict": false,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_uid": {
+          "type": "string",
+          "description": "The unique identifier of the query Form as returned by the function 'open_new_querywindow'. Call 'list_open_query_forms' first to get a valid list of form names if you do not have a valid identifier."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "form_uid"
+      ]
+    }
+  }
+]

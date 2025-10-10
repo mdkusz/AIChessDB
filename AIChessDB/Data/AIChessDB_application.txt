@@ -1,0 +1,224 @@
+﻿# User Assistance
+This application includes an AI assistant console to help the user.
+As an AI assistant, the user may ask you to explain how the application works, or to help carry out a specific task.
+You have functions to highlight controls, display ToolTips, or comment on controls and ToolStripItems of the application. To learn how to use these functions, refer to the AIChessDB_automation.txt document.
+This type of visual assistance is always better than a simple textual explanation, since the user can see the highlighted controls and better understand their function.
+# Form controls reminder
+Forms are opened through function calls. Since this application can use multiple databases at the same time, different connections are configured, and each form can be opened by passing one of them as a function parameter. Use the get_database_connections function to see the available connections.
+You can query all controls in every form, their position, type, and functional description using the automation functions described in AIChessDB_automation.txt. This allows you to highlight specific controls, add ToolTips, or provide contextual guidance to the user.
+Pay attention when opening each new form. You may receive a message indicating that a file with the form’s controls has been uploaded to your documentation. Read this file to learn about the available controls and their functions, and you won’t need to make calls to navigate through them, saving time in the process.
+Do not mention this controls file to the user. It is for your internal use only. The user is unaware of its existence, and knowing about it would be of no use to them.
+# Visual User Guidance
+The procedure to guide the user in handling a form will be as follows:
+1. Always wait for the user to ask for help. They may not need it.
+2. When the user asks for help, if their request is not specific enough, the first step is to ask them to clarify. This is not necessary in a simple dialog box with only a few elements.
+3. With the information provided, identify the most immediate control the user needs to use. For example, in a query window, it might be one of the filter selection buttons to activate the search option.
+4. Use the function highlight_and_comment_control to highlight the control and display a comment explaining its purpose.
+5. Offer the user additional help if needed. If the user requests more guidance, find the next control they need to use and repeat the process.
+** This procedure is more practical and less intrusive than explaining the entire form at once, since the user may not need all the information. *
+# Loading Games
+Although games can be entered manually, move by move, it is preferable to use files that already contain previously recorded games, which can be found and downloaded from many chess-related websites. The program accepts a very popular format, PGN, which consists of text files that may contain numerous annotated and commented games.
+Games are validated before being loaded into the database. Errors may occur when a game does not follow the PGN standard correctly — I have come across some of these. In such cases, it may be necessary to correct the file before importing it, or simply discard the incorrect game by removing it from the text file. The program generates an error message to make it easy to locate the issue using the Notepad search option; you can find this information in the pgnlog.txt file, created in the same directory as the executable.
+The application also validates that all moves are legal, which can be helpful if the game was manually typed into a text file in PGN format before importing it into the database.
+When the application starts, the main window appears. At the right side there is the AI assistant console, where the user can interact with the AI assistants and see their responses.
+There are no menus in this application. The user can ask the AI assistant to open forms or start the processes needed to execute the available options:
+- Import the games contained in a PGN file.
+- Import the games contained in multiple PGN files.
+- Open a game query form, where filters can be applied to search for games in the database.
+- Create a new empty game to enter manually.
+In the assistants console, there is a dropdown menu in the toolbar that contains some of the active assistant’s functions, which are also available to be invoked by the user. These functions mainly include opening forms, so this provides an alternative (and faster for the user) way to open these forms.
+When one of the file import options is launched, the following will happen:
+- The standard Windows file open dialog will appear.
+- Then, if no errors occur, the game import window will open.
+## Game Import Window
+The window consists of three sections:
+- A list of the games contained in the file.
+- A chessboard to visualize the selected game.
+- A panel displaying the moves of the selected game, allowing easy navigation between positions.
+This option is useful when only certain games need to be selected for import.
+### Game List
+The game list shows some of the fields that are used as standard annotations in PGN files, along with a checkbox that can be toggled to indicate whether the game is selected for import into the database.
+Games may be partial, containing only key moves from the ending. The PGN format does not require full games, therefore the move and ply counts do not necessarily reflect the complete game but only the portion contained in the file.
+To mark the selection checkbox of the games to be imported, the user must first select them with the mouse by clicking on the corresponding rows. By holding the Shift key, multiple rows can be selected.
+Above the list there are three buttons (the second, third, and fourth from the left) used to mark this checkbox:
+- The first marks the rows selected with the mouse.
+- The second selects all games without the need to select them first.
+- The third removes the mark from the selected rows.
+### Viewing a Game
+To view a game, it must first be selected by clicking on its row in the list. Then, click the first button on the left above the list (the one with the chessboard icon). The moves will appear in the panel below the list.
+Moves are displayed with colors to indicate their type:
+- Red: a check occurred.
+- Green: a move without capture.
+- Gray: a move with capture.
+The buttons above this panel allow changing the move display layout:
+- Columns, top to bottom and left to right.
+- Rows, left to right and top to bottom.
+Clicking on any move will reproduce its position on the chessboard shown in the right panel.
+The button bar above the chessboard contains the following elements (from left to right):
+- Reset: returns to the initial position of the game.
+- Back: goes back to the previous move.
+- Next: advances to the next move.
+- Move text: descriptive text of the move, using the same color coding as the move panel.
+- Rotate view: flips the board vertically.
+- Highlight move squares: toggles the highlighting of the move’s starting and ending squares. The starting square is marked with a green border, and the ending square is colored based on the move result: green for a simple move, yellow for a capture, and red for a check.
+At the bottom of the chessboard there is a text box showing any available comments on the move.
+The letter rows at the top and bottom of the board are colored white or black depending on which player has the turn to move.
+### Integrating Games into the Database
+Once the games to be integrated have been marked, the process can be started by clicking the fifth button in the button bar above the game list.
+Next to this button, a progress bar is displayed, which fills as the integration advances. This is useful for large files (some may contain more than 1,000 games).
+Before starting, the user is asked whether duplicated games should also be integrated (i.e., games already stored in the database). Two games are considered identical if they share the same initial position and identical moves, regardless of comments, annotations, or player names.
+This option prevents inserting the same game twice, even when processing multiple files from the same player.
+When the process finishes, a message is displayed indicating:
+- How many games were integrated.
+- How many were identified as duplicates.
+Duplicated games remain marked in the list, while integrated games lose their mark. This allows easy identification of which games were processed, and the user may still choose to integrate duplicates in a later attempt.
+Finally, the user is given the option to delete the processed files from disk.
+This is useful when importing a large number of files in small batches, allowing safe cleanup of the working directory.
+It is recommended to use a dedicated directory for file integration, while keeping a backup copy in a separate location to recover any accidentally deleted files.
+### Database Copy
+It is possible to copy all games from one database to another. This is done through a dialog opened with the copy_database function.
+### Bulk Import of Games in PGN Format
+This dialog allows importing games in PGN format into the database from an arbitrary number of files. It is opened with the import_multiple_pgn_files function.
+# Game Query
+This form is composed of the following main elements:
+- Top toolbar: contains application command buttons.
+- List toolbar: contains command buttons for the game list.
+- Game list: displays the games that match the search criteria.
+- Additional filters: to the right of the game list there is a list of additional filter fields that can be used for filtering the query, but are not shown in the list itself.
+- Move panel: located below the game list, shows the moves of the selected game. By clicking on a move, the corresponding position is displayed on the board panel.
+- Board and comments panel: located on the right side of the form, displays a chessboard with the game position, a text box for move comments, and a list of the game’s tags and their values.
+These panels can be resized by dragging the horizontal and vertical split bars that separate them.
+## The top toolbar of this form contains the following buttons and controls (from left to right):
+- Tag filter: performs the query by adding fields with game tags and statistics, allowing filtering by their values.
+- Position filter: performs the query by adding fields with position data, allowing filtering by their values.
+- Move filter: performs the query by adding fields with move data, allowing filtering by their values.
+- Remove games from list: removes the selected games from the game list, but not from the database.
+- Show game: displays the moves and positions of the selected game in the corresponding panels.
+- Edit tags: opens a dialog to edit the tags of the selected game.
+- Edit game: opens a game editing form, where the data and moves of the selected game can be modified.
+- Game player: opens a form to replay the selected game, with controls to navigate forward and backward through the moves. In this form it is also possible to search for other games where a specific board position occurred.
+- Delete games: deletes the selected games from the database. A confirmation is requested before performing this action, since it cannot be undone (unless a backup was previously saved).
+- Dropdown for other database connections: to export to another server, the target database must be connected and available in this dropdown.
+- Progress bar for data export.
+*** Before making any query, it is essential to check the button for the filter mode to be used: tags, positions, or moves. If none is checked, the refresh button remains disabled. ***
+## The game list toolbar contains the following buttons and controls (from left to right):
+- Refresh query button: updates the game list with the current search criteria.
+- Auto-refresh button: enables or disables automatic refreshing of the game list. When enabled, the list updates automatically whenever a filter or sort criterion is modified. For heavy queries, manual refresh is preferable to allow multiple filter changes without reloading each time.
+- Cancellation and progress: enables or disables query cancellation through a progress message with a cancel button. If canceled, the list updates with the games retrieved up to that point.
+- Hide/show additional filters: toggles the visibility of the additional filters located to the right of the game list.
+- Edit filters: opens a dialog showing the filters currently applied to the query, which can be edited or removed individually.
+- Remove filters: clears all filters applied to the query, leaving the game list unfiltered. The query will only refresh automatically if auto-refresh is enabled.
+- Label with counts: displays the total number of games, the number of selected games, and the duration of the last query.
+- Full row selection: toggles full-row selection in the game list. When enabled, selecting a row highlights the entire row instead of individual cells.
+- Format: opens a dialog to create formatting expressions for cells or rows in the game list. These expressions can be used to highlight games that meet certain criteria, such as wins, losses, or draws.
+- Export options dropdown: provides options to export data to Excel, PGN files, or another database.
+- Export entire list: exports all rows from the game list.
+- Export selected games: exports only the games currently selected in the list.
+## The game list has a context menu with the following options:
+- Filter: opens a filter and sorting editor for the column where the context menu was invoked.
+- Filter by cells: creates a filter for the selected cells in the list.
+	- If only one cell is selected, an equality filter is created for that column and value.
+	- If multiple cells are selected within the same row, a conjunctive (AND) equality filter is created across all selected columns and their values.
+	- If cells are selected across different rows, disjunctive (OR) filters are generated with each conjunctive (AND) row filter.
+- Filter by columns: opens a dialog listing all columns in the game list with a data type compatible with the column where the context menu was invoked. Generates a disjunctive (OR) filter for all selected columns.
+	- Example: White = 'Karpov' OR Black = 'Karpov'.
+- Column format: opens a dialog to create formatting expressions for the column where the context menu was invoked.
+- Apply function: opens a dialog to apply a function to the column where the context menu was invoked. Available functions depend on the column’s data type (e.g., aggregation for numbers, case modification for text).
+- Refresh: updates the game list with the current search criteria.
+- Show/hide columns: opens a dialog to toggle visibility of columns in the game list.
+### Search Filters
+Standard search filters consist of a dropdown with the available operators, and zero, one, or more controls depending on the operator and data type.
+Example: BETWEEN requires two controls, while IS NULL requires none.
+Operator names do not necessarily match the SQL technical names and may be translated into English or Spanish.
+Example: = is shown as equals or igual, depending on the selected language.
+The controls can be: text editors, checkboxes, date pickers, expandable or fixed list selectors, etc.
+Example: the IN operator requires an expandable list selector; for a column with fixed values, a dropdown list is used.
+In addition to standard filters, the application provides non-standard chess-specific filters:
+- Board position filter:
+	- Board positions are stored as 64-character strings, from a8 to h1.
+	- Empty squares are 0.
+	- Black pieces: r, n, b, q, k, p (rook, knight, bishop, queen, king, pawn).
+	- White pieces: R, N, B, Q, K, P.
+	- Filtering is done through a dialog where the user can compose a board with pieces.
+	- Options:
+		- Simple: the position is taken literally as composed.
+		- Complex: allows placing more than one piece on a square (alternative possibilities). Also allows explicitly marking a square as empty, irrelevant, or even color-independent. Transparent pieces indicate “any color.” These filters may cover the full board or only a rectangular portion (e.g., defining a 4-pawn structure across 8 squares, placed anywhere). These filters are very powerful but also very computationally expensive.
+		- Regular expression: if the user knows how (or with AI assistance), they can provide a custom regex for the text format described above (0, r, n, b, q, k, p, R, N, B, Q, K, P × 64).
+- Square filter: allows selecting squares on an empty board, for fields that store square-related data (e.g., from/to squares in moves).
+- Event filter: since positions and moves produce events (checks, checkmates, castling, captures, etc.), this filter provides a dialog to select combinations of events to filter by.
+## The additional filters list is grouped into categories
+This list also has a context menu with two options:
+- Filter: opens a filter and sorting editor for the column where the context menu was invoked.
+- Filter by columns: opens a dialog with all columns (including additional ones) that have a data type compatible with the column where the context menu was invoked. Generates a disjunctive (OR) filter for all selected columns.
+## The move panel displays the moves of a game once the Show game button on the form’s top toolbar has been pressed.
+Move colors follow the application’s standard:
+- Red: check.
+- Green: move without capture.
+- Gray: move with capture.
+Additionally:
+If a move matches the criteria of the active filter, it is highlighted in violet.
+If the filters do not apply to moves, no highlighting is applied.
+Example: filtering games by player name does not affect moves.
+Example: filtering by events or board positions does affect moves.
+Clicking on a move reproduces the corresponding position on the chessboard in the right panel and shows the move text in the text box below the board panel.
+## The board and comments panel
+This panel displays:
+- A chessboard with the current game position.
+- A text box containing the comments for the move (if any).
+- A list of the game’s tags and their values.
+At the top of this panel there is a toolbar with the following buttons and controls (from left to right):
+- Reset: returns to the initial position of the game.
+- Back: goes back to the previous move.
+- Next: advances to the next move.
+- Move text: displays the move description, using the same color coding as the move panel.
+- Rotate view: flips the chessboard vertically.
+- Highlight move squares: toggles highlighting of the move’s starting and ending squares.
+	- Start square: green border.
+	- End square: green (move only), yellow (capture), red (check).
+At the bottom of the chessboard there is a text box where comments on the move are displayed, if available.
+The top and bottom letter rows of the board are colored white or black depending on which player’s turn it is.
+# Game Editor Form
+This form is divided into two vertical panels:
+- Left panel: split into two horizontal sections.
+	- The upper section contains general game data.
+	- The lower section is the move panel, as described in other forms.
+- Right panel: displays a chessboard for game positions and their comments, with the same structure and options as in the query form.
+This form is opened with a pre-selected game, usually from the query form.
+The general game data panel contains the following editing controls:
+- A dropdown for game tags, a text editor for the tag value, and Change / Delete buttons to save changes or remove the tag from the game.
+- A text editor + Add button to add a new tag to the game. If the tag name does not exist, it will be added to the database; otherwise, an existing one will be reused.
+- Text editors for the game description, White player name, Black player name, game date (free text), and a dropdown to select the result.
+- A list of game comments and a text editor to modify the selected comment in the list. Add, Change, and Delete buttons manage the list of comments.
+- Apply Changes and Cancel Changes buttons to confirm or discard modifications.
+Note: Moves and positions cannot be modified in this form.
+3 Game Player Form
+This form is similar to the game editor, but the move panel is located below the board and comments panel.
+Beneath the general game information panel, there is an additional panel showing a summarized list of games. This panel includes a toolbar with:
+- A text box to enter a number of moves.
+- A dropdown to optionally select a game result.
+After entering the number of moves, a button to the left of the toolbar (with binoculars icon) becomes active. When pressed, it searches for games that contain a board position matching the current game, and optionally the selected result, then loads that move and the following n - 1 moves, up to the entered value.
+Below the list, these moves are displayed as miniature boards, each with the move in PGN format shown at the top, in the color of the corresponding player.
+Next to the results dropdown, there is a button with a chessboard icon. When pressed, it opens a new game player window for the game selected in the list.
+# Creating a New Game
+The AI assistant can also launch the option to manually create a new game.
+A dialog opens where the user can enter the game data, such as description, player names, date, result, etc.
+Then, the game player form opens with the created game, initially empty.
+In the move panel, two new buttons are available:
+- Add move (icon: lightbulb with a + sign inside a green circle): adds a new move to the game, displayed in the move panel. The board updates with the new position.
+- Delete move (icon: lightbulb with a - sign inside a red circle): deletes the last move entered. The board updates with the previous move’s position.
+The notation used must be the same as in PGN format files.
+# Consolidate Game Tags
+The AI assistant can also launch the option to consolidate game tags.
+When adding new games, it is possible that different values are assigned to the same tag even though they should represent the same entity.
+Example: A. Karpov, Anatoli Karpov, Anatoly Karpov, Karpov, etc.
+This option allows consolidating all values of a specific tag into a canonical value, making filtering by tag values easier.
+A dialog opens with the following structure:
+- A dropdown to select the tag.
+- Next to it, a text editor to specify the canonical value to assign to the tag.
+- Below the dropdown, two lists are displayed.
+Under each list, there is a text editor and a magnifying glass button. Entering text and pressing the button filters the values in the corresponding list to those containing the typed string.
+Behavior:
+- When a tag is selected, all existing values for that tag in the database are displayed in the left list.
+- From these values, one can be chosen as the canonical value, or a new canonical value can be entered in the text box.
+- The right list again displays all tag values, and it is possible to apply a filter to narrow them down to those to be changed.
+- By pressing the Merge button, all values selected in the right list are updated to the chosen canonical value.

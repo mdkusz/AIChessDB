@@ -1,0 +1,184 @@
+﻿# Ayuda al usuario
+Esta aplicación tiene una consola de asistentes IA para ayudar al usuario.
+Como asistente IA, el usuario te puede pedir que le expliques cómo funciona la aplicación, o que le ayudes a realizar alguna tarea concreta.
+Dispones de funciones para resaltar controles, mostrar ToolTips, o comentar controles y ToolStripItems de la aplicación. Para conocer cómo usar estas funciones, consulta el documento AIChessDB_automatizacion.txt.
+Este tipo de ayuda visual es siempre mejor que una simple explicación textual, ya que el usuario puede ver los controles resaltados y comprender mejor su función.
+# Recordatorio de controles de los formularios
+Los formularios se abren mediante llamadas a función. Como esta aplicación puede usar varias bases de datos a la vez, existen diferentes conexiones configuradas, y cada formulario se puede abrir pasando una de ellas en un parámetro de la función. Utiliza la función 'get_database_connections' para conocer las conexiones disponibles.
+Puedes consultar todos los controles de cada formulario, su posición, tipo y descripción funcional usando las funciones de automatización descritas en AIChessDB_automatizacion.txt. Esto te permite resaltar controles específicos, añadir ToolTips, o proporcionar ayuda contextual al usuario.
+Presta atención al abrir cada nuevo formulario. Es posibe que recibas un mensaje que te indique que se ha subido a tu documentación un archivo con los controles del formulario. Consulta este archivo para conocer los controles disponibles y sus funciones, y no tendrás que hacer llamadas para navegar por ellos, con el consiguiente ahorro de tiempo.
+No le menciones al usuario este archivo de controles. Es de uso interno para ti. El usuario desconoce su existencia y saberlo no le sirve de nada.
+# Guía visual al usuario
+El procedimiento para guíar al usuario en el manejo de un formulario, será el siguiente:
+1. Simpre esperar a que el usuario pida ayuda. A lo mejor no la necesita.
+2. Cuando el usuario pida ayuda, si no concreta lo suficiento, lo primero que hay que hacer es pedirle que concrete. Esto no es necesario en un cuadro de diálog simple, con pocos elementos.
+3. Con la información proporcionada, buscarás el control más inmediato que tenga que usar el usuario. Por ejemplo, en una ventana de consulta, será uno de los botones de selección de tipo de filtro, para activar la opción de buscar.
+4. Utilizarás la función 'highlight_and_comment_control' para resaltar el control y mostrar un comentario con su función.
+5. Ofrece al usuario más ayuda si la necesita. Si el usuario pide más ayuda, busca el siguiente control que tenga que usar, y repite el proceso.
+** Este procedimiento es más práctico y menos intrusivo que explicar todo el formulario de golpe, ya que el usuario puede no necesitar toda la información. **
+# Carga de las partidas
+Aunque las partidas pueden introducirse de forma manual, movimiento a movimiento, es preferible hacerlo utilizando ficheros que ya contengan partidas escritas previamente y que podemos encontrar y descargar en multitud de sitios de internet dedicados al mundo del ajedrez. El formato aceptado por el programa es uno muy popular, el formato PGN, que consiste en ficheros de texto que pueden contener multitud de partidas anotadas y comentadas. Las partidas son comprobadas antes de cargarlas en la base de datos, por lo que pueden aparecer errores debido a que alguna de ellas no sigue correctamente el estándar, yo me he encontrado con algunos, por lo que en ocasiones será necesario corregir el archivo para poder integrarlo, o bien descartar la partida incorrecta simplemente borrándola del fichero de texto. El programa proporcionará un texto con el error para que sea fácilmente encontrado con la opción de buscar del bloc de notas, lo puedes encontrar en el fichero pgnlog.txt que se genera en el mismo directorio donde está el ejecutable.
+La aplicación también comprueba que todos los movimientos sean válidos, lo que puede resultar de ayuda si la partida la hemos tecleado a mano en un fichero de texto con este formato para integrarla en la base de datos.
+Al abrir la aplicación, aparece la ventana principal. A la derecha, se encuentra la consola de asistentes IA, donde el usuario puede interactuar con los asistentes de IA y ver sus respuestas.
+La aplicación no tiene menús. El usuario puede pedir al asistente IA que muestre los formularios o inicie los procesos necesarios para ejecutar alguna de las opciones disponibles:
+- Importar las partidas contenidas en un fichero PGN.
+- Importar las partidas contenidas en múltiples ficheros PGN.
+- Abrir un formulario de consulta de partidas, en el que se pueden usar filtros para buscar partidas en la base de datos.
+- Crear una nueva partida vacía para introducirla manualmente.
+En la consola de asistentes, existe un menú desplegable en la barra de herramientas que contiene algunas de las funciones del asistente activo que están dispopnibles para ser llamadas también por el usuario. Estas funciones incluyen principalmente la apertura de formularios, por lo que esta es una forma alternativa (y más rápida para el usuario) de abrir estos formularios.
+Al lanzar una de las opciones de importación de archivos, sucederá lo siguiente:  
+- Se abrirá el cuadro de diálogo estándar de Windows para abrir ficheros.
+- A continuación, si no se han producido errores, se abrirá la ventana de importación de partidas.
+## Ventana de importación de partidas
+La ventana tiene tres partes: 
+- Un listado con las partidas contenidas en el archivo.
+- Un tablero para poder visualizar la partida seleccionada
+- Un panel donde se mostrarán los movimientos de la partida para poder moverse con facilidad entre las posiciones. 
+Esta opción es útil si queremos seleccionar solo algunas de las partidas.
+### Listado de partidas
+El listado de partidas muestra algunos de los campos que se utilizan como anotaciones estándar en todas las partidas en formato PGN, además de una casilla que se puede marcar o desmarcar y que indica si hemos seleccionado o no la partida para su importación a la base de datos.
+Las partidas pueden ser solo parciales y contener algunas jugadas claves del final, este formato no obliga a introducir partidas completas, por lo que la cantidad de movimientos y jugadas no se refiere a las totales de la partida, sino a las contenidas en el fichero.
+Para marcar la casilla de selección de las partidas que queremos importar, primero hay que seleccionarlas con el ratón en el listado, pulsando sobre cada una de las líneas. Manteniendo pulsada la tecla de mayúsculas podemos seleccionar más de una. Sobre el listado existen tres botones, el segundo, tercero y cuarto por la izquierda, que sirven para marcar esta casilla. El primero marca las líneas seleccionadas con el ratón, el segundo selecciona todas las partidas sin necesidad de seleccionarlas primero, y el tercero quita la marca a las líneas seleccionadas.
+### Visualizar una partida
+Para visualizar una partida, hay que seleccionarla primero pulsando con el ratón en la fila correspondiente del listado y, a continuación, pulsar el primer botón de la izquierda sobre el listado con el icono de un tablero de ajedrez. Los movimientos aparecen en el panel que está debajo del listado.
+Los movimientos en rojo indican que se ha producido un jaque, en verde los movimientos en los que no se captura ninguna pieza, y en gris los movimientos con captura. 
+Con los botones que hay sobre este panel se puede elegir visualizar las jugadas en columnas de arriba abajo y de izquierda a derecha, o bien en filas de izquierda a derecha y de arriba abajo. 
+Pulsando sobre cualquiera de estos movimientos se reproducirá la posición en el tablero del panel de la derecha:
+En la barra de botones que está sobre el tablero se encuentran, de izquierda a derecha, los siguientes elementos:
+1. Reiniciar: vuelve a la posición inicial de la partida.
+2. Atrás: retrocede al anterior movimiento.
+3. Siguiente: avanza al siguiente movimiento.
+4. Texto de la jugada: texto indicativo de la jugada, con el mismo código de colores que el panel de movimientos.
+5. Rotar vista: da la vuelta al tablero en sentido vertical.
+6. Marcar escaques del movimiento: activa o desactiva el marcado de los escaques de inicio y final del movimiento. El escaque inicial se marca con un borde de color verde, mientras que el escaque final se colorea en función del resultado del movimiento: verde para solo movimiento, amarillo para captura de pieza y rojo para jaque.
+En la parte inferior del tablero hay un cuadro de texto en el que aparecen los comentarios a la jugada si los hubiera. 
+Las filas de letras inferior y superior se colorean en color blanco o negro en función del jugador que tenga el turno de movimiento.
+### Integrar las partidas en la base de datos
+Una vez marcadas las partidas a integrar en la base de datos, con el quinto botón de la barra de botones que se encuentra sobre el listado de partidas podemos dar comienzo al proceso de integración en la base de datos. 
+Al lado de este botón existe una barra que se va llenando a medida que el proceso va avanzando, para indicar el progreso, que puede ser largo para ficheros muy grandes (algunos pueden contener más de 1000 partidas). 
+Antes de comenzar se nos preguntará si queremos integrar las partidas duplicadas, es decir, las que ya estén en la base de datos. Dos partidas se consideran iguales si su posición inicial es la misma y todos sus movimientos son iguales, independientemente de los comentarios y anotaciones que puedan contener, incluyendo el nombre de los jugadores. 
+Con esta opción podemos evitar insertar dos veces la misma partida, aunque procesemos varios ficheros del mismo jugador.
+Al terminar el proceso, se mostrará un mensaje indicando cuantas partidas se han integrado y cuantas estaban duplicadas. 
+Las partidas duplicadas permanecerán marcadas en el listado, mientras que las integradas perderán la marca, para que sea sencillo identificarlas y analizar si se quieren integrar de todos modos en otro intento posterior.
+Finalmente, se nos dará la opción de eliminar los archivos procesados del disco. 
+Esto puede ser útil cuando estamos integrando una gran cantidad de ficheros en pequeños lotes o de uno en uno, para ir limpiando el directorio de manera segura. 
+Conviene usar un directorio solo para integrar los archivos, mientras que mantenemos una copia de los mismos en otro directorio distinto para poder recuperar los que borremos de manera accidental.
+## Copia de base de datos
+Es posible copiar todas las partidas de una base de datos en otra diferente. Para ello existe un cuadro de diálogo que se abre con la función "copy_database".
+## Importación masiva de partidas en formato PGN
+Este cuadro de diálogo permite importar partidas en formato PGN a la base de datos desde un número arbitrario de archivos. Se abre con la función "import_multiple_pgn_files".
+# Consulta de partidas
+Este formulario está compuesto por los siguientes elementos principales:
+- Barra de herramientas superior. Contiene botones de comando de la aplicación.
+- Barra de herramientas de listado. Contiene botones de comando para el listado de partidas.
+- Listado de partidas. Muestra las partidas que cumplen los criterios de búsqueda.
+- Filtros adicionales. A la derecha del listado de partidas, existe una lista de campos de filtrado adicionales por los que se puede filtra la consulta, pero que no se muestran en el listado.
+- Panel de movimientos. Debajo del listado de partidas, se muestra un panel con los movimientos de la partida que se ha solicitado mostrar. Pulsando sobre un movimiento, se muestra la posición correspondiente en el panel de tablero.
+- Panel de tablero y comentarios. La parte derecha del formulario muestra un tablero de ajedrez con la posición de la partida mostrada, un cuadro de texto con los comentarios a la jugada, y un listado de etiquetas de la partida y sus valores.
+Estos paneles se pueden redimensionar deslizando las barras de división que los separan horizontal y verticalmente.
+## La barra de herramientas superior de este formulario presenta los siguientes botones y controles, de izquierda a derecha:
+- Filtro por etiquetas: realiza la consulta añadiendo campos de etiquetas y estadísticas de partida para realizar filtrado por sus valores.
+- Filtro por posiciones: realiza la consulta añadiendo campos con datos de las posiciones de la partidad para filtrar por sus valores. 
+- Filtro por movimientos: realiza la consulta añadiendo campos con datos de los movimientos de la partida para filtrar por sus valores.
+- Quitar partidas del lsitado: Elimina las partidas seleccionadas del listado de partidas, pero no de la base de datos.
+- Mostrar partida: mustra los movimientos y posiciones de la partida seleccionada en los paneles correspondientes.
+- Edición de etiquetas: muestra un cuadro de diálogo para editar las etiquetas de la partida seleccionada.
+- Edición de partida: abre un formulario de edición de partida, en el que se pueden modificar los datos y movimientos de la partida seleccionada.
+- Reproductor de partida: abre un formulario en el que se puede reproducir la partida seleccionada, con controles para avanzar y retroceder en los movimientos. En este formulario también se pueden buscar otras partidas en las que se haya producido una determinada posición del tablero.
+- Borrado de partidas: esto botón elimina de la base de datos las partidas seleccionadas en el listado. Se pregunta antes de realizar esta operación, ya que no se puede deshacer (a menos que se haya guardado un backup).
+- Desplegable con otras conexiones a base de datos disponible. Para exportar a otro servidor, es necesario que la base de datos de destino esté conectada y disponible en el desplegable.
+- Barra de progreso de la exportación de los datos.
+*** Antes de realizar cualquier consulta es imprescindible pulsar el botón de la modalidad de filtro a emplear: etiquetas, posiciones o movimientos. Si no se pulsa ninguno, el botón de consulta permanece desactivado. ***
+## La barra de herramientas de listado de partidas presenta los siguientes botones y controles, de izquierda a derecha:
+- Botón de refresco de la consulta: actualiza el listado de partidas con los criterios de búsqueda actuales.
+- Botón de refresco automático: activa o desactiva el refresco automático del listado de partidas. Si está activado, el listado se actualizará automáticamente cada vez que se modifique algún filtro o criterio de orden. Si la consulta es pesada, es mejor hacer un refresco manual, para poder cambiar varios filtros sin refrescar cada vez.
+- Cancelación y progreso: activa o desactiva la cancelación de la consulta mediante un mensaje con el progreso de la misma y un botón de cancelación. Si se cancela, el listado se actualizará con las partidas que se hayan recuperado hasta ese momento.
+- Ocultar / mostrar filtros adicionales: oculta o muestra los filtros adicionales que se encuentran a la derecha del listado de partidas.
+- Editar filtros: abre un cuadro de diálogo en el que se muestran los filtros que se están aplicando a la consulta y se pueden editar o eliminar individualmente.
+- Eliminar filtros: elimina todos los filtros que se están aplicando a la consulta, dejando el listado de partidas sin filtrar. Solo se refrescará la consulta de forma automática si está activada la opción correspondiente.
+- Etiqueta con la cuenta de partidas, partidas seleccionadas y el tiempo que ha tardado la última consulta.
+- Selección de fila completa: activa o desactiva la selección de fila completa en el listado de partidas. Si está activada, al seleccionar una fila se selecciona toda la fila, no celdas independientes.
+- Formato: abre un cuadro de diálogo para crear expresiones de formato para las celdas o filas independientes del listado de partidas. Estas expresiones se pueden usar para resaltar partidas que cumplan ciertos criterios, como partidas ganadas, perdidas, tablas, etc.
+- Desplegable con opciones de exportación de los datos. Existe la opcin de exportar a Excel, a fichero PGN y a otra base de datos.
+- Exportar todo el listaddo: exportar todas las filas del listado.
+- Exportar partidas seleccionadas: exporta solo las partidas que están seleccionadas en el listado.
+## El listado de partidas tiene un menú contextual con las siguientes opciones:
+- Filtrar: abre un editor de filtros y opciones de ordenación para la columna sobre la que se ha abierto el menú contextual.
+- Filtrar por celdas: crea un filtro para las celdas seleccionadas en el listado. Si solo existe una celda, se crea un filtro de igualdad para la columna y el valor de esa celda. Si existen varias celdas seleccionadas en una misma fila. Se crea un filtro conjuntivo (Y) de igualdad para todas las columnas con sus respectivos valores. Las celdas en filas distintas generan filtros disyuntivos (O) con los filtros conjuntivos (Y) de cada fila.
+- Filtar por columnas: abre un cuadro de diálogo con todas las columnas del listado con un tipo de datos compatible con el de la columna sobre la que se ha abierto el menú contextual. Genera un filtro disyuntivo (O) para todas las columnas seleccionadas. Ejemplo Blancas = 'Karpov' O Negras = 'Karpov'.
+- Formato de columna: abre un cuadro de diálogo para crear expresiones de formato para la columna sobre la que se ha abierto el menú contextual.
+- Aplicar función: abre un cuadro de diálogo para aplicar una función a la columna sobre la que se ha abierto el menú contextual. Las funciones disponibles dependen del tipo de datos de la columna. En general, serán funciones de agregación para números, o de modificación del caso para textos.
+- Refrescar: actualiza el listado de partidas con los criterios de búsqueda actuales.
+- Mostrar u ocultar columnas: abre un cuadro de diálogo para mostrar u ocultar columnas del listado de partidas.
+### Filtros de búsqueda
+Los filtros estándar de búsqueda consisten en un desplegable con los operadores disponibles, y cero, uno o más controles en función del operador y tipo de datos.
+Por ejemplo, BETWEEN requiere dos controles, mientras que IS NULL no requiere ninguno.
+Los nombres de los operadores no se corresponden con los nombres técnicos SQL, o han sido traducidos al español. Por ejemplo, = es 'equals' o 'igual', según el idioma.
+Los controles pueden ser: editores de texto, checkboxes, controles de fecha, controles de selección de lista ampliables o fijos, etc. Por ejemplo, el operador 'IN' requiere un control de selección de lista ampliable, una columna con valores fijos, un desplegable dropdownlist.
+Existen filtros de columan no estándar, específicos de esta aplicación de ajedrez:
+- Posición de tablero: las posiciones de tablero se almacenan como cadenas de texto con la siguiente notación: 64 caracteres, de a8 a h1, 0 para casilla vacía, r,n,b,q,k,p (negras: rook, knight, bishop, queen, king, pawn) o R,N,B,Q,K,P (blancas). Para filtrar por posiciones, se utiliza un cuadro de diálogo en el que se puede componer un tablero con sus fichas. Las opciones son las siguientes:
+  - Simple: la posición indicada en el tablero es literal.
+  - Compleja: este editor permite situar más de una ficha en un escaque, indicando varias alternativas válidas. también permite indicar expresamente que un escaque debe estar vacío, o que es indiferente su contenido, o incluso su color. Existen piezas blancas y negras, pero también transparentes, que indican que es indiferente el color de la pieza. Estos filtros pueden abarcar el tablero completo, pero también pueden ser parciales, solo unos escaques (dentro de un rectángulo, eso sí), se puede definir solamente una estructura de 4 peones sobre 8 escaques, que puede estar situada en cualquier parte del tablero, por ejemplo. Estos filtros son muy potentes, pero suelen ser muy costosos en tiempo de proceso.
+  - Expresión regular: si el usuario sabe como hacerlo (o la IA le ayuda), puede proporcionar una expresión regular a medida para el texto en el formato mencionado anteriormente (0,r,n,b,q,k,p,R,N,B,Q,K,P x 64).
+- Filtro de escaques: este filtro permite seleccionar escaques en un tablero vacío, para los campos que contienen información de escaque (desde / hasta, en los movimientos, por ejemplo).
+- Filtro de eventos: en las posiciones y movimientos se producen eventos, como jaques, jaques mate, enroques, capturas, etc. Este filtro presenta un cuadro de diálogo para seleccionar combinaciones de eventos para filtrar por ellos.
+## La lista de filtros adicionales es una lista agrupada en categorías
+Esta lista también tiene un menu de contexto con dos opciones:
+- Filtrar: abre un editor de filtros y opciones de ordenación para la columna sobre la que se ha abierto el menú contextual.
+- Filtrar por columnas: abre un cuadro de diálogo con todas las columnas del listado y adicionales con un tipo de datos compatible con el de la columna sobre la que se ha abierto el menú contextual. Genera un filtro disyuntivo (OR) para todas las columnas seleccionadas.
+## El panel de movimientos muestra los movimientos de una partida cuando se ha pulsado el botón de mostrar partida en la barra de herramientas superior del formulario.
+Los colores de los movimientos son los estándar en esta aplicación: ro para jaque, verde para movimientos sin captura, y gris para movimientos con captura.
+Adicionalmente, si un movimiento cumple con los criterios del filtro activo, se colorea en violeta. Si los filtros no actúan sobre los movimientos, no se colorean. Por ejemplo, si se filtran las partidas por el nombre de un jugador, este filtro no afecta a los movimientos, un filtro por eventos o psotición de tablero, sí afecta.
+Al pulsar sobr un movimiento, se reproduce la posición en el tablero del panel de la derecha, y se muestra el texto de la jugada en el cuadro de texto inferior del panel de tablero.
+## El panel de tablero y comentarios muestra un tablero de ajedrez con la posición de la partida mostrada, un cuadro de texto con los comentarios a la jugada, y un listado de etiquetas de la partida y sus valores.
+Este panel tiene una barra de herramientas en su parte superior, con los siguientes botones y controles, de izquerda a serecha:
+- Reiniciar: vuelve a la posición inicial de la partida.
+- Atrás: retrocede al anterior movimiento.
+- Siguiente: avanza al siguiente movimiento.
+- Texto de la jugada: texto indicativo de la jugada, con el mismo código de colores que el panel de movimientos.
+- Rotar vista: da la vuelta al tablero en sentido vertical.
+- Marcar escaques del movimiento: activa o desactiva el marcado de los escaques de inicio y final del movimiento. El escaque inicial se marca con un borde de color verde, mientras que el escaque final se colorea en función del resultado del movimiento: verde para solo movimiento, amarillo para captura de pieza y rojo para jaque.
+En la parte inferior del tablero hay un cuadro de texto en el que aparecen los comentarios a la jugada si los hubiera. 
+Las filas de letras inferior y superior del tablero se colorean en color blanco o negro en función del color del jugador que tenga el turno de movimiento.
+# Formulario editor de partidas
+Este formulario está dividido en dos paneles verticales:
+- El panel de la izquierda está dividido a su vez en dos paneles horizontales: el superior son datos generales de la partida, el inferior es el panel de movimientos de partida ya mencionado en otros formularios.
+- El panel de la derecha es un tablero para las posiciones de la partida y sus comentarios. Con la misma estructura y opciones que en el formulario de consulta.
+A este formulario se entra con una partida ya seleccionada. Normalmente desde el formulario de consulta.
+El panel de datos generales de la partida contiene los siguientes controles para editar:
+- Desplegable de etiquetas de partida, editor de texto para el valor de la etiqueta, y botones de Cambiar y Eliminar para guardar el cambio o eliminar la etiqueta para la partida.
+- Editor de texto + botón Añadir para añadir una nueva etiqueta a la partida. El nombre de la etiqueta se añadirá a la base de datos si no existe, o se reutilizará una existente.
+- Editores de texto para la descripción de la partida, nombre del jugador blanco y negro, fecha de la partida (texto libre) y un desplegable para seleccionar el resultado.
+- Lista de comentarios de la partida y editor de texto para modificar el comentario seleccionado en la lista. Botones de Añadir, Cambiar y Eliminar para la lista de comentarios.
+- Botones de Actualizar Cambios y cancelar Cambios para aplicar o cancelar los cambios realizados.
+No se pueden modificar los movimientos ni las posiciones.
+# Formulario reproductor de partidas
+Este formulario es similar al editor de partidas, pero el panel de movimientos está debajo del panel con el tablero y comentarios.
+Debajo del panel de información general de la partida, hay un nuevo panel con un listado resumido de partidas. Este panel tiene una barra de herramientas para escribir un número de movimientos y un desplegable para seleccionar (opcionalmente) un resultado de partida.
+Una vez escrito el número de movimientos, se activa un botón a la izquerda de la barra con un icono de prismáticos. Al pulsar este botón, se buscarán partidas que tengan una posición de tablero que coincida con la partida actual y, opcionalmente, con el resultado seleccionado y se cargará ese movimiento y los siguientes n - 1, hasta el valor indicado.
+Debajo del listado se mostrarán estos movimientos en forma de tableros en miniatura con el movimiento en formato PGN en su parte superior, del color del jugador correspondiente.
+Al lado del desplegable de resultados hay un botón con aspecto de un tablero de ajedrez. Al pulsarlo, se abrirá una nueva ventana de reproductor de partida para la partida seleccionada en el listado.
+# Crear una nueva partida
+El asistente IA también puede lanzar la opción de crear una nueva partida manualmente.
+Se abrirá un cuadro de diálogo en el que el usuario puede introducir los datos de la partida, como la descripción, el nombre de los jugadores, la fecha, el resultado, etc.
+A continuación, se abrirá el formulario reproductor de partidas con la partida creada, que estará vacía.
+En el panel de movimientos, veremos dos nuevo botones:
+- Añadir movimiento (icono de bombilla con un signo + en un círculo verde): al pulsar este botón, se añadirá un nuevo movimiento a la partida, que se mostrará en el panel de movimientos. El tablero se actualizará con la posición del nuevo movimiento.
+- Eliminar movimiento (icono de bombilla con un signo - en un círculo rojo): al pulsar este botón, se eliminará el último movimiento introducido. El tablero se actualizará con la posición del movimiento anterior.
+La notación debe ser la misma que la utilizada en los archivos en formato PGN.
+# Consolidar etquetas de partida
+El asistente IA también puede lanzar la opción de consolidar etiquetas de partida.
+Al introducir nuevas partidas, es posible que se den valores diferentes a una etiqueta, pero que en realidad debería ser el mismo. Un ejemplo: A. Karpov, Anatoli Karpov, Anatoly Karpov, Karpov, etc.
+Esta opción permite consolidar todos los valores de una determinada etiqueta usando un valor canónico para todas, facilitando las labores de filtrado por valores de etiqueta.
+Se abrirá un cuadro de diálogo en el que se puede seleccionar la etiqueta en un desplegable. Al lado del desplegable, hay un editor de texto para el valor canónico que se quiere asignar a la etiqueta.
+Debajo del desplegable encontraremos dos listas.
+Debajo de cada una de estas listas, hay un editor de texto y un botón con una lupa. Escribiendo un texto y pulsando la lista, filtraremos los valores de la lista superior que contengan el texto escrito.
+Al seleccionar una etiqueta, se mostrarán todos los valores para la misma que existen en la base de datos en la lista de la izquierda. 
+De entre todas las opciones mostradas, seleccionaremos una como valor canónico, o bien escribiremos un nuevo valor canónico en el cuadro de texto correspondiente. 
+En la lista de la derecha se muestran de nuevo todos los valores de la etiqueta, y también podremos aplicar un filtro para quedarnos solo con los que queremos cambiar. 
+Pulsando el botón Fusionar, todos los valores seleccionados en la lista de la derecha cambiarán al valor canónico seleccionado.
+
+
+
+
+

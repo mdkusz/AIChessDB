@@ -1,0 +1,16 @@
+# VS
+.vs/
+*.suo
+
+# Builds
+bin/
+obj/
+*.pdb
+*.zip
+
+# Paquetes
+packages/
+*.nupkg
+
+# Otros
+Thumbs.db

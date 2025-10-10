@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/play_config.schema.json",
+  "title": "Play Configuration (List<PlaySchema>)",
+  "type": "object",
+  "description": "Archivo de configuración que contiene una lista de 'plays' (conjuntos de asistentes que colaboran en una consola).",
+  "$comment": "Este esquema modela la estructura PlaySchema / PlayUser / PlayPlayer / CastElement / APIRef. Las referencias a API Managers, asistentes y assets vienen del archivo principal de configuración.",
+  "additionalProperties": false,
+  "properties": {
+    "plays": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/play"
+      },
+      "description": "Lista de configuraciones Play."
+    }
+  },
+  "required": [
+    "plays"
+  ],
+  "$defs": {
+    "colorValue": {
+      "description": "Color ARGB como entero sin signo de 32 bits (0–4294967295) o cadena HEX (#RRGGBB o #AARRGGBB).",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        {
+          "type": "string",
+          "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+        }
+      ]
+    },
+    "apiRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador del API Manager (puede ser vacío si se usa el manager por defecto)."
+        },
+        "type": {
+          "type": "string",
+          "description": "Nombre de tipo .NET del API Manager (p. ej., 'OpenAIAPI.OpenAIAPIManager, OpenAIAPI')."
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "playUser": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Alias mostrado para el usuario o la aplicación."
+        },
+        "backColor": {
+          "$ref": "#/$defs/colorValue"
+        },
+        "foreColor": {
+          "$ref": "#/$defs/colorValue"
+        }
+      },
+      "required": [
+        "name",
+        "backColor",
+        "foreColor"
+      ]
+    },
+    "castElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador del asset (e.g., vector store id)."
+        },
+        "type": {
+          "type": "string",
+          "description": "Tipo/interfaz del asset (p. ej., 'IFilePackageManager', 'ISpeechManager')."
+        },
+        "api": {
+          "$ref": "#/$defs/apiRef"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "api"
+      ]
+    },
+    "playPlayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único del Player (p. ej., assistant_id o alias local)."
+        },
+        "type": {
+          "type": "string",
+          "description": "Tipo de interfaz del Player (p. ej., 'IAssistant', 'IChat', 'IResponseChat', 'IImageGenerator')."
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Instrucciones iniciales del Player. Puede usar el prefijo 'file:' para leer desde archivo.",
+          "$comment": "Si comienza por 'file:', la aplicación cargará el contenido desde ese archivo antes de crear el Player."
+        },
+        "reminder": {
+          "type": "string",
+          "description": "Mensaje enviado en cada petición para recordar indicaciones importantes."
+        },
+        "backColor": {
+          "$ref": "#/$defs/colorValue"
+        },
+        "foreColor": {
+          "$ref": "#/$defs/colorValue"
+        },
+        "default": {
+          "type": "boolean",
+          "description": "Si es true, este Player será el seleccionado inicialmente al abrir la consola.",
+          "default": false
+        },
+        "allowed_services": {
+          "type": "array",
+          "description": "Servicios de aplicación permitidos para este Player (p. ej., 'userinterface', 'automation', 'configuration').",
+          "items": {
+            "type": "string"
+          }
+        },
+        "app_roles": {
+          "type": "array",
+          "description": "Roles específicos de aplicación asignados al Player.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "api": {
+          "$ref": "#/$defs/apiRef"
+        },
+        "assets": {
+          "type": "array",
+          "description": "Lista de assets asociados al Player (voz, vector stores, etc.).",
+          "items": {
+            "$ref": "#/$defs/castElement"
+          },
+          "default": []
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "api"
+      ]
+    },
+    "play": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único del Play."
+        },
+        "name": {
+          "type": "string",
+          "description": "Nombre del Play."
+        },
+        "description": {
+          "type": "string",
+          "description": "Descripción del Play."
+        },
+        "presentation": {
+          "type": "string",
+          "description": "Mensaje de introducción que verán los Players al iniciar. Puede usar el prefijo 'file:' para cargar desde archivo.",
+          "$comment": "Si comienza por 'file:', la aplicación leerá el texto desde el archivo indicado."
+        },
+        "user": {
+          "$ref": "#/$defs/playUser"
+        },
+        "applications": {
+          "type": "array",
+          "description": "Lista opcional de aplicaciones con su configuración visual.",
+          "items": {
+            "$ref": "#/$defs/playUser"
+          }
+        },
+        "cast": {
+          "type": "array",
+          "minItems": 1,
+          "description": "Lista de Players que participan en la consola.",
+          "items": {
+            "$ref": "#/$defs/playPlayer"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "user",
+        "cast"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "plays": [
+        {
+          "id": "Example_Play",
+          "name": "Example cast",
+          "description": "Example assistants working together",
+          "presentation": "file:/Scripts/Intro.txt",
+          "user": {
+            "name": "User",
+            "backColor": 4278190080,
+            "foreColor": 4294967295
+          },
+          "applications": [
+            {
+              "name": "App1",
+              "backColor": 4278190080,
+              "foreColor": 4294967295
+            }
+          ],
+          "cast": [
+            {
+              "id": "asst_XXXX",
+              "type": "IAssistant",
+              "backColor": 4286578816,
+              "foreColor": 4294967295,
+              "default": true,
+              "reminder": "",
+              "allowed_services": [
+                "userinterface"
+              ],
+              "api": {
+                "id": "",
+                "type": "OpenAIAPI.OpenAIAPIManager, OpenAIAPI"
+              },
+              "assets": [
+                {
+                  "id": "vs_xxx",
+                  "type": "IFilePackageManager",
+                  "api": {
+                    "id": "",
+                    "type": "OpenAIAPI.OpenAIAPIManager, OpenAIAPI"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

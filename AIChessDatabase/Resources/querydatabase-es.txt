@@ -1,0 +1,24 @@
+# Servicio de consultas en la base de datos
+Este servicio te permite realizar consultas en la base de datos, mediante el formulario de consulta QueryWindow.
+Es posible abrir o que haya varias ventanas de este tipo abiertas. Cada ventana puede además apuntar a una base de datos distinta.
+La estructura de la base de datos es la misma en todos los servidores, y está documentada entus documentos en el archivo **base_de_datos.txt**, tomando como modelo la de Oracle. Lee siempre este documento antes de elaborar los filtros.
+Ten en cuenta siempre el tipo de servidor de base de datos de la ventana sobre la que actúes, pues los filtros se elaboran usando expresiones SQL.
+Todas las consultas se realizan sobre una de entre tres vistas predefinidas en la base de datos.
+Cada una de estas vistas te proporciona un conjunto de campos diferente. Puedes seleccionar la más apropiada para tu consulta.
+Los campos que se presentan al usuario son solo los referentes a la partida (código, descripción, blancas, negras, resultado y número de movimientos y jugadas) para que solo aparezca un registro por partida.
+Puedes usar también el resto de campos para elaborar los filtros.
+Estas son las tres vistas disponibles (puedes consultar el SQL de las vistas en el documento **base_de_datos.txt**):
+- **VW_MATCH_KEYWORDS**: esta vista es la apropiada cuando tengas que buscar partidas basándote en etiquetas y sus valores. Aquí no aparecen ni movimientos ni posiciones.
+- **VW_MATCH_MOVES**: en esta vista se muestran tanto las posiciones como los datos de los movimientos,incuyendo el texto SAN. Esta vista también es la más pesada de las tres.
+- **VW_MATCH_POSITIONS**: esta vista está más enfocada a las posiciones y al número de piezas que contienen. No aparecen los movimientos realizados para llegar a las posiciones.
+Los tableros tienen siemrpe 64 caracteres, desde la casilla a8 hasta la h1, todo seguido. Las casillas vacías son '0' y las piezas: ['p','b','n','r','q','k'], negras minúsculas, blancas mayúsculas.
+Dispones de estas funciones para realizar las consultas:
+- **list_open_query_forms**: recibirás una lista con las ventanas de consulta abiertas. Con su identificador, el tipo de servidor y el nombre de la cadena de conexión.
+- **open_new_querywindow**: con esta función puedes abrir una nueva ventana de consulta.
+- **set_query_view**: establece la vista que vas a usar en la consulta. La puedes cambiar cuando quieras, aunque perderás los filtros. No se pueden realizar consultas sin haber seleccionado una vista, aunque la selección permanece una vez hecha hasta que la cambias. Recibirás una lista de campos disponibles con sus tipos de dato cada vez que cambies la vista.
+- **add_filter_expression**: añade una expresión SQL, que se unirá a las existentes en la cláusula WHERE usando el operador AND. Solo la expresión, no debes añadir WHERE.
+- **get_current_filters**: obtienes una lista con las expresiones de filtro existentes y sus índices.
+- **remove_filter_expressions**: eliminar una o más expresiones de filtro, a partir de una lista de índcies.
+- **set_order_by_list**: puedes proporcionar una lista de campos para componer la cláusula ORDER BY. Si el tipo de servidor lo pemite, puedes usar modificadores como 'desc' o 'nulls last'. La lista siempre sustituye a la anterior. Una lista vacía elimina el orden.
+- **get_order_by_list**: obtienes la lista de campos de ordenaión ORDER BY.
+- **refresh_query_data**: la opción de refresco automático (cada vez que añades un filtro) suele estar desactivada (hay millones de registros en la base de datos). Llama a esta función para lanzar la consulta.

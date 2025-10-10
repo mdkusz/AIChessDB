@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APP_3337A0107B324B33B4699C1A529F3ED0_CONNQ" xml:space="preserve">
+    <value>562cc292442b4f26bb064d7ddfc31479</value>
+  </data>
+  <data name="APP_3337A0107B324B33B4699C1A529F3ED0_PARAMQ" xml:space="preserve">
+    <value>9b9a55a3d848445ba77065c359dc90e8</value>
+  </data>
+  <data name="CAP_LOGUserCode" xml:space="preserve">
+    <value>cod_user</value>
+  </data>
+  <data name="CAP_LOGUserName" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="CAP_OWFriendlyDescription" xml:space="preserve">
+    <value>ow_friendlydescription</value>
+  </data>
+  <data name="CAP_OWFriendlyName" xml:space="preserve">
+    <value>ow_friendlyname</value>
+  </data>
+  <data name="CAP_OWKey" xml:space="preserve">
+    <value>ow_value</value>
+  </data>
+  <data name="CATEGORY_BSCHEMA" xml:space="preserve">
+    <value>Schema</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_BTABLE" xml:space="preserve">
+    <value>Table</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_BUILDCOMMAND" xml:space="preserve">
+    <value>Build Command</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_CODEFORMATTERS" xml:space="preserve">
+    <value>Code Formatter</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_COLUMNEDITOR" xml:space="preserve">
+    <value>columnEditor</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_DataColumn" xml:space="preserve">
+    <value>DataColumn</value>
+  </data>
+  <data name="CATEGORY_DATAFORMATTERS" xml:space="preserve">
+    <value>Data Fromatters</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_DATATYPES" xml:space="preserve">
+    <value>DataType</value>
+  </data>
+  <data name="CATEGORY_DBMANAGER" xml:space="preserve">
+    <value>Database Manager</value>
+  </data>
+  <data name="CATEGORY_FORM" xml:space="preserve">
+    <value>Desktop Application Form</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_FUNCTIONS" xml:space="preserve">
+    <value>Functions</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_GenericColumn" xml:space="preserve">
+    <value>GenericColumn</value>
+  </data>
+  <data name="CATEGORY_IMPORTDATA" xml:space="preserve">
+    <value>Data Import</value>
+  </data>
+  <data name="CATEGORY_IMPORTEXPORT" xml:space="preserve">
+    <value>IMPORT/EXPORT</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_LITERALS" xml:space="preserve">
+    <value>Literals</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_OBJRESULT" xml:space="preserve">
+    <value>Resulting Object</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_ORDERBY" xml:space="preserve">
+    <value>ORDER BY</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_PARAMETERS" xml:space="preserve">
+    <value>PARAMETERS</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_Query" xml:space="preserve">
+    <value>Query</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_QUERYCLAUSE" xml:space="preserve">
+    <value>Query Clause</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_QueryColumn" xml:space="preserve">
+    <value>QueryColumn</value>
+  </data>
+  <data name="CATEGORY_QUERYCONSOLE" xml:space="preserve">
+    <value>Query Console</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_QUERYLINK" xml:space="preserve">
+    <value>Query Link</value>
+  </data>
+  <data name="CATEGORY_SELECT" xml:space="preserve">
+    <value>SELECT</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_SQLBUILDER" xml:space="preserve">
+    <value>SQL Builder</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_SUBQUERY" xml:space="preserve">
+    <value>Subquery</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CATEGORY_VALUELISTPROVIDERS" xml:space="preserve">
+    <value>ValueListProvider</value>
+    <comment>Non-localized category name</comment>
+  </data>
+  <data name="CONFIG_dbProviders" xml:space="preserve">
+    <value>dbProviders</value>
+    <comment>.Config section name</comment>
+  </data>
+  <data name="CONFIG_dependencyProviders" xml:space="preserve">
+    <value>dependencyProviders</value>
+    <comment>.Config section name</comment>
+  </data>
+  <data name="CONFIG_resourceManagers" xml:space="preserve">
+    <value>resourceManagers</value>
+    <comment>.Config section name</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="connections" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connections.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="CTK_SUGGESTION" xml:space="preserve">
+    <value>...</value>
+    <comment>Suggestion indicator</comment>
+  </data>
+  <data name="CT_AGGREGATES" xml:space="preserve">
+    <value>aggregates</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_AMBIGUOUS" xml:space="preserve">
+    <value>ambiguousTokens</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_ANOPERATORS" xml:space="preserve">
+    <value>alphanumericOperators</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BOOLCONSTANTS" xml:space="preserve">
+    <value>BoolConstants</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BOOLFUNCTIONS" xml:space="preserve">
+    <value>booleanFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BOOLPROPERTIES" xml:space="preserve">
+    <value>BoolProperties</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BUILDERQUERYCLAUSES" xml:space="preserve">
+    <value>QueryClauses</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BUILDERSUBQUERY" xml:space="preserve">
+    <value>builderSubqueries</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_BUILDERTOKENS" xml:space="preserve">
+    <value>builder</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_CONFIGCOMMANDS" xml:space="preserve">
+    <value>ConfigurationCommand</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_DATATYPES" xml:space="preserve">
+    <value>dataTypes</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_DATETIMEFUNC" xml:space="preserve">
+    <value>datetimeFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_DMLCOMMANDS" xml:space="preserve">
+    <value>DMLCommands</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_DMLTOKENS" xml:space="preserve">
+    <value>DMLTokens</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_ENUMCONSTANTS" xml:space="preserve">
+    <value>EnumConstants</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_ENUMPROPERTIES" xml:space="preserve">
+    <value>EnumProperties</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_FILTERCOMMANDS" xml:space="preserve">
+    <value>FIlterCommand</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_INTERVALNAME" xml:space="preserve">
+    <value>intervalNames</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_INTPROPERTIES" xml:space="preserve">
+    <value>IntProperties</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_JOINS" xml:space="preserve">
+    <value>tableJoins</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_LITERALTOKENS" xml:space="preserve">
+    <value>literalTokens</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_LOGICOPERATORS" xml:space="preserve">
+    <value>logicOperators</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_MTFUNCTIONS" xml:space="preserve">
+    <value>multiTypeFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_NUMBERFUNC" xml:space="preserve">
+    <value>numberFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_OADTFUNCTIONS" xml:space="preserve">
+    <value>One-ArgumentDateTimeFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_OANUMBERFUNC" xml:space="preserve">
+    <value>One-ArgumentNumberFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_OASTRFUNCTIONS" xml:space="preserve">
+    <value>One-ArgumentStringFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_PARAMCONFIGURATION" xml:space="preserve">
+    <value>ParaneterConfiguration</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_RESERVEDWORDS" xml:space="preserve">
+    <value>reservedWords</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_SELECTTOKENS" xml:space="preserve">
+    <value>selVariants</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_SETJOINOPERATORS" xml:space="preserve">
+    <value>setJoinOperators</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_SETOPERATORS" xml:space="preserve">
+    <value>setOperators</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_SPECIAL" xml:space="preserve">
+    <value>specialTokens</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_STRINGFUNC" xml:space="preserve">
+    <value>stringFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_STRINGPROPERTIES" xml:space="preserve">
+    <value>StringProperties</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_SYMBOLS" xml:space="preserve">
+    <value>symbols</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_TSFUNCTIONS" xml:space="preserve">
+    <value>timeStampFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="CT_URTFUNCTIONS" xml:space="preserve">
+    <value>unknownReturnTypeFunctions</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="EDIT_CheckBox" xml:space="preserve">
+    <value>Checkbox</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>Editor type</comment>
+  </data>
+  <data name="EDIT_DateInterval" xml:space="preserve">
+    <value>Date Interval</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_DateTime" xml:space="preserve">
+    <value>DateTime</value>
+    <comment>Editor type</comment>
+  </data>
+  <data name="EDIT_DateTimeInterval" xml:space="preserve">
+    <value>DateTime INterval</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_FList" xml:space="preserve">
+    <value>Float List</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Float" xml:space="preserve">
+    <value>Float</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_IList" xml:space="preserve">
+    <value>Integer List</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Int" xml:space="preserve">
+    <value>Integer</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Interval" xml:space="preserve">
+    <value>Interval</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_List" xml:space="preserve">
+    <value>List</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Logic" xml:space="preserve">
+    <value>Logic</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_MLText" xml:space="preserve">
+    <value>Multiline Text</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_None" xml:space="preserve">
+    <value>None</value>
+    <comment>Editor type</comment>
+  </data>
+  <data name="EDIT_SList" xml:space="preserve">
+    <value>String List</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_TELogic" xml:space="preserve">
+    <value>Triestate Logic</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Text" xml:space="preserve">
+    <value>Text</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="EDIT_Time" xml:space="preserve">
+    <value>Time</value>
+    <comment>Editor type</comment>
+  </data>
+  <data name="EDIT_TimeInterval" xml:space="preserve">
+    <value>Time Interval</value>
+    <comment>Editor Type</comment>
+  </data>
+  <data name="ID_CommandQueryColumn" xml:space="preserve">
+    <value>CQC</value>
+    <comment>Value Source Identifier</comment>
+  </data>
+  <data name="ID_CSDefault" xml:space="preserve">
+    <value>defaultconnection</value>
+    <comment>Standardized connection string class name for export data</comment>
+  </data>
+  <data name="ID_CSExportClass" xml:space="preserve">
+    <value>exportconnection</value>
+    <comment>Standardized connection string class name for export data</comment>
+  </data>
+  <data name="ID_CStringClass" xml:space="preserve">
+    <value>IDCONNCLASS</value>
+    <comment>Standardized parametre name for connection string class</comment>
+  </data>
+  <data name="ID_DefaultQueries" xml:space="preserve">
+    <value>DefaultQueries</value>
+  </data>
+  <data name="ID_ExtColPropertyICType" xml:space="preserve">
+    <value>InteractiveColumnType</value>
+  </data>
+  <data name="ID_GroupCode" xml:space="preserve">
+    <value>IDGCODE</value>
+    <comment>Standardized parametre name for user group code</comment>
+  </data>
+  <data name="ID_ParameterName" xml:space="preserve">
+    <value>IDPARNAME</value>
+    <comment>Standardized parametre name for application parameter name</comment>
+  </data>
+  <data name="ID_ParameterPath" xml:space="preserve">
+    <value>IDPARPATH</value>
+    <comment>Standardized parametre name for application parameter structure path</comment>
+  </data>
+  <data name="ID_QueryColumn" xml:space="preserve">
+    <value>QC</value>
+    <comment>Value Source Identifier</comment>
+  </data>
+  <data name="ID_QueryCommandParameter" xml:space="preserve">
+    <value>QCP</value>
+    <comment>Value Source Identifier</comment>
+  </data>
+  <data name="ID_QueryParameter" xml:space="preserve">
+    <value>QP</value>
+    <comment>Value Source Identifier</comment>
+  </data>
+  <data name="ID_UserCode" xml:space="preserve">
+    <value>IDUCODE</value>
+    <comment>Standardized parametre name for user code</comment>
+  </data>
+  <data name="loginquery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginquery.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="OBJTYPE_TABLE" xml:space="preserve">
+    <value>Table</value>
+    <comment>Standard database object type</comment>
+  </data>
+  <data name="OBJTYPE_VIEW" xml:space="preserve">
+    <value>View</value>
+    <comment>Standard database object type</comment>
+  </data>
+  <data name="parameters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\parameters.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="POST_ConnecionQuery" xml:space="preserve">
+    <value>_CONNQ</value>
+    <comment>Postfix qualifier (connection strings query)</comment>
+  </data>
+  <data name="POST_ParameterQuery" xml:space="preserve">
+    <value>_PARAMQ</value>
+    <comment>Postfix qualifier (application parameters query)</comment>
+  </data>
+  <data name="PRE_APP" xml:space="preserve">
+    <value>APP_</value>
+    <comment>Resource prefix (application settings)</comment>
+  </data>
+  <data name="PRE_DESCR" xml:space="preserve">
+    <value>DESCR_</value>
+    <comment>REsource prefix (descriptions)</comment>
+  </data>
+  <data name="PRE_ENUM" xml:space="preserve">
+    <value>ENUM_</value>
+    <comment>Resource prefix (enum members)</comment>
+  </data>
+  <data name="PRE_NAME" xml:space="preserve">
+    <value>NAME_</value>
+    <comment>Resource prefix (names)</comment>
+  </data>
+  <data name="SBSTR_CONN" xml:space="preserve">
+    <value>connection</value>
+    <comment>Custom connection data string builder item name (connection string name)</comment>
+  </data>
+  <data name="SBSTR_CONNS" xml:space="preserve">
+    <value>connections</value>
+    <comment>Custom object ids string builder item name (Connection strings query)</comment>
+  </data>
+  <data name="SBSTR_FILE" xml:space="preserve">
+    <value>file</value>
+    <comment>Custom connection data string builder item name (object file name)</comment>
+  </data>
+  <data name="SBSTR_LOGIN" xml:space="preserve">
+    <value>login</value>
+    <comment>Custom object ids string builder item name (Groups and users query)</comment>
+  </data>
+  <data name="SBSTR_PARAM" xml:space="preserve">
+    <value>parameters</value>
+    <comment>Custom object ids string builder item name (parameters and users query)</comment>
+  </data>
+  <data name="SBSTR_RESX" xml:space="preserve">
+    <value>resource</value>
+    <comment>Custom connection data string builder item name (resource name)</comment>
+  </data>
+  <data name="SBSTR_SER" xml:space="preserve">
+    <value>serializer</value>
+    <comment>Custom connection data string builder item name (serializer type name)</comment>
+  </data>
+  <data name="SBSTR_TYPE" xml:space="preserve">
+    <value>type</value>
+    <comment>Custom connection data string builder item name (object datatype name)</comment>
+  </data>
+  <data name="SBSTR_XML" xml:space="preserve">
+    <value>xml</value>
+    <comment>Custom object ids string builder item name (XML objects query)</comment>
+  </data>
+  <data name="selxmlobjects" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\selxmlobjects.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="TK_BINARYARRAY" xml:space="preserve">
+    <value>binaryArray</value>
+    <comment>Token</comment>
+  </data>
+  <data name="TK_DECNUMBERS" xml:space="preserve">
+    <value>decimalNumber</value>
+    <comment>Token</comment>
+  </data>
+  <data name="UID_BooleanParamEditor" xml:space="preserve">
+    <value>6A00CE81-6727-4323-90D9-DE242B2A91B2</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_ComboBoxEditableParamEditor" xml:space="preserve">
+    <value>1649A84F-4AAF-4332-81E3-C423D40A8427</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_ComboBoxParamEditor" xml:space="preserve">
+    <value>77D4B3DC-83F4-445C-9E9A-833646DF5CE9</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_DBProviderList" xml:space="preserve">
+    <value>90CF0196-0C68-4671-8985-DABADA07F2E0</value>
+    <comment>Value List Provider</comment>
+  </data>
+  <data name="UID_DTPDateandTimeEditor" xml:space="preserve">
+    <value>020B34E2-36FA-4EF1-B9E8-2375DF0C3C3D</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_DTPDateEditor" xml:space="preserve">
+    <value>AC805510-7238-4373-B11B-2E9FCB9EB053</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_EmailParameterEditor" xml:space="preserve">
+    <value>B0ACF2F6-ACD7-49A9-8973-2A44E45D7CD1</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_GUIDGenerator" xml:space="preserve">
+    <value>07798652-CF66-4653-BBEE-B604705052B8</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_ModalFileParameterEditor" xml:space="preserve">
+    <value>86E52F57-621D-4C24-A409-B2B1069ED09D</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_ModalPathParameterEditor" xml:space="preserve">
+    <value>1801C55C-EB0F-4520-81D0-5E360B1C2FBE</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_MultiValuedParameterEditor" xml:space="preserve">
+    <value>528DF98F-5030-4C34-B483-FB370841FA63</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="UID_SimpleTextParamEditor" xml:space="preserve">
+    <value>76786711-BD59-42E1-BBCA-9BCB263EC791</value>
+    <comment>Parameter editor type UID</comment>
+  </data>
+  <data name="CATEGORY_ASSISTANT" xml:space="preserve">
+    <value>User Assistant</value>
+  </data>
+  <data name="CT_LOGICPSEUDOOPERATORS" xml:space="preserve">
+    <value>LogicPseudoOperators</value>
+    <comment>Token set</comment>
+  </data>
+  <data name="EDIT_Enum" xml:space="preserve">
+    <value>EnumCB</value>
+    <comment>Editor Type</comment>
+  </data>
+</root>

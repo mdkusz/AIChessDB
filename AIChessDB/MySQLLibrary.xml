@@ -1,0 +1,2750 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>MySQLLibrary</name>
+  </assembly>
+  <members>
+    <member name="P:MySQLLibrary.DML.MySQLDataViewManager.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Element name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.DML.MySQLDataViewManager.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Element description
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.DML.MySQLDataViewManager.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Element category
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.DML.MySQLDataViewManager.Parser">
+      <summary>
+            IDataViewManager: Analizador de SQL / 
+            IDataViewManager: SQL parser
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.GetSchemas(System.Int32)">
+      <summary>
+            IDataViewManager: Enumera los esquemas disponibles en la base de datos / 
+            IDataViewManager: Enumerate the available schemas in the database
+            </summary>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+      <returns>
+            Enumerador de nombres de esquemas / 
+            Schema names enumerator
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.GetTables(System.String,System.String,System.Boolean,System.Int32)">
+      <summary>
+            IDataViewManager: Obtener información sobre tablas y vistas de la base de datos / 
+            IDataViewManager: Get information about database tables and views
+            </summary>
+      <param name="schema">
+            Nombre del esquema. Vacío = todos los esquemas / 
+            Schema name. Empty = all schemas
+            </param>
+      <param name="objname">
+            Nombre del objeto. Vacío = todos los objetos / 
+            Object name. Empty = all objects
+            </param>
+      <param name="partial">
+            Devolver objetos que contengan el nombre parcialmente / 
+            Return objects containing the name partially
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con información de los objetos: schema, name, object_type / 
+            DataTable with object information: schema, name, object_type
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.StandardizeObjectType(System.String)">
+      <summary>
+            IDataViewManager: Tipo estándar del objeto de base de datos / 
+            IDataViewManager: Database object standard type name
+            </summary>
+      <param name="objtype">
+            Tipo de objeto en la base de datos (tabla, vista, etc.) / 
+            Database object type (table, view, etc.)
+            </param>
+      <returns>
+            Texto estandarizado para identificar el tipo / 
+            Standardized text to identify the type
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.GetColumnContainerInfo(BaseClassesAndInterfaces.SQL.QueryTable,BaseClassesAndInterfaces.Interfaces.ISQLElementBuilder,System.Int32)">
+      <summary>
+            IDataViewManager: Obtiene la información de un contenedor de columnas / 
+            IDataViewManager: Get the information of a column container
+            </summary>
+      <param name="table">
+            Objeto QueryTable sin inicializar / 
+            Uninitialized QueryTable object
+            </param>
+      <param name="sqlbuilder">
+            Constructor de objetos SQL / 
+            SQL element builder
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.GetRelatedTables(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String},System.Int32)">
+      <summary>
+            IDataViewManager: Nombres de tabla relacionadas con una tabla dada / 
+            IDataViewManager: Table names related to a given table
+            </summary>
+      <param name="table">
+            Tabla principal / 
+            Main table
+            </param>
+      <param name="referenced">
+            Listar tablas a las que hace referencia la tabla principal / 
+            List tables referenced by the main table
+            </param>
+      <param name="referencing">
+            Listar tablas que referencian a la tabla principal / 
+            List tables referencing the main table
+            </param>
+      <param name="details">
+            Listar tablas de detalle / 
+            List detail tables
+            </param>
+      <param name="tables">
+            Lista de tablas excluyendo la tabla principal / 
+            Table list excluding the main table
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLDataViewManager.GetLastInsertKeyCommand(System.String,System.String)">
+      <summary>
+            IDataViewManager: Sentencia SQL para obtener el último valor insertado en una tabla / 
+            IDataViewManager: SQL sentence to get the last inserted value ina a table
+            </summary>
+      <param name="table">
+            Nombre de la tabla / 
+            Table name 
+            </param>
+      <param name="defvalue">
+            Valor por defecto del campo / 
+            Field default value
+            </param>
+      <returns>
+            Sentencia SQL para obtener el valor de la clave / 
+            SQL sentence to get the key value
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.DML.MySQLProcedureManager.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento
+            IUIIdentifier: Element name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.DML.MySQLProcedureManager.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento
+            IUIIdentifier: Element description
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLProcedureManager.GetFunction(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+            ICodeBuilder: Construye una función consultando la base de datos
+            ICodeBuilder: Build a function using the database catalog
+            </summary>
+      <param name="schema">
+            Esquema de la función
+            Function schema
+            </param>
+      <param name="fname">
+            Nombre de la función
+            Function name
+            </param>
+      <returns>
+            Objeto SLQFunction o null
+            SQLFunction object or null
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLProcedureManager.GetProcedure(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+            ICodeBuilder: Construye un procedimiento o función consultando la base de datos
+            ICodeBuilder: Build a procedure or function using the database catalog
+            </summary>
+      <param name="schema">
+            Esquema de la función
+            Function schema
+            </param>
+      <param name="pname">
+            Nombre del procedimiento o función
+            Procedure or function name
+            </param>
+      <returns>
+            Objeto QueryProcedure o null
+            QueryProcedure object or null
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLProcedureManager.Overloads(System.String)">
+      <summary>
+            ICodeBuilder: Identificadores de sobrecarga de procedimiento
+            ICodeBuilder: Overload procedure identifiers
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <returns>
+            Lista de identificadores de sobrecarga
+            Overload identifier list
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.DML.MySQLProcedureManager.GetParameters(System.String,System.String)">
+      <summary>
+            Obtiene los datos de los parámetros desde la base de datos
+            Get parameter data from database
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <param name="overload">
+            Identificador de sobrecarga
+            Overload identifier
+            </param>
+      <returns>
+            Lista ordenada de parámetros
+            Ordered parameter list
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.Interfaces.IMySQLExtendedQuery">
+      <summary>
+            Extensión de ISQLQuery de MySQL
+            MySQL extension of ISQLQuery
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.Interfaces.IMySQLExtendedQuery.RowLimitingClause">
+      <summary>
+            Cláusula límite de filas
+            Row limiting clause
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.Interfaces.IMySQLExtendedQuery.ForUpdateClause">
+      <summary>
+            Cláusula for update
+            For update clause
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.Interfaces.IMySQLExtendedQuery.IntoFileClause">
+      <summary>
+            INTO file
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.Provider">
+      <summary>
+            ISQLDatabaseConnector: Proveedor de instancias de elementos SQL / 
+            ISQLDatabaseConnector: SQL element instances provider
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.ConnectionString">
+      <summary>
+            ISQLDatabaseConnector: Cadena de conexión con la base de datos
+            ISQLDatabaseConnector: Database connection string 
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.BuildConnectionString(System.String,System.String,System.String,System.String)">
+      <summary>
+            ISQLDatabaseConnector: Contrucción de cadena de conexión / 
+            ISQLDatabaseConnector: Build connection string
+            </summary>
+      <param name="username">
+            Nombre del usuario / 
+            User name
+            </param>
+      <param name="password">
+            Contraseña de acceso / 
+            Access password
+            </param>
+      <param name="server">
+            Nombre o dirección del servidor / 
+            Server name or address
+            </param>
+      <param name="database">
+            Base de datos o esquema / 
+            Database or schema
+            </param>
+      <returns>
+            Cadena de conexión de aplicación / 
+            Applciation conenction string
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.GetConnectionStringData">
+      <summary>
+            ISQLDatabaseConnector: Get a ConnectionStringData object from current connection string
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.GetParameterValue">
+      <summary>
+            ISQLDatabaseConnector: Callback para obtener valores de parámetos de consulta
+            ISQLDatabaseConnector: Callback to get query parameter values
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.AsyncReportProgressRate">
+      <summary>
+            ISQLDatabaseConnector: Cuenta de registros cargados antes de informar de progreso en operaciones asíncronas
+            ISQLDatabaseConnector: Loaded record count before report progress in async operations
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLConnector.ElapsedTime">
+      <summary>
+            ISQLDatabaseConnector: Tiempo que ha llevado ejecutar la consulta
+            ISQLDatabaseConnector: Query execution time
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.NewConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Crear un array de conexiones
+            ISQLDatabaseConnector: Create a connection array
+            </summary>
+      <param name="count">
+            Número de conexioiones
+            Connection array size
+            </param>
+      <returns>
+            Número de conexiones realmente creadas
+            Number of connections actually created
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.OpenConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Abrir una conexión del array
+            ISQLDatabaseConnector: Open a connection from array
+            </summary>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido abrir la conexión
+            True if connection has been opened
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.OpenConnectionAsync(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Abrir una conexión del array (Versión asíncrona)
+            ISQLDatabaseConnector: Open a connection from array (Asynchronous version)
+            </summary>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido abrir la conexión
+            True if connection has been opened
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.CloseConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Cerrar una conexión del array
+            ISQLDatabaseConnector: Close a connection from array
+            </summary>
+      <param name="cn">
+            Índice de la conexión, -1 para todas
+            Connection index, -1 for all connections
+            </param>
+      <returns>
+            True si se ha podido cerrar la conexión
+            True if connection has been closed
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.BeginTransaction(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Iniciar una transacción
+            ISQLDatabaseConnector: Start a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido iniciar la transacción
+            True if transaction has been started
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.Commit(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Terminar una transacción con commit
+            ISQLDatabaseConnector: Commit a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido realizar commit
+            True if commit has been done
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.Rollback(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Terminar una transacción con rollback
+            ISQLDatabaseConnector: Commit a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido realizar rollback
+            True if rollback has been done
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.Execute(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el número de registros afectados
+            ISQLDatabaseConnector: Run and return record count
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Número de registros afectados
+            Number of affected records
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteTable(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable
+            ISQLDatabaseConnector: Run and return results as DataTable
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteTableAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,BaseClassesAndInterfaces.Interfaces.AsyncRecordLoaded,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable (versión asíncrona)
+            ISQLDatabaseConnector: Run and return results as DataTable (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="progress">
+            Delegado para informar de progreso de la carga de datos
+            Delegate to report data loading progress
+            </param>
+      <param name="tcancel">
+            Token de cancelación
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteTable(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable
+            ISQLDatabaseConnector: Run and return results as DataTable
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteTableAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,BaseClassesAndInterfaces.Interfaces.AsyncRecordLoaded,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable (versión asíncrona)
+            ISQLDatabaseConnector: Run and return results as DataTable (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="progress">
+            Delegado para informar de progreso de la carga de datos
+            Delegate to report data loading progress
+            </param>
+      <param name="tcancel">
+            Token de cancelación
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteReader(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor
+            ISQLDatabaseConnector: Run and return results as a cursor
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteReaderAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor (versión asíncrona)
+            ISQLDatabaseConnector: Run and return results as a cursor (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="tcancel">
+            Token de cancelación
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteReader(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor
+            ISQLDatabaseConnector: Run and return results as a cursor
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteReaderAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor (versión asíncrona)
+            ISQLDatabaseConnector: Run and return results as a cursor (asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="tcancel">
+            Token de cancelación
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteScalar(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta y devolver un solo valor
+            ISQLDatabaseConnector: Execute query and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteScalar(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta y devolver un solo valor
+            ISQLDatabaseConnector: Execute query and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteScalarAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta de forma asíncrona y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query asynchronously and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteScalarAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta de forma asíncrona y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query asynchronously and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteNonQuery(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML
+            ISQLDatabaseConnector: Execute a DML sentence
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteNonQueryAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML (versión asíncrona)
+            ISQLDatabaseConnector: Execute a DML sentence (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteNonQuery(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML
+            ISQLDatabaseConnector: Execute a DML sentence
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.ExecuteNonQueryAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML (versión asíncrona)
+            ISQLDatabaseConnector: Execute a DML sentence (asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.EstimateResultCount(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Estimación de la cantidad de filas que devuelve una consulta
+            ISQLDatabaseConnector: Estimating the number of rows returned by a query
+            </summary>
+      <param name="query">
+            Texto SQL de la consulta
+            SQL query source text
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Número aproximado de filas o -1 si no se puede calcular
+            The approximate number of rows or -1 if it cannot be calculated
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.EstimateResultCount(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Estimación de la cantidad de filas que devuelve una consulta
+            ISQLDatabaseConnector: Estimating the number of rows returned by a query
+            </summary>
+      <param name="query">
+            Consulta SQL
+            SQL query
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Número aproximado de filas o -1 si no se puede calcular
+            The approximate number of rows or -1 if cannot be calculated
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.CallProcedure(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Llamada a procedimiento o función
+            ISQLDatabaseConnector: Procedure / function call
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Valor de retorno y parámetros out
+            Return value and out parameters
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.CallProcedureAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Llamada a procedimiento o función (versión asíncrona)
+            ISQLDatabaseConnector: Procedure / function call (asynchronous version)
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Valor de retorno y parámetros out
+            Return value and out parameters
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.CallProcedureDataSet(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Collections.Generic.List{System.Object},System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Realiza una llamada a procedimiento o función que devuelve filas
+            ISQLDatabaseConnector: Call a procedure or function returning rows
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión
+            Connection index
+            </param>
+      <param name="outparams">
+            Valores de los parámetros OUT
+            OUT parameters values
+            </param>
+      <returns>
+            Tabla con los datos devueltos por el procedimiento
+            Procedure results DataSet
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.CallProcedureDataSetAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Collections.Generic.List{System.Object},System.Int32)">
+      <summary>
+            Realiza una llamada a procedimiento o función que devuelve filas (versión asíncrona)
+            Call a procedure or function returning rows (asynchronous version)
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión
+            Connection index
+            </param>
+      <param name="outparams">
+            Valores de los parámetros OUT
+            OUT parameters values
+            </param>
+      <returns>
+            Tabla con los datos devueltos por el procedimiento
+            Procedure results DataSet
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.GetCLOBStream(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Extraer texto de una consulta con un solo campo de tipo CLOB
+            ISQLDatabaseConnector: Extract text from a query with a single CLOB field
+            </summary>
+      <param name="query">
+            Consulta SQL
+            SQL query
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Stream para leer el texto obtenido
+            Stream to read the text content
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLConnector.GetCLOBStream(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Extraer texto de una consulta con un solo campo de tipo CLOB
+            ISQLDatabaseConnector: Extract text from a query with a single CLOB field
+            </summary>
+      <param name="query">
+            Texto de la consulta SQL
+            SQL query text
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión
+            Connection index
+            </param>
+      <returns>
+            Stream para leer el texto obtenido
+            Stream to read the text content
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.MySQLElementProvider.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLElementProvider.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.MySQLElementProvider.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLElementProvider.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.MySQLElementProvider.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLElementProvider.SQLElement(System.Type)">
+      <summary>
+            BaseElementProvider: Devolver elemento desde tipo base sin parámetros / 
+            BaseElementProvider: Get element from base type without parameters
+            </summary>
+      <param name="baseType">
+            Tipo base del elemento / 
+            Code base type
+            </param>
+      <returns>
+            Elemento construido / 
+            Built element
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLElementProvider.SQLElement(System.Type,System.Object[])">
+      <summary>
+            BaseElementProvider: Devolver elemento desde tipo base con parámetros / 
+            BaseElementProvider: Get element from base type with parameters
+            </summary>
+      <param name="baseType">
+            Tipo base del elemento / 
+            Code base type
+            </param>
+      <param name="parameters">
+            Array de parámetros para construir el elemento / 
+            Parameter array to build the element
+            </param>
+      <returns>
+            Elemento construido / 
+            Built element
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.MySQLElementProvider.SQLElementType(System.String)">
+      <summary>
+            BaseElementProvider: Tipo de un elemento SQL a partir de su nombre / 
+            BaseElementProvider: SQL element type from name
+            </summary>
+      <param name="typeName">
+            Nombre del tipo / 
+            Type name
+            </param>
+      <returns>
+            Tipo que corresponde al nombre / 
+            Type corresponding to the name
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.ObjectProvider">
+      <summary>
+            Factoría de objetos MySQL
+            MySQL object factory
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.Parser">
+      <summary>
+            Parser SQL singleton / 
+            Singleton SQL parser
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.RDBMSName">
+      <summary>
+            IDatabaseDependencyProvider: Nombre del sistema de base de datos / 
+            IDatabaseDependencyProvider: Database system name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.ObjectProvider.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.ObjectProvider.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.ObjectProvider.AllResources">
+      <summary>
+            IDependencyProvider: Repositorio central de recursos incrustados / 
+            IDependencyProvider: Central repository of embedded resources
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.ObjectProvider.QueryClassOrInterface(System.String)">
+      <summary>
+            IDependencyProvider: Probar si un interfaz o clase está soportado / 
+            IDependencyProvider: Check if a given class or interface is supported
+            </summary>
+      <param type="services">
+            Nombres de tipo separados por punto y coma / 
+            Type names separated by semicolon
+            </param>
+      <returns>
+            True si es posible instanciar objetos de alguno de los tipos / 
+            True if can instantiante objets of at least one of the given types
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.ObjectProvider.GetObjects(System.String,System.Object)">
+      <summary>
+            IDependencyProvider: Proporciona todas las instancias de los tipos o interfaces solicitados / 
+            IDependencyProvider: Get all the instances of all the rquested types or interfaces
+            </summary>
+      <param type="services">
+            Lista de nombres de tipo separada por punto y coma / 
+            Semicolon separated type type list
+            </param>
+      <param type="filter">
+            Objeto que contiene un filtro para seleccionar elementos / 
+            Object containing a filter to select elements
+            </param>
+      <returns>
+            Enumeración de objetos que implementan los tipos, encapsulados como IUIIdentifier / 
+            Enumeration of objects implementing the types as IUIIdentifier objects
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLDataType">
+      <summary>
+            Tipo de datos de MySQL
+            MySQL data type
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLDataType.AllowParameters">
+      <summary>
+            La declaración del tipo admite parámetros / 
+            The type declaration allows parameters
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLDataType.Unsigned">
+      <summary>
+            Atributo unsigned
+            Unsigned attribute
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLDataType.ZeroFill">
+      <summary>
+            Atributo zerofill
+            Zerofill attribute
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLDataType.DataType">
+      <summary>
+            Tipo de datos equivalente
+            Equivalent data type
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLDataType.ProcessAdditionalParameter(System.String)">
+      <summary>
+            Posibles parámetros adicionales del tipo de datos
+            Possible additional parameters for the data type
+            </summary>
+      <param name="token">
+            Token a comprobar
+            Token to check
+            </param>
+      <returns>
+            True si es un parámetro adicional
+            True if it as an additional parameter
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLDataType.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Declaración del tipo
+            SQLElement: Type declaration
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLDataType.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos
+            Element builder
+            </param>
+      <returns>
+            Copy of the element
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLDataType.Type2NativeDefault(System.Type)">
+      <summary>
+            Tipo de datos por defecto en base de datos
+            Database default data type
+            </summary>
+      <param name="type">
+            Tipo de datos en la aplicación
+            Framework data type
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLDataType.SetDefaultSize">
+      <summary>
+            Establece una longitud por defecto para el tipo de datos
+            Set a default length for the datatype
+            </summary>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLHint">
+      <summary>
+            Implementa hints de consulta MySQL
+            MySQL query hints
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLHint.HintType">
+      <summary>
+            Tipo de hint (caracteres iniciales)
+            Hint type (initial characters)
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLHint.Hint">
+      <summary>
+            Texto del hint
+            Hint text
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLHint.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto del hint en la sentencia SQL
+            SQLElement: hint text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLHint.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos
+            Element builder
+            </param>
+      <returns>
+            Copy of the element
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLHint.Equals(BaseClassesAndInterfaces.SQL.SQLElement)">
+      <summary>
+            IEquatable: Comprueba si el elemento es igual a otro
+            IEquatable: Check if this elemento is identical to another one
+            </summary>
+      <param name="other">
+            Elemento a comparar
+            Code to comapre
+            </param>
+      <returns>
+            Siempre false
+            Always false
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLLogicOperator">
+      <summary>
+            Operadores lógicos de MySQL
+            MySQL logic operators
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLLogicOperator.Operator">
+      <summary>
+            Operador genérico
+            Generic operator
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLLogicOperator.OperatorName">
+      <summary>
+            Nombre SQL del operador
+            Operator SQL name
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.OperatorsForType(BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,BaseClassesAndInterfaces.Interfaces.ISQLElementProvider,System.String)">
+      <summary>
+            IOperatorProvider: Lista de operadores que se pueden usar para un elemnento con tipo
+            IOperatorProvider: Typed element allowable operators
+            </summary>
+      <param name="element">
+            Elemento con tipo
+            Typed element
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL
+            SQL element builder
+            </param>
+      <returns>
+            Lista de operadores compatibles con el tipo del elemento
+            Compatible operator list
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLLogicOperator.OperatorIdList">
+      <summary>
+            Todos los identificadores de interfaz de usuario de operadores
+            All user interface operator identifiers
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.EditorTypeFor(BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,GlobalCommonEntities.Interfaces.IUIIdentifier)">
+      <summary>
+            IOperatorProvider: Identificador del tipo de editor necesario para el operador
+            IOperatorProvider: Operator editor type identifier
+            </summary>
+      <param name="element">
+            Elemento al que aplicar el operador
+            Code to which apply the operator
+            </param>
+      <param name="op">
+            Operador de filtro
+            Filter operator
+            </param>
+      <returns>
+            Identificador de tipo de editor, según definido por la aplicación
+            Editor type identifier, as defined in the appliaction
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLLogicOperator.OperatorUIName">
+      <summary>
+            Nombre del operador en la interfaz de usuario
+            Operator name in user interface
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.BuildExpression(BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,System.Collections.Generic.List{System.Object},BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            IFilterExpressionBuilder: Construir una expresión para este operador / 
+            IFilterExpressionBuilder: Build and expression for this operator
+            </summary>
+      <param name="eleft">
+            Campo de consulta / 
+            Query field
+            </param>
+      <param name="args">
+            Argumentos para el operador / 
+            Operator arguments
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL element builder
+            </param>
+      <returns>
+            Expresión de filtro validada / 
+            Validated filter expression 
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.ExtractOperator(BaseClassesAndInterfaces.UserInterface.UIFilterExpression,BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            IFilterExpressionBuilder: Extrae el operador de una expresión de filtro / 
+            IFilterExpressionBuilder: Extract the operator from a filter expression
+            </summary>
+      <param name="expr">
+            Expresión de filtro / 
+            Filter expression
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL element builder
+            </param>
+      <returns>
+            Operador lógico de filtro / 
+            Filter logic operator
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.ValidateFilterArguments(BaseClassesAndInterfaces.SQL.SQLExpression,BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,System.Collections.Generic.List{System.Object},BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            Valida y añade argumentos a una expresión de filtro
+            Validate and add arguments to a filter expression
+            </summary>
+      <param name="expr">
+            Expresión de filtro
+            Filter expression
+            </param>
+      <param name="eleft">
+            Elemento de filtro
+            Filter element
+            </param>
+      <param name="args">
+            Argumentos a validar
+            Arguments to validate
+            </param>
+      <param name="provider">
+            Construcitor de elementos SQL
+            SQL element builder
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLLogicOperator.ExtractArguments(BaseClassesAndInterfaces.SQL.SQLExpression,System.String,System.Int32,System.Collections.Generic.List{System.Object})">
+      <summary>
+            Extrae los argumentos de una SQLExpresion
+            Extract arguments from a SQLExpression
+            </summary>
+      <param name="expr">
+            Expresión SQL de filtro
+            SQL filter expression
+            </param>
+      <param name="opname">
+            Nombre del operador
+            Operator name
+            </param>
+      <param name="argindex">
+            Índice del primer argumento
+            First argument index
+            </param>
+      <param name="args">
+            Lista de argumentos
+            Argument list
+            </param>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLQuery">
+      <summary>
+            Implementación de la clase ISOQuery para MySQL / 
+            MySQL implementation of ISOQuery class
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.Hint">
+      <summary>
+            Hint de la consulta / 
+            Query hint
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.IntoClause">
+      <summary>
+            SELECT ... INTO ...
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.GroupByRollup">
+      <summary>
+            Group by .... with rollup
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.RowLimitingClause">
+      <summary>
+            IMySQLExtendedQuery: Cláusula límite de filas / 
+            IMySQLExtendedQuery: Row limiting clause
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.ForUpdateClause">
+      <summary>
+            IMySQLExtendedQuery: Cláusula for update / 
+            IMySQLExtendedQuery: For update clause
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.IntoFileClause">
+      <summary>
+            IMySQLExtendedQuery: SELECT ... INTO file
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.Identifier">
+      <summary>
+            SQLElement: Identificador del elemento en la consulta / 
+            SQLElement: Element identifier in the query
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetSampleData(System.String,System.String,System.Int32)">
+      <summary>
+            IDataImportCore: Conjunto de datos de muestra / 
+            IDataImportCore: Sample data set
+            </summary>
+      <param name="source">
+            Identificador de la fuente de datos (por ejemplo ruta de archivo) / 
+            Data source identifier (i.e. a file path)
+            </param>
+      <param name="sourceoption">
+            Nombre de una de las opciones para fuentes múltiples de datos / 
+            Option name for multiple data sources
+            </param>
+      <param name="rows">
+            Número de filas a devolver / 
+            Results data row max count
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.BuildExpression(System.String@,System.Collections.Generic.List{System.String})">
+      <summary>
+            ISQLElementBuilder: Construcción de una expresión SQL / 
+            ISQLElementBuilder: SQL expression building
+            </summary>
+      <param name="code">
+            Código fuente SQL / 
+            SQL source code
+            </param>
+      <param name="stopwords">
+            Tokens de parada / 
+            Parsing stop tokens
+            </param>
+      <returns>
+            SQLElement que representa la expresión compilada / 
+            SQLElement representing the compiled expression
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.Initialize(System.String)">
+      <summary>
+            ISQLQuery: Inicialización de la consulta / 
+            ISQLQuery: Query initialization
+            </summary>
+      <param name="alias">
+            Alias de la consulta / 
+            Query alias
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetSelectList(System.Collections.Generic.List{System.String},System.Int32@,System.Boolean)">
+      <summary>
+            Construye la cláusula SELECT / 
+            Build SELECT clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFormattedSelectList(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            Construye la cláusula SELECT / 
+            Build SELECT clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFromClause(System.Collections.Generic.List{System.String},System.Int32@,System.Boolean)">
+      <summary>
+            Construye la cláusula FROM / 
+            Build FROM clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFormattedFromClause(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            Construye la cláusula FROM / 
+            Build FROM clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetGroupByClause(System.Collections.Generic.List{System.String},System.Int32@,System.Boolean)">
+      <summary>
+            Construye la cláusula GROUP BY / 
+            Build GROUP BY clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFormattedGroupByClause(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            Construye la cláusula GROUP BY / 
+            Build GROUP BY clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto de la sentencia SQL o de alguna de sus partes / 
+            SQLElement: Code of the SQL sentence or one of its parts
+            </summary>
+      <param name="scope">
+            Ámbito del texto a generar dentro de la sentencia / 
+            Scope in the sentence of the text to generate
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Texto SQL generado / 
+            SQL generated text
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL / 
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuery.ParameterPrefix">
+      <summary>
+            ISQLQuery: Prefijo de parámetro de consulta / 
+            ISQLQuery: Query parameter prefix
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.LiteralIdentifier(System.String,System.String@)">
+      <summary>
+            Identifica y conbstruye un identificador literal / 
+            Identifies and build a literal identifier
+            </summary>
+      <param name="token">
+            Símbolo inicial / 
+            Initial symbol
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            SQL sentence text
+            </param>
+      <returns>
+            Identificador o null / 
+            Identifier or null
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.LiteralDelimiter(System.String)">
+      <summary>
+            Identifica caracteres delimitadores / 
+            Identify delimiter characters
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <returns>
+            True si el token es un delimitador de literales / 
+            True if token is a literal delimiter
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.TryLiteralString(System.String@,System.String@,System.String@,System.Boolean)">
+      <summary>
+            ISQLElementBuilder: Intenta construir una cadena de texto o produce una excepción / 
+            ISQLElementBuilder: Try to build a literal string or throws an exception
+            </summary>
+      <param name="token">
+            Token actual y final / 
+            Current and final token
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token final / 
+            Token list name containing the final token
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="throwex">
+            Lanzar excepción si no es un literal / 
+            Throw exception if it is not a literal string
+            </param>
+      <returns>
+            Objeto de cadena de texto / 
+            Code string object
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.ValidColumnName(System.String)">
+      <summary>
+            Comprueba validez de nombre de columna / 
+            Validates column name
+            </summary>
+      <param name="columnName">
+            Nombre de columna / 
+            Column name
+            </param>
+      <returns>
+            True si el nombre es válido / 
+            True if the name is valid
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.IsTokenValidForAlias(System.String)">
+      <summary>
+            Valida un token que pertenece a un grupo de tokens como alias / 
+            Valdate a token that belongs to a token group as alias
+            </summary>
+      <param name="token">
+            Token a validar / 
+            Token to validate
+            </param>
+      <returns>
+            True si el token es un alias válido / 
+            True if token is a valid alias
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SolveAmbiguity(System.String,System.String,BaseClassesAndInterfaces.SQL.SQLElement)">
+      <summary>
+            Resolver el conjunto de tokens de un token ambiguo / 
+            Solve token set of an ambiguous token
+            </summary>
+      <param name="token">
+            Token a comprobar / 
+            Token to check
+            </param>
+      <param name="sql">
+            Sentencia SQL que se está analizando / 
+            SQL Senence beign parsed
+            </param>
+      <param name="wisparsing">
+            Elemento SQL que se está analizando / 
+            SQL Code which is being parsed
+            </param>
+      <returns>
+            Nombre del conjunto de tokens al que corresponde / 
+            Corresponding Token set name
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseFunction(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLFunction@)">
+      <summary>
+            Procesa una llamada a función SQL no estándar / 
+            Process a non-standard SQL function call
+            </summary>
+      <param name="schema">
+            Esquema de la función / 
+            Function schema
+            </param>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="parenthesis">
+            Indica si se ha leído ya el paréntesis de apertura / 
+            Indicates if open parenthesis is alredy read
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="func">
+            SQLFunction resultante / 
+            Resulting SQLFunction
+            </param>
+      <returns>
+            Siguiente token o vacío / 
+            Next token or empty or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseSelectToken(System.String,System.String@,System.String@)">
+      <summary>
+            Procesa un token select no estándar. Implementar en la clase derivada si es necesario / 
+            Process a non-standard select token. Implement in the derived class if necessary
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseReservedWord(System.String,System.String@,System.String@,System.Boolean@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Procesa una palabra reservada SQL no estándar / 
+            Process a non-standard SQL reserved word
+            </summary>
+      <param name="token">
+            Palabra reservada / 
+            Reserved word
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece la palabra reservada / 
+            Token list name containing the reserved word
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="expr">
+            Expresión a la que añadir el símbolo / 
+            Expression to which add the symbol
+            </param>
+      <param name="tryalias">
+            El resultado puede tener alias / 
+            The result can have alias
+            </param>
+      <param name="alias">
+            Alias del nuevo elemento / 
+            New element alias
+            </param>
+      <returns>
+            Siguiente token o vacío / 
+            Next token or empty or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseSymbol(System.String,System.String@,System.String@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Procesa un símbolo SQL no estándar / 
+            Process a non-standard SQL symbol
+            </summary>
+      <param name="token">
+            Símbolo / 
+            Simbol
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el símbolo, o vacío / 
+            Token list name containing the symbol, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="alias">
+            Alias del elemento generado / 
+            Built element alias
+            </param>
+      <param name="expr">
+            Expresión a la que añadir el símbolo / 
+            Expression to which add the symbol
+            </param>
+      <returns>
+            Siguiente token o vacío / 
+            Next token or empty or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseQueryClause(System.String,System.String@,System.Boolean@)">
+      <summary>
+            Analizar cláusulas no estándar / 
+            Parse non-standard clauses
+            </summary>
+      <param name="token">
+            Token inicial encontrado por una instancia superior o vacío / 
+            Starting token found by a higher instance or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            </param>
+      <param name="exit">
+            Indica si se debe terminar el análisis de la consulta
+            Indicator to stop parsing the query 
+            </param>
+      <returns>
+            Token final o vacío / 
+            Final token or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.ParseRowLimitingClause(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Cláusula de límite de resultados / 
+            Limiting results clause
+            </summary>
+      <param name="token">
+            Token inicial encontrado por una instancia superior o vacío / 
+            Starting token found by a higher instance or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            </param>
+      <param name="expr">
+            Expresión resultante
+            Resulting expression
+            </param>
+      <returns>
+            Token final o vacío / 
+            Final token or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseFromElement(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLFromElement@)">
+      <summary>
+            Procesa elementos no standard de la cláusula from / 
+            Process from clause non-standard elements
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="telement">
+            Objeto genérico en el que se devolverá el elemento resultante / 
+            Generic object to return the resulting element
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetJSONColumns(BaseClassesAndInterfaces.SQL.SQLElementList,BaseClassesAndInterfaces.SQL.Table)">
+      <summary>
+            Extraer recursivamente las columnas de JSON_TABLE desde la lista de columnas / 
+            Extract recursively the JSON_TABLE columns from the column list
+            </summary>
+      <param name="plist">
+            Lista de columnas / 
+            Column list
+            </param>
+      <param name="table">
+            Tabla para añadir las columnas / 
+            Table to add the columns
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.ParseMerge(System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa comandos merge / 
+            Process merge commands
+            </summary>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión resultante / 
+            Resulting container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseDelete(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento delete no estándar. / 
+            Process a non-standard delete element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseUpdate(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento update no estándar. / 
+            Process a non-standard update element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SpecialParseInsert(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento insert no estándar. / 
+            Process a non-standard insert element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFunctionDatatype(System.String,System.Type@,System.String@,System.Boolean@)">
+      <summary>
+            Establece el tipo de datos de una función / 
+            Set function datatype
+            </summary>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="datatype">
+            Tipo de datos en la aplicación / 
+            Application function data type
+            </param>
+      <param name="nativetype">
+            Tipo de datos en la base de datos / 
+            Database function data type
+            </param>
+      <param name="aggregate">
+            Indica si la función es de agregación / 
+            Indicates if the function is an aggregation one
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetAggregateReturnType(System.String,System.Type@)">
+      <summary>
+            Tipo de retorno de una función de agregación / 
+            Return type for an aggregation function
+            </summary>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="atype">
+            Tipo de datos administrado / 
+            Managed data type
+            </param>
+      <returns>
+            Tipo nativo de datos / 
+            Native data type
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.GetFunctionReturnTypeFromParameters(BaseClassesAndInterfaces.SQL.SQLFunction)">
+      <summary>
+            Obtiene el valor de retorno de una función a partir de sus parámetros / 
+            Gets function return value datatype from parameters
+            </summary>
+      <param name="func">
+            Función ya construida / 
+            Built function
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.SetDefaultSchema">
+      <summary>
+            Establece el esquema por defecto para las tablas / 
+            Set defualt schema for tables
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuery.OnDeserialized(BaseClassesAndInterfaces.Interfaces.ISQLQuery)">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de deserializar / 
+            ISerializableElement: Callback to perform post-deserialization tasks
+            </summary>
+      <param name="parent">
+            Consulta principal / 
+            Main query
+            </param>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLQueryParser">
+      <summary>
+            Separador de tokens MySQL / 
+            MySQL token provider
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.ParameterPrefix">
+      <summary>
+            ISQLParser: Prefijo de los parámetros en las sentencias SQL o DML / 
+            ISQLParser: Parameter prefix in DML or SQL sentences
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.Connector">
+      <summary>
+            ISQLParser: Conexión con la base de datos / 
+            ISQLParser: Database connection
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.TranslateSymbol(System.String,System.String@)">
+      <summary>
+            Traduce símbolos usados de manera diferente en Sql Server / 
+            Translate symbols differently used in Sql Server
+            </summary>
+      <param name="symbol">
+            Símbolo a traducir / 
+            Symbol to translate
+            </param>
+      <param name="reftoken">
+            Devuelve el nombre de la lista de tokens a la que pertenece el token encontrado.Vacío si no se trata de un token / 
+            Returns the name of the token list where the token is located. Empty if there is not a token
+            </param>
+      <returns>
+            Símbolo traducido / 
+            Translated symbol
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.ProcessCodeText(System.Collections.Generic.List{System.String})">
+      <summary>
+            ISQLParser: Procesar una sentencia sql dividida en varias líneas / 
+            ISQLParser: Process a sentence divided in some lines
+            </summary>
+      <param name="lines">
+            Lista de líneas / 
+            Line list
+            </param>
+      <returns>
+            Una sola cadena de texto con la sentencia SQL / 
+            A single line with the SQL sentence
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.RawString(System.String)">
+      <summary>
+            ISQLParser: Quita los delimitadores de una cadena de texto / 
+            ISQLParser: Remove delimiters from a text string
+            </summary>
+      <param name="s">
+            Cadena de texto con o sin delimitadores / 
+            Text string with or wthout delimiters
+            </param>
+      <returns>
+            Texto de la cadena / 
+            String text
+            </returns>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.extraTypes">
+      <summary>
+            ISQLParser: Tipos extra para arrays y listas genéricas / 
+            ISQLParser: Extra types for generic arrays and lists
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryParser.DataTypes">
+      <summary>
+            ISQLParser: Tipos de datos disponibles / 
+            ISQLParser: Available DataTypes
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryParser.InitializeParser">
+      <summary>
+            Inicialización del parser extra de Oracle / 
+            Oracle extra parser initialization
+            </summary>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLQuerySet">
+      <summary>
+            Conjunto de consultas enlazadas por operadores de union en MySQL
+            MySQL set of queries joined with union operators
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuerySet.RowLimitingClause">
+      <summary>
+            IMySQLExtendedQuery: Cláusula límite de filas
+            IMySQLExtendedQuery: Row limiting clause
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuerySet.ForUpdateClause">
+      <summary>
+            IMySQLExtendedQuery: Cláusula for update, no usado en este elemento
+            IMySQLExtendedQuery: For update clause, not used in this element
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuerySet.IntoFileClause">
+      <summary>
+            IMySQLExtendedQuery: SELECT ... INTO file
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQuerySet.Identifier">
+      <summary>
+            SQLElement: Identificador del elemento en la consulta
+            SQLElement: Element identifier in the query
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.GetSampleData(System.String,System.String,System.Int32)">
+      <summary>
+            IDataImportCore: Conjunto de datos de muestra / 
+            IDataImportCore: Sample data set
+            </summary>
+      <param name="source">
+            Identificador de la fuente de datos (por ejemplo ruta de archivo) / 
+            Data source identifier (i.e. a file path)
+            </param>
+      <param name="sourceoption">
+            Nombre de una de las opciones para fuentes múltiples de datos / 
+            Option name for multiple data sources
+            </param>
+      <param name="rows">
+            Número de filas a devolver / 
+            Results data row max count
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.Initialize(System.String)">
+      <summary>
+            ISQLQuery: Inicialización de la consulta / 
+            ISQLQuery: Query initialization
+            </summary>
+      <param name="alias">
+            Alias de la consulta / 
+            Query alias
+            </param>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.ParseQuery(System.String@,System.String@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLQuery,BaseClassesAndInterfaces.Serialization.SerializableQueryConfiguration,System.String)">
+      <summary>
+            ISQLQuery: Construye un objeto SQLElement a partir de una sentencia SQL en formato texto
+            ISQLQuery: Builds a SQLElement object from a SQL sentence in text format
+            </summary>
+      <param name="token">
+            Entrada: token actual, Salida: siguiente token
+            Input: current token, Output: next token
+            </param>
+      <param name="tokenset">
+            Entrada: conjunto de tokens actual, Salida: conjunto de tokens del siguiente token
+            Input: current token set, Output: next token tokenset
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL
+            SQL sentence text
+            </param>
+      <param name="parent">
+            Consulta de nivel superior
+            High level parent query
+            </param>
+      <param name="cfg">
+            Configuración de consulta
+            Query configuration
+            </param>
+      <param name="alias">
+            Alias de la consulta
+            Query alias
+            </param>
+      <returns>
+            Token final o vacío
+            Final token or empty
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto del parámetro dentro de una sentencia SQL
+            SQLElement: Parameter text into an SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos
+            Element builder
+            </param>
+      <returns>
+            Copy of the element
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQuerySet.OnDeserialized(BaseClassesAndInterfaces.Interfaces.ISQLQuery)">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de deserializar
+            ISerializableElement: Callback to perform post-deserialization tasks
+            </summary>
+      <param name="parent">
+            Consulta principal
+            Main query
+            </param>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLQueryTable">
+      <summary>
+            Tabla de consulta MySQL
+            MySQL query table
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryTable.Hints">
+      <summary>
+            Hints de tabla
+            Table hints
+            </summary>
+    </member>
+    <member name="P:MySQLLibrary.SQL.MySQLQueryTable.Parameters">
+      <summary>
+            Parámetros (JSON_TABLE)
+            UpdateParameters (JSON_TABLE)
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryTable.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto para construir la sentencia SQL
+            SQLElement: Code to build the SQL sentence
+            </summary>
+      <param name="scope">
+            Ámbito dentro de la sentencia SQL para formatear el resultado
+            Scope in the SQL sentence to format the result
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Texto del elemento
+            Elemnent text
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryTable.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLQueryTable.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos
+            Element builder
+            </param>
+      <returns>
+            Copy of the element
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLTable">
+      <summary>
+            Tabla o vista en una sentencia SQL / 
+            SQL sentence table or view
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLTable.DefaultDMLSentence(BaseClassesAndInterfaces.Interfaces.UpdateMode,System.Boolean,System.Collections.Generic.List{System.String})">
+      <summary>
+            IUpdatableObject: Código fuente por defecto de la sentencia DML / 
+            IUpdatableObject: Default DML sentence code
+            </summary>
+      <param name="mode">
+            Tipo de comando DML / 
+            DML command type
+            </param>
+      <param name="reset">
+            Ignorar el texto actual / 
+            Ignore the current text
+            </param>
+      <param name="fieldfilter">
+            Lista de campos a incluir /
+            List of fields to include
+            </param>
+      <returns>
+            Código fuente del comando / 
+            Default command source code
+            </returns>
+    </member>
+    <member name="T:MySQLLibrary.SQL.MySQLValueOperator">
+      <summary>
+            Operadores numéricos y de texto / 
+            Numeric and string operators
+            </summary>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLValueOperator.Apply(System.Object)">
+      <summary>
+            Aplicar operador lógico unario / 
+            Apply unary logic operator
+            </summary>
+      <param name="value">
+            Valor al que aplicar el operador / 
+            ValueSet to apply the operator
+            </param>
+      <returns>
+            Resultado de la operación / 
+            Opertion result
+            </returns>
+    </member>
+    <member name="M:MySQLLibrary.SQL.MySQLValueOperator.Apply(System.Double,System.Double)">
+      <summary>
+            Aplicar operador de valor a dos números / 
+            Apply value operator to two numbers
+            </summary>
+      <param name="left">
+            Primer valor al que aplicar el operador / 
+            The first value to apply the operator
+            </param>
+      <param name="right">
+            Segundo valor al que aplicar el operador / 
+            The second value to apply the operator
+            </param>
+      <returns>
+            Resultado de la operación / 
+            Opertion result
+            </returns>
+    </member>
+  </members>
+</doc>

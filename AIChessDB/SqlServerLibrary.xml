@@ -1,0 +1,3292 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>SqlServerLibrary</name>
+  </assembly>
+  <members>
+    <member name="T:SqlServerLibrary.DML.SqlServerDataViewManager">
+      <summary>
+            Gestor de información sobre vistas y tablas de Sql Server / 
+            Sql Server tables and views information manager
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerDataViewManager.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Element name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerDataViewManager.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Element description
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerDataViewManager.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Element category
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerDataViewManager.Parser">
+      <summary>
+            IDataViewManager: Analizador de SQL / 
+            IDataViewManager: SQL parser
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.GetSchemas(System.Int32)">
+      <summary>
+            IDataViewManager: Enumera los esquemas disponibles en la base de datos / 
+            IDataViewManager: Enumerate the available schemas in the database
+            </summary>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+      <returns>
+            Enumerador de nombres de esquemas / 
+            Schema names enumerator
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.GetTables(System.String,System.String,System.Boolean,System.Int32)">
+      <summary>
+            IDataViewManager: Obtener información sobre tablas y vistas de la base de datos / 
+            IDataViewManager: Get information about database tables and views
+            </summary>
+      <param name="schema">
+            Nombre del esquema. Vacío = todos los esquemas / 
+            Schema name. Empty = all schemas
+            </param>
+      <param name="objname">
+            Nombre del objeto. Vacío = todos los objetos / 
+            Object name. Empty = all objects
+            </param>
+      <param name="partial">
+            Devolver objetos que contengan el nombre parcialmente / 
+            Return objects containing the name partially
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con información de los objetos: schema, name, object_type / 
+            DataTable with object information: schema, name, object_type
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.StandardizeObjectType(System.String)">
+      <summary>
+            IDataViewManager: Tipo estándar del objeto de base de datos / 
+            IDataViewManager: Database object standard type name
+            </summary>
+      <param name="objtype">
+            Tipo de objeto en la base de datos (tabla, vista, etc.) / 
+            Database object type (table, view, etc.)
+            </param>
+      <returns>
+            Texto estandarizado para identificar el tipo / 
+            Standardized text to identify the type
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.GetColumnContainerInfo(BaseClassesAndInterfaces.SQL.QueryTable,BaseClassesAndInterfaces.Interfaces.ISQLElementBuilder,System.Int32)">
+      <summary>
+            IDataViewManager: Obtiene la información de un contenedor de columnas / 
+            IDataViewManager: Get the information of a column container
+            </summary>
+      <param name="table">
+            Objeto QueryTable sin inicializar / 
+            Uninitialized QueryTable object
+            </param>
+      <param name="sqlbuilder">
+            Constructor de objetos SQL / 
+            SQL element builder
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.GetRelatedTables(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{System.String},System.Int32)">
+      <summary>
+            IDataViewManager: Nombres de tabla relacionadas con una tabla dada / 
+            IDataViewManager: Table names related to a given table
+            </summary>
+      <param name="table">
+            Tabla principal / 
+            Main table
+            </param>
+      <param name="referenced">
+            Listar tablas a las que hace referencia la tabla principal / 
+            List tables referenced by the main table
+            </param>
+      <param name="referencing">
+            Listar tablas que referencian a la tabla principal / 
+            List tables referencing the main table
+            </param>
+      <param name="details">
+            Listar tablas de detalle / 
+            List detail tables
+            </param>
+      <param name="tables">
+            Lista de tablas excluyendo la tabla principal / 
+            Table list excluding the main table
+            </param>
+      <param name="cn">
+            Índice de al conexión / 
+            Connection index
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.GetLastInsertKeyCommand(System.String,System.String)">
+      <summary>
+            IDataViewManager: Sentencia SQL para obtener el último valor insertado en una tabla / 
+            IDataViewManager: SQL sentence to get the last inserted value ina a table
+            </summary>
+      <param name="table">
+            Nombre de la tabla / 
+            Table name 
+            </param>
+      <param name="defvalue">
+            Valor por defecto del campo / 
+            Field default value
+            </param>
+      <returns>
+            Sentencia SQL para obtener el valor de la clave / 
+            SQL sentence to get the key value
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerDataViewManager.NumberColumnName(System.String)">
+      <summary>
+            Encierra un nombre de columna numérico entre [] / 
+            Numeric column name can have square brackets
+            </summary>
+      <param name="colname">
+            Nombre de columna / 
+            Column name
+            </param>
+      <returns>
+            Nombre de columna corregido con [] / 
+            Column name corrected with []
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.DML.SqlServerProcedureManager">
+      <summary>
+            Constructor de llamadas a procedimientos y funciones / 
+            Procedure / function calls builder
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerProcedureManager.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Element name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.DML.SqlServerProcedureManager.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Element description
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerProcedureManager.GetFunction(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+            ICodeBuilder: Construye una función consultando la base de datos / 
+            ICodeBuilder: Build a function using the database catalog
+            </summary>
+      <param name="schema">
+            Esquema de la función / 
+            Function schema
+            </param>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <returns>
+            Objeto SLQFunction o null / 
+            SQLFunction object or null
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerProcedureManager.GetProcedure(System.Collections.Generic.List{System.String},System.String)">
+      <summary>
+            ICodeBuilder: Construye un procedimiento o función consultando la base de datos / 
+            ICodeBuilder: Build a procedure or function using the database catalog
+            </summary>
+      <param name="schema">
+            Esquema de la función / 
+            Function schema
+            </param>
+      <param name="pname">
+            Nombre del procedimiento o función / 
+            Procedure or function name
+            </param>
+      <returns>
+            Objeto QueryProcedure o null / 
+            QueryProcedure object or null
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerProcedureManager.Overloads(System.String)">
+      <summary>
+            ICodeBuilder: Identificadores de sobrecarga de procedimiento / 
+            ICodeBuilder: Overload procedure identifiers
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <returns>
+            Lista de identificadores de sobrecarga / 
+            Overload identifier list
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.DML.SqlServerProcedureManager.GetParameters(System.String,System.String)">
+      <summary>
+            Obtiene los datos de los parámetros desde la base de datos / 
+            Get parameter data from database
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <param name="overload">
+            Identificador de sobrecarga / 
+            Overload identifier
+            </param>
+      <returns>
+            Lista ordenada de parámetros / 
+            Ordered parameter list
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet">
+      <summary>
+            Extiende el interface ISQLQuery para Sql Server / 
+            Extends ISQLQuery interface for Sql Server
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet.ForXmlClause">
+      <summary>
+            Cláusula FOR XML / 
+            FOR XML clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet.PivotClause">
+      <summary>
+            Pivot and Unpivot
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet.RowLimitingClause">
+      <summary>
+            Cláusula OFFSET .. LIMIT / 
+            OFFSET .. LIMIT clause
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet.ProcessPivotColumns">
+      <summary>
+            Procesar columnas cláusula pivot and unpivot / 
+            Process pivot and unpivot columns
+            </summary>
+    </member>
+    <member name="T:SqlServerLibrary.ObjectProvider">
+      <summary>
+            Factoría de objetos Oracle / 
+            Oracle object factory
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.RDBMSName">
+      <summary>
+            IDatabaseDependencyProvider: Nombre del sistema de base de datos / 
+            IDatabaseDependencyProvider: Database system name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.Parser">
+      <summary>
+            Parser SQL singleton / 
+            Singleton SQL parser
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.ObjectProvider.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.ObjectProvider.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.ObjectProvider.AllResources">
+      <summary>
+            IDependencyProvider: Repositorio central de recursos incrustados / 
+            IDependencyProvider: Central repository of embedded resources
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.ObjectProvider.QueryClassOrInterface(System.String)">
+      <summary>
+            IDependencyProvider: Probar si un interfaz o clase está soportado / 
+            IDependencyProvider: Check if a given class or interface is supported
+            </summary>
+      <param type="services">
+            Nombres de tipo separados por punto y coma / 
+            Type names separated by semicolon
+            </param>
+      <returns>
+            True si es posible instanciar objetos de alguno de los tipos / 
+            True if can instantiante objets of at least one of the given types
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.ObjectProvider.GetObjects(System.String,System.Object)">
+      <summary>
+            IDependencyProvider: Proporciona todas las instancias de los tipos o interfaces solicitados / 
+            IDependencyProvider: Get all the instances of all the rquested types or interfaces
+            </summary>
+      <param type="services">
+            Lista de nombres de tipo separada por punto y coma / 
+            Semicolon separated type type list
+            </param>
+      <param type="filter">
+            Objeto que contiene un filtro para seleccionar elementos / 
+            Object containing a filter to select elements
+            </param>
+      <returns>
+            Enumeración de objetos que implementan los tipos, encapsulados como IUIIdentifier / 
+            Enumeration of objects implementing the types as IUIIdentifier objects
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.Provider">
+      <summary>
+            ISQLDatabaseConnector: Proveedor de instancias de elementos SQL / 
+            ISQLDatabaseConnector: SQL element instances provider
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.ConnectionString">
+      <summary>
+            ISQLDatabaseConnector: Cadena de conexión con la base de datos / 
+            ISQLDatabaseConnector: Database connection string 
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.BuildConnectionString(System.String,System.String,System.String,System.String)">
+      <summary>
+            ISQLDatabaseConnector: Contrucción de cadena de conexión / 
+            ISQLDatabaseConnector: Build connection string
+            </summary>
+      <param name="username">
+            Nombre del usuario / 
+            User name
+            </param>
+      <param name="password">
+            Contraseña de acceso / 
+            Access password
+            </param>
+      <param name="server">
+            Nombre o dirección del servidor / 
+            Server name or address
+            </param>
+      <param name="database">
+            Base de datos a la que conectarse / 
+            Database to connect
+            </param>
+      <returns>
+            Cadena de conexión de aplicación / 
+            Applciation conenction string
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.GetConnectionStringData">
+      <summary>
+            ISQLDatabaseConnector: Get a ConnectionStringData object from current connection string
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.GetParameterValue">
+      <summary>
+            ISQLDatabaseConnector: Callback para obtener valores de parámetos de consulta / 
+            ISQLDatabaseConnector: Callback to get query parameter values
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.AsyncReportProgressRate">
+      <summary>
+            ISQLDatabaseConnector: Cuenta de registros cargados antes de informar de progreso en operaciones asíncronas / 
+            ISQLDatabaseConnector: Loaded record count before report progress in async operations
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerConnector.ElapsedTime">
+      <summary>
+            ISQLDatabaseConnector: Tiempo que ha llevado ejecutar la consulta / 
+            ISQLDatabaseConnector: Query execution time
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.NewConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Crear un array de conexiones / 
+            ISQLDatabaseConnector: Create a connection array
+            </summary>
+      <param name="count">
+            Número de conexioiones / 
+            Connection array size
+            </param>
+      <returns>
+            Número de conexiones realmente creadas / 
+            Number of connections actually created
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.OpenConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Abrir una conexión del array / 
+            ISQLDatabaseConnector: Open a connection from array
+            </summary>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido abrir la conexión / 
+            True if connection has been opened
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.OpenConnectionAsync(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Abrir una conexión del array (Versión asíncrona) / 
+            ISQLDatabaseConnector: Open a connection from array (Asynchronous version)
+            </summary>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido abrir la conexión / 
+            True if connection has been opened
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.CloseConnection(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Cerrar una conexión del array / 
+            ISQLDatabaseConnector: Close a connection from array
+            </summary>
+      <param name="cn">
+            Índice de la conexión, -1 para todas / 
+            Connection index, -1 for all connections
+            </param>
+      <returns>
+            True si se ha podido cerrar la conexión / 
+            True if connection has been closed
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.BeginTransaction(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Iniciar una transacción / 
+            ISQLDatabaseConnector: Start a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido iniciar la transacción / 
+            True if transaction has been started
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.Commit(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Terminar una transacción con commit / 
+            ISQLDatabaseConnector: Commit a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido realizar commit / 
+            True if commit has been done
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.Rollback(System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Terminar una transacción con rollback / 
+            ISQLDatabaseConnector: Commit a transaction
+            </summary>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            True si se ha podido realizar rollback / 
+            True if rollback has been done
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.Execute(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el número de registros afectados / 
+            ISQLDatabaseConnector: Run and return record count
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Número de registros afectados / 
+            Number of affected records
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteTable(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable / 
+            ISQLDatabaseConnector: Run and return results as DataTable
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados / 
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteTableAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,BaseClassesAndInterfaces.Interfaces.AsyncRecordLoaded,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable (versión asíncrona) / 
+            ISQLDatabaseConnector: Run and return results as DataTable (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="progress">
+            Delegado para informar de progreso de la carga de datos / 
+            Delegate to report data loading progress
+            </param>
+      <param name="tcancel">
+            Token de cancelación / 
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados / 
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteTable(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable / 
+            ISQLDatabaseConnector: Run and return results as DataTable
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados / 
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteTableAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,BaseClassesAndInterfaces.Interfaces.AsyncRecordLoaded,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado como un DataTable (versión asíncrona) / 
+            ISQLDatabaseConnector: Run and return results as DataTable (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="progress">
+            Delegado para informar de progreso de la carga de datos / 
+            Delegate to report data loading progress
+            </param>
+      <param name="tcancel">
+            Token de cancelación / 
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            DataTable con los resultados / 
+            Resulting DataTable
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteReader(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor / 
+            ISQLDatabaseConnector: Run and return results as a cursor
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados / 
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteReaderAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor (versión asíncrona) / 
+            ISQLDatabaseConnector: Run and return results as a cursor (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="tcancel">
+            Token de cancelación / 
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados / 
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteReader(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor / 
+            ISQLDatabaseConnector: Run and return results as a cursor
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados / 
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteReaderAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Threading.CancellationTokenSource,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar y devolver el resultado en un cursor (versión asíncrona) / 
+            ISQLDatabaseConnector: Run and return results as a cursor (asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="tcancel">
+            Token de cancelación / 
+            Cancellation token
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            IDataReader con los resultados / 
+            IDataReader with the results
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteScalar(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteScalar(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteScalarAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta de forma asíncrona y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query asynchronously and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteScalarAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una consulta de forma asíncrona y devolver un solo valor / 
+            ISQLDatabaseConnector: Execute query asynchronously and return a single value
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor del primer campo del primer registro / 
+            First field from firs record value
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteNonQuery(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML / 
+            ISQLDatabaseConnector: Execute a DML sentence
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados / 
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteNonQueryAsync(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML (versión asíncrona) / 
+            ISQLDatabaseConnector: Execute a DML sentence (Asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados / 
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteNonQuery(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Ejecutar una sentencia DML / 
+            ISQLDatabaseConnector: Execute a DML sentence
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados / 
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.ExecuteNonQueryAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            Ejecutar una sentencia DML (versión asíncrona) / 
+            Execute a DML sentence (asynchronous version)
+            </summary>
+      <param name="query">
+            Consulta a ejecutar / 
+            Query to execute
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Cuenta de registros afectados / 
+            Affected record count
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.EstimateResultCount(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Estimación de la cantidad de filas que devuelve una consulta / 
+            ISQLDatabaseConnector: Estimating the number of rows returned by a query
+            </summary>
+      <param name="query">
+            Texto SQL de la consulta / 
+            SQL query source text
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Número aproximado de filas o -1 si no se puede calcular / 
+            The approximate number of rows or -1 if it cannot be calculated
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.EstimateResultCount(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Estimación de la cantidad de filas que devuelve una consulta / 
+            ISQLDatabaseConnector: Estimating the number of rows returned by a query
+            </summary>
+      <param name="query">
+            Consulta SQL / 
+            SQL query
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Número aproximado de filas o -1 si no se puede calcular / 
+            The approximate number of rows or -1 if cannot be calculated
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.CallProcedure(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Llamada a procedimiento o función / 
+            ISQLDatabaseConnector: Procedure / function call
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada / 
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor de retorno y parámetros out / 
+            Return value and out parameters
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.CallProcedureAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Llamada a procedimiento o función (versión asíncrona) / 
+            ISQLDatabaseConnector: Procedure / function call (asynchronous version)
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada / 
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Valor de retorno y parámetros out / 
+            Return value and out parameters
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.CallProcedureDataSet(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Collections.Generic.List{System.Object},System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Realiza una llamada a procedimiento o función que devuelve filas / 
+            ISQLDatabaseConnector: Call a procedure or function returning rows
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada / 
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <param name="outparams">
+            Valores de los parámetros OUT / 
+            OUT parameters values
+            </param>
+      <returns>
+            Tabla con los datos devueltos por el procedimiento / 
+            Procedure results DataSet
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.CallProcedureDataSetAsync(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Collections.Generic.List{System.Object},System.Int32)">
+      <summary>
+            Realiza una llamada a procedimiento o función que devuelve filas (versión asíncrona) / 
+            Call a procedure or function returning rows (asynchronous version)
+            </summary>
+      <param name="procedure">
+            Nombre del procedimiento / 
+            Procedure name
+            </param>
+      <param name="parameters">
+            Parámetros de llamada / 
+            Calling parameters
+            </param>
+      <param name="nc">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <param name="outparams">
+            Valores de los parámetros OUT / 
+            OUT parameters values
+            </param>
+      <returns>
+            Tabla con los datos devueltos por el procedimiento / 
+            Procedure results DataSet
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.GetCLOBStream(BaseClassesAndInterfaces.Interfaces.ISQLQuery,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Extraer texto de una consulta con un solo campo de tipo CLOB / 
+            ISQLDatabaseConnector: Extract text from a query with a single CLOB field
+            </summary>
+      <param name="query">
+            Consulta SQL / 
+            SQL query
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Stream para leer el texto obtenido / 
+            Stream to read the text content
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerConnector.GetCLOBStream(System.String,BaseClassesAndInterfaces.SQL.SQLParameterList,System.Int32)">
+      <summary>
+            ISQLDatabaseConnector: Extraer texto de una consulta con un solo campo de tipo CLOB / 
+            ISQLDatabaseConnector: Extract text from a query with a single CLOB field
+            </summary>
+      <param name="query">
+            Texto de la consulta SQL / 
+            SQL query text
+            </param>
+      <param name="parameters">
+            Lista de parámetros de la consulta / 
+            Query parameter list
+            </param>
+      <param name="cn">
+            Índice de la conexión / 
+            Connection index
+            </param>
+      <returns>
+            Stream para leer el texto obtenido / 
+            Stream to read the text content
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SqlServerElementProvider">
+      <summary>
+            Proveedor de elementos SQL para SQL Server / 
+            SQL element provider for SQL Server
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerElementProvider.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerElementProvider.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SqlServerElementProvider.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerElementProvider.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerElementProvider.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerElementProvider.SQLElement(System.Type)">
+      <summary>
+            BaseElementProvider: Devolver elemento desde tipo base sin parámetros / 
+            BaseElementProvider: Get element from base type without parameters
+            </summary>
+      <param name="baseType">
+            Tipo base del elemento / 
+            Code base type
+            </param>
+      <returns>
+            Elemento construido / 
+            Built element
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerElementProvider.SQLElement(System.Type,System.Object[])">
+      <summary>
+            BaseElementProvider: Devolver elemento desde tipo base con parámetros / 
+            BaseElementProvider: Get element from base type with parameters
+            </summary>
+      <param name="baseType">
+            Tipo base del elemento / 
+            Code base type
+            </param>
+      <param name="parameters">
+            Array de parámetros para construir el elemento / 
+            Parameter array to build the element
+            </param>
+      <returns>
+            Elemento construido / 
+            Built element
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SqlServerElementProvider.SQLElementType(System.String)">
+      <summary>
+            BaseElementProvider: Tipo de un elemento SQL a partir de su nombre / 
+            BaseElementProvider: SQL element type from name
+            </summary>
+      <param name="typeName">
+            Nombre del tipo / 
+            Type name
+            </param>
+      <returns>
+            Tipo que corresponde al nombre / 
+            Type corresponding to the name
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerDataType">
+      <summary>
+            Tipo de datos de SqlServer / 
+            SqlServer data type
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerDataType.AllowParameters">
+      <summary>
+            La declaración del tipo admite parámetros / 
+            The type declaration allows parameters
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerDataType.MaxSize">
+      <summary>
+            Tipo de datos declarado con longitud MAX / 
+            MAX length data type
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerDataType.DataType">
+      <summary>
+            Tipo de datos equivalente / 
+            Equivalent data type
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerDataType.ChooseTipeByPrecedence(System.Collections.Generic.List{BaseClassesAndInterfaces.Interfaces.ISQLTypedElement})">
+      <summary>
+            Selecciona un tipo de datos de una lista por precedencia / 
+            Select a data type by precedence from a list
+            </summary>
+      <param name="types">
+            Lista de nobres de tipos de datos / 
+            Data type names list
+            </param>
+      <returns>
+            Nombre del tipo de datos con mayor precedencia / 
+            Highest precedence data type name
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerDataType.ConfigureFromParameters">
+      <summary>
+            Establece la configuración del tipo desde los parámetros / 
+            Set type configuration from the parameters
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerDataType.Type2NativeDefault(System.Type)">
+      <summary>
+            Tipo de datos por defecto en base de datos / 
+            Database default data type
+            </summary>
+      <param name="type">
+            Tipo de datos en la aplicación / 
+            Framework data type
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerDataType.SetDefaultSize">
+      <summary>
+            Establece una longitud por defecto para el tipo de datos / 
+            Set a default length for the datatype
+            </summary>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerLiteralDateTime">
+      <summary>
+            Implementación Sql Server de literal de fecha y hora / 
+            Sql Server Date and time literal implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerLiteralDateTime.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto de la fecha dentro de la sentencia SQL / 
+            SQLElement: DateTime text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerLiteralNumber">
+      <summary>
+            Número literal en Sql Server / 
+            Literal number in Sql Server
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerLiteralNumber.Prefix">
+      <summary>
+            Prefijo del número / 
+            Nimber prefix
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerLiteralNumber.Number">
+      <summary>
+            Texto del número / 
+            Number text
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerLiteralNumber.MultipliedNumber(System.String)">
+      <summary>
+            Aplica el multiplicador al número / 
+            Aply multiplier to number
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerLiteralNumber.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerLogicOperator">
+      <summary>
+            Operador lógico propio de SQL Server / 
+            SQL Server logic operator
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerLogicOperator.Operator">
+      <summary>
+            Operador genérico / 
+            Generic operator
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerLogicOperator.OperatorName">
+      <summary>
+            Nombre SQL del operador / 
+            Operator SQL name
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerLogicOperator.BuildExpression(BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,System.Collections.Generic.List{System.Object},BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            IFilterExpressionBuilder: Construir una expresión para este operador / 
+            IFilterExpressionBuilder: Build and expression for this operator
+            </summary>
+      <param name="eleft">
+            Campo de consulta / 
+            Query field
+            </param>
+      <param name="args">
+            Argumentos para el operador / 
+            Operator arguments
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL element builder
+            </param>
+      <returns>
+            Expresión de filtro validada / 
+            Validated filter expression 
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerLogicOperator.ExtractOperator(BaseClassesAndInterfaces.UserInterface.UIFilterExpression,BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            IFilterExpressionBuilder: Extrae el operador de una expresión de filtro / 
+            IFilterExpressionBuilder: Extract the operator from a filter expression
+            </summary>
+      <param name="expr">
+            Expresión de filtro / 
+            Filter expression
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL element builder
+            </param>
+      <returns>
+            Operador lógico de filtro / 
+            Filter logic operator
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerOrderOperator">
+      <summary>
+            Operador de orden SQL Server / 
+            SQL Server order operator
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerOrderOperator.OperatorName">
+      <summary>
+            Nombre SLQ del operador / 
+            Operator SQL name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerOrderOperator.Active">
+      <summary>
+            Habilita o deshabilita el modificador según check box de interfaz de usuario / 
+            Enable or disable the modifier from user interface check box
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerOrderOperator.Default(System.Collections.Generic.List{BaseClassesAndInterfaces.SQL.OrderOperator},System.Int32)">
+      <summary>
+            Comprueba los modificadores con valores por defecto, para excluir del SQL final / 
+            Check modifiers with default values, so that they can be excluded from the final SQL
+            </summary>
+      <param name="allmodifiers">
+            Lista con todos los modificadores / 
+            List with all modifiers
+            </param>
+      <param name="ix">
+            Índice del modificador a comprobar / 
+            Modifier to check index
+            </param>
+      <returns>
+            True si es un modificador por defecto / 
+            True if it is a default modifier
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerOrderOperator.UIControlLabel">
+      <summary>
+            Etiqueta para mostrar en controles de configuración / 
+            Label to show in configuration controls
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerOrderOperator.OperatorsForType(BaseClassesAndInterfaces.Interfaces.ISQLTypedElement,BaseClassesAndInterfaces.Interfaces.ISQLElementProvider,System.String)">
+      <summary>
+            IOperatorProvider: Lista de operadores que se pueden usar para un elemnento con tipo / 
+            IOperatorProvider: Typed element allowable operators
+            </summary>
+      <param name="element">
+            Elemento con tipo / 
+            Typed element
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL element builder
+            </param>
+      <param name="category">
+            Categoría de los operadores / 
+            FilterOperators category
+            </param>
+      <returns>
+            Lista de operadores compatibles con el tipo del elemento / 
+            Compatible operator list
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerOrderOperator.OperatorIdList">
+      <summary>
+            Todos los identificadores de interfaz de usuario de operadores / 
+            All user interface operator identifiers
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerOrderOperator.OperatorUIName">
+      <summary>
+            Nombre del operador en la interfaz de usuario / 
+            Operator name in user interface
+            </summary>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerPivotClause">
+      <summary>
+            Cláusula PIVOT y UNPIVOT de SQL Server / 
+            SQL Server PIVOT and UNPIVOT clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerPivotClause.PivotToken">
+      <summary>
+            Token pivot / unpivot / 
+            Pivot / unpivot token
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerPivotClause.PivotElement">
+      <summary>
+            Elemento pivotado / 
+            Pivoted element
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerPivotClause.PivotForElement">
+      <summary>
+            Cláusula FOR / 
+            FOR clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerPivotClause.PivotInList">
+      <summary>
+            Lista de elementos IN / 
+            IN element list
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto de la expresión dentro de una sentencia SQL / 
+            SQLElement: Expression text in a SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            Texto formateado del elemento dentro de la sentencia SQL / 
+            Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.Equals(BaseClassesAndInterfaces.SQL.SQLElement)">
+      <summary>
+            IEquatable: Comprueba si el elemento es igual a otro / 
+            IEquatable: Check if this element is identical to another one
+            </summary>
+      <param name="other">
+            Elemento a comparar / 
+            Code to comapre
+            </param>
+      <returns>
+            true si son iguales / 
+            true if both are equal
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.Equals(BaseClassesAndInterfaces.SQL.SQLFromElement)">
+      <summary>
+            IEquatable: Comprueba si el elemento es igual a otro / 
+            IEquatable: Check if this element is identical to another one
+            </summary>
+      <param name="other">
+            Elemento a comparar / 
+            Code to comapre
+            </param>
+      <returns>
+            true si son iguales / 
+            true if both are equal
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.OnDeserialized(BaseClassesAndInterfaces.Interfaces.ISQLQuery)">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de deserializar / 
+            ISerializableElement: Callback to perform post-deserialization tasks
+            </summary>
+      <param name="parent">
+            Consulta principal / 
+            Main query
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.OnSerializing">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de serializar / 
+            ISerializableElement: Callback to perform post-serialization tasks
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerPivotClause.ProcessColumns(System.String,BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            Crea las listas de columnas nuevas y eliminadas / 
+            Create new and removed columns lists
+            </summary>
+      <param name="tablename">
+            Nombre de la tabla o consulta pivotada / 
+            Pivoted table or subquery name
+            </param>
+      <param name="provider">
+            Constructor de elementos SQL / 
+            SQL Element builder
+            </param>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerQueryParser">
+      <summary>
+            Analizador Sql Server para separara consultas en tokens / 
+            Sql Server parser to provide query tokens
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.TranslateSymbol(System.String,System.String@)">
+      <summary>
+            Traduce símbolos usados de manera diferente en Sql Server / 
+            Translate symbols differently used in Sql Server
+            </summary>
+      <param name="symbol">
+            Símbolo a traducir / 
+            Symbol to translate
+            </param>
+      <param name="reftoken">
+            Devuelve el nombre de la lista de tokens a la que pertenece el token encontrado.Vacío si no se trata de un token / 
+            Returns the name of the token list where the token is located. Empty if there is not a token
+            </param>
+      <returns>
+            Símbolo traducido / 
+            Translated symbol
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.ParameterPrefix">
+      <summary>
+            ISQLParser: Prefijo de los parámetros en las sentencias SQL o DML / 
+            ISQLParser: Parameter prefix in DML or SQL sentences
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.Connector">
+      <summary>
+            ISQLParser: Conexión con la base de datos / 
+            ISQLParser: Database connection
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.extraTypes">
+      <summary>
+            ISQLParser: Tipos extra para arrays y listas genéricas / 
+            ISQLParser: Extra types for generic arrays and lists
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.RawString(System.String)">
+      <summary>
+            ISQLParser: Quita los delimitadores de una cadena de texto / 
+            ISQLParser: Remove delimiters from a text string
+            </summary>
+      <param name="s">
+            Cadena de texto con o sin delimitadores / 
+            Text string with or wthout delimiters
+            </param>
+      <returns>
+            Texto de la cadena / 
+            String text
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.FriendlyName">
+      <summary>
+            IUIIdentifier: Nombre del elemento / 
+            IUIIdentifier: Code name
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.FriendlyDescription">
+      <summary>
+            IUIIdentifier: Descripción del elemento / 
+            IUIIdentifier: Code description
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.UICategory">
+      <summary>
+            IUIIdentifier: Categoría del elemento / 
+            IUIIdentifier: Code category
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.Implementation">
+      <summary>
+            IUIIdentifier: Implementación del objeto / 
+            IUIIdentifier: Object implementation
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.ParamImplementation(System.Object[])">
+      <summary>
+            IUIIdentifier: Implementación del objeto con parámetros / 
+            IUIIdentifier: Parameterized object implementation
+            </summary>
+      <param name="p">
+            Array de parámetros / 
+            parameter array
+            </param>
+      <returns>
+            Objeto inicializado / 
+            Initialized object
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.TryNumber(System.String,System.String@)">
+      <summary>
+            Intenta componer un número / 
+            Try to build a number
+            </summary>
+      <param name="text">
+            Texto a analizar / 
+            Code to parse
+            </param>
+      <param name="reftoken">
+            Devuelve el nombre de la lista de tokens a la que pertenece el token encontrado.Vacío si no se trata de un token / 
+            Returns the name of the token list where the token is located. Empty if there is not a token
+            </param>
+      <returns>
+            Número decimal o vacío / 
+            Decimal number or empty
+            </returns>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryParser.DataTypes">
+      <summary>
+            ISQLParser: Tipos de datos disponibles / 
+            ISQLParser: Available DataTypes
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryParser.InitializeParser">
+      <summary>
+            Inicialización del parser extra de Oracle / 
+            Oracle extra parser initialization
+            </summary>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerQuerySet">
+      <summary>
+            Implementación de SQLQuerySet para SqlServer / 
+            SqlServer implementation of SQLQuerySet
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.QueryColumns">
+      <summary>
+            Lista de columnas de la tabla / 
+            Table column collection
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.ForXmlClause">
+      <summary>
+            ISqlServerExtendedDataSet: Cláusula FOR XML / 
+            ISqlServerExtendedDataSet: FOR XML clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.PivotClause">
+      <summary>
+            ISqlServerExtendedDataSet: Pivot and Unpivot
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.RowLimitingClause">
+      <summary>
+            ISqlServerExtendedDataSet: Cláusula OFFSET .. LIMIT / 
+            ISqlServerExtendedDataSet: OFFSET .. LIMIT clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.OptionClause">
+      <summary>
+            Cláusula option / 
+            Option clause
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.GetSampleData(System.String,System.String,System.Int32)">
+      <summary>
+            IDataImportCore: Conjunto de datos de muestra / 
+            IDataImportCore: Sample data set
+            </summary>
+      <param name="source">
+            Identificador de la fuente de datos (por ejemplo ruta de archivo) / 
+            Data source identifier (i.e. a file path)
+            </param>
+      <param name="sourceoption">
+            Nombre de una de las opciones para fuentes múltiples de datos / 
+            Option name for multiple data sources
+            </param>
+      <param name="rows">
+            Número de filas a devolver / 
+            Results data row max count
+            </param>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuerySet.Identifier">
+      <summary>
+            SQLElement: Identificador del elemento en la consulta / 
+            SQLElement: Element identifier in the query
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.Initialize(System.String)">
+      <summary>
+            ISQLQuery: Inicialización de la consulta / 
+            ISQLQuery: Query initialization
+            </summary>
+      <param name="alias">
+            Alias de la consulta / 
+            Query alias
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.ParseQuery(System.String@,System.String@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLQuery,BaseClassesAndInterfaces.Serialization.SerializableQueryConfiguration,System.String)">
+      <summary>
+            ISQLQuery: Construye un objeto SQLElement a partir de una sentencia SQL en formato texto / 
+            ISQLQuery: Builds a SQLElement object from a SQL sentence in text format
+            </summary>
+      <param name="token">
+            Entrada: token actual, Salida: siguiente token / 
+            Input: current token, Output: next token
+            </param>
+      <param name="tokenset">
+            Entrada: conjunto de tokens actual, Salida: conjunto de tokens del siguiente token / 
+            Input: current token set, Output: next token tokenset
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            SQL sentence text
+            </param>
+      <param name="parent">
+            Consulta de nivel superior / 
+            High level parent query
+            </param>
+      <param name="cfg">
+            Configuración de consulta / 
+            Query configuration
+            </param>
+      <param name="alias">
+            Alias de la consulta / 
+            Query alias
+            </param>
+      <returns>
+            Token final o vacío / 
+            Final token or empty
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto del parámetro dentro de una sentencia SQL / 
+            SQLElement: Parameter text into an SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL / 
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.OnDeserialized(BaseClassesAndInterfaces.Interfaces.ISQLQuery)">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de deserializar / 
+            ISerializableElement: Callback to perform post-deserialization tasks
+            </summary>
+      <param name="parent">
+            Consulta principal / 
+            Main query
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuerySet.ProcessPivotColumns">
+      <summary>
+            ISqlServerExtendedDataSet: Procesar columnas cláusula pivot and unpivot / 
+            ISqlServerExtendedDataSet: Process pivot and unpivot columns
+            </summary>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerRelationalOperator">
+      <summary>
+            Operadores relacionales que devuelven tablas / 
+            Relational operators returning tables
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerRelationalOperator.Parameters">
+      <summary>
+            Lista de parámetros / 
+            Parameter list
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerRelationalOperator.PostClauses">
+      <summary>
+            Cláusulas adicionales (como WITH) / 
+            Additional clauses (such as WITH)
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerRelationalOperator.ForceAsAlias">
+      <summary>
+            IAliasedElement: Escribir siempre el alias precedido del token AS / 
+            IAliasedElement: Write always the token AS before the table alias
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerRelationalOperator.Alias">
+      <summary>
+            IAliasedElement: Alias de la tabla / 
+            IAliasedElement: Table alias
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerRelationalOperator.Identifier">
+      <summary>
+            SQLElement: Identificador del elemento en la consulta / 
+            SQLElement: Element identifier in the query
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerRelationalOperator.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto para construir la sentencia SQL / 
+            SQLElement: Code to build the SQL sentence
+            </summary>
+      <param name="scope">
+            Ámbito dentro de la sentencia SQL para formatear el resultado / 
+            Scope in the SQL sentence to format the result
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Texto del elemento / 
+            Elemnent text
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerRelationalOperator.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL / 
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerRelationalOperator.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerQuery">
+      <summary>
+            Implementación de ISOQuery para SqlServer / 
+            SqlServer implementation of ISOQuery
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.TopRows">
+      <summary>
+            TOP expr [PERCENT] [WITH TIES]
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.IntoClause">
+      <summary>
+            INTO table ON filegroup
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.OptionClause">
+      <summary>
+            Cláusula option / 
+            Option clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.ForXmlClause">
+      <summary>
+            ISqlServerExtendedDataSet: Cláusula FOR XML / 
+            ISqlServerExtendedDataSet: FOR XML clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.PivotClause">
+      <summary>
+            ISqlServerExtendedDataSet: Pivot and Unpivot
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.RowLimitingClause">
+      <summary>
+            ISqlServerExtendedDataSet: Cláusula OFFSET .. LIMIT / 
+            ISqlServerExtendedDataSet: OFFSET .. LIMIT clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.ParameterPrefix">
+      <summary>
+            ISQLQuery: Prefijo de parámetro de consulta / 
+            ISQLQuery: Query parameter prefix
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.QueryColumns">
+      <summary>
+            Lista de columnas de la tabla / 
+            Table column collection
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetSampleData(System.String,System.String,System.Int32)">
+      <summary>
+            IDataImportCore: Conjunto de datos de muestra / 
+            IDataImportCore: Sample data set
+            </summary>
+      <param name="source">
+            Identificador de la fuente de datos (por ejemplo ruta de archivo) / 
+            Data source identifier (i.e. a file path)
+            </param>
+      <param name="sourceoption">
+            Nombre de una de las opciones para fuentes múltiples de datos / 
+            Option name for multiple data sources
+            </param>
+      <param name="rows">
+            Número de filas a devolver / 
+            Results data row max count
+            </param>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.Elements">
+      <summary>
+            ISQLElementContainer: Lista de subelementos / 
+            ISQLElementContainer: Subelement list
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.Initialize(System.String)">
+      <summary>
+            ISQLQuery: Inicialización de la consulta / 
+            ISQLQuery: Query initialization
+            </summary>
+      <param name="alias">
+            Alias de la consulta / 
+            Query alias
+            </param>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQuery.Identifier">
+      <summary>
+            SQLElement: Identificador del elemento en la consulta / 
+            SQLElement: Element identifier in the query
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseDelete(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento delete no estándar. / 
+            Process a non-standard delete element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseUpdate(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento update no estándar. / 
+            Process a non-standard update element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseInsert(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento insert no estándar. / 
+            Process a non-standard insert element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseMerge(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa un elemento merge no estándar. / 
+            Process a non-standard merge element.
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseTopElement(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Procesa el elemento TOP / 
+            Process TOP element
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cont">
+            Expresión que contiene la sentencia / 
+            Sentence container expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetSelectList(System.Collections.Generic.List{System.String},System.Int32@,System.Boolean)">
+      <summary>
+            Construye la cláusula SELECT / 
+            Build SELECT clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetFormattedSelectList(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            Construye la cláusula SELECT / 
+            Build SELECT clause
+            </summary>
+      <param name="sql">
+            SQL resultante / 
+            Resulting SQL
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto de la sentencia SQL o de alguna de sus partes / 
+            SQLElement: Code of the SQL sentence or one of its parts
+            </summary>
+      <param name="scope">
+            Ámbito del texto a generar dentro de la sentencia / 
+            Scope in the sentence of the text to generate
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Texto SQL generado / 
+            SQL generated text
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL / 
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.IdentifierPartsSeparator(System.String)">
+      <summary>
+            Identifica un token separador de partes de identificador / 
+            Identify an identifier part separator token
+            </summary>
+      <param name="token">
+            Token a comprobar / 
+            Token to check
+            </param>
+      <returns>
+            true si es un separador válido / 
+            true if valid separator
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.LiteralIdentifier(System.String,System.String@)">
+      <summary>
+            Identifica y construye un identificador literal / 
+            Identifies and build a literal identifier
+            </summary>
+      <param name="token">
+            Símbolo inicial / 
+            Initial symbol
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            SQL sentence text
+            </param>
+      <returns>
+            Identificador o null / 
+            Identifier or null
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.LiteralDelimiter(System.String)">
+      <summary>
+            Identifica caracteres delimitadores / 
+            Identify delimiter characters
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <returns>
+            True si el token es un delimitador de literales / 
+            True if token is a literal delimiter
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ValidColumnName(System.String)">
+      <summary>
+            Comprueba validez de nombre de columna / 
+            Validates column name
+            </summary>
+      <param name="columnName">
+            Nombre de columna / 
+            Column name
+            </param>
+      <returns>
+            True si el nombre es válido / 
+            True if the name is valid
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.TryLiteralString(System.String@,System.String@,System.String@,System.Boolean)">
+      <summary>
+            ISQLElementBuilder: Intenta construir una cadena de texto o produce una excepción / 
+            ISQLElementBuilder: Try to build a literal string or throws an exception
+            </summary>
+      <param name="token">
+            Token actual y final / 
+            Current and final token
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token final / 
+            Token list name containing the final token
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="throwex">
+            Lanzar excepción si no es un literal / 
+            Throw exception if it is not a literal string
+            </param>
+      <returns>
+            Objeto de cadena de texto / 
+            Code string object
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SolveAmbiguity(System.String,System.String,BaseClassesAndInterfaces.SQL.SQLElement)">
+      <summary>
+            Resolver el conjunto de tokens de un token ambiguo / 
+            Solve token set of an ambiguous token
+            </summary>
+      <param name="token">
+            Token a comprobar / 
+            Token to check
+            </param>
+      <param name="sql">
+            Sentencia SQL que se está analizando / 
+            SQL Senence beign parsed
+            </param>
+      <param name="wisparsing">
+            Elemento SQL que se está analizando / 
+            SQL Code which is being parsed
+            </param>
+      <returns>
+            Nombre del conjunto de tokens al que corresponde / 
+            Corresponding Token set name
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.AddElementToContainer(BaseClassesAndInterfaces.SQL.SQLElement,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer,System.String)">
+      <summary>
+            Permite procesar formas no estándar de referenciar un elemento / 
+            Allows processing non-standard ways to reference an element
+            </summary>
+      <param name="col">
+            Elemento a añadir al contenedor / 
+            Elemento to add to container
+            </param>
+      <param name="expr">
+            Contenedor de la expresión / 
+            Expression container
+            </param>
+      <param name="alias">
+            Posible alias de elemento / 
+            Possible element alias
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseQueryClause(System.String,System.String@,System.Boolean@)">
+      <summary>
+            Analizar cláusulas no estándar / 
+            Parse non-standard clauses
+            </summary>
+      <param name="token">
+            Token inicial encontrado por una instancia superior o vacío / 
+            Starting token found by a higher instance or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia SQL / 
+            </param>
+      <param name="exit">
+            Indica si se debe terminar el análisis de la consulta
+            Indicator to stop parsing the query 
+            </param>
+      <returns>
+            Token final o vacío / 
+            Final token or empty
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParsePivotClause(System.String,System.String@,System.String@,SqlServerLibrary.Interfaces.ISqlServerExtendedDataSet)">
+      <summary>
+            Analizar cláusulas pivot and unpivot / 
+            Parse pivot and unpivot clauses
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="ssdataset">
+            Objeto que contiene la cláusula pivot / 
+            Object owning the pivot clause
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialQueryClause(System.String,System.String)">
+      <summary>
+            Identificador de cláusula especial de consulta / 
+            Special query clause identifier
+            </summary>
+      <param name="token">
+            Token actual / 
+            Current token
+            </param>
+      <param name="tokenset">
+            Conjunto de tokens actual / 
+            Current token set
+            </param>
+      <returns>
+            True si el token pertenece a una cáusula especial / 
+            True for special clause token
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ProcessSpecialColumns">
+      <summary>
+            Procesar columnas especiales no listadas en la cláusula SELECT / 
+            Process special columns not listed in the SELECT clause
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseFromElement(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLFromElement@)">
+      <summary>
+            Procesa elementos no standard de la cláusula from / 
+            Process from clause non-standard elements
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="telement">
+            Objeto genérico en el que se devolverá el elemento resultante / 
+            Generic object to return the resulting element
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseModelParameters(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLElementList)">
+      <summary>
+            Procesa los parámetros de modelo de la función PREDICT / 
+            Process the PREDICT function model parameters
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="elist">
+            Lista de parámetros / 
+            Parameter list
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseForPivotClause(System.String,System.String@,System.String@,SqlServerLibrary.SQL.SqlServerPivotClause)">
+      <summary>
+            Procesa la cláusula for de una expresión pivot and unpivot / 
+            Process for clause of a pivot and unpivot expression
+            </summary>
+      <param name="token">
+            Token actual / 
+            Currecnt token
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token / 
+            Token list name containing the final
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cnt">
+            Expresión pivot and unpivot / 
+            Pivot and unpivot expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseInPivotClause(System.String,System.String@,System.String@,SqlServerLibrary.SQL.SqlServerPivotClause)">
+      <summary>
+            Procesa la cláusula in de una expresión pivot and unpivot / 
+            Process in clause of a pivot and unpivot expression
+            </summary>
+      <param name="token">
+            Token actual / 
+            Currecnt token
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token / 
+            Token list name containing the final
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="cnt">
+            Expresión pivot and unpivot / 
+            pivot and unpivot expression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseSymbol(System.String,System.String@,System.String@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Procesa un símbolo SQL no estándar / 
+            Process a non-standard SQL symbol
+            </summary>
+      <param name="token">
+            Símbolo / 
+            Simbol
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el símbolo, o vacío / 
+            Token list name containing the symbol, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="alias">
+            Aliasd el nuevo elemento / 
+            New element alias
+            </param>
+      <param name="expr">
+            Expresión a la que añadir el símbolo / 
+            Expression to which add the symbol
+            </param>
+      <returns>
+            Siguiente token o vacío / 
+            Next token or empty or empty
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SystemFunctions(System.String)">
+      <summary>
+            Tipo de función de sistema / 
+            System function type
+            </summary>
+      <param name="token">
+            Nombre de la función / 
+            Function name
+            </param>
+      <returns>
+            Clasificación de la función en el parser / 
+            Parser function clasification
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetAggregateReturnType(System.String,System.Type@)">
+      <summary>
+            Tipo de retorno de una función de agregación / 
+            Return type for an aggregation function
+            </summary>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="atype">
+            Tipo de datos administrado / 
+            Managed data type
+            </param>
+      <returns>
+            Tipo nativo de datos / 
+            Native data type
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetFunctionDatatype(System.String,System.Type@,System.String@,System.Boolean@)">
+      <summary>
+            Establece el tipo de datos de una función / 
+            Set function datatype
+            </summary>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="datatype">
+            Tipo de datos en la aplicación / 
+            Application function data type
+            </param>
+      <param name="nativetype">
+            Tipo de datos en la base de datos / 
+            Database function data type
+            </param>
+      <param name="aggregate">
+            Indica si la función es de agregación / 
+            Indicates if the function is an aggregation one
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.GetFunctionReturnTypeFromParameters(BaseClassesAndInterfaces.SQL.SQLFunction)">
+      <summary>
+            Obtiene el valor de retorno de una función a partir de sus parámetros / 
+            Gets function return value datatype from parameters
+            </summary>
+      <param name="func">
+            Función ya construida / 
+            Built function
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseReservedWord(System.String,System.String@,System.String@,System.Boolean@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Procesa una palabra reservada propia de SqlServer / 
+            Process a SqlServer reserved word
+            </summary>
+      <param name="token">
+            Palabra reservada / 
+            Reserved word
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece la palabra reservada, o vacío / 
+            Token list name containing the reserved word, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="tryalias">
+            El resultado puede tener alias / 
+            The result can have alias
+            </param>
+      <param name="alias">
+            Alias del nuevo elemento / 
+            New element alias
+            </param>
+      <param name="container">
+            Subexpresión a completar recursivamente, si estamos procesando una subexpresión / 
+            Subexpression to complete recursively, if we are processing a subexpression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.TryGetFunctionReturnType(BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Buscar el tipo de datos de retorno de las funciones / 
+            Find functions return data type
+            </summary>
+      <param name="expr">
+            Expresión que puede contener funciones / 
+            Expression that can contain functions
+            </param>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseOptionClause(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLElementList)">
+      <summary>
+            Cláusula option y subelementos / 
+            Option clause and subelements
+            </summary>
+      <param name="token">
+            Palabra reservada / 
+            Reserved word
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece la palabra reservada, o vacío / 
+            Token list name containing the reserved word, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="list">
+            Elementos de la cláusula option / 
+            Option clause elements
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseForXmlClause(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLExpression)">
+      <summary>
+            Cláusula FOR XML y subelementos / 
+            FOR XML clause and subelements
+            </summary>
+      <param name="token">
+            Palabra reservada / 
+            Reserved word
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece la palabra reservada, o vacío / 
+            Token list name containing the reserved word, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="expr">
+            Componentes de la cláusula FOR XML / 
+            FOR CML clause components
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseExpression(System.String,System.String@,System.String@,BaseClassesAndInterfaces.Interfaces.ISQLElementContainer)">
+      <summary>
+            Procesa una expresión no estándar. Implementar en la clase derivada si es necesario / 
+            Process a non-standard expression. Implement in the derived class if necessary
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="container">
+            Subexpresión a completar recursivamente, si estamos procesando una subexpresión / 
+            Subexpression to complete recursively, if we are processing a subexpression
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseFunction(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.String@,System.String@,BaseClassesAndInterfaces.SQL.SQLFunction@)">
+      <summary>
+            Procesa una llamada a función SQL no estándar / 
+            Process a non-standard SQL function call
+            </summary>
+      <param name="schema">
+            Esquema de la función / 
+            Function schema
+            </param>
+      <param name="fname">
+            Nombre de la función / 
+            Function name
+            </param>
+      <param name="parenthesis">
+            Indica si se ha leído ya el paréntesis de apertura / 
+            Indicates if open parenthesis is alredy read
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial, o vacío / 
+            Token list name containing the initail token, or empty
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="func">
+            SQLFunction resultante / 
+            Resulting SQLFunction
+            </param>
+      <returns>
+            Siguiente token o vacío / 
+            Next token or empty or empty
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.PreprocessColumns">
+      <summary>
+            Inicializar las columnas y reprocesar los campos select / 
+            Initialize columns and reprocess select fields
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ProcessPivotColumns">
+      <summary>
+            ISqlServerExtendedDataSet: Procesar columnas cláusula pivot and unpivot / 
+            ISqlServerExtendedDataSet: Process pivot and unpivot columns
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SpecialParseTable(System.String,System.String@,System.String@,System.Collections.Generic.List{System.String},BaseClassesAndInterfaces.Interfaces.IDatabaseObject@)">
+      <summary>
+            Proceso extra de una tabla dependiente de cada base da datos específica / 
+            Extra processing of a table specific of each database
+            </summary>
+      <param name="token">
+            Siguiente token a procesar / 
+            Next token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenece el token inicial / 
+            Token list name containing the initail token
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="lids">
+            Lista de identificadores separados por punto / 
+            Dot separated identifier list
+            </param>
+      <param name="table">
+            Objeto que implementa la tabla / 
+            Object implementing the table
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.WithClauseIdentifier(System.String)">
+      <summary>
+            Identifica el comienzo de una cláusula WITH / 
+            Identifies a WITH clause
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <returns>
+            true si es una cláusula WITH / 
+            true if its a WITH clause
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseWith(System.String,System.String@,System.String@)">
+      <summary>
+            Procesar la cláusula with de la consulta / 
+            Process query with clause
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenecen el token inicial y final / 
+            Token list name containing the initial and final token
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.ParseWithElement(System.String,System.String@,System.String@,BaseClassesAndInterfaces.SQL.WithClause)">
+      <summary>
+            Procesar un elemento de la cláusula with / 
+            Process a with clause element
+            </summary>
+      <param name="token">
+            Token a procesar / 
+            Token to process
+            </param>
+      <param name="tokenset">
+            Nombre de la lista de tokens a la que pertenecen el token inicial y final / 
+            Token list name containing the initial and final token
+            </param>
+      <param name="sql">
+            Texto de la sentencia a procesar / 
+            Sentence text to process
+            </param>
+      <param name="withc">
+            Cláusula with / 
+            With clause
+            </param>
+      <returns>
+            Siguiente token a procesar / 
+            Next token to process
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.SetDefaultSchema">
+      <summary>
+            Establece el esquema por defecto para las tablas / 
+            Set defualt schema for tables
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQuery.OnDeserialized(BaseClassesAndInterfaces.Interfaces.ISQLQuery)">
+      <summary>
+            ISerializableElement: Callback para ejecutar después de deserializar / 
+            ISerializableElement: Callback to perform post-deserialization tasks
+            </summary>
+      <param name="parent">
+            Consulta principal / 
+            Main query
+            </param>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerQueryTable">
+      <summary>
+            Tabla o vista en una sentencia SQL / 
+            SQL sentence table or view
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.Columns">
+      <summary>
+            IColumnContainer: Lista de columnas / 
+            IColumnContainer: Column list
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryTable.ProcessSpecialColumns">
+      <summary>
+            Procesar columnas especiales de cláusulas no estándar / 
+            Process non-standard clauses special columns
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryTable.ProcessPivotColumns">
+      <summary>
+            Añadir o quitar las columnas pivotadas a la lista de columnas / 
+            Add to or remove from column list the pivoted columns
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.TimeClause">
+      <summary>
+            for system_time
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.SampleClause">
+      <summary>
+            tablesample
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.TableHints">
+      <summary>
+            with (hints,...)
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.ForXmlClause">
+      <summary>
+            ISqlServerExtendedDataSet: Cláusula FOR XML / 
+            ISqlServerExtendedDataSet: FOR XML clause
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.PivotClause">
+      <summary>
+            ISqlServerExtendedDataSet: Pivot and Unpivot
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerQueryTable.RowLimitingClause">
+      <summary>
+            ISqlServerExtendedDataSet: No usado / 
+            ISqlServerExtendedDataSet: Not used
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryTable.GetSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Boolean,System.Int32)">
+      <summary>
+            SQLElement: Texto para construir la sentencia SQL / 
+            SQLElement: Code to build the SQL sentence
+            </summary>
+      <param name="scope">
+            Ámbito dentro de la sentencia SQL para formatear el resultado / 
+            Scope in the SQL sentence to format the result
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Texto del elemento / 
+            Elemnent text
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryTable.GetFormattedSQL(BaseClassesAndInterfaces.SQL.SQLScope,System.Int32,System.Int32,System.Char,System.Boolean,System.Int32,System.Int32)">
+      <summary>
+            SQLElement: Texto formateado del elemento dentro de la sentencia SQL / 
+            SQLElement: Formatted code text in the SQL sentence
+            </summary>
+      <param name="scope">
+            Parte de la sentencia a la que pertenece el elemento / 
+            Senetence part where the element is located
+            </param>
+      <param name="level">
+            Nivel de anidamiento / 
+            Nesting level
+            </param>
+      <param name="levelmult">
+            Multiplicador del nivel de anidamiento / 
+            Nestig level multiplier
+            </param>
+      <param name="tab">
+            Caracter de tabulación / 
+            Tabulation character
+            </param>
+      <param name="expandqueries">
+            Mostrar el texto completo de las subconsultas o solo una abreviatura / 
+            Show the full text of the subqueries or just an abbreviation
+            </param>
+      <param name="line">
+            Primera línea del texto del elemento / 
+            First element text line
+            </param>
+      <param name="column">
+            Primera columna del texto del elemento / 
+            First element text column
+            </param>
+      <returns>
+            Cadena de texto que representa el elemento / 
+            Code text string representation
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerQueryTable.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerTableJoin">
+      <summary>
+            Enlace entre tablas en SqlServer / 
+            SqlServer Table joins
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerTableJoin.JoinHint">
+      <summary>
+            HASH, LOOP, MERGE, REMOTE
+            </summary>
+    </member>
+    <member name="P:SqlServerLibrary.SQL.SqlServerTableJoin.SQLJoinType">
+      <summary>
+            Convierte el tipo de enlace a o desde texto / 
+            Converts join type from / to string
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerTableJoin.Clone(BaseClassesAndInterfaces.Interfaces.ISQLElementProvider)">
+      <summary>
+            SQLElement: Crea una copia de este elemento con los datos imprescindibles / 
+            SQLElement: Build a copy of this element with just the indispensble data
+            </summary>
+      <param name="provider">
+            Constructor de elementos / 
+            Element builder
+            </param>
+      <returns>
+            Copy of the element / 
+            Copia del elemento
+            </returns>
+    </member>
+    <member name="T:SqlServerLibrary.SQL.SqlServerValueOperator">
+      <summary>
+            Operadores numéricos y de texto / 
+            Numeric and string operators
+            </summary>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerValueOperator.Apply(System.Object)">
+      <summary>
+            Aplicar operador lógico unario / 
+            Apply unary logic operator
+            </summary>
+      <param name="value">
+            Valor al que aplicar el operador / 
+            ValueSet to apply the operator
+            </param>
+      <returns>
+            Resultado de la operación / 
+            Opertion result
+            </returns>
+    </member>
+    <member name="M:SqlServerLibrary.SQL.SqlServerValueOperator.Apply(System.Double,System.Double)">
+      <summary>
+            Aplicar operador de valor a dos números / 
+            Apply value operator to two numbers
+            </summary>
+      <param name="left">
+            Primer valor al que aplicar el operador / 
+            The first value to apply the operator
+            </param>
+      <param name="right">
+            Segundo valor al que aplicar el operador / 
+            The second value to apply the operator
+            </param>
+      <returns>
+            Resultado de la operación / 
+            Opertion result
+            </returns>
+    </member>
+  </members>
+</doc>

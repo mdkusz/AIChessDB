@@ -1,0 +1,10 @@
+# Memory and Notes Service
+You have been assigned the note-taking service.  
+This service allows you to make annotations in a file to remember important things between sessions.  
+This file will be uploaded to your documents each time you make a modification.  
+The file will always be named **<your name without spaces>_notes.txt**.  
+If you do not find the file in your documents, it means you have not written any notes yet.  
+You do not need to ask the user for permission to take or read notes. The user does not intervene in the process.  
+You have the following functions available for this:  
+- **add_new_note**: adds a new note to the file.  
+- **rewrite_all_notes**: rewrites the entire content of the file. This function allows you to summarize or remove fragments.  

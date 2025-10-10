@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/assistant_updates.schema.json",
+  "title": "Assistant Updates Configuration",
+  "description": "Configuration to update assistants' instructions and private documents, and service-level documents.",
+  "$comment": "Matches UpdateAssistantsConfiguration / AssistantUpdates / ServiceUpdates / ApplicationDocument classes.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "assistants": {
+      "type": "array",
+      "description": "Per-assistant updates (instructions and private documents).",
+      "items": {
+        "$ref": "#/$defs/assistantUpdates"
+      },
+      "default": []
+    },
+    "services": {
+      "type": "array",
+      "description": "Per-service document updates. Only services present in a player's AllowedServices will be applied.",
+      "items": {
+        "$ref": "#/$defs/serviceUpdates"
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "assistants",
+    "services"
+  ],
+  "$defs": {
+    "assistantUpdates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "assistant_name": {
+          "type": "string",
+          "description": "Visible assistant name used by the host app to locate the player (GetPlayerByName)."
+        },
+        "instructions": {
+          "type": "string",
+          "description": "Relative file path (under DataPath) with the new main instructions. Do not prefix with 'file:'."
+        },
+        "update_instructions": {
+          "type": "boolean",
+          "description": "If true and the player is an IAssistant, the file in 'instructions' will be read and uploaded as the new instructions.",
+          "default": false
+        },
+        "documents": {
+          "type": "array",
+          "description": "Assistant private documents to update or remove.",
+          "items": {
+            "$ref": "#/$defs/applicationDocument"
+          }
+        }
+      },
+      "required": [
+        "assistant_name"
+      ]
+    },
+    "serviceUpdates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "service_id": {
+          "type": "string",
+          "description": "Service identifier. Must match one of the player's AllowedServices to take effect."
+        },
+        "documents": {
+          "type": "array",
+          "description": "Service private documents to update or remove.",
+          "items": {
+            "$ref": "#/$defs/applicationDocument"
+          }
+        }
+      },
+      "required": [
+        "service_id"
+      ]
+    },
+    "applicationDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "update": {
+          "type": "boolean",
+          "description": "If true, the document will be refreshed with the local file contents (relative to DataPath).",
+          "default": false
+        },
+        "remove": {
+          "type": "boolean",
+          "description": "If true, the document will be removed from the assistant store. Takes precedence over 'update' when both are true.",
+          "default": false
+        },
+        "file_name": {
+          "type": "string",
+          "description": "File name or relative path in the application's repository (combined with DataPath)."
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "assistants": [
+        {
+          "assistant_name": "Caspov",
+          "instructions": "Caspov_instructions.txt",
+          "update_instructions": true,
+          "documents": [
+            {
+              "update": true,
+              "file_name": "Caspov_notes.txt"
+            },
+            {
+              "remove": true,
+              "file_name": "legacy_doc.txt"
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "service_id": "automation",
+          "documents": [
+            {
+              "update": true,
+              "file_name": "AIChessDB_automation.txt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

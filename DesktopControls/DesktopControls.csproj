@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23C722D6-4FC4-4BDD-BF8E-45B120CC91DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesktopControls</RootNamespace>
+    <AssemblyName>DesktopControls</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AutoCompleteListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoCompleteTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlInteractor.cs" />
+    <Compile Include="Controls\DataEditing\ComboBoxWithCommandButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataEditing\ComboBoxWithCommandButton.Designer.cs">
+      <DependentUpon>ComboBoxWithCommandButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataEditing\DGVComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataEditing\DGVComboBoxCell.cs" />
+    <Compile Include="Controls\DataEditing\DGVComboBoxCellStyle.cs" />
+    <Compile Include="Controls\DataEditing\DGVComboBoxColumn.cs" />
+    <Compile Include="Controls\DataEditing\DGVDateAndTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataEditing\DGVDateAndTimePickerCell.cs" />
+    <Compile Include="Controls\DataEditing\DGVDateAndTimePickerCellStyle.cs" />
+    <Compile Include="Controls\DataEditing\DGVDateAndTimePickerColumn.cs" />
+    <Compile Include="Controls\DataEditing\DGVImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataEditing\DGVImageCell.cs" />
+    <Compile Include="Controls\DataEditing\DGVImageCellStyle.cs" />
+    <Compile Include="Controls\DataEditing\DGVImageColumn.cs" />
+    <Compile Include="Controls\DateAndTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DateAndTimePicker.Designer.cs">
+      <DependentUpon>DateAndTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExtendedPropertyGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExtendedPropertyGrid.Designer.cs">
+      <DependentUpon>ExtendedPropertyGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\fHighlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\fHighlight.Designer.cs">
+      <DependentUpon>fHighlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InputEditors\BoolValueInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\ColorInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\ComboBoxInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\CommandButtonInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\DIalogBoxInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\DictionaryKeyInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\DirectoryInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\GenericDataSheetInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\InputEditorFlowContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\MultipleFileNameInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\FileNameInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\FixedComboBoxInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\FloatValueInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\HeaderInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\InputEditorBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\InputEditorFactory.cs" />
+    <Compile Include="Controls\InputEditors\IntValueInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\MethodInputEditorBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\MultiLineTextInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\MultiSelectListInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\ObjectSelectorInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\PropertyInputEditorBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ReflectiveTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\SingleLineTextInputEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\InputEditors\ToolTipPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\Attributes\EditorCharCaseAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Attributes\PropertyBlockAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Attributes\PropertyEditorAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Attributes\PropertyIndexAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Attributes\ShowPropertyValueDescriptionAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Attributes\ValueEditorCaptionAttribute.cs" />
+    <Compile Include="Controls\PropertyTable\Interfaces\IndexedPropertyValueManager.cs" />
+    <Compile Include="Controls\PropertyTable\Interfaces\IPropertyBlockContainer.cs" />
+    <Compile Include="Controls\PropertyTable\Interfaces\IPropertyBlockHeader.cs" />
+    <Compile Include="Controls\PropertyTable\Interfaces\IPropertyConfigurationProvider.cs" />
+    <Compile Include="Controls\PropertyTable\Interfaces\IValueSelectionListProvider.cs" />
+    <Compile Include="Controls\PropertyTable\PropertyColumnHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyContainerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\CheckPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\CollectionPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\DateTimePropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ExpandablePropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ExtendedObjectWrapperComboBoxPE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\InteractiveLabelPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\LabelExpandablePropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ModalDialogTextPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ObjectWrapperActiveObjectListPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ObjectWrapperCheckedListBoxPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ObjectWrapperComboBoxPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ObjectWrapperEditorBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\PropertyEditorBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\ResourcePropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyEditors\TextPropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyTable.Designer.cs">
+      <DependentUpon>PropertyTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyTable\PropertyTableColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RelevantControlCollector.cs" />
+    <Compile Include="Controls\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RTFTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgInputText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgInputText.Designer.cs">
+      <DependentUpon>DlgInputText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DataSheetDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DataSheetDialog.Designer.cs">
+      <DependentUpon>DataSheetDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ObjectSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ObjectSelectionDialog.Designer.cs">
+      <DependentUpon>ObjectSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmToolWindow.Designer.cs">
+      <DependentUpon>fmToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoadingOverlayForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolForm.Designer.cs">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\UIElements.es.Designer.cs">
+      <DependentUpon>UIElements.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\UIElements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIElements.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\UIResources.es.Designer.cs">
+      <DependentUpon>UIResources.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\UIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyTools\ModalPropertyEditor.cs" />
+    <Compile Include="PropertyTools\ObjectWrapperListEditor.cs" />
+    <Compile Include="PropertyTools\ObjectWrapperListEditorPE.cs" />
+    <Compile Include="PropertyTools\PEListBoxWithCommandButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyTools\PEListBoxWithCommandButtons.Designer.cs">
+      <DependentUpon>PEListBoxWithCommandButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyTools\PropertyEditorChangedEvent.cs" />
+    <Compile Include="PropertyTools\PropertyEditorListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PropertyTools\GenericObjectTypeConverter.cs" />
+    <Compile Include="Tools\ControlHelpers.cs" />
+    <Compile Include="Tools\EventHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{ce734a28-4531-4095-a95e-0fb7bc98262d}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalCommonEntities\GlobalCommonEntities.csproj">
+      <Project>{d4f57be5-fad7-4eb2-a1b0-6b57853dc628}</Project>
+      <Name>GlobalCommonEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DataEditing\ComboBoxWithCommandButton.resx">
+      <DependentUpon>ComboBoxWithCommandButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateAndTimePicker.resx">
+      <DependentUpon>DateAndTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExtendedPropertyGrid.resx">
+      <DependentUpon>ExtendedPropertyGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\fHighlight.resx">
+      <DependentUpon>fHighlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PropertyTable\PropertyTable.resx">
+      <DependentUpon>PropertyTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgInputText.resx">
+      <DependentUpon>DlgInputText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DataSheetDialog.resx">
+      <DependentUpon>DataSheetDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ObjectSelectionDialog.resx">
+      <DependentUpon>ObjectSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmToolWindow.resx">
+      <DependentUpon>fmToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolForm.resx">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIElements.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIElements.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIElements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIElements.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIResources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyTools\PEListBoxWithCommandButtons.resx">
+      <DependentUpon>PEListBoxWithCommandButtons.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\Collapse_small.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapsed.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_osx_terminal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterb16_d.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterb16_d11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_explore.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_tile_horizontal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_tile_vertical.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\253.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_edit.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

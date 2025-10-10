@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/openai_api_config.schema.json",
+  "title": "OpenAI API Configuration",
+  "type": "object",
+  "description": "Configuration file for API managers, players, assets, tools, and shared function definitions.",
+  "$comment": "This schema models the structure described in the provided C# classes and example JSON.",
+  "additionalProperties": false,
+  "properties": {
+    "apiManager": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/elementConfiguration"
+      },
+      "description": "List of API Manager configurations. Usually only one entry, and the default one carries the endpoints."
+    },
+    "players": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/elementConfiguration"
+      },
+      "description": "List of Player configurations (IAssistant, IChat, IImageGenerator, IResponse/IResponseChat)."
+    },
+    "playerAssets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/elementConfiguration"
+      },
+      "description": "Assets usable by players (e.g., ISpeechManager, IFilePackageManager, IEmbedding)."
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/elementConfiguration"
+      },
+      "description": "Tool configurations (e.g., IFileManager, IFilePackageManager, IEmbedding, ITuningJob)."
+    },
+    "functions": {
+      "type": "array",
+      "description": "Shared function-call definitions for assistants/chats, following the OpenAI function/tool schema.",
+      "items": {
+        "$ref": "#/$defs/functionDef"
+      }
+    }
+  },
+  "required": [
+    "apiManager"
+  ],
+  "$defs": {
+    "elementConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "API Key name stored in the Windows Credential Manager (Generic Credentials). Used only for apiManager entries.",
+          "$comment": "Only relevant for IAPIManager elements."
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the element."
+        },
+        "default": {
+          "type": "boolean",
+          "description": "Marks the default configuration for this element type. Typically only one default per type; default elements hold the endpoint definitions."
+        },
+        "type": {
+          "type": "string",
+          "description": "Interface/type name. Examples: IAPIManager, IAssistant, IChat, IResponse, IResponseChat, IImageGenerator, ISpeechManager, IFilePackageManager, IEmbedding, IFileManager, ITuningJob."
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "UI display name for the element."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "UI display description for the element."
+        },
+        "voice": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Voice name to synthesize speech (for speaking agents)."
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Default model to use for the element."
+        },
+        "maxRequestRatePerMinute": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Rate limit in requests per minute."
+        },
+        "maxRequestRatePerDay": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Rate limit in requests per day."
+        },
+        "endpoints": {
+          "type": "array",
+          "description": "List of endpoints; only default elements include this list.",
+          "items": {
+            "$ref": "#/$defs/apiEndpoint"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ]
+    },
+    "apiEndpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Human-friendly endpoint name."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Endpoint description."
+        },
+        "section": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Internal category to group endpoints (e.g., 'models', 'assistantthreads')."
+        },
+        "method": {
+          "type": "string",
+          "description": "HTTP method or equivalent verb.",
+          "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        },
+        "timeout": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Timeout in seconds (0 means use system default)."
+        },
+        "url": {
+          "type": "string",
+          "description": "Endpoint URL. May include {0}, {1} placeholders for path parameters and query templates.",
+          "pattern": "^https?://"
+        },
+        "pathParams": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Path parameter list to fill placeholders in the URL.",
+          "items": {
+            "$ref": "#/$defs/urlParameter"
+          }
+        },
+        "queryParams": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Query string parameter list appended to the URL.",
+          "items": {
+            "$ref": "#/$defs/urlParameter"
+          }
+        },
+        "requestType": {
+          "description": "Fully qualified request .NET type name (e.g., 'Namespace.Type, Assembly').",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ]
+        },
+        "returnType": {
+          "description": "Fully qualified response .NET type name (e.g., 'Namespace.Type, Assembly').",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "method"
+      ]
+    },
+    "urlParameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Parameter name."
+        },
+        "type": {
+          "type": "string",
+          "description": "Parameter data type (e.g., 'string', 'int', 'array', 'array[string]')."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Parameter description."
+        },
+        "optional": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "If true, parameter may be omitted."
+        },
+        "values": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Allowed values (if constrained).",
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "enum": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Alias for 'values' in some entries; same semantics.",
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ]
+    },
+    "functionDef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_]{1,64}$",
+          "description": "Function name (snake_case or alphanumeric+underscore)."
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Short description of what the function does."
+        },
+        "parameters": {
+          "type": "object",
+          "description": "JSON Schema for the function's parameters object (OpenAI-style).",
+          "properties": {},
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "name",
+        "parameters"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "If an element is marked as default=true, it should provide the 'endpoints' array.",
+      "if": {
+        "properties": {
+          "apiManager": {
+            "items": {
+              "properties": {
+                "default": {
+                  "const": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "apiManager": {
+            "items": {
+              "required": [
+                "endpoints"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

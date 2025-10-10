@@ -1,0 +1,3124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BTN_ADD" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="BTN_CANCEL" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="BTN_CANCELCHG" xml:space="preserve">
+    <value>Cancelar cambios</value>
+  </data>
+  <data name="BTN_CHANGE" xml:space="preserve">
+    <value>Cambiar</value>
+  </data>
+  <data name="BTN_CHANGEMODE" xml:space="preserve">
+    <value>Cambiar modo de enlace</value>
+  </data>
+  <data name="BTN_CLEAR" xml:space="preserve">
+    <value>Vaciar</value>
+  </data>
+  <data name="BTN_CLOSE" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="BTN_CONSOLIDATE" xml:space="preserve">
+    <value>Fusionar</value>
+  </data>
+  <data name="BTN_DELETE" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="BTN_DELETEFILTER" xml:space="preserve">
+    <value>Borrar filtro</value>
+  </data>
+  <data name="BTN_EDIT" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="BTN_EXPORT" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="BTN_IMPORT" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="BTN_NEWCOMMENT" xml:space="preserve">
+    <value>Nuevo comentario</value>
+  </data>
+  <data name="BTN_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BTN_RESET" xml:space="preserve">
+    <value>Inicial</value>
+  </data>
+  <data name="BTN_SAVE" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="BTN_SELFILES" xml:space="preserve">
+    <value>Seleccionar archivos...</value>
+  </data>
+  <data name="BTN_UPDATE" xml:space="preserve">
+    <value>Actualizar cambios</value>
+  </data>
+  <data name="BTN_USE" xml:space="preserve">
+    <value>Usar</value>
+  </data>
+  <data name="CAP_QUESTION" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="CB_COPYDUPLICATES" xml:space="preserve">
+    <value>Copiar partidas duplicadas</value>
+  </data>
+  <data name="CB_DELETEPGNFILES" xml:space="preserve">
+    <value>Eliminar archivos después de la importación</value>
+  </data>
+  <data name="CB_DUPLICATES" xml:space="preserve">
+    <value>Importar partidas duplicadas</value>
+  </data>
+  <data name="CB_SIMPLEBOARDED" xml:space="preserve">
+    <value>Editor simple</value>
+  </data>
+  <data name="CB_USEFILTER" xml:space="preserve">
+    <value>Usar filtro</value>
+  </data>
+  <data name="COL_BLACK" xml:space="preserve">
+    <value>Negras</value>
+  </data>
+  <data name="COL_DATE" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="COL_FMOVES" xml:space="preserve">
+    <value>Jugadas</value>
+  </data>
+  <data name="COL_MATCH" xml:space="preserve">
+    <value>Partida</value>
+  </data>
+  <data name="COL_MOVES" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="COL_RESULT" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="COL_SELECTED" xml:space="preserve">
+    <value>Seleccionado</value>
+  </data>
+  <data name="COL_WHITE" xml:space="preserve">
+    <value>Blancas</value>
+  </data>
+  <data name="ERR_BADBLACKMOVE" xml:space="preserve">
+    <value>Movimiento de las negras incorrecto</value>
+  </data>
+  <data name="ERR_BADBOARD" xml:space="preserve">
+    <value>Tablero incompleto</value>
+  </data>
+  <data name="ERR_BADCHOICENOTKW" xml:space="preserve">
+    <value>Elección de filtro incorrecta, no es una etiqueta</value>
+  </data>
+  <data name="ERR_BADMOVE" xml:space="preserve">
+    <value>Movimiento incorrecto</value>
+  </data>
+  <data name="ERR_BADMOVE1" xml:space="preserve">
+    <value>{0}: {1} - {2}{3}{4}</value>
+  </data>
+  <data name="ERR_BADMOVENUMBER" xml:space="preserve">
+    <value>Formato de número de movimiento incorrecto</value>
+  </data>
+  <data name="ERR_BADOPERATOR" xml:space="preserve">
+    <value>Operador de filtro incorrecto</value>
+  </data>
+  <data name="ERR_BADPIECEVALUE" xml:space="preserve">
+    <value>Valor de pieza incorrecto</value>
+  </data>
+  <data name="ERR_BADPLAYERNUMBER" xml:space="preserve">
+    <value>Número de jugador incorrecto</value>
+  </data>
+  <data name="ERR_BADPOSITION" xml:space="preserve">
+    <value>Posición de pieza incorrecta</value>
+  </data>
+  <data name="ERR_BADWHITEMOVE" xml:space="preserve">
+    <value>Movimiento de las blancas incorrecto</value>
+  </data>
+  <data name="ERR_CONTNOTSERIALIZABLE" xml:space="preserve">
+    <value>El contenedor no admite guardado</value>
+  </data>
+  <data name="ERR_DBNOTFOUND" xml:space="preserve">
+    <value>Filtro no encontrado</value>
+  </data>
+  <data name="ERR_ELMNOTSERIALIZABLE" xml:space="preserve">
+    <value>El elemento no admite guardado</value>
+  </data>
+  <data name="ERR_ENDLESS" xml:space="preserve">
+    <value>Bucle infinito</value>
+  </data>
+  <data name="ERR_INCOMPATIBLETYPES" xml:space="preserve">
+    <value>Tipos incompatibles</value>
+  </data>
+  <data name="ERR_NOATTRIBUTENAME" xml:space="preserve">
+    <value>Nombre de atributo incorrecto</value>
+  </data>
+  <data name="ERR_NOATTRIBUTEVALUE" xml:space="preserve">
+    <value>Valor de atributo incorrecto</value>
+  </data>
+  <data name="ERR_NOEVENLABEL" xml:space="preserve">
+    <value>No se encuentra la primera etiqueta "Event"</value>
+  </data>
+  <data name="ERR_NOPARAMTYPE" xml:space="preserve">
+    <value>El tipo del parámetro es necesario</value>
+  </data>
+  <data name="ERR_NOREPOSITORY" xml:space="preserve">
+    <value>No se ha definido un repositorio de base de datos</value>
+  </data>
+  <data name="ERR_NOTRANSLATOR" xml:space="preserve">
+    <value>No se ha definido ningún traductor SQL</value>
+  </data>
+  <data name="ERR_OPERATION_NOTALLOWED" xml:space="preserve">
+    <value>Operación no permitida</value>
+  </data>
+  <data name="ERR_REPOSITORYNOC" xml:space="preserve">
+    <value>Repositiorio de base de datos incompatible</value>
+  </data>
+  <data name="ERR_SINGLEVALUEREQUIRED" xml:space="preserve">
+    <value>Se requiere un solo valor</value>
+  </data>
+  <data name="ERR_STFILTERNF" xml:space="preserve">
+    <value>Filtro no encontrado</value>
+  </data>
+  <data name="ERR_VALUEREQUIRED" xml:space="preserve">
+    <value>Se requiere un valor</value>
+  </data>
+  <data name="ERR_XMLNOTVALID" xml:space="preserve">
+    <value>Esquema XML incorrecto</value>
+  </data>
+  <data name="EVENT_BBISHOP1" xml:space="preserve">
+    <value>Alfil oscuras</value>
+  </data>
+  <data name="EVENT_BBISHOP11" xml:space="preserve">
+    <value>Alfil oscuras</value>
+  </data>
+  <data name="EVENT_BBISHOP2" xml:space="preserve">
+    <value>Alfil oscuras</value>
+  </data>
+  <data name="EVENT_BBISHOP21" xml:space="preserve">
+    <value>Alfil oscuras</value>
+  </data>
+  <data name="EVENT_BISHOP" xml:space="preserve">
+    <value>Alfil</value>
+  </data>
+  <data name="EVENT_CAPTURE" xml:space="preserve">
+    <value>Captura</value>
+  </data>
+  <data name="EVENT_CAPTURE1" xml:space="preserve">
+    <value>Captura</value>
+  </data>
+  <data name="EVENT_CASTLE" xml:space="preserve">
+    <value>Enroque</value>
+  </data>
+  <data name="EVENT_CASTLE1" xml:space="preserve">
+    <value>Enroque</value>
+  </data>
+  <data name="EVENT_CASTLEK" xml:space="preserve">
+    <value>Enroque lado de rey</value>
+  </data>
+  <data name="EVENT_CASTLEK1" xml:space="preserve">
+    <value>Enroque lado del rey</value>
+  </data>
+  <data name="EVENT_CASTLEQ" xml:space="preserve">
+    <value>Enroque lado de dama</value>
+  </data>
+  <data name="EVENT_CASTLEQ1" xml:space="preserve">
+    <value>Enroque lado de dama</value>
+  </data>
+  <data name="EVENT_CHECK" xml:space="preserve">
+    <value>Jaque</value>
+  </data>
+  <data name="EVENT_CHECK1" xml:space="preserve">
+    <value>Jaque</value>
+  </data>
+  <data name="EVENT_CHECKMATE" xml:space="preserve">
+    <value>Jaque mate</value>
+  </data>
+  <data name="EVENT_CHECK_MATE" xml:space="preserve">
+    <value>Jaque mate</value>
+  </data>
+  <data name="EVENT_DISCOVERED_CHECK" xml:space="preserve">
+    <value>Jaque descubierto</value>
+  </data>
+  <data name="EVENT_DISCOVERED_CHECK1" xml:space="preserve">
+    <value>Jaque descubierto</value>
+  </data>
+  <data name="EVENT_DRAW_OFFER" xml:space="preserve">
+    <value>Oferta tablas</value>
+  </data>
+  <data name="EVENT_DRAW_OFFER1" xml:space="preserve">
+    <value>Oferta de tablas</value>
+  </data>
+  <data name="EVENT_KING1" xml:space="preserve">
+    <value>Rey</value>
+  </data>
+  <data name="EVENT_KING11" xml:space="preserve">
+    <value>Rey</value>
+  </data>
+  <data name="EVENT_KNIGHT1" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="EVENT_KNIGHT11" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="EVENT_KNIGHT2" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="EVENT_KNIGHT21" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="EVENT_MOVE" xml:space="preserve">
+    <value>Mueve</value>
+  </data>
+  <data name="EVENT_MOVE1" xml:space="preserve">
+    <value>Mueve</value>
+  </data>
+  <data name="EVENT_MULTIPLE_CHECK" xml:space="preserve">
+    <value>Jaque múltiple</value>
+  </data>
+  <data name="EVENT_MULTIPLE_CHECK1" xml:space="preserve">
+    <value>Jaque múltiple</value>
+  </data>
+  <data name="EVENT_PAWN1" xml:space="preserve">
+    <value>Peón</value>
+  </data>
+  <data name="EVENT_PAWN11" xml:space="preserve">
+    <value>Peón</value>
+  </data>
+  <data name="EVENT_PAWN2" xml:space="preserve">
+    <value>Peón</value>
+  </data>
+  <data name="EVENT_PAWN21" xml:space="preserve">
+    <value>Peón</value>
+  </data>
+  <data name="EVENT_PAWN_PASSANT" xml:space="preserve">
+    <value>Al paso</value>
+  </data>
+  <data name="EVENT_PAWN_PASSANT1" xml:space="preserve">
+    <value>Al paso</value>
+  </data>
+  <data name="EVENT_PAWN_PROMOTED" xml:space="preserve">
+    <value>Peón coronado</value>
+  </data>
+  <data name="EVENT_PAWN_PROMOTED1" xml:space="preserve">
+    <value>Peón coronado</value>
+  </data>
+  <data name="EVENT_QUEEN1" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="EVENT_QUEEN11" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="EVENT_QUEEN2" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="EVENT_QUEEN21" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="EVENT_ROOK1" xml:space="preserve">
+    <value>Torre</value>
+  </data>
+  <data name="EVENT_ROOK11" xml:space="preserve">
+    <value>Torre</value>
+  </data>
+  <data name="EVENT_ROOK2" xml:space="preserve">
+    <value>Torre</value>
+  </data>
+  <data name="EVENT_ROOK21" xml:space="preserve">
+    <value>Torre</value>
+  </data>
+  <data name="EVENT_WBISHOP1" xml:space="preserve">
+    <value>Alfil claras</value>
+  </data>
+  <data name="EVENT_WBISHOP11" xml:space="preserve">
+    <value>Alfil claras</value>
+  </data>
+  <data name="EVENT_WBISHOP2" xml:space="preserve">
+    <value>Alfil claras</value>
+  </data>
+  <data name="EVENT_WBISHOP21" xml:space="preserve">
+    <value>Alfil claras</value>
+  </data>
+  <data name="FIL_MATCHES" xml:space="preserve">
+    <value>Archivos binarios de partida (*.bmf)|*.bmf|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FIL_PGN" xml:space="preserve">
+    <value>Archivos PGN (*.pgn)|*.pgn|Archivos binarios de partida (*.bmf)|*.bmf|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FIL_QRS" xml:space="preserve">
+    <value>Archivos de resultados de consulta (*.qrs)|*.qrs|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FIL_XML" xml:space="preserve">
+    <value>Archivos XML (*.xml)|*.xml|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FNAME_MATCHINFO" xml:space="preserve">
+    <value>Información de partida</value>
+  </data>
+  <data name="FNAME_MATCHKEYWORD" xml:space="preserve">
+    <value>Etiqueta de partida</value>
+  </data>
+  <data name="FNAME_MATCHSTS" xml:space="preserve">
+    <value>Estadística de partida</value>
+  </data>
+  <data name="FNAME_MOVEFILTER" xml:space="preserve">
+    <value>Movimiento o posición</value>
+  </data>
+  <data name="FNAME_MOVEPIECE" xml:space="preserve">
+    <value>Pieza que mueve / captura</value>
+  </data>
+  <data name="FNAME_PLAYER" xml:space="preserve">
+    <value>Turno de jugador</value>
+  </data>
+  <data name="FNAME_POSITION" xml:space="preserve">
+    <value>Definición de posición</value>
+  </data>
+  <data name="FNAME_POSSTS" xml:space="preserve">
+    <value>Estadística de posición</value>
+  </data>
+  <data name="FNAME_PZCOUNT" xml:space="preserve">
+    <value>Cuenta de piezas</value>
+  </data>
+  <data name="FNAME_SQUARES" xml:space="preserve">
+    <value>Mover desde - hasta escaque</value>
+  </data>
+  <data name="GRP_MATCHKEYS" xml:space="preserve">
+    <value>Etiquetas de partida</value>
+  </data>
+  <data name="GRP_MATCHSTS" xml:space="preserve">
+    <value>Estadísticas de partida</value>
+  </data>
+  <data name="GRP_PAWNPROMOTED" xml:space="preserve">
+    <value>Peón promovido a</value>
+  </data>
+  <data name="GRP_PIECECAPTURED" xml:space="preserve">
+    <value>Pieza capturada</value>
+  </data>
+  <data name="GRP_POSSTS" xml:space="preserve">
+    <value>Estadísticas de posición</value>
+  </data>
+  <data name="GRP_PZMOVE" xml:space="preserve">
+    <value>Pieza que mueve</value>
+  </data>
+  <data name="KW_DESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>Deescripción de etiqueta</value>
+  </data>
+  <data name="KW_DESCRIPTION_NAME" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="KW_KEYWORD_DESCRIPTION" xml:space="preserve">
+    <value>Nombre de etiqueta</value>
+  </data>
+  <data name="KW_KEYWORD_NAME" xml:space="preserve">
+    <value>Nombre de etiqueta</value>
+  </data>
+  <data name="KW_KW_VALUE_DESCRIPTION" xml:space="preserve">
+    <value>Valor de etiqueta</value>
+  </data>
+  <data name="KW_KW_VALUE_NAME" xml:space="preserve">
+    <value>Valor de etiqueta</value>
+  </data>
+  <data name="LAB_ADDNEW" xml:space="preserve">
+    <value>Añadir nuevo:</value>
+  </data>
+  <data name="LAB_APPICON" xml:space="preserve">
+    <value>Icono aplicación:</value>
+  </data>
+  <data name="LAB_AUTHOR" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="LAB_BLACK" xml:space="preserve">
+    <value>Negras</value>
+  </data>
+  <data name="LAB_CANONICAL" xml:space="preserve">
+    <value>Valor canónico</value>
+  </data>
+  <data name="LAB_CASTLE" xml:space="preserve">
+    <value>Enroque</value>
+  </data>
+  <data name="LAB_CHECK" xml:space="preserve">
+    <value>Jaque</value>
+  </data>
+  <data name="LAB_CHUNKSIZE" xml:space="preserve">
+    <value>Copiar bloques de tamaño</value>
+  </data>
+  <data name="LAB_COMMENTS" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="LAB_CUSTOM" xml:space="preserve">
+    <value>Expresión a medida</value>
+  </data>
+  <data name="LAB_DATE" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="LAB_DESCRIPTION" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="LAB_DESTDB" xml:space="preserve">
+    <value>Base de datos de destino</value>
+  </data>
+  <data name="LAB_EQUIVALENCES" xml:space="preserve">
+    <value>Equivalencias</value>
+  </data>
+  <data name="LAB_FILES" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="LAB_FILNAME" xml:space="preserve">
+    <value>Nombre del filtro</value>
+  </data>
+  <data name="LAB_FILTER" xml:space="preserve">
+    <value>Filtro</value>
+  </data>
+  <data name="LAB_FROM" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="LAB_FULLMOVES" xml:space="preserve">
+    <value>Jugadas</value>
+  </data>
+  <data name="LAB_ITEMS" xml:space="preserve">
+    <value>Elementos</value>
+  </data>
+  <data name="LAB_KEYWORD" xml:space="preserve">
+    <value>Etiqueta</value>
+  </data>
+  <data name="LAB_MATCH" xml:space="preserve">
+    <value>Partida</value>
+  </data>
+  <data name="LAB_MATCHCOUNT" xml:space="preserve">
+    <value>{0} Partidas en la base de datos origen</value>
+  </data>
+  <data name="LAB_MATCHES" xml:space="preserve">
+    <value>Partidas</value>
+  </data>
+  <data name="LAB_MATCHSEL" xml:space="preserve">
+    <value>{0} Partidas, {1} Seleccionadas</value>
+  </data>
+  <data name="LAB_MOVES" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="LAB_NAME" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="LAB_OPERATION" xml:space="preserve">
+    <value>Operación</value>
+  </data>
+  <data name="LAB_PIECESET" xml:space="preserve">
+    <value>Piezas:</value>
+  </data>
+  <data name="LAB_RESULT" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="LAB_RESULTCNT" xml:space="preserve">
+    <value>{0} Partidas</value>
+  </data>
+  <data name="LAB_STOREDBOARDS" xml:space="preserve">
+    <value>Tableros guardados</value>
+  </data>
+  <data name="LAB_TO" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="LAB_VALUE" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="LAB_VALUES" xml:space="preserve">
+    <value>Valores</value>
+  </data>
+  <data name="LAB_WHITE" xml:space="preserve">
+    <value>Blancas</value>
+  </data>
+  <data name="LAB_WHITEBLACK" xml:space="preserve">
+    <value>Blancas/Negras</value>
+  </data>
+  <data name="MATCH_DESCRIPTION_DESCRIPTION" xml:space="preserve">
+    <value>Descripción de partida</value>
+  </data>
+  <data name="MATCH_DESCRIPTION_NAME" xml:space="preserve">
+    <value>Descripción de partida</value>
+  </data>
+  <data name="MATCH_RESULTTEXT_DESCRIPTION" xml:space="preserve">
+    <value>* = no terminado, 1-0 = blancas ganan, 0-1 = negras ganan, 1/2-1/2 = tablas</value>
+  </data>
+  <data name="MATCH_RESULTTEXT_NAME" xml:space="preserve">
+    <value>Resultado de la partida (AN)</value>
+  </data>
+  <data name="MATCH_RESULT_DESCRIPTION" xml:space="preserve">
+    <value>0 = no terminado, 1 = blancas ganan, 2 = negras ganan, 3 = tablas</value>
+  </data>
+  <data name="MATCH_RESULT_NAME" xml:space="preserve">
+    <value>Resultado de la partida</value>
+  </data>
+  <data name="MENU_DATABASE" xml:space="preserve">
+    <value>Base de datos</value>
+  </data>
+  <data name="MENU_FILE" xml:space="preserve">
+    <value>Archivo</value>
+  </data>
+  <data name="MENU_HELP" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="MENU_WINDOW" xml:space="preserve">
+    <value>Ventana</value>
+  </data>
+  <data name="MOVE_COMMENT_DESCRIPTION" xml:space="preserve">
+    <value>Texto del comentario</value>
+  </data>
+  <data name="MOVE_COMMENT_MATCH_DESCRIPTION" xml:space="preserve">
+    <value>Nmbre de la partida en la que se ha escrito el comentario</value>
+  </data>
+  <data name="MOVE_COMMENT_MATCH_NAME" xml:space="preserve">
+    <value>Nombre de la partida</value>
+  </data>
+  <data name="MOVE_COMMENT_NAME" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="MOVE_EVENT_DESCRIPTION" xml:space="preserve">
+    <value>Resultado del movimiento (jaque, jaque mate, captura, etc.)</value>
+  </data>
+  <data name="MOVE_EVENT_NAME" xml:space="preserve">
+    <value>Evento de movimiento</value>
+  </data>
+  <data name="MOVE_MATCH_DESCRIPTION" xml:space="preserve">
+    <value>Partida en la que se ha jugado el movimiento</value>
+  </data>
+  <data name="MOVE_MATCH_NAME" xml:space="preserve">
+    <value>Movimiento de partida</value>
+  </data>
+  <data name="MOVE_TEXT_DESCRIPTION" xml:space="preserve">
+    <value>Movimiento en notación algebraica</value>
+  </data>
+  <data name="MOVE_TEXT_NAME" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+  <data name="MSG_CANCELCHG" xml:space="preserve">
+    <value>Se perderán todos los cambios. ¿Continuar?</value>
+  </data>
+  <data name="MSG_COMMITCHG" xml:space="preserve">
+    <value>¿Trasladar los cambios a la base de datos?</value>
+  </data>
+  <data name="MSG_CONSOLIDATE" xml:space="preserve">
+    <value>Todos los valores seleccionados se cambiarán al valor canónico '{0}'. ¿Continuar?</value>
+  </data>
+  <data name="MSG_DBEXPORTED" xml:space="preserve">
+    <value>Base de datos exportada</value>
+  </data>
+  <data name="MSG_DBOPERATION" xml:space="preserve">
+    <value>Hay una operación de base de datos en curso.</value>
+  </data>
+  <data name="MSG_DBOPERATIONQ" xml:space="preserve">
+    <value>Hay una operación de base de datos en curso. ¿Cerrar de todo modos?</value>
+  </data>
+  <data name="MSG_DELETEFILE" xml:space="preserve">
+    <value>¿Eliminar archivo origen?</value>
+  </data>
+  <data name="MSG_DELMATCHES" xml:space="preserve">
+    <value>Todas las partidas seleccionadas se eliminarán por completo de la base de datos. ¿Desea continuar?</value>
+  </data>
+  <data name="MSG_EXPORTCOMMENTS" xml:space="preserve">
+    <value>¿Exportar comentarios?</value>
+  </data>
+  <data name="MSG_FILTERDELETE" xml:space="preserve">
+    <value>El filtro seleccionado se eleiminará de la base de datos. ¿Contiunar?</value>
+  </data>
+  <data name="MSG_INSERTDUPLICATES" xml:space="preserve">
+    <value>¿Insertar partidas duplicadas?</value>
+  </data>
+  <data name="MSG_LABELMATCH" xml:space="preserve">
+    <value>Partidas etiquetadas</value>
+  </data>
+  <data name="MSG_MATCHDUPLICATED" xml:space="preserve">
+    <value>Esta partida ya está en la base de datos. ¿Guardar de todos modos?</value>
+  </data>
+  <data name="MSG_MATCHESDEL" xml:space="preserve">
+    <value>Partidas eliminadas</value>
+  </data>
+  <data name="MSG_MATCHESINSERTED" xml:space="preserve">
+    <value>Procesadas {0} partidas, Insertadas {1} partidas, {2} duplicados encontrados. Las partidas duplicadas permanecen seleccionadas.</value>
+  </data>
+  <data name="MSG_MATCHESINSERTED2" xml:space="preserve">
+    <value>Procesadas {0} partidas, Insertadas {1} partidas, {2} duplicados encontrados.</value>
+  </data>
+  <data name="MSG_MATCHESSAVED" xml:space="preserve">
+    <value>Partidas guardadas</value>
+  </data>
+  <data name="MSG_OPCANCEL" xml:space="preserve">
+    <value>Operación cancelada</value>
+  </data>
+  <data name="MSG_PGNLOADED" xml:space="preserve">
+    <value>Archivo PGN traducido</value>
+  </data>
+  <data name="MSG_QRYFINISHED" xml:space="preserve">
+    <value>Consulta finalizada en {0}</value>
+  </data>
+  <data name="MSG_RESULTEXPORTED" xml:space="preserve">
+    <value>{0} Resultados exportados</value>
+  </data>
+  <data name="MSG_RESULTSAVED" xml:space="preserve">
+    <value>Resultados guardados</value>
+  </data>
+  <data name="MSG_TERMINATEMATCH" xml:space="preserve">
+    <value>Esto finalizará la edición de la partida actual. Esta operación no se puede deshacer. ¿Continuar?</value>
+  </data>
+  <data name="MST_BCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques de las negras</value>
+  </data>
+  <data name="MST_BDISCCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques descubiertos de las negras</value>
+  </data>
+  <data name="MST_BMULTICHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques múltiples de las negras</value>
+  </data>
+  <data name="MST_TCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta total de jaques</value>
+  </data>
+  <data name="MST_TDISCCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta total de jaques descubiertos</value>
+  </data>
+  <data name="MST_TMULTICHECKCOUNT" xml:space="preserve">
+    <value>Cuenta total de jaques múltiples</value>
+  </data>
+  <data name="MST_WCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques de las blancas</value>
+  </data>
+  <data name="MST_WDISCCHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques descubiertos de las blancas</value>
+  </data>
+  <data name="MST_WMULTICHECKCOUNT" xml:space="preserve">
+    <value>Cuenta de jaques múltiples de las blancas</value>
+  </data>
+  <data name="NAG_0" xml:space="preserve">
+    <value>anotación nula</value>
+  </data>
+  <data name="NAG_1" xml:space="preserve">
+    <value>buen movimiento !</value>
+  </data>
+  <data name="NAG_10" xml:space="preserve">
+    <value>posición de tablas</value>
+  </data>
+  <data name="NAG_100" xml:space="preserve">
+    <value>Blancas tienen la dama bien posicionada</value>
+  </data>
+  <data name="NAG_101" xml:space="preserve">
+    <value>Negras tienen la dama bien posicionada</value>
+  </data>
+  <data name="NAG_102" xml:space="preserve">
+    <value>Blancas tienen las piezas mal coordinadas</value>
+  </data>
+  <data name="NAG_103" xml:space="preserve">
+    <value>Negras tienen las piezas mal coordinadas</value>
+  </data>
+  <data name="NAG_104" xml:space="preserve">
+    <value>Blancas tienen las piezas bien coordinadas</value>
+  </data>
+  <data name="NAG_105" xml:space="preserve">
+    <value>Negras tienen las piezas bien coordinadas</value>
+  </data>
+  <data name="NAG_106" xml:space="preserve">
+    <value>Blancas han jugado muy mal la apertura</value>
+  </data>
+  <data name="NAG_107" xml:space="preserve">
+    <value>Negras han jugado muy mal la apertura</value>
+  </data>
+  <data name="NAG_108" xml:space="preserve">
+    <value>Blancas han jugado mal la apertura</value>
+  </data>
+  <data name="NAG_109" xml:space="preserve">
+    <value>Negras han jugado mal la apertura</value>
+  </data>
+  <data name="NAG_11" xml:space="preserve">
+    <value>igualados, posición tranquila</value>
+  </data>
+  <data name="NAG_110" xml:space="preserve">
+    <value>Blancas han jugado bien la apertura</value>
+  </data>
+  <data name="NAG_111" xml:space="preserve">
+    <value>Negras han jugado bien la apertura</value>
+  </data>
+  <data name="NAG_112" xml:space="preserve">
+    <value>Blancas han jugado muy bien la apertura</value>
+  </data>
+  <data name="NAG_113" xml:space="preserve">
+    <value>Negras han jugado muy bien la apertura</value>
+  </data>
+  <data name="NAG_114" xml:space="preserve">
+    <value>Blancas han jugado muy mal el medio juego</value>
+  </data>
+  <data name="NAG_115" xml:space="preserve">
+    <value>Negras han jugado muy mal el medio juego</value>
+  </data>
+  <data name="NAG_116" xml:space="preserve">
+    <value>Blancas han jugado mal el medio juego</value>
+  </data>
+  <data name="NAG_117" xml:space="preserve">
+    <value>Negras han jugado mal el medio juego</value>
+  </data>
+  <data name="NAG_118" xml:space="preserve">
+    <value>Blancas han jugado bien el medio juego</value>
+  </data>
+  <data name="NAG_119" xml:space="preserve">
+    <value>Negras han jugado bien el medio juego</value>
+  </data>
+  <data name="NAG_12" xml:space="preserve">
+    <value>igualados, posición activa</value>
+  </data>
+  <data name="NAG_120" xml:space="preserve">
+    <value>Blancas han jugado muy bien el medio juego</value>
+  </data>
+  <data name="NAG_121" xml:space="preserve">
+    <value>Negras han jugado muy bien el medio juego</value>
+  </data>
+  <data name="NAG_122" xml:space="preserve">
+    <value>Blancas han jugado muy mal el final</value>
+  </data>
+  <data name="NAG_123" xml:space="preserve">
+    <value>Negras han jugado muy mal el final</value>
+  </data>
+  <data name="NAG_124" xml:space="preserve">
+    <value>Blancas han jugado mal el final</value>
+  </data>
+  <data name="NAG_125" xml:space="preserve">
+    <value>Negras han jugado mal el final</value>
+  </data>
+  <data name="NAG_126" xml:space="preserve">
+    <value>Blancas han jugado bien el final</value>
+  </data>
+  <data name="NAG_127" xml:space="preserve">
+    <value>Negras han jugado bien el final</value>
+  </data>
+  <data name="NAG_128" xml:space="preserve">
+    <value>Blancas han jugado muy bien el final</value>
+  </data>
+  <data name="NAG_129" xml:space="preserve">
+    <value>Negras han jugado muy bien el final</value>
+  </data>
+  <data name="NAG_13" xml:space="preserve">
+    <value>posición no clara</value>
+  </data>
+  <data name="NAG_130" xml:space="preserve">
+    <value>Blancas tienen un ligero contraataque</value>
+  </data>
+  <data name="NAG_131" xml:space="preserve">
+    <value>Negras tienen un ligero contraataque</value>
+  </data>
+  <data name="NAG_132" xml:space="preserve">
+    <value>Blancas tienen un contraataque moderado</value>
+  </data>
+  <data name="NAG_133" xml:space="preserve">
+    <value>Negras tienen un contraataque moderado</value>
+  </data>
+  <data name="NAG_134" xml:space="preserve">
+    <value>Blancas tienen un contraataque decisivo</value>
+  </data>
+  <data name="NAG_135" xml:space="preserve">
+    <value>Negras tienen un contraataque decisivo</value>
+  </data>
+  <data name="NAG_136" xml:space="preserve">
+    <value>Blancas tienen una presión de tiempo moderada</value>
+  </data>
+  <data name="NAG_137" xml:space="preserve">
+    <value>Negras tienen una presión de tiempo moderada</value>
+  </data>
+  <data name="NAG_138" xml:space="preserve">
+    <value>Blancas tienen una presión de tiempo severa</value>
+  </data>
+  <data name="NAG_139" xml:space="preserve">
+    <value>Negras tienen una presión de tiempo severa</value>
+  </data>
+  <data name="NAG_14" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja</value>
+  </data>
+  <data name="NAG_15" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja</value>
+  </data>
+  <data name="NAG_16" xml:space="preserve">
+    <value>Blancas tienen una ventaja moderada</value>
+  </data>
+  <data name="NAG_17" xml:space="preserve">
+    <value>Negras tienen una ventaja moderada</value>
+  </data>
+  <data name="NAG_18" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva</value>
+  </data>
+  <data name="NAG_19" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva</value>
+  </data>
+  <data name="NAG_2" xml:space="preserve">
+    <value>movimiento malo ?</value>
+  </data>
+  <data name="NAG_20" xml:space="preserve">
+    <value>Blancas tienen una ventaja aplastante (Negras deberían rendirse)</value>
+  </data>
+  <data name="NAG_21" xml:space="preserve">
+    <value>Negras tienen una ventaja aplastante (Blancas deberían rendirse)</value>
+  </data>
+  <data name="NAG_22" xml:space="preserve">
+    <value>Blancas en zugzwang</value>
+  </data>
+  <data name="NAG_23" xml:space="preserve">
+    <value>Negras en zugzwang</value>
+  </data>
+  <data name="NAG_24" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja de espacio</value>
+  </data>
+  <data name="NAG_25" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja de espacio</value>
+  </data>
+  <data name="NAG_26" xml:space="preserve">
+    <value>Blancas tienen una ventaja de espacio moderada</value>
+  </data>
+  <data name="NAG_27" xml:space="preserve">
+    <value>Negras tienen una ventaja de espacio moderada</value>
+  </data>
+  <data name="NAG_28" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva de espacio</value>
+  </data>
+  <data name="NAG_29" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva de espacio</value>
+  </data>
+  <data name="NAG_3" xml:space="preserve">
+    <value>muy buen movimiento !!</value>
+  </data>
+  <data name="NAG_30" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_31" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_32" xml:space="preserve">
+    <value>Blancas tienen una ventaja moderada de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_33" xml:space="preserve">
+    <value>Negras tienen una ventaja moderada de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_34" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_35" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva de tiempo (desarrollo)</value>
+  </data>
+  <data name="NAG_36" xml:space="preserve">
+    <value>Blancas tienen la iniciativa</value>
+  </data>
+  <data name="NAG_37" xml:space="preserve">
+    <value>Negras tienen la iniciativa</value>
+  </data>
+  <data name="NAG_38" xml:space="preserve">
+    <value>Blancas tienen una iniciativa duradera</value>
+  </data>
+  <data name="NAG_39" xml:space="preserve">
+    <value>Negras tienen una iniciativa duradera</value>
+  </data>
+  <data name="NAG_4" xml:space="preserve">
+    <value>movimiento muy malo ??</value>
+  </data>
+  <data name="NAG_40" xml:space="preserve">
+    <value>Blancas tienen el ataque</value>
+  </data>
+  <data name="NAG_41" xml:space="preserve">
+    <value>Negras tienen el ataque</value>
+  </data>
+  <data name="NAG_42" xml:space="preserve">
+    <value>Blancas tienen una compensación insuficiente por la pérdida de material</value>
+  </data>
+  <data name="NAG_43" xml:space="preserve">
+    <value>Negras tienen una compensación insuficiente por la pérdida de material</value>
+  </data>
+  <data name="NAG_44" xml:space="preserve">
+    <value>Blancas tienen una compensación suficiente por la pérdida de material</value>
+  </data>
+  <data name="NAG_45" xml:space="preserve">
+    <value>Negras tienen una compensación suficiente por la pérdida de material</value>
+  </data>
+  <data name="NAG_46" xml:space="preserve">
+    <value>Blancas tienen una compensación más que adecuada por la pérdida de material</value>
+  </data>
+  <data name="NAG_47" xml:space="preserve">
+    <value>Negras tienen una compensación más que adecuada por la pérdida de material</value>
+  </data>
+  <data name="NAG_48" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja de control del centro</value>
+  </data>
+  <data name="NAG_49" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja de control del centro</value>
+  </data>
+  <data name="NAG_5" xml:space="preserve">
+    <value>movimiento arriesgado !?</value>
+  </data>
+  <data name="NAG_50" xml:space="preserve">
+    <value>Blancas tienen una ventaja moderada de control del centro</value>
+  </data>
+  <data name="NAG_51" xml:space="preserve">
+    <value>Negras tienen una ventaja moderada de control del centro</value>
+  </data>
+  <data name="NAG_52" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva de control del centro</value>
+  </data>
+  <data name="NAG_53" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva de control del centro</value>
+  </data>
+  <data name="NAG_54" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja en el flanco de rey</value>
+  </data>
+  <data name="NAG_55" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja en el flanco de rey</value>
+  </data>
+  <data name="NAG_56" xml:space="preserve">
+    <value>Blancas tienen una ventaja moderada en el flanco de rey</value>
+  </data>
+  <data name="NAG_57" xml:space="preserve">
+    <value>Negras tienen una ventaja moderada en el flanco de rey</value>
+  </data>
+  <data name="NAG_58" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva en el flanco de rey</value>
+  </data>
+  <data name="NAG_59" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva en el flanco de rey</value>
+  </data>
+  <data name="NAG_6" xml:space="preserve">
+    <value>movimiento cuestionable ?!</value>
+  </data>
+  <data name="NAG_60" xml:space="preserve">
+    <value>Blancas tienen una ligera ventaja en el flanco de dama</value>
+  </data>
+  <data name="NAG_61" xml:space="preserve">
+    <value>Negras tienen una ligera ventaja en el flanco de dama</value>
+  </data>
+  <data name="NAG_62" xml:space="preserve">
+    <value>Blancas tienen una ventaja moderada en el flanco de dama</value>
+  </data>
+  <data name="NAG_63" xml:space="preserve">
+    <value>Negras tienen una ventaja moderada en el flanco de dama</value>
+  </data>
+  <data name="NAG_64" xml:space="preserve">
+    <value>Blancas tienen una ventaja decisiva en el flanco de dama</value>
+  </data>
+  <data name="NAG_65" xml:space="preserve">
+    <value>Negras tienen una ventaja decisiva en el flanco de dama</value>
+  </data>
+  <data name="NAG_66" xml:space="preserve">
+    <value>Blancas tienen una primera fila vulnerable</value>
+  </data>
+  <data name="NAG_67" xml:space="preserve">
+    <value>Negras tienen una primera fila vulnerable</value>
+  </data>
+  <data name="NAG_68" xml:space="preserve">
+    <value>Blancas tienen una primera fila bien protegida</value>
+  </data>
+  <data name="NAG_69" xml:space="preserve">
+    <value>Negras tienen una primera fila bien protegida</value>
+  </data>
+  <data name="NAG_7" xml:space="preserve">
+    <value>movimiento forzado (los demás pierden rápidamente)</value>
+  </data>
+  <data name="NAG_70" xml:space="preserve">
+    <value>Blancas tienen el rey desprotegido</value>
+  </data>
+  <data name="NAG_71" xml:space="preserve">
+    <value>Negras tienen el rey desprotegido</value>
+  </data>
+  <data name="NAG_72" xml:space="preserve">
+    <value>Blancas tienen el rey bien defendido</value>
+  </data>
+  <data name="NAG_73" xml:space="preserve">
+    <value>Negras tienen el rey bien defendido</value>
+  </data>
+  <data name="NAG_74" xml:space="preserve">
+    <value>Blancas tienen el rey mal posicionado</value>
+  </data>
+  <data name="NAG_75" xml:space="preserve">
+    <value>Negras tienen el rey mal posicionado</value>
+  </data>
+  <data name="NAG_76" xml:space="preserve">
+    <value>Blancas tienen el rey bien posicionado</value>
+  </data>
+  <data name="NAG_77" xml:space="preserve">
+    <value>Negras tienen el rey bien posicionado</value>
+  </data>
+  <data name="NAG_78" xml:space="preserve">
+    <value>Blancas tienen una estructura de peones muy débil</value>
+  </data>
+  <data name="NAG_79" xml:space="preserve">
+    <value>Negras tienen una estructura de peones muy débil</value>
+  </data>
+  <data name="NAG_8" xml:space="preserve">
+    <value>movimiento único (sin alternativas razonables)</value>
+  </data>
+  <data name="NAG_80" xml:space="preserve">
+    <value>Blancas tienen una estructura de peones moderadamente débil</value>
+  </data>
+  <data name="NAG_81" xml:space="preserve">
+    <value>Negras tienen una estructura de peones moderadamente débil</value>
+  </data>
+  <data name="NAG_82" xml:space="preserve">
+    <value>Blancas tienen una estructura de peones moderadamente fuerte</value>
+  </data>
+  <data name="NAG_83" xml:space="preserve">
+    <value>Negras tienen una estructura de peones moderadamente fuerte</value>
+  </data>
+  <data name="NAG_84" xml:space="preserve">
+    <value>Blancas tienen una estructura de peones muy fuerte</value>
+  </data>
+  <data name="NAG_85" xml:space="preserve">
+    <value>Negras tienen una estructura de peones muy fuerte</value>
+  </data>
+  <data name="NAG_86" xml:space="preserve">
+    <value>Blancas tienen el caballo mal posicionado</value>
+  </data>
+  <data name="NAG_87" xml:space="preserve">
+    <value>Negras tienen el caballo mal posicionado</value>
+  </data>
+  <data name="NAG_88" xml:space="preserve">
+    <value>Blancas tienen el caballo bien posicionado</value>
+  </data>
+  <data name="NAG_89" xml:space="preserve">
+    <value>Negras tienen el caballo bien posicionado</value>
+  </data>
+  <data name="NAG_9" xml:space="preserve">
+    <value>peor movimiento</value>
+  </data>
+  <data name="NAG_90" xml:space="preserve">
+    <value>Blancas tienen el alfil mal posicionado</value>
+  </data>
+  <data name="NAG_91" xml:space="preserve">
+    <value>Negras tienen el alfil mal posicionado</value>
+  </data>
+  <data name="NAG_92" xml:space="preserve">
+    <value>Blancas tienen el alfil bien posicionado</value>
+  </data>
+  <data name="NAG_93" xml:space="preserve">
+    <value>Negras tienen el alfil bien posicionado</value>
+  </data>
+  <data name="NAG_94" xml:space="preserve">
+    <value>Blancas tienen la torre mal posicionada</value>
+  </data>
+  <data name="NAG_95" xml:space="preserve">
+    <value>Negras tienen la torre mal posicionada</value>
+  </data>
+  <data name="NAG_96" xml:space="preserve">
+    <value>Blancas tienen la torre bien posicionada</value>
+  </data>
+  <data name="NAG_97" xml:space="preserve">
+    <value>Negras tienen la torre bien posicionada</value>
+  </data>
+  <data name="NAG_98" xml:space="preserve">
+    <value>Blancas tienen la dama mal posicionada</value>
+  </data>
+  <data name="NAG_99" xml:space="preserve">
+    <value>Negras tienen la dama mal posicionada</value>
+  </data>
+  <data name="NAME_BPLAYER" xml:space="preserve">
+    <value>Negras</value>
+  </data>
+  <data name="NAME_COMPOSITECONDITION" xml:space="preserve">
+    <value>Condición de filtro compuesta</value>
+  </data>
+  <data name="NAME_DBDEFAULT" xml:space="preserve">
+    <value>Nueva colección de filtros</value>
+  </data>
+  <data name="NAME_MULTIPOS" xml:space="preserve">
+    <value>Posiciones alternativas múltiples</value>
+  </data>
+  <data name="NAME_PARTPOS" xml:space="preserve">
+    <value>Posición parcial</value>
+  </data>
+  <data name="NAME_SIMPLEPOS" xml:space="preserve">
+    <value>Posición absoluta</value>
+  </data>
+  <data name="NAME_TOMOVE" xml:space="preserve">
+    <value> juegan</value>
+  </data>
+  <data name="NAME_UNDEFINED" xml:space="preserve">
+    <value>No definido</value>
+  </data>
+  <data name="NAME_UNKNOWN" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="NAME_WPLAYER" xml:space="preserve">
+    <value>Blancas</value>
+  </data>
+  <data name="OPN_BITAND" xml:space="preserve">
+    <value>Contiene evento</value>
+  </data>
+  <data name="OPN_EQUALS" xml:space="preserve">
+    <value>Igual</value>
+  </data>
+  <data name="OPN_FIRST" xml:space="preserve">
+    <value>Primero</value>
+  </data>
+  <data name="OPN_FIRSTPLUS" xml:space="preserve">
+    <value>Primero+{0}</value>
+  </data>
+  <data name="OPN_FIRSTPLUSN" xml:space="preserve">
+    <value>Primero +</value>
+  </data>
+  <data name="OPN_GREATERTHAN" xml:space="preserve">
+    <value>Mayor que</value>
+  </data>
+  <data name="OPN_GREATERTHANOREQUAL" xml:space="preserve">
+    <value>Mayor o igual que</value>
+  </data>
+  <data name="OPN_IN" xml:space="preserve">
+    <value>En el conjunto</value>
+  </data>
+  <data name="OPN_INRANGE" xml:space="preserve">
+    <value>En el rango</value>
+  </data>
+  <data name="OPN_LESSTHAN" xml:space="preserve">
+    <value>Menor que</value>
+  </data>
+  <data name="OPN_LESSTHANOREQUAL" xml:space="preserve">
+    <value>Menor o igual que</value>
+  </data>
+  <data name="OPN_LIKE" xml:space="preserve">
+    <value>Contiene</value>
+  </data>
+  <data name="OPN_NEXT" xml:space="preserve">
+    <value>Entre los siguientes... </value>
+  </data>
+  <data name="OPN_NEXTN" xml:space="preserve">
+    <value>Posterior</value>
+  </data>
+  <data name="OPN_NOTBITAND" xml:space="preserve">
+    <value>No contiene evento</value>
+  </data>
+  <data name="OPN_NOTEQUALS" xml:space="preserve">
+    <value>Diferente a</value>
+  </data>
+  <data name="OPN_NOTIN" xml:space="preserve">
+    <value>No en el conjunto</value>
+  </data>
+  <data name="OPN_NOTINRANGE" xml:space="preserve">
+    <value>No en el rango</value>
+  </data>
+  <data name="OPN_NOTLIKE" xml:space="preserve">
+    <value>No contiene</value>
+  </data>
+  <data name="OPN_NOTNULL" xml:space="preserve">
+    <value>No vacío</value>
+  </data>
+  <data name="OPN_NOTREGEX" xml:space="preserve">
+    <value>No se ajusta al patrón</value>
+  </data>
+  <data name="OPN_NULL" xml:space="preserve">
+    <value>Vacío</value>
+  </data>
+  <data name="OPN_REGEX" xml:space="preserve">
+    <value>Se ajusta al patrón</value>
+  </data>
+  <data name="OPT_BULKIMPORTPGN" xml:space="preserve">
+    <value>Importar múltiples archivos...</value>
+  </data>
+  <data name="OPT_CASCADE" xml:space="preserve">
+    <value>Cascada</value>
+  </data>
+  <data name="OPT_CLEAR" xml:space="preserve">
+    <value>Escaque ignorado</value>
+  </data>
+  <data name="OPT_CLEARALL" xml:space="preserve">
+    <value>Cambiar todos los escaques vacíos a ignorados</value>
+  </data>
+  <data name="OPT_COLORBLACK" xml:space="preserve">
+    <value>Escaque oscuro</value>
+  </data>
+  <data name="OPT_COLORWHITE" xml:space="preserve">
+    <value>Escaque claro</value>
+  </data>
+  <data name="OPT_CONSOLIDATE" xml:space="preserve">
+    <value>Fusionar valores de etiquetas</value>
+  </data>
+  <data name="OPT_CREDITS" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="OPT_EMPTY" xml:space="preserve">
+    <value>Forzar a escaque vacío</value>
+  </data>
+  <data name="OPT_EMPTYALL" xml:space="preserve">
+    <value>Forcar todos los escaques sin asignar a vacíos</value>
+  </data>
+  <data name="OPT_EXIT" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="OPT_EXPORTDB" xml:space="preserve">
+    <value>Exportar base de datos</value>
+  </data>
+  <data name="OPT_HELP" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="OPT_IMPORTPGN" xml:space="preserve">
+    <value>Importar archivo...</value>
+  </data>
+  <data name="OPT_LOADRES" xml:space="preserve">
+    <value>Abrir resultados de consulta...</value>
+  </data>
+  <data name="OPT_MATCHFILTEREDITOR" xml:space="preserve">
+    <value>Editor de filtros de partida</value>
+  </data>
+  <data name="OPT_MOVEEDITOR" xml:space="preserve">
+    <value>Editor de filtros de movimiento</value>
+  </data>
+  <data name="OPT_NEWDATABASE" xml:space="preserve">
+    <value>Nueva colección de filtros</value>
+  </data>
+  <data name="OPT_NEWMATCH" xml:space="preserve">
+    <value>Nueva partida</value>
+  </data>
+  <data name="OPT_NEWQUERY" xml:space="preserve">
+    <value>Nueva consulta</value>
+  </data>
+  <data name="OPT_NOCOLOR" xml:space="preserve">
+    <value>Escaque de color indiferente</value>
+  </data>
+  <data name="OPT_OPENDB" xml:space="preserve">
+    <value>Abrir coleción de filtros...</value>
+  </data>
+  <data name="OPT_SAVEDB" xml:space="preserve">
+    <value>Guardar colección de filtros</value>
+  </data>
+  <data name="OPT_SAVEDBAS" xml:space="preserve">
+    <value>Guardar colección de filtros como...</value>
+  </data>
+  <data name="OPT_SAVEMATCHESFILE" xml:space="preserve">
+    <value>Guardar partidas seleccionadas en archivo...</value>
+  </data>
+  <data name="OPT_SAVERES" xml:space="preserve">
+    <value>Guardar resultados...</value>
+  </data>
+  <data name="OPT_TILEH" xml:space="preserve">
+    <value>Mosaico horizontal</value>
+  </data>
+  <data name="OPT_TILEV" xml:space="preserve">
+    <value>Mosaico vertical</value>
+  </data>
+  <data name="POSITION_EVENT_DESCRIPTION" xml:space="preserve">
+    <value>Último resultado del movimiento en la posición (jaque, jaque mate, captura, etc.)</value>
+  </data>
+  <data name="POSITION_EVENT_NAME" xml:space="preserve">
+    <value>Evento de posición</value>
+  </data>
+  <data name="PST_MATCHCOUNT" xml:space="preserve">
+    <value>Partidas en las que se ha llegado a esta posición</value>
+  </data>
+  <data name="PST_OCCURCOUNT" xml:space="preserve">
+    <value>Veces que se ha dado esta posición</value>
+  </data>
+  <data name="PZ_ANY" xml:space="preserve">
+    <value>Cualquier pieza</value>
+  </data>
+  <data name="PZ_BISHOP" xml:space="preserve">
+    <value>Alfil</value>
+  </data>
+  <data name="PZ_KING" xml:space="preserve">
+    <value>Rey</value>
+  </data>
+  <data name="PZ_KNIGHT" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="PZ_PAWN" xml:space="preserve">
+    <value>Peón</value>
+  </data>
+  <data name="PZ_QUEEN" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="PZ_ROOK" xml:space="preserve">
+    <value>Torre</value>
+  </data>
+  <data name="RB_BLACKMOVE" xml:space="preserve">
+    <value>Negras mueven</value>
+  </data>
+  <data name="RB_WHITEMOVE" xml:space="preserve">
+    <value>Blancas mueven</value>
+  </data>
+  <data name="SEP_AND" xml:space="preserve">
+    <value> y </value>
+  </data>
+  <data name="SEP_FROM" xml:space="preserve">
+    <value>desde </value>
+  </data>
+  <data name="SEP_OR" xml:space="preserve">
+    <value> o </value>
+  </data>
+  <data name="SEP_TO" xml:space="preserve">
+    <value> hasta </value>
+  </data>
+  <data name="TTL_BULKCOPY" xml:space="preserve">
+    <value>Exportar base de datos desde {0}</value>
+  </data>
+  <data name="TTL_BULKPGNIMPORT" xml:space="preserve">
+    <value>Importación en bloque de archivos en {0}</value>
+  </data>
+  <data name="TTL_CONSOLIDATE" xml:space="preserve">
+    <value>Fusionar etiquetas en {0}</value>
+  </data>
+  <data name="TTL_DUPLICATES" xml:space="preserve">
+    <value>Permitir duplicados</value>
+  </data>
+  <data name="TTL_FILTERDATABASE" xml:space="preserve">
+    <value>Colección de filtros: {0}</value>
+  </data>
+  <data name="TTL_INITIALPOS" xml:space="preserve">
+    <value>Establecer posición inicial</value>
+  </data>
+  <data name="TTL_LABELMATCHES" xml:space="preserve">
+    <value>Definir etiqueta de partida</value>
+  </data>
+  <data name="TTL_MAINFORM" xml:space="preserve">
+    <value>Base de datos de partidas de ajedrez</value>
+  </data>
+  <data name="TTL_MATCHFILTER" xml:space="preserve">
+    <value>Editor de filtros de partida: {0}</value>
+  </data>
+  <data name="TTL_MATCHINFO" xml:space="preserve">
+    <value>Editor de información de partida</value>
+  </data>
+  <data name="TTL_MOVEFILTER" xml:space="preserve">
+    <value>Editor de filtros de movimiento: {0}</value>
+  </data>
+  <data name="TTL_MOVEPIECESED" xml:space="preserve">
+    <value>Editor de eventos de movimiento</value>
+  </data>
+  <data name="TTL_MULTICHOICEEDITOR" xml:space="preserve">
+    <value>Editor de filtros {0}</value>
+  </data>
+  <data name="TTL_NEW" xml:space="preserve">
+    <value>(Nuevo)</value>
+  </data>
+  <data name="TTL_NEWMATCH" xml:space="preserve">
+    <value>Datos nueva partida</value>
+  </data>
+  <data name="TTL_PGNERROR" xml:space="preserve">
+    <value>Guardar erróneos en archivo</value>
+  </data>
+  <data name="TTL_PGNWINDOW" xml:space="preserve">
+    <value>Importar archivo {0} en {1}</value>
+  </data>
+  <data name="TTL_PIECECOUNT" xml:space="preserve">
+    <value>Cuenta de piezas</value>
+  </data>
+  <data name="TTL_POSITIONEDITOR" xml:space="preserve">
+    <value>Editor de posiciones</value>
+  </data>
+  <data name="TTL_QUERY" xml:space="preserve">
+    <value>Consulta en {0}</value>
+  </data>
+  <data name="TTP_ADDMOVE" xml:space="preserve">
+    <value>Añadir movimiento</value>
+  </data>
+  <data name="TTP_ADDMOVEE" xml:space="preserve">
+    <value>Añadir movimiento</value>
+  </data>
+  <data name="TTP_ADDNEWTODB" xml:space="preserve">
+    <value>Añadir nueva copia a colección de filtros</value>
+  </data>
+  <data name="TTP_ADDTODB" xml:space="preserve">
+    <value>Añadir a / Actualizar en colección de filtros</value>
+  </data>
+  <data name="TTP_BACK" xml:space="preserve">
+    <value>Atrás</value>
+  </data>
+  <data name="TTP_BGINSERTCHECKED" xml:space="preserve">
+    <value>Insertar las partidas marcadas en la base de datos (proceso de fondo)</value>
+  </data>
+  <data name="TTP_CHECKROWS" xml:space="preserve">
+    <value>Marcar las filas seleccionadas</value>
+  </data>
+  <data name="TTP_DELFILTER" xml:space="preserve">
+    <value>Eliminar filtro</value>
+  </data>
+  <data name="TTP_DELMATCH" xml:space="preserve">
+    <value>Eliminar partidas seleccionadas</value>
+  </data>
+  <data name="TTP_DELMOVE" xml:space="preserve">
+    <value>Eliminar último movimiento</value>
+  </data>
+  <data name="TTP_DELMOVE1" xml:space="preserve">
+    <value>Eliminar último movimiento</value>
+  </data>
+  <data name="TTP_DELRESULTS" xml:space="preserve">
+    <value>Eliminar resultados seleccionados</value>
+  </data>
+  <data name="TTP_EDITFILTER" xml:space="preserve">
+    <value>Editar filtro</value>
+  </data>
+  <data name="TTP_EDITMATCH" xml:space="preserve">
+    <value>Editar partida seleccionada</value>
+  </data>
+  <data name="TTP_EXPORTDB" xml:space="preserve">
+    <value>Exportar a otra base de datos</value>
+  </data>
+  <data name="TTP_EXPPGN" xml:space="preserve">
+    <value>Exportar selección a archivo PGN</value>
+  </data>
+  <data name="TTP_FINDPOS" xml:space="preserve">
+    <value>Buscar posición en base de datos</value>
+  </data>
+  <data name="TTP_INITIALPOS" xml:space="preserve">
+    <value>Establecer posición inicial</value>
+  </data>
+  <data name="TTP_INSERTCHECKED" xml:space="preserve">
+    <value>Insertar partidas marcadas en la base de datos</value>
+  </data>
+  <data name="TTP_LABELMATCHES" xml:space="preserve">
+    <value>Etiquetar partidas seleccionadas</value>
+  </data>
+  <data name="TTP_MARKMSQUARE" xml:space="preserve">
+    <value>Marcar escaques del movimiento</value>
+  </data>
+  <data name="TTP_NEWMATCHFILTER" xml:space="preserve">
+    <value>Nuevo filtro de partida</value>
+  </data>
+  <data name="TTP_NEWMOVEFILTER" xml:space="preserve">
+    <value>Nuevo filtro de movimiento</value>
+  </data>
+  <data name="TTP_NEXT" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="TTP_PLAYMATCH" xml:space="preserve">
+    <value>Jugar partida</value>
+  </data>
+  <data name="TTP_QUERY" xml:space="preserve">
+    <value>Consultar la base de datos</value>
+  </data>
+  <data name="TTP_READLEFTRIGHT" xml:space="preserve">
+    <value>Leer de izquierda a derecha y de arriba a abajo</value>
+  </data>
+  <data name="TTP_READTOPDOWN" xml:space="preserve">
+    <value>Leer de arriba abajo y de izquierda a derecha</value>
+  </data>
+  <data name="TTP_REFRESH" xml:space="preserve">
+    <value>Refrescar</value>
+  </data>
+  <data name="TTP_RESET" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="TTP_ROTATEVIEW" xml:space="preserve">
+    <value>Rotar vista</value>
+  </data>
+  <data name="TTP_SELALL" xml:space="preserve">
+    <value>Seleccionar todo</value>
+  </data>
+  <data name="TTP_UNCHECKROWS" xml:space="preserve">
+    <value>Quitar marca a filas seleccionadas</value>
+  </data>
+  <data name="TTP_VIEWMATCH" xml:space="preserve">
+    <value>Ver partida seleccionada</value>
+  </data>
+  <data name="TXT_ALLCONDITIONS" xml:space="preserve">
+    <value>Todas estas condiciones</value>
+  </data>
+  <data name="TXT_DESTFILE" xml:space="preserve">
+    <value>Un solo archivo binario</value>
+  </data>
+  <data name="TXT_DESTFILES" xml:space="preserve">
+    <value>Un archivo binario por cada bloque</value>
+  </data>
+  <data name="TXT_SOMECONDITIONS" xml:space="preserve">
+    <value>Una o más de estas condiciones</value>
+  </data>
+  <data name="URL_HELP" xml:space="preserve">
+    <value>http://software-tecnico-libre.es/es/articulo-por-tema/todas-las-secciones/todos-los-temas/todos-los-articulos/chessposdb-manual-de-usuario-1</value>
+  </data>
+  <data name="DN_code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="DES_code" xml:space="preserve">
+    <value>Identificador único</value>
+  </data>
+  <data name="DN_keyword" xml:space="preserve">
+    <value>Etiqueta</value>
+  </data>
+  <data name="DES_keyword" xml:space="preserve">
+    <value>Etiqueta descriptiva del match (jugadores, lugar, evento, etc.)</value>
+  </data>
+  <data name="DN_keyword_type" xml:space="preserve">
+    <value>Tipo de etiqueta</value>
+  </data>
+  <data name="DES_keyword_type" xml:space="preserve">
+    <value>Clasificación de la etiqueta</value>
+  </data>
+  <data name="DN_description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DES_match_description" xml:space="preserve">
+    <value>Descripción de la partida</value>
+  </data>
+  <data name="DN_result" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="DES_result" xml:space="preserve">
+    <value>Resultado de la partida (0 = *, 1 = 1-0, 2 = 0-1, 3 = 1/2-1/2)</value>
+  </data>
+  <data name="DN_date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="DES_match_date" xml:space="preserve">
+    <value>Fecha de la partida</value>
+  </data>
+  <data name="DN_white" xml:space="preserve">
+    <value>Blancas</value>
+  </data>
+  <data name="DES_white" xml:space="preserve">
+    <value>Nombre del jugador con las blancas</value>
+  </data>
+  <data name="DN_black" xml:space="preserve">
+    <value>Negras</value>
+  </data>
+  <data name="DES_black" xml:space="preserve">
+    <value>Nombre del jugador con las negras</value>
+  </data>
+  <data name="DN_result_text" xml:space="preserve">
+    <value>Resultado (texto)</value>
+  </data>
+  <data name="DES_result_text" xml:space="preserve">
+    <value>Resultado traducido a texto estándar</value>
+  </data>
+  <data name="DN_move_count" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="DES_move_count" xml:space="preserve">
+    <value>Cuenta de movimientos</value>
+  </data>
+  <data name="DN_fullmove_count" xml:space="preserve">
+    <value>Jugadas</value>
+  </data>
+  <data name="DES_fullmove_count" xml:space="preserve">
+    <value>Cuenta de jugadas</value>
+  </data>
+  <data name="DN_move_number" xml:space="preserve">
+    <value>Jugada</value>
+  </data>
+  <data name="DES_move_number" xml:space="preserve">
+    <value>Número de jugada</value>
+  </data>
+  <data name="DN_move_order" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+  <data name="DES_move_order" xml:space="preserve">
+    <value>Número de movimiento</value>
+  </data>
+  <data name="DN_move_player" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="DES_move_player" xml:space="preserve">
+    <value>Número de jugador: 0 =blancas, 1 =negras</value>
+  </data>
+  <data name="DN_move_an_text" xml:space="preserve">
+    <value>Texto AN</value>
+  </data>
+  <data name="DES_move_an_text" xml:space="preserve">
+    <value>Texto estandarizado del movimiento</value>
+  </data>
+  <data name="DN_score" xml:space="preserve">
+    <value>Puntuación</value>
+  </data>
+  <data name="DES_move_score" xml:space="preserve">
+    <value>Puntuación del movimiento</value>
+  </data>
+  <data name="DN_comment_order" xml:space="preserve">
+    <value>Comentario</value>
+  </data>
+  <data name="DES_comment_order" xml:space="preserve">
+    <value>Número de comentario del movimiento</value>
+  </data>
+  <data name="DN_comment_text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="DES_comment_text" xml:space="preserve">
+    <value>Texto del comentario</value>
+  </data>
+  <data name="DN_value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="DES_keyword_value" xml:space="preserve">
+    <value>Valor asignado a la etiqueta</value>
+  </data>
+  <data name="DES_statistic" xml:space="preserve">
+    <value>Etiqueta descriptiva de la estadística</value>
+  </data>
+  <data name="DES_statistic_value" xml:space="preserve">
+    <value>Valor de la estadística</value>
+  </data>
+  <data name="DES_event_description" xml:space="preserve">
+    <value>Descripción del evento</value>
+  </data>
+  <data name="DES_pos_score" xml:space="preserve">
+    <value>Puntuación de la posición</value>
+  </data>
+  <data name="DN_pos_order" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+  <data name="DN_board" xml:space="preserve">
+    <value>Tablero</value>
+  </data>
+  <data name="DES_board" xml:space="preserve">
+    <value>Disposición de las piezas en el tablero</value>
+  </data>
+  <data name="DN_w_pawns" xml:space="preserve">
+    <value>Peones Blancos</value>
+  </data>
+  <data name="DES_w_pawns" xml:space="preserve">
+    <value>Cuenta de peones blancos</value>
+  </data>
+  <data name="DN_b_pawns" xml:space="preserve">
+    <value>Peones negros</value>
+  </data>
+  <data name="DES_b_pawns" xml:space="preserve">
+    <value>Cuenta de peones negros</value>
+  </data>
+  <data name="DN_w_rooks" xml:space="preserve">
+    <value>Torres Blancas</value>
+  </data>
+  <data name="DES_w_rooks" xml:space="preserve">
+    <value>Cuenta de torres blancas</value>
+  </data>
+  <data name="DN_b_rooks" xml:space="preserve">
+    <value>Torres negras</value>
+  </data>
+  <data name="DES_b_rooks" xml:space="preserve">
+    <value>Cuenta de torres negras</value>
+  </data>
+  <data name="DN_w_knights" xml:space="preserve">
+    <value>Caballos blancos</value>
+  </data>
+  <data name="DES_w_knights" xml:space="preserve">
+    <value>Cuenta de caballos blancos</value>
+  </data>
+  <data name="DN_b_knights" xml:space="preserve">
+    <value>Caballos negros</value>
+  </data>
+  <data name="DES_b_knights" xml:space="preserve">
+    <value>Cuenta de caballos negros</value>
+  </data>
+  <data name="DN_w_bishops" xml:space="preserve">
+    <value>Alfiles blancos</value>
+  </data>
+  <data name="DES_w_bishops" xml:space="preserve">
+    <value>Cuenta de alfiles blancos</value>
+  </data>
+  <data name="DN_b_bishops" xml:space="preserve">
+    <value>Alfiles negros</value>
+  </data>
+  <data name="DES_b_bishops" xml:space="preserve">
+    <value>Cuenta de alfiles negros</value>
+  </data>
+  <data name="DN_w_queens" xml:space="preserve">
+    <value>Reinas blancas</value>
+  </data>
+  <data name="DES_w_queens" xml:space="preserve">
+    <value>Cuenta de reinas blancas</value>
+  </data>
+  <data name="DN_b_queens" xml:space="preserve">
+    <value>Reinas negras</value>
+  </data>
+  <data name="DES_b_queens" xml:space="preserve">
+    <value>Cuenta de reinas negras</value>
+  </data>
+  <data name="LCAT_MOVE" xml:space="preserve">
+    <value>JUGADA</value>
+  </data>
+  <data name="COL_KEYWORD" xml:space="preserve">
+    <value>Etiqueta de partida</value>
+  </data>
+  <data name="COL_KEYWORDVALUE" xml:space="preserve">
+    <value>Valor de etiqueta</value>
+  </data>
+  <data name="COL_MATCHSTS" xml:space="preserve">
+    <value>Estadística de partida</value>
+  </data>
+  <data name="COL_MATCHSTSVALUE" xml:space="preserve">
+    <value>Valor de estadística</value>
+  </data>
+  <data name="CAT_KEYWORDS" xml:space="preserve">
+    <value>Etiquetas</value>
+  </data>
+  <data name="CAT_STATISTICS" xml:space="preserve">
+    <value>Estadísitcas</value>
+  </data>
+  <data name="COL_INITIALBOARD" xml:space="preserve">
+    <value>Tablero inicial</value>
+  </data>
+  <data name="CAT_INITIALPOS" xml:space="preserve">
+    <value>Posición inicial de la partida</value>
+  </data>
+  <data name="COL_INITAIALBPAWNS" xml:space="preserve">
+    <value>Peones negros iniciales</value>
+  </data>
+  <data name="COL_initial_white_pawns" xml:space="preserve">
+    <value>Peones blancos iniciales</value>
+  </data>
+  <data name="COL_initial_black_rooks" xml:space="preserve">
+    <value>Torres negras iniciales</value>
+  </data>
+  <data name="COL_initial_white_rooks" xml:space="preserve">
+    <value>Torres blancas iniciales</value>
+  </data>
+  <data name="COL_initial_black_bishops" xml:space="preserve">
+    <value>Alfiles negros iniciales</value>
+  </data>
+  <data name="COL_initial_white_bishops" xml:space="preserve">
+    <value>Alfiles blancos iniciales</value>
+  </data>
+  <data name="COL_initial_black_knights" xml:space="preserve">
+    <value>Caballos negros iniciales</value>
+  </data>
+  <data name="COL_initial_white_knights" xml:space="preserve">
+    <value>Caballos blancos iniciales</value>
+  </data>
+  <data name="COL_initial_black_queens" xml:space="preserve">
+    <value>Reinas negras iniciales</value>
+  </data>
+  <data name="COL_initial_white_queens" xml:space="preserve">
+    <value>Reinas blancas iniciales</value>
+  </data>
+  <data name="CAT_GENMOVE" xml:space="preserve">
+    <value>Datos del movimiento</value>
+  </data>
+  <data name="COL_MOVE_ORDER" xml:space="preserve">
+    <value>Movimiento</value>
+  </data>
+  <data name="COL_MOVE_NUMBER" xml:space="preserve">
+    <value>Jugada</value>
+  </data>
+  <data name="COL_MOVE_PLAYER" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="COL_MOVE_EVENTS" xml:space="preserve">
+    <value>Eventos del movimiento</value>
+  </data>
+  <data name="COL_MOVE_AN_TEXT" xml:space="preserve">
+    <value>Texto del movimiento</value>
+  </data>
+  <data name="COL_COMMENTS" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="COL_SCORE" xml:space="preserve">
+    <value>Puntuación</value>
+  </data>
+  <data name="COL_MOVE_FROM" xml:space="preserve">
+    <value>Desde escaque</value>
+  </data>
+  <data name="COL_from_board" xml:space="preserve">
+    <value>Desde Posición</value>
+  </data>
+  <data name="COL_from_black_pawns" xml:space="preserve">
+    <value>Peones negros antes</value>
+  </data>
+  <data name="COL_from_white_pawns" xml:space="preserve">
+    <value>Peones blancos antes</value>
+  </data>
+  <data name="COL_from_black_rooks" xml:space="preserve">
+    <value>Torres negras antes</value>
+  </data>
+  <data name="COL_from_white_rooks" xml:space="preserve">
+    <value>Torres blancas antes</value>
+  </data>
+  <data name="COL_from_black_bishops" xml:space="preserve">
+    <value>Alfiles negros antes</value>
+  </data>
+  <data name="COL_from_white_bishops" xml:space="preserve">
+    <value>Alfiles blancos antes</value>
+  </data>
+  <data name="COL_from_black_knights" xml:space="preserve">
+    <value>Caballos negors antes</value>
+  </data>
+  <data name="COL_from_white_knights" xml:space="preserve">
+    <value>Caballos blancos antes</value>
+  </data>
+  <data name="COL_from_black_queens" xml:space="preserve">
+    <value>Reinas negras antes</value>
+  </data>
+  <data name="COL_from_white_queens" xml:space="preserve">
+    <value>Reinas blancas antes</value>
+  </data>
+  <data name="CAT_MOVEFROM" xml:space="preserve">
+    <value>Desde movimiento</value>
+  </data>
+  <data name="COL_MOVE_TO" xml:space="preserve">
+    <value>Hasta escaque</value>
+  </data>
+  <data name="COL_to_board" xml:space="preserve">
+    <value>Hasta posición</value>
+  </data>
+  <data name="COL_to_black_pawns" xml:space="preserve">
+    <value>Peones negros después</value>
+  </data>
+  <data name="COL_to_white_pawns" xml:space="preserve">
+    <value>Peones blancoss después</value>
+  </data>
+  <data name="COL_to_black_rooks" xml:space="preserve">
+    <value>Torres negras después</value>
+  </data>
+  <data name="COL_to_white_rooks" xml:space="preserve">
+    <value>Torres blancas después</value>
+  </data>
+  <data name="COL_to_black_bishops" xml:space="preserve">
+    <value>Alfiles negros después</value>
+  </data>
+  <data name="COL_to_white_bishops" xml:space="preserve">
+    <value>Alfiles blancos después</value>
+  </data>
+  <data name="COL_to_black_knights" xml:space="preserve">
+    <value>Caballos negros después</value>
+  </data>
+  <data name="COL_to_white_knights" xml:space="preserve">
+    <value>Caballos blancos después</value>
+  </data>
+  <data name="COL_to_black_queens" xml:space="preserve">
+    <value>Reinas negras después</value>
+  </data>
+  <data name="COL_to_white_queens" xml:space="preserve">
+    <value>Reinas blancas después</value>
+  </data>
+  <data name="CAT_MOVETO" xml:space="preserve">
+    <value>Hasta movimiento</value>
+  </data>
+  <data name="COL_POSITION_ORDER" xml:space="preserve">
+    <value>Orden de la posición</value>
+  </data>
+  <data name="COL_POSITION_EVENTS" xml:space="preserve">
+    <value>Eventos en la posición</value>
+  </data>
+  <data name="COL_board" xml:space="preserve">
+    <value>Tablero</value>
+  </data>
+  <data name="COL_black_pawns" xml:space="preserve">
+    <value>Peones negros</value>
+  </data>
+  <data name="COL_white_pawns" xml:space="preserve">
+    <value>Peones blancos</value>
+  </data>
+  <data name="COL_black_rooks" xml:space="preserve">
+    <value>Torres negras</value>
+  </data>
+  <data name="COL_white_rooks" xml:space="preserve">
+    <value>Torres blancas</value>
+  </data>
+  <data name="COL_black_bishops" xml:space="preserve">
+    <value>Alfiles negros</value>
+  </data>
+  <data name="COL_white_bishops" xml:space="preserve">
+    <value>Alfiles blancos</value>
+  </data>
+  <data name="COL_black_knights" xml:space="preserve">
+    <value>Caballos negros</value>
+  </data>
+  <data name="COL_white_knights" xml:space="preserve">
+    <value>Caballos blancos</value>
+  </data>
+  <data name="COL_black_queens" xml:space="preserve">
+    <value>Reinas negras</value>
+  </data>
+  <data name="COL_white_queens" xml:space="preserve">
+    <value>Reinas blancas</value>
+  </data>
+  <data name="CAT_POSITION" xml:space="preserve">
+    <value>Posiciones de la partida</value>
+  </data>
+  <data name="LAB_Square" xml:space="preserve">
+    <value>Escaque</value>
+  </data>
+  <data name="TTP_FILTERBYTAG" xml:space="preserve">
+    <value>Filtrar por etiquetas</value>
+  </data>
+  <data name="TTP_FILTERBYPOS" xml:space="preserve">
+    <value>Filtrar por posiciones</value>
+  </data>
+  <data name="TTP_FILTERBYMOVE" xml:space="preserve">
+    <value>Filtrar por movimientos</value>
+  </data>
+  <data name="MSG_UILaunched" xml:space="preserve">
+    <value>Se han mostrado al usuario los formularios necesarios para servir esta llamada.</value>
+  </data>
+  <data name="ERR_PARAMMANDATORY" xml:space="preserve">
+    <value>Estos parámetros son obligatorios: {0}</value>
+  </data>
+  <data name="ERR_INVALIDPARAMVALUE" xml:space="preserve">
+    <value>Valor no valido para el parámetro {0}: {1}</value>
+  </data>
+  <data name="TTL_Console" xml:space="preserve">
+    <value>Consola de asistentes IA</value>
+  </data>
+  <data name="CAP_LOADING" xml:space="preserve">
+    <value>Cargando datos...</value>
+  </data>
+  <data name="MSG_LOADINGWHITEK" xml:space="preserve">
+    <value>Cargando sugerencias de auto completado para jugador blancas...</value>
+  </data>
+  <data name="MSG_LOADINGBLACKK" xml:space="preserve">
+    <value>Cargando sugerencias de auto completado para jugador negras...</value>
+  </data>
+  <data name="ERR_NOFREECONNECTIONS" xml:space="preserve">
+    <value>No hay conexiones disponibles. Cierre algunas ventanas para liberar conexiones.</value>
+  </data>
+  <data name="ERR_NOCONNECTOR" xml:space="preserve">
+    <value>Es necesario inicializar la conexión antes de modificar el número de conexiones.</value>
+  </data>
+  <data name="ERR_MAXCONNEGATIVE" xml:space="preserve">
+    <value>El máximo de conexiones debe ser un entero no negativo.</value>
+  </data>
+  <data name="ERR_CONNECTIONSINUSE" xml:space="preserve">
+    <value>No es posible cambiar el máximo de conexiones con conexiones en uso.</value>
+  </data>
+  <data name="ERR_NOAVAILABLECONNECTIONS" xml:space="preserve">
+    <value>No hay conexiones de base de datos disponibles para esta operación.</value>
+  </data>
+  <data name="OPT_BULKCOPYDB" xml:space="preserve">
+    <value>Copiar base de datos...</value>
+  </data>
+  <data name="CB_NEVER" xml:space="preserve">
+    <value>Nunca ocurre</value>
+  </data>
+  <data name="MSG_import_pgn_file" xml:space="preserve">
+    <value>Abriendo el formulario para importar archivos PGN</value>
+  </data>
+  <data name="MSG_import_multiple_pgn_files" xml:space="preserve">
+    <value>Abriendo el formulario para importar múltiples archivos PGN</value>
+  </data>
+  <data name="MSG_copy_database" xml:space="preserve">
+    <value>Abriendo el formulario para copiar la base de datos</value>
+  </data>
+  <data name="MSG_create_new_match" xml:space="preserve">
+    <value>Abriendo el formulario para crear una nueva partida</value>
+  </data>
+  <data name="MSG_open_new_querywindow" xml:space="preserve">
+    <value>Abriendo un nuevo formulario para consultar la base de datos</value>
+  </data>
+  <data name="MSG_normalize_match_labels" xml:space="preserve">
+    <value>Abriendo un formulario para unificar valores de etiqueta de partida</value>
+  </data>
+  <data name="MSG_arrange_windows" xml:space="preserve">
+    <value>Organizando los formularios abiertos</value>
+  </data>
+  <data name="MSG_list_open_automation_forms" xml:space="preserve">
+    <value>Obteniendo una lista de formularios interactivos abiertos</value>
+  </data>
+  <data name="MSG_get_form_controls" xml:space="preserve">
+    <value>Obteniendo la lista de controles del formulario...</value>
+  </data>
+  <data name="MSG_get_children_controls" xml:space="preserve">
+    <value>Obteniendo la lista de controles hijos del control....</value>
+  </data>
+  <data name="MSG_highlight_control" xml:space="preserve">
+    <value>Resaltando control...</value>
+  </data>
+  <data name="MSG_comment_control" xml:space="preserve">
+    <value>Comentando sobre el control...</value>
+  </data>
+  <data name="MSG_get_open_match_windows" xml:space="preserve">
+    <value>Obteniendo una lista de formularios para visualizar y jugar partidas...</value>
+  </data>
+  <data name="MSG_get_current_match_info" xml:space="preserve">
+    <value>Obteniendo información sobre la partida actual...</value>
+  </data>
+  <data name="MSG_get_current_match_moves" xml:space="preserve">
+    <value>Obteniendo la lista de movimientos de la partida actual...</value>
+  </data>
+  <data name="MSG_get_last_match_move" xml:space="preserve">
+    <value>Obteniendo el último movimiento de la partida actual...</value>
+  </data>
+  <data name="MSG_go_to_next_match_move" xml:space="preserve">
+    <value>Avanzando al siguiente movimiento de la partida actual...</value>
+  </data>
+  <data name="MSG_go_to_previous_match_move" xml:space="preserve">
+    <value>Retrocediendo al movimiento anterior de la partida actual...</value>
+  </data>
+  <data name="MSG_add_new_match_move" xml:space="preserve">
+    <value>Realizando un nuevo movimiento en la partida actual...</value>
+  </data>
+  <data name="ERR_NOTEDITABLEMATCH" xml:space="preserve">
+    <value>Esta partida no se puede editar en este momento.</value>
+  </data>
+  <data name="TTL_APPCONFIGURATION" xml:space="preserve">
+    <value>Parámetros de configuración</value>
+  </data>
+  <data name="BTTL_DBConnection" xml:space="preserve">
+    <value>Conexión con la base de datos</value>
+  </data>
+  <data name="BTTL_Paths" xml:space="preserve">
+    <value>Rutas a archivos</value>
+  </data>
+  <data name="BTTL_Files" xml:space="preserve">
+    <value>Nombres de archivo</value>
+  </data>
+  <data name="FILTER_LogFiles" xml:space="preserve">
+    <value>Archivos de Log (*.log)|*.log</value>
+  </data>
+  <data name="FILTER_AllFiles" xml:space="preserve">
+    <value>Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="FILTER_Json" xml:space="preserve">
+    <value>Archivos Json (*.json)|*.json</value>
+  </data>
+  <data name="BTTL_DefValues" xml:space="preserve">
+    <value>Valores por defecto</value>
+  </data>
+  <data name="BTTL_CredentialMgr" xml:space="preserve">
+    <value>Administrador de credenciales</value>
+  </data>
+  <data name="NAME_dbconstring" xml:space="preserve">
+    <value>Cadena de conexión</value>
+  </data>
+  <data name="DESC_dbconstring" xml:space="preserve">
+    <value>Selecciona un nombre de cadena de conexión para conectar con el servidor de base de datos</value>
+  </data>
+  <data name="NAME_dbconnections" xml:space="preserve">
+    <value>Máximo Conexiones</value>
+  </data>
+  <data name="DESC_dbconnections" xml:space="preserve">
+    <value>Número de conexiones con la base de datos que pueden estar abiertas al mismo tiempo</value>
+  </data>
+  <data name="NAME_dataPath" xml:space="preserve">
+    <value>Directorio de datos</value>
+  </data>
+  <data name="DESC_dataPath" xml:space="preserve">
+    <value>Directorio para almacenar documentos y datos temporales</value>
+  </data>
+  <data name="NAME_ConfigPath" xml:space="preserve">
+    <value>Directorio de configuración</value>
+  </data>
+  <data name="DESC_ConfigPath" xml:space="preserve">
+    <value>Ruta del directorio en el que se guardan los archivos de configuración</value>
+  </data>
+  <data name="NAME_playCollection" xml:space="preserve">
+    <value>Colección de asistentes</value>
+  </data>
+  <data name="DESC_playCollection" xml:space="preserve">
+    <value>Nombre del archivo que en el que se definen equipos de asistentes (Players) que trabajan juntos en la consola (Play)</value>
+  </data>
+  <data name="NAME_appFunctions" xml:space="preserve">
+    <value>Colección de funciones</value>
+  </data>
+  <data name="DESC_appFunctions" xml:space="preserve">
+    <value>Nombre del archivo con los esquemas de definición de funciones usadas por los asistentes para interactuar con la aplicación</value>
+  </data>
+  <data name="NAME_nsQueries" xml:space="preserve">
+    <value>Consultas no estándar</value>
+  </data>
+  <data name="DESC_nsQueries" xml:space="preserve">
+    <value>Nombre del archivo con consultas de base de datos que usan SQL no ISO</value>
+  </data>
+  <data name="NAME_defaultPlay" xml:space="preserve">
+    <value>Equipo por defecto</value>
+  </data>
+  <data name="DESC_defaultPlay" xml:space="preserve">
+    <value>Nombre de la play por defecto que se utilizará al abrir la aplicación</value>
+  </data>
+  <data name="NAME_ConsoleLog" xml:space="preserve">
+    <value>Archivo de log de consola</value>
+  </data>
+  <data name="DESC_ConsoleLog" xml:space="preserve">
+    <value>Nombre del archivo para guardar los mensajes de log de la consola de asistentes</value>
+  </data>
+  <data name="NAME_LogPathBase" xml:space="preserve">
+    <value>Directorio de archivos de log</value>
+  </data>
+  <data name="DESC_LogPathBase" xml:space="preserve">
+    <value>Directorio para almacenar todos los archivos de log generados por la aplicación</value>
+  </data>
+  <data name="NAME_FunctionCallLog" xml:space="preserve">
+    <value>Log de llamadas a función</value>
+  </data>
+  <data name="DESC_FunctionCallLog" xml:space="preserve">
+    <value>Nombre del archivo con mensajes de log de llamadas a función y sus resultados</value>
+  </data>
+  <data name="NAME_tokenUsageLog" xml:space="preserve">
+    <value>Log de uso de tokens</value>
+  </data>
+  <data name="DESC_tokenUsageLog" xml:space="preserve">
+    <value>Nombre del archivo donde se almacena la información de tokens usados por los modelos IA</value>
+  </data>
+  <data name="NAME_CredentialStore" xml:space="preserve">
+    <value>Almacén de credenciales</value>
+  </data>
+  <data name="DESC_CredentialStore" xml:space="preserve">
+    <value>Seleccionar el almacén de credenciales usado para almacenar las contraseñas de acceso a API y bases de datos</value>
+  </data>
+  <data name="NAME_CredentialStoreKeyData" xml:space="preserve">
+    <value>Datos extra para el almacén de credenciales</value>
+  </data>
+  <data name="DESC_CredentialStoreKeyData" xml:space="preserve">
+    <value>Datos separados por punto y coma para añadir al nombre de la credencial para recuperar la clave desde el almacén de credenciales. Normalmente vacío.</value>
+  </data>
+  <data name="MSG_show_application_configuration" xml:space="preserve">
+    <value>Abriendo un cuadro de diálogo para cambiar los parámetros de la aplicación</value>
+  </data>
+  <data name="TTL_Play" xml:space="preserve">
+    <value>Editor de Equipos</value>
+  </data>
+  <data name="TTP_DelPlay" xml:space="preserve">
+    <value>Eliminar teatro seleccionado</value>
+  </data>
+  <data name="TTP_EditPlay" xml:space="preserve">
+    <value>Crear o editar equipo</value>
+  </data>
+  <data name="TTP_Font" xml:space="preserve">
+    <value>Cambiar fuente</value>
+  </data>
+  <data name="TTP_LoadPlay" xml:space="preserve">
+    <value>Editar teatro seleccionado</value>
+  </data>
+  <data name="TTP_AddItem" xml:space="preserve">
+    <value>Añadir nuevo elemento al nodo</value>
+  </data>
+  <data name="TTP_RemoveItem" xml:space="preserve">
+    <value>Eliminar el elemento del nodo</value>
+  </data>
+  <data name="TTP_SaveConfiguration" xml:space="preserve">
+    <value>Guardar configuración</value>
+  </data>
+  <data name="LAB_Plays" xml:space="preserve">
+    <value>Equipos</value>
+  </data>
+  <data name="LAB_AddItem" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="MSG_DeleteObject" xml:space="preserve">
+    <value>Aviso! El objeto será eliminado y no se podrá recuperar. ¿Está seguro de querer eliminarlo?</value>
+  </data>
+  <data name="CAP_DelObject" xml:space="preserve">
+    <value>Borrado de objeto</value>
+  </data>
+  <data name="MSG_show_play_editor" xml:space="preserve">
+    <value>Abriendo el formulario para editar Equipos de asistentes</value>
+  </data>
+  <data name="MSG_MoveFiles" xml:space="preserve">
+    <value>¿Mover los archivos a la nueva ubicación?</value>
+  </data>
+  <data name="MSG_CopyFile" xml:space="preserve">
+    <value>¿Copiar el archivo al directorio apropiado?</value>
+  </data>
+  <data name="MSG_add_new_note" xml:space="preserve">
+    <value>Escribiendo la nota en el documento de notas del asistente...</value>
+  </data>
+  <data name="MSG_add_new_note2" xml:space="preserve">
+    <value>Actualizando las notas en el almacén de documentos del asistente...</value>
+  </data>
+  <data name="MSG_rewrite_all_notes" xml:space="preserve">
+    <value>Reescribiendo todo el contenido del documento de notas del asistente...</value>
+  </data>
+  <data name="TTL_Assistants" xml:space="preserve">
+    <value>Editor de elementos IA</value>
+  </data>
+  <data name="TTP_NewItem" xml:space="preserve">
+    <value>Crear una nueva instancia del tipo de elemento seleccionado</value>
+  </data>
+  <data name="TTP_DeleteElement" xml:space="preserve">
+    <value>Eliminar la instancia de elemento seleccionada</value>
+  </data>
+  <data name="TTP_SaveChanges" xml:space="preserve">
+    <value>Guardar los cambios en la nube del proveedor y en los archivos de configuración.</value>
+  </data>
+  <data name="MSG_show_assistants_editor" xml:space="preserve">
+    <value>Abriendo el formulario de edición de asistentes</value>
+  </data>
+  <data name="SRV_userinterface" xml:space="preserve">
+    <value>Asistente de interfaz de usuario</value>
+  </data>
+  <data name="SRV_automation" xml:space="preserve">
+    <value>Explica y maneja controles de formulario</value>
+  </data>
+  <data name="SRV_chessplayer" xml:space="preserve">
+    <value>Juega y analiza partidas de ajedrez</value>
+  </data>
+  <data name="SRV_configuration" xml:space="preserve">
+    <value>Asistente de configuración</value>
+  </data>
+  <data name="SRV_memoryandnotes" xml:space="preserve">
+    <value>Lee y escribe notas con información relevante</value>
+  </data>
+  <data name="NAME_FIlePackageManagerData_Identifier" xml:space="preserve">
+    <value>Identificador único</value>
+  </data>
+  <data name="DESC_FIlePackageManagerData_Identifier" xml:space="preserve">
+    <value>Identificador único del paquete de archivos</value>
+  </data>
+  <data name="NAME_FIlePackageManagerData_Name" xml:space="preserve">
+    <value>Nombre del paquete</value>
+  </data>
+  <data name="DESC_FIlePackageManagerData_Name" xml:space="preserve">
+    <value>Nombre del administrador de paquete de archivos</value>
+  </data>
+  <data name="NAME_FIlePackageManagerData_Description" xml:space="preserve">
+    <value>Descripción del paquete</value>
+  </data>
+  <data name="DESC_FIlePackageManagerData_Description" xml:space="preserve">
+    <value>Descripción del administrador de paquete de archivos</value>
+  </data>
+  <data name="BTTL_PackageManager" xml:space="preserve">
+    <value>Gestor de paquetes de archivos</value>
+  </data>
+  <data name="NAME_FIleManager" xml:space="preserve">
+    <value>Gestor de archivos</value>
+  </data>
+  <data name="BTTL_FileManager" xml:space="preserve">
+    <value>Gestor de archivos</value>
+  </data>
+  <data name="NAME_FileManagerData_FilePaths" xml:space="preserve">
+    <value>Archivos de datos</value>
+  </data>
+  <data name="DESC_FileManagerData_FilePaths" xml:space="preserve">
+    <value>Archivos de datos en el directorio de datos</value>
+  </data>
+  <data name="FIL_ALLAllowed" xml:space="preserve">
+    <value>Todos los archivos permitidos</value>
+  </data>
+  <data name="CMD_UploadFiles" xml:space="preserve">
+    <value>Subir archivos</value>
+  </data>
+  <data name="NAME_FIlePackageManagerData_FileManager" xml:space="preserve">
+    <value>Gestor de archivos</value>
+  </data>
+  <data name="DESC_FIlePackageManagerData_FileManager" xml:space="preserve">
+    <value>Usa esta instancia de gestor de archivos para subir archivos que se pueden añadir al paquete de archivos</value>
+  </data>
+  <data name="CMD_ManageFiles" xml:space="preserve">
+    <value>Gestionar archivos</value>
+  </data>
+  <data name="NAME_SpeechManagerData_Identifier" xml:space="preserve">
+    <value>Identificador</value>
+  </data>
+  <data name="DESC_SpeechManagerData_Identifier" xml:space="preserve">
+    <value>Identificador único para este objeto gestor de voz</value>
+  </data>
+  <data name="NAME_SpeechManagerData_Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DESC_SpeechManagerData_Name" xml:space="preserve">
+    <value>Nombre del gestor de voz</value>
+  </data>
+  <data name="NAME_SpeechManagerData_Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DESC_SpeechManagerData_Description" xml:space="preserve">
+    <value>Descripción del gestor de voz</value>
+  </data>
+  <data name="DESC_SpeechManagerData_Model" xml:space="preserve">
+    <value>Modelo usado para gestionar la voz o la transcripción de voz</value>
+  </data>
+  <data name="NAME_SpeechManagerData_Model" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="BTTL_SpeechManager" xml:space="preserve">
+    <value>Gestor de voz</value>
+  </data>
+  <data name="NAME_APIPlayerData_Identifier" xml:space="preserve">
+    <value>Identificador único</value>
+  </data>
+  <data name="DESC_APIPlayerData_Identifier" xml:space="preserve">
+    <value>Identificador único del asistente API</value>
+  </data>
+  <data name="NAME_APIPlayerData_Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DESC_APIPlayerData_Name" xml:space="preserve">
+    <value>Nombre del asistente API</value>
+  </data>
+  <data name="NAME_APIPlayerData_Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DESC_APIPlayerData_Description" xml:space="preserve">
+    <value>Descripción del asistente API</value>
+  </data>
+  <data name="NAME_APIPlayerData_Instructions" xml:space="preserve">
+    <value>Instrucciones iniciales</value>
+  </data>
+  <data name="DESC_APIPlayerData_Instructions" xml:space="preserve">
+    <value>Instrucciones iniciales (system) para este asistente</value>
+  </data>
+  <data name="NAME_APIPlayerData_Model" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="DESC_APIPlayerData_Model" xml:space="preserve">
+    <value>Modelo LLM usado por este asistente. Solo para asistentes guardados en la nube del proveedor.</value>
+  </data>
+  <data name="NAME_APIPlayerData_Voice" xml:space="preserve">
+    <value>Nombre de voz</value>
+  </data>
+  <data name="DESC_APIPlayerData_Voice" xml:space="preserve">
+    <value>Nombre de la voz que usa este asistente para hablar. Los nombres de las voces los proporcionan los asistentes de voz</value>
+  </data>
+  <data name="BTTL_APIPlayer" xml:space="preserve">
+    <value>Asistente API</value>
+  </data>
+  <data name="NAME_APIPlayerData_WebSearch" xml:space="preserve">
+    <value>Búsqueda en la Web</value>
+  </data>
+  <data name="DESC_APIPlayerData_WebSearch" xml:space="preserve">
+    <value>Activar la capacidad del asistente para búsqueda en internet</value>
+  </data>
+  <data name="MSG_DeleteObjectFromCfgFiles" xml:space="preserve">
+    <value>Esta acción eliminará el item de los archivos de configuración de la aplicación. No se borrará nada en la nube del proveedor de IA. ¿Desea continuar?</value>
+  </data>
+  <data name="MSG_ChangesNotSaved" xml:space="preserve">
+    <value>Tienes cambios sin guardar. Se perderán si cierras el formulario. ¿Quieres continuar?</value>
+  </data>
+  <data name="TTL_AssistantUpdates" xml:space="preserve">
+    <value>Actualizaciones de documentos de los asistentes</value>
+  </data>
+  <data name="LAB_Instance" xml:space="preserve">
+    <value>Instancia</value>
+  </data>
+  <data name="LAB_OtherInstances" xml:space="preserve">
+    <value>Otras Instancias</value>
+  </data>
+  <data name="MSG_show_updates_editor" xml:space="preserve">
+    <value>Abriendo el formulario editor de actualizaciones...</value>
+  </data>
+  <data name="NAME_UpdateAssistantsConfiguration_Assistants" xml:space="preserve">
+    <value>Actualizaciones de asistente</value>
+  </data>
+  <data name="DESC_UpdateAssistantsConfiguration_Assistants" xml:space="preserve">
+    <value>Actualizaciones de instrucciones iniciales y documentos privados del asistente</value>
+  </data>
+  <data name="NAME_UpdateAssistantsConfiguration_Services" xml:space="preserve">
+    <value>Actualizaciones de servicio</value>
+  </data>
+  <data name="DESC_UpdateAssistantsConfiguration_Services" xml:space="preserve">
+    <value>Actualizaciones de los documentos de servicio</value>
+  </data>
+  <data name="NAME_AssistantUpdates_UpdateInstructions" xml:space="preserve">
+    <value>Actualizar instrucciones</value>
+  </data>
+  <data name="DESC_AssistantUpdates_UpdateInstructions" xml:space="preserve">
+    <value>Marcar para actualizar las instrucciones iniciales del asistente</value>
+  </data>
+  <data name="NAME_AssistantUpdates_Documents" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="DESC_AssistantUpdates_Documents" xml:space="preserve">
+    <value>Lista de documentos privados del asistente</value>
+  </data>
+  <data name="NAME_ServiceUpdates_ServiceId" xml:space="preserve">
+    <value>Identificador del servicio</value>
+  </data>
+  <data name="DESC_ServiceUpdates_ServiceId" xml:space="preserve">
+    <value>Identificador único del servicio</value>
+  </data>
+  <data name="DESC_ServiceUpdates_Documents" xml:space="preserve">
+    <value>Lista de documentos del servicio</value>
+  </data>
+  <data name="NAME_ServiceUpdates_Documents" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="NAME_ApplicationDocument_Update" xml:space="preserve">
+    <value>Actualizar documento</value>
+  </data>
+  <data name="DESC_ApplicationDocument_Update" xml:space="preserve">
+    <value>Marcar para subir el documento al almacén de archivos en la nube del proveedor</value>
+  </data>
+  <data name="NAME_ApplicationDocument_Remove" xml:space="preserve">
+    <value>Eliminar documento</value>
+  </data>
+  <data name="DESC_ApplicationDocument_Remove" xml:space="preserve">
+    <value>Marcar para eliminar el documento del almacén de archivos en la nube del proveedor</value>
+  </data>
+  <data name="NAME_ApplicationDocument_FileName" xml:space="preserve">
+    <value>Nombre del archivo</value>
+  </data>
+  <data name="DESC_ApplicationDocument_FileName" xml:space="preserve">
+    <value>Nombre del archivo. Este documento debe ubicarse en el directorio de datos de la aplicación.</value>
+  </data>
+  <data name="BTTL_Document" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="OPT_CONFIGAPP" xml:space="preserve">
+    <value>Editar parámetros de configuración...</value>
+  </data>
+  <data name="OPT_CONFIGPLAY" xml:space="preserve">
+    <value>Editar configuración de equipos...</value>
+  </data>
+  <data name="OPT_CONFIGASSISTANTS" xml:space="preserve">
+    <value>Editar configuración de asistentes...</value>
+  </data>
+  <data name="OPT_CONFIGAUPDATES" xml:space="preserve">
+    <value>Editar configuración de actualizaciones...</value>
+  </data>
+  <data name="TTP_EditDocument" xml:space="preserve">
+    <value>Editar el documento seleccionado</value>
+  </data>
+  <data name="TTP_AddDocuments" xml:space="preserve">
+    <value>Añadir documentos a la lista seleccionada</value>
+  </data>
+  <data name="TTP_ApplyUpdates" xml:space="preserve">
+    <value>Aplicar las actualizaciones a todos los documentos e instrucciones de asistente</value>
+  </data>
+  <data name="NAME_updateConfiguration" xml:space="preserve">
+    <value>Archivo de actualización de asistentes</value>
+  </data>
+  <data name="DESC_updateConfiguration" xml:space="preserve">
+    <value>Nombre de l archivo de actualización de documentos e instrucciones de los asistentes</value>
+  </data>
+  <data name="FILTER_Text" xml:space="preserve">
+    <value>Archivos de texto (*.txt)|*.txt</value>
+  </data>
+  <data name="MSG_AllUpdated" xml:space="preserve">
+    <value>Se han actualizado todos los documentos e instrucciones marcados.</value>
+  </data>
+  <data name="NAME_PGNFormatter" xml:space="preserve">
+    <value>Exportar a archivo PGN</value>
+  </data>
+  <data name="FIL_PGNFiles" xml:space="preserve">
+    <value>Archivos PGN (*.pgn)|*.pgn|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="NAME_MatchFormatter" xml:space="preserve">
+    <value>Exportar a una base de datos</value>
+  </data>
+  <data name="NAME_MatchDataImportManager" xml:space="preserve">
+    <value>Gestor de importación de partidas</value>
+  </data>
+  <data name="DESCRIPTION_MatchDataImportManager" xml:space="preserve">
+    <value>Importa objetos de partida desde una DataTable con un campo llamado cod_match</value>
+  </data>
+  <data name="ERR_NODATABASESELECTED" xml:space="preserve">
+    <value>No se ha seleccionado una base de datos de destino</value>
+  </data>
+  <data name="ERR_BADREPOSITORYTYPE" xml:space="preserve">
+    <value>El repositorio debe poder gestionar objetos de tipo ObjectBase.</value>
+  </data>
+  <data name="FNAME_AIAssistantsEditor" xml:space="preserve">
+    <value>Editor de asistentes IA</value>
+  </data>
+  <data name="FNAME_BulkIMportPGN" xml:space="preserve">
+    <value>Importación masiva de archivos PGN</value>
+  </data>
+  <data name="FNAME_DlgMatch" xml:space="preserve">
+    <value>Cuadro de diálogo de partida</value>
+  </data>
+  <data name="FNAME_MatchEditor" xml:space="preserve">
+    <value>Editor de partidas</value>
+  </data>
+  <data name="FNAME_PGNWindow" xml:space="preserve">
+    <value>Importar archivos PGN y visualizar las partidas que contienen</value>
+  </data>
+  <data name="FNAME_PLayMatchWindow" xml:space="preserve">
+    <value>Ventana de juego de partidas</value>
+  </data>
+  <data name="FNAME_QueryWindow" xml:space="preserve">
+    <value>Formulario de consultas en la base de datos</value>
+  </data>
+  <data name="TTL_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="TTP_AddPlay" xml:space="preserve">
+    <value>Añadir nuevo equipo</value>
+  </data>
+  <data name="NAME_NewPlay" xml:space="preserve">
+    <value>Nuevo equipo {0}</value>
+  </data>
+  <data name="ERR_PlayIdInUse" xml:space="preserve">
+    <value>Identificador de equipo en uso</value>
+  </data>
+  <data name="MSG_ConfigurationSaved" xml:space="preserve">
+    <value>Configuración guardada con éxito</value>
+  </data>
+  <data name="CAP_Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="TTP_SetAsDefaultPlay" xml:space="preserve">
+    <value>Establecer este equipo como el equipo por defecto</value>
+  </data>
+  <data name="TTP_ChangeToPlay" xml:space="preserve">
+    <value>Establecer este equipo como el equipo activo. Se perderá el contexto de la conversación.</value>
+  </data>
+  <data name="CAP_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MSG_LoadingPlay" xml:space="preserve">
+    <value>Cargando equipo...</value>
+  </data>
+  <data name="MSG_LoadingPGN" xml:space="preserve">
+    <value>Cargando archivo PGN...</value>
+  </data>
+  <data name="MSG_StartConfiguration" xml:space="preserve">
+    <value>Esta aplicación debe configurarse antes de usarla. Se le solicitarán algunos valores de parámetros.</value>
+  </data>
+  <data name="ERR_AppNotProperlyConfigured" xml:space="preserve">
+    <value>La aplicación no está configurada correctamente. Saliendo.</value>
+  </data>
+  <data name="SETUP_CredentialStore" xml:space="preserve">
+    <value>El almacén de credenciales se utiliza para almacenar 
+contraseñas de manera segura.
+En esta aplicación, están disponibles tres almacenes básicos:
+- Almacén de credenciales de Windows: se guardan las credenciales
+  para el usuario actual en la sección de credenciales genéricas.
+  Puedes acceder a este almacén desde el panel de control.
+- Variables de entorno: las credenciales se almacenan en una variable
+  de entorno del usuario actual.
+- Fichero de configuración de la aplicación: las credenciales se
+  guardarán en la sección AppSettings del archivo AIChessDB.exe.config. 
+  Cualquiera que tenga acceso a este archivo podrá ver las credenciales.
+En cualquiera de los casos, tendrás que introducir un nombre para la
+credencial.
+Se solicitará crear una credencial para la clave de API de OpenAI.
+También se solicitará crear credenciales para las cadenas de conexión
+con la base de datos, ya que contienen contraseñas y datos de acceso.</value>
+  </data>
+  <data name="CAP_Instructions" xml:space="preserve">
+    <value>Instrucciones</value>
+  </data>
+  <data name="BTTL_APIKey" xml:space="preserve">
+    <value>Clave API OpenAI</value>
+  </data>
+  <data name="NAME_APIManagerName" xml:space="preserve">
+    <value>Nombre de API</value>
+  </data>
+  <data name="DESC_APIManagerName" xml:space="preserve">
+    <value>Nombre de la cuenta de proveedor de API IA</value>
+  </data>
+  <data name="NAME_APIKeyName" xml:space="preserve">
+    <value>Nombre de la clave API</value>
+  </data>
+  <data name="DESC_APIKeyName" xml:space="preserve">
+    <value>Nombre para almacenar la clave en el almacén de credenciales</value>
+  </data>
+  <data name="NAME_APIKeyValue" xml:space="preserve">
+    <value>Clave API</value>
+  </data>
+  <data name="DESC_APIKeyValue" xml:space="preserve">
+    <value>Valore real de la clave de API para almacenar en el almacén de credenciales</value>
+  </data>
+  <data name="SETUP_APIKey" xml:space="preserve">
+    <value>Los asistentes IA funcionan a través de un administrador de API.
+Cada administrador de API necesita de una clave para operar.
+Introduce un nombre identificativo para la clave
+y su valor real, suministrado por el proveedor de API.
+En los archivos de configuración se almacenará el nombre 
+de la clave.
+La clave real se guardará en el administrador de credenciales
+seleccionado en el paso anterior.</value>
+  </data>
+  <data name="SETUP_ConnectionString" xml:space="preserve">
+    <value>Esta aplicación funciona con una base de datos.
+Antes de continuar con la configuración, debes asegurarte
+de que la base de datos está instalada y es accesible 
+desde este ordenador.
+La base de datos se pueden montar sobre un servidor Oracle,
+SQL Server o MySQL.
+Para conectar es necesario crear al menos una cadena de conexión,
+aunque se pueden crear varias para el mismo servidor o 
+para servidores diferentes.
+Las cadenas de conexión necesitan obligatoriamente estos datos:
+- Nombre o dirección IP (y puerto, si no se usa el estándar) 
+  del servidor de base de datos.
+- Nombre del usuario que accede a la base de datos.
+- Contraseña del usuario.
+En MySQL y Sql Server también es necesario indicar el nombre
+de la base de datos o esquema en el que residen los datos.</value>
+  </data>
+  <data name="ERR_CompleteAllFields" xml:space="preserve">
+    <value>Faltan algunos campos obligatorios</value>
+  </data>
+  <data name="DESC_dbconstringname" xml:space="preserve">
+    <value>Nombre de la cadena de conexión para guardar en el archivo de configuración</value>
+  </data>
+  <data name="NAME_dbconstringname" xml:space="preserve">
+    <value>Nombre de la conexión</value>
+  </data>
+  <data name="DESC_connstring" xml:space="preserve">
+    <value>Cadena de conexión para el servidor de base de datos</value>
+  </data>
+  <data name="NAME_dbconnector" xml:space="preserve">
+    <value>Conector con la base de datos</value>
+  </data>
+  <data name="DESC_dbconnector" xml:space="preserve">
+    <value>Seleccione un conector de base de datos para configurar una cadena de conexión apropiada</value>
+  </data>
+  <data name="ERR_NoConsoleFound" xml:space="preserve">
+    <value>No se ha encontrado ninguna consola de asistentes</value>
+  </data>
+  <data name="BTTL_Assistants" xml:space="preserve">
+    <value>Configuración de asistentes IA</value>
+  </data>
+  <data name="BTTL_PLayPlayer" xml:space="preserve">
+    <value>Asistente del equipo</value>
+  </data>
+  <data name="DESC_PlayerBackColor" xml:space="preserve">
+    <value>Color de fondo de la barra de encabezado de la viñeta de chat del asistente</value>
+  </data>
+  <data name="DESC_PlayerForeColor" xml:space="preserve">
+    <value>Color del texto de la barra de encabezado de la viñeta de chat del usuario o la aplicación</value>
+  </data>
+  <data name="DESC_PlayerType" xml:space="preserve">
+    <value>Nombre genérico del tipo de asistente</value>
+  </data>
+  <data name="NAME_PlayerBackColor" xml:space="preserve">
+    <value>Color de fondo</value>
+  </data>
+  <data name="NAME_PlayerForeColor" xml:space="preserve">
+    <value>Color de texto</value>
+  </data>
+  <data name="NAME_PlayerType" xml:space="preserve">
+    <value>Tipo de asistente</value>
+  </data>
+  <data name="NAME_PlayerName" xml:space="preserve">
+    <value>Nombre del asistente</value>
+  </data>
+  <data name="DESC_PlayerName" xml:space="preserve">
+    <value>Nombre del asistente para mostrar en la consola de asistentes</value>
+  </data>
+  <data name="NAME_APIManager" xml:space="preserve">
+    <value>Gestor de API</value>
+  </data>
+  <data name="DESC_APIManager" xml:space="preserve">
+    <value>Gestiona la creación y configuración de asistentes IA</value>
+  </data>
+  <data name="NAME_ChessMate" xml:space="preserve">
+    <value>Asistente de aplicación</value>
+  </data>
+  <data name="DESC_ChessMate" xml:space="preserve">
+    <value>Ayuda al usuario a entender y aprender cómo usar esta aplicación.</value>
+  </data>
+  <data name="NAME_Caspov" xml:space="preserve">
+    <value>Experto en ajedrez</value>
+  </data>
+  <data name="DESC_Caspov" xml:space="preserve">
+    <value>Juega al ajedrez con el usuario y comenta las partidas</value>
+  </data>
+  <data name="NAME_MorFix" xml:space="preserve">
+    <value>Asistente de configuración</value>
+  </data>
+  <data name="DESC_MorFix" xml:space="preserve">
+    <value>Ayuda al usuario con la configuración de la aplicación</value>
+  </data>
+  <data name="NAME_VectorStore" xml:space="preserve">
+    <value>Vector Store de {0}</value>
+  </data>
+  <data name="MSG_CreateingAssistants" xml:space="preserve">
+    <value>Creando los asistentes IA y sus herramientas...</value>
+  </data>
+  <data name="AFILE_Application" xml:space="preserve">
+    <value>AIChessDB_aplicacion.txt</value>
+  </data>
+  <data name="AFILE_Automation" xml:space="preserve">
+    <value>AIChessDB_automatizacion.txt</value>
+  </data>
+  <data name="AFILE_Configuration" xml:space="preserve">
+    <value>AIChessDB_configuracion.txt</value>
+  </data>
+  <data name="AFILE_database" xml:space="preserve">
+    <value>base_de_datos.txt</value>
+  </data>
+  <data name="IFILE_Assistant" xml:space="preserve">
+    <value>{0}_instrucciones.txt</value>
+  </data>
+  <data name="SFILE_assistant_updates_schema" xml:space="preserve">
+    <value>assistant_updates_schema.txt</value>
+  </data>
+  <data name="SFILE_openai_api_config_schema" xml:space="preserve">
+    <value>openai_api_config_schema.txt</value>
+  </data>
+  <data name="SFILE_play_config_schema" xml:space="preserve">
+    <value>play_config_schema.txt</value>
+  </data>
+  <data name="SETUP_Assistants" xml:space="preserve">
+    <value>Esta es una aplicación asistida por agentes IA.
+Por defecto, se deben crear tres asistentes con diversas funciones:
+- Ayuda al usuario con el uso de la aplicación.
+- Ayuda al usuario con la configuración.
+- Jugar con el usuario al ajedrez y comentar y analizar 
+  las partidas existentes.
+Dependiendo del tipo de asistente que selecciones, se 
+crearán objetos en la cuenta del proveedor de IA seleccionado.
+También se creará un almacén de documentos para cada uno
+de estos asistentes, en el que se guardará la documentación
+inicial.
+Puedes cambiar los nombres, la documentación, y añadir
+nuevos asistentes una vez configurada la aplicación.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Caspov_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Caspov_instrucciones.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ChessMate_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChessMate_instrucciones.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MorFix_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MorFix_instrucciones.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NFILE_Assistant" xml:space="preserve">
+    <value>{0}_notes.txt</value>
+  </data>
+  <data name="MSG_CreatingAssistant" xml:space="preserve">
+    <value>Creando la configuración de {0}...</value>
+  </data>
+  <data name="MSG_UploadingDocuments" xml:space="preserve">
+    <value>Subiendo documentos...</value>
+  </data>
+  <data name="ERR_UploadingDocuments" xml:space="preserve">
+    <value>Errores subiendo documentos</value>
+  </data>
+  <data name="NAME_DefPlay" xml:space="preserve">
+    <value>Equipo por defecto AIChessDB</value>
+  </data>
+  <data name="DESC_DefPlay" xml:space="preserve">
+    <value>Configuración de asistentes IA de AIChessDB</value>
+  </data>
+  <data name="Play_presentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Presentacion_play.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="URL_STL" xml:space="preserve">
+    <value>https://software-tecnico-libre.es/es/indice-stl</value>
+  </data>
+  <data name="MSG_SystemToUser" xml:space="preserve">
+    <value>### Bienvenido a AIChessDB
+ 
+Esta aplicación combina **una base de datos de partidas de ajedrez** con **asistentes IA** que te guían en su uso.  
+Desde la consola puedes pedir a los asistentes que te ayuden a:
+ 
+- **Importar partidas en formato PGN** para guardarlas en la base de datos.  
+- **Consultar partidas existentes** con filtros por jugadores, posiciones o movimientos.  
+- **Crear o editar una partida** de forma manual.  
+- **Reproducir partidas** en un tablero interactivo con movimientos y comentarios.  
+ 
+También puedes pedirles que te **expliquen y señalen los botones y elementos de los formularios**, para que entiendas mejor cómo funciona cada parte de la aplicación.  
+Además, en la barra de herramientas de la consola encontrarás un menú desplegable con accesos rápidos a los formularios principales.
+Por defecto, existen estos tres asistentes:
+- **{0}**: Ayuda al usuario con el uso de la aplicación.
+- **{1}**: Ayuda al usuario con la configuración.
+- **{2}**: Juega con el usuario al ajedrez y comenta y analiza las partidas existentes.
+ 
+Escribe tu primera petición en la consola, por ejemplo: **"Importar un archivo PGN"** o **"Abrir el formulario de consulta de partidas"**, y deja que los asistentes hagan el resto.</value>
+  </data>
+  <data name="NAME_UserName" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="DESC_UserName" xml:space="preserve">
+    <value>Apodo con el que los asistentes se dirigirán al usuario</value>
+  </data>
+  <data name="TTL_AIChessDB" xml:space="preserve">
+    <value>Base de datos de ajedrez asistida por IA</value>
+  </data>
+  <data name="MSG_OPerationCancelled" xml:space="preserve">
+    <value>Operación cancelada por el usuario</value>
+  </data>
+  <data name="MSG_ControlsUploaded" xml:space="preserve">
+    <value>El archivo {0} con la lista de controles del formulario {1} se ha añadido a tus documentos. Lee el documento en lugar de llamar a list_open_automation_forms</value>
+  </data>
+  <data name="TTL_EditPlayer" xml:space="preserve">
+    <value>Editar configuración de {0}</value>
+  </data>
+  <data name="NAME_PlayerTemperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="DESC_PlayerTemperature" xml:space="preserve">
+    <value>Valores más altos, como 0,8, harán que la salida sea más aleatoria, mientras que valores más bajos, como 0,2, la harán más centrada y determinista.</value>
+  </data>
+  <data name="NAME_PlayerTopP" xml:space="preserve">
+    <value>Top-P</value>
+  </data>
+  <data name="DESC_PlayerTopP" xml:space="preserve">
+    <value>El modelo considera los resultados de los tokens con una masa de probabilidad superior a p. Por lo tanto, 0,1 significa solo los tokens que comprenden el 10 % superior de masa de probabilidad.</value>
+  </data>
+  <data name="OPT_NEWCONNSTRING" xml:space="preserve">
+    <value>Crear una nueva cadena de conexión con base de datos...</value>
+  </data>
+  <data name="LAB_MATCHINT" xml:space="preserve">
+    <value>{0} Partidas {1} Integradas {2} erróneos en {3}</value>
+  </data>
+  <data name="LAB_BULKFILESPROC" xml:space="preserve">
+    <value>{0} de {1} Procesadas en  {2}</value>
+  </data>
+  <data name="LAB_BULKMATCHESINT" xml:space="preserve">
+    <value>{0} de {1} Insertados en {2} - {3} con errores</value>
+  </data>
+  <data name="MSG_LoadingData" xml:space="preserve">
+    <value>Cargando datos...</value>
+  </data>
+  <data name="MSG_CountingMatches" xml:space="preserve">
+    <value>Contando total de partidas...</value>
+  </data>
+  <data name="FIL_TXT" xml:space="preserve">
+    <value>Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*</value>
+  </data>
+  <data name="LAB_BADMOVE1" xml:space="preserve">
+    <value>Captura de peón sin la notación 'x'</value>
+  </data>
+  <data name="LAB_BADMOVE2" xml:space="preserve">
+    <value>Formato de inicio de movimiento incorrecto</value>
+  </data>
+  <data name="LAB_BADMOVE3" xml:space="preserve">
+    <value>No hay ninguna pieza en el escaque de captura</value>
+  </data>
+  <data name="LAB_BADMOVE4" xml:space="preserve">
+    <value>Movimiento imposible o captura no indicada</value>
+  </data>
+  <data name="LAB_BADMOVE5" xml:space="preserve">
+    <value>Este movimiento deja al rey propio en jaque</value>
+  </data>
+  <data name="LAB_BADMOVE6" xml:space="preserve">
+    <value>Movimiento ambiguo, es posible mover más de una pieza</value>
+  </data>
+  <data name="LAB_BADMOVE7" xml:space="preserve">
+    <value>No se ha indicado escaque de destino</value>
+  </data>
+  <data name="LAB_BADMOVE8" xml:space="preserve">
+    <value>Pieza no válida para promover peón.</value>
+  </data>
+  <data name="LAB_BADMOVE9" xml:space="preserve">
+    <value>Solo es posible promover peones</value>
+  </data>
+  <data name="LAB_BADMOVE10" xml:space="preserve">
+    <value>La jugada no es jaque</value>
+  </data>
+  <data name="LAB_BADMOVE11" xml:space="preserve">
+    <value>La jugada no es mate</value>
+  </data>
+  <data name="LAB_BADMOVE12" xml:space="preserve">
+    <value>Jaque sin notación de jaque (modo estricto)</value>
+  </data>
+  <data name="MSG_send_complete_pgn_match" xml:space="preserve">
+    <value>Procesando la partida PGN enviada...</value>
+  </data>
+  <data name="MSG_MATCHESADDED" xml:space="preserve">
+    <value>{0} partidas añadidas</value>
+  </data>
+  <data name="MSG_MATCHADDED" xml:space="preserve">
+    <value>Partida añadida</value>
+  </data>
+  <data name="ERR_NOMATCHADDED" xml:space="preserve">
+    <value>No se ha añadido ninguna partida</value>
+  </data>
+  <data name="ERR_NOTIMPLEMENTED" xml:space="preserve">
+    <value>No implementado para este formulario</value>
+  </data>
+  <data name="TTP_ADDCOMMENTS" xml:space="preserve">
+    <value>Añadir de forma automática los comentarios de los asistentes al movimiento</value>
+  </data>
+  <data name="NAME_PGNPath" xml:space="preserve">
+    <value>Directorio PGN por defecto</value>
+  </data>
+  <data name="DESC_PGNPath" xml:space="preserve">
+    <value>Directorio por defecto para almacenar archivos PGN</value>
+  </data>
+  <data name="MSG_DELETINGMATCHES" xml:space="preserve">
+    <value>Borrando {0} partidas...</value>
+  </data>
+  <data name="ERR_INVALIDBOARDCHAR" xml:space="preserve">
+    <value>Caracter de tablero no válido {0}</value>
+  </data>
+  <data name="ERR_MATCHNOTFOUND" xml:space="preserve">
+    <value>No se ha encontrado la partida {0}</value>
+  </data>
+  <data name="ERR_MATCHWITHOUTMOVES" xml:space="preserve">
+    <value>La partida {0} no tiene movimientos</value>
+  </data>
+  <data name="ERR_MATCHWITHOUTPOS" xml:space="preserve">
+    <value>La partida {0} no tiene posiciones</value>
+  </data>
+  <data name="MSG_NODATARETURNED" xml:space="preserve">
+    <value>No se han devuelto datos</value>
+  </data>
+  <data name="NAME_PlayerParallelCalls" xml:space="preserve">
+    <value>Uso de herramientas en paralelo</value>
+  </data>
+  <data name="DESC_PlayerParallelCalls" xml:space="preserve">
+    <value>Permitir que el asistente realice varias llamadas a herramientas (como funciones) o solo una por solicitud. Desmarque esta opción para establecer el comportamiento predeterminado.</value>
+  </data>
+  <data name="MSG_SavingAIObjects" xml:space="preserve">
+    <value>Guardando y subiendo...</value>
+  </data>
+  <data name="ERR_InvalidMultipleOperation" xml:space="preserve">
+    <value>Operación no válida para múltiples editores</value>
+  </data>
+  <data name="MSG_LoadingInstances" xml:space="preserve">
+    <value>Cargando instancias...</value>
+  </data>
+  <data name="MSG_ChangesNotSaved2" xml:space="preserve">
+    <value>Existen cambios sin guardar, si seleccionas otro equipo, se perderán. ¿Quieres continuar?</value>
+  </data>
+  <data name="SRV_querydatabase" xml:space="preserve">
+    <value>Realiza consultas en la base de datos</value>
+  </data>
+  <data name="MSG_list_open_query_forms" xml:space="preserve">
+    <value>Obteniendo una lista de formularios de consulta...</value>
+  </data>
+  <data name="MSG_set_query_view" xml:space="preserve">
+    <value>Cambiando la vista de consulta...</value>
+  </data>
+  <data name="ERR_UNKNOWNVIEWNAME" xml:space="preserve">
+    <value>Nombre de vista desconocido {0}</value>
+  </data>
+  <data name="MSG_add_filter_expression" xml:space="preserve">
+    <value>Añadiendo filtro '{0}'...</value>
+  </data>
+  <data name="MSG_get_current_filters" xml:space="preserve">
+    <value>Obteniendo los filtros actuales de la aconsulta...</value>
+  </data>
+  <data name="MSG_remove_filter_expressions" xml:space="preserve">
+    <value>Eliminando expresiones de filtro...</value>
+  </data>
+  <data name="MSG_refresh_query_data" xml:space="preserve">
+    <value>Refrescando los datos del listado...</value>
+  </data>
+  <data name="NAME_PlayerWebSearch" xml:space="preserve">
+    <value>Búsqueda en Web</value>
+  </data>
+  <data name="DESC_PlayerWebSearch" xml:space="preserve">
+    <value>Activar o desactivar el uso de la herramienta de búsqueda en la web</value>
+  </data>
+  <data name="NAME_UpdateAssistantsConfiguration_CleanExpressions" xml:space="preserve">
+    <value>Patrones de limpieza de archivos</value>
+  </data>
+  <data name="DESC_UpdateAssistantsConfiguration_CleanExpressions" xml:space="preserve">
+    <value>Todos los archivos que coincidan con uno de estos patrones se eliminarán del almacenamiento de archivos al iniciarse la aplicación.</value>
+  </data>
+  <data name="MSG_CleaningDocuments" xml:space="preserve">
+    <value>Limpiando documentos de trabajo anteriores...</value>
+  </data>
+  <data name="automation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\automation-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="chessplayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chessplayer-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="configuration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuration-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="memoryandnotes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\memoryandnotes-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="querydatabase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\querydatabase-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="userinterface" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userinterface-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LAB_AllTogether" xml:space="preserve">
+    <value>A la vez</value>
+  </data>
+  <data name="MSG_CurrentMove" xml:space="preserve">
+    <value>{0} ha movido {1}. </value>
+  </data>
+  <data name="MSG_NextMove" xml:space="preserve">
+    <value>El siguiente movimiento de la partida es: {0} mueven {1}</value>
+  </data>
+  <data name="MSG_NoMoreMoves" xml:space="preserve">
+    <value>No hay más movimientos</value>
+  </data>
+  <data name="NAME_APIPlayerData_ReasoningLevel" xml:space="preserve">
+    <value>Nivel de razonamiento</value>
+  </data>
+  <data name="DESC_APIPlayerData_ReasoningLevel" xml:space="preserve">
+    <value>Establece el nivel de razonamiento del modelo. Solo para modelos que admiten razonamiento.</value>
+  </data>
+  <data name="LAB_BADMOVE13" xml:space="preserve">
+    <value>No existe la pieza a mover</value>
+  </data>
+  <data name="LAB_BADMOVE14" xml:space="preserve">
+    <value>Otras piezas obstruyen el movimiento</value>
+  </data>
+</root>

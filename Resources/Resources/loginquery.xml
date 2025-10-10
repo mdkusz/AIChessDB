@@ -1,0 +1,15 @@
+<TextContainer xmlns="http://schemas.datacontract.org/2004/07/BaseClassesAndInterfaces.Serialization" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Text xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+    <a:string>with tree as</a:string>
+    <a:string>(select cod_group,convert(varchar(1000),grp_name) gname,cod_parent from cfg_groups </a:string>
+    <a:string>where cod_parent is null</a:string>
+    <a:string>union all</a:string>
+    <a:string>select g.cod_group,convert(varchar(1000),t.gname+'/'+g.grp_name),g.cod_parent</a:string>
+    <a:string>from cfg_groups g,tree t</a:string>
+    <a:string>where g.cod_parent = t.cod_group)</a:string>
+    <a:string>select u.cod_user,u.usr_name username,t.cod_group ow_value,t.gname ow_friendlyname</a:string>
+    <a:string>from users u</a:string>
+    <a:string>left outer join user_groups g on u.cod_user = g.cod_user </a:string>
+    <a:string>left outer join tree t on t.cod_group = g.cod_group</a:string>
+  </Text>
+</TextContainer>

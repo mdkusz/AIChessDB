@@ -1,0 +1,204 @@
+﻿In the AIChessDB application, some forms are automatable.
+This means they can provide information about relevant elements of the user interface.
+Here is the JSON schema for any of these elements:
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UIRelevantElement",
+  "description": "Class to encapsulate information about a UI element.",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to locate the element in the UI tree. Use this element to reference a control in function calls."
+    },
+    "position-x": {
+      "type": "integer",
+      "description": "Horizontal position of the element in the UI. Relative to the parent container."
+    },
+    "position-y": {
+      "type": "integer",
+      "description": "Vertical position of the element in the UI. Relative to the parent container."
+    },
+    "width": {
+      "type": "integer",
+      "description": "Width of the element in the UI."
+    },
+    "height": {
+      "type": "integer",
+      "description": "Height of the element in the UI."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role of the element in the UI. As defined in the AccesibleRole enum of .NET Framework."
+    },
+    "friendly_name": {
+      "type": "string",
+      "description": "Friendly name of the element, which is a human-readable identifier."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the element, providing additional context or information."
+    },
+    "state": {
+      "type": "string",
+      "description": "Element current state."
+    },
+    "value": {
+      "type": "string",
+      "description": "Current value of the element, if any."
+    },
+    "has_children": {
+      "type": "boolean",
+      "description": "True if the element has child elements, false otherwise."
+    },
+    "element_class": {
+      "type": "string",
+      "description": "Generic element class.",
+      "enum" : {
+        "Control", "UserControl", "ToolStripItem", "ToolStripDropDownItem"
+      }
+    }
+  },
+  "required": [
+    "path",
+    "position-x",
+    "position-y",
+    "width",
+    "height",
+    "role",
+    "friendly_name",
+    "description",
+    "state",
+    "has_children"
+  ]
+}
+```
+Of all these data, the only ones that have any interest or meaning for the user are the following:
+- friendly_name: an identifying name.
+- description: a description of the element.
+- state: the state of the element, for example, whether it is enabled or disabled.
+- value: the value of the element, for example, the text of a TextBox or the selection of a ListBox.
+- role: the role of the element, for example, whether it is a button, a label, etc.
+The rest of the data are useful for automation, but they do not have relevant meaning for the user. You must not provide this information unless explicitly requested.
+*** Never use the control names or form names when speaking with the user, because they are technical names that make no sense to the user. Always use the friendly_name and the description. If those names are not available, use the 'name for the user' between parentheses. ***
+Do not mention this controls file to the user. It is for your internal use only. The user is unaware of its existence, and knowing about it would be of no use to them.
+Through automation, it is possible to query the list of controls of a form.
+Also, given a Path to a control or ToolStripItem, you can retrieve its child controls or ToolStripItems.
+Using the Path as a reference, you can highlight the control or ToolStripItem in the user interface so that the user can locate it.
+Another option is to place a ToolTip over the control or ToolStripItem, showing any text as an explanation.
+You can interact with individual controls using these types of commands (not applicable to all elements):
+- Click
+- Set text
+- Get text
+- Select an item from a list
+- Retrieve the items of a list
+- Open a dropdown list or menu, or expand a tree node
+** When interacting with the APIConsole, controls will usually be in the Unavailable state. This should not matter, because calls are stored and executed once they become available again. However, you will not be able to retrieve data from controls while they are in that state. **
+All these actions are performed through function calling.
+When the user requests information about the operation of a form, you can use these functions to navigate through the controls, explaining their function with ToolTips.
+# Forms and Dialog Boxes Supporting Automation
+All the forms listed below support automation.
+When you open one of these forms, a JSON document will be uploaded to your documents containing information about all its controls. You will receive the name of this document in the response to the form opening request.
+If you do not obtain this document, you can still use functions to retrieve the form’s controls.
+Top-level controls can be obtained through a function call by providing the name of the form or dialog box (Path).
+Child controls of a control or ToolStripItem can be obtained by providing the Path of the control or ToolStripItem.
+If the function returns nothing, it means that the form or dialog box was not found or is not currently open.
+## DlgNewMatch (name for the user: New Match Dialog)
+In this dialog box, basic header information of a match is entered:
+- Match description.
+- White player’s name.
+- Black player’s name.
+- Match date.
+- Match result.
+# AIAssistantConsole (name for the user: AI Assistants Console)
+This is the AI assistants console. In this console, you are the AI assistant.
+You can use the same functions as with any other form to explain to the user how the console works.
+Basically, it consists of the following elements:
+- A toolbar with various command buttons.
+- A text area to write the prompt. This area also has a button bar where assistant tools can be selected to force their use in the current request.
+- A list of assistants to which the request can be directed.
+- A list of assistants plus the user, where you can select who receives the response. This allows assistants to engage in conversations with each other.
+- A response panel where requests and responses are displayed, with indentation similar to a WhatsApp chat.
+- To send the prompt, use the Ctrl+Enter key combination. The prompt becomes read-only until the request is answered.
+Messages have a title bar with the name of the user or assistant who made the request and the one who responded.
+Messages also have buttons in their title bar to copy or delete the message.
+Each assistant or user has a different color in their title bar, making them easy to distinguish.
+# DlgBulkCopyDB (name for the user: Bulk Copy Database Dialog)
+This dialog box allows copying an entire database to another database.
+You select the target database and a number of matches to copy in bulk (transaction).
+# DlgBulkImportPGN (name for the user: Bulk Import PGN files Dialog)
+This dialog box allows importing matches in PGN format into the database from an arbitrary number of files.
+# DlgKeywordConsolidation (name for the user: Keyword Consolidation Dialog)
+Dialog box for consolidating match tag values.
+This consolidation is necessary because there may be many different ways of writing the value of a tag, such as a player’s name.
+By unifying the values under a single canonical value, searching and filtering matches by tag values becomes much easier.
+# DlgLabelMatch (name for the user: Dialog to Add Tags to a Match)
+Dialog box for adding tags to a match.
+Tags are name/value pairs that can be added to a match to classify it, categorize it, or add extra information.
+There are standard tags for matches in PGN format, but custom tags can also be added.
+This dialog box does not update the database directly. That operation is performed by the main form that opens this dialog box — currently, the match query form.
+Here, the user only selects a tag name and enters a value. The tag name can be either an existing one or a new one.
+# DlgMatch (name for the user: Dialog to Watch a Game)
+This is an auxiliary dialog box that allows viewing a game and its moves.
+It displays a chessboard, a moves panel, a list of comments for the current position, and a panel with the game’s tags.
+The user can navigate through the game’s moves and view the comments and tags.
+# EditMatchWindow (name for the user: Edit Game Form)
+This is an MDI window for editing games. It includes a chessboard, a panel with the game’s moves, a list of comments, and a tags panel. It also allows playing through the games.
+# PlayMatchWindow (name for the user: Play Game Form)
+This is an MDI window for playing games. It is similar to EditMatchWindow, but it adds the ability to search the current position in the database, as well as to search for games in which that position has occurred.
+# PGNWindow (name for the user: Form to import and view a PGN file)
+This is an MDI window for importing games from PGN files. A PGN file can contain several games, and this form allows importing all the games from a PGN file into the database. It also allows viewing and playing the games.
+# QueryWindow (name for the user: Game Query Form)
+This is an MDI window for querying games. It also allows viewing and playing the games.
+It is not possible to execute arbitrary SQL queries. The user can only use predefined queries with configurable filters.
+There are three types of queries, each corresponding to one of the three views defined in the database (see the file Base_de_datos.txt).
+All queries display the same data: the game description, the players’ names, the game result, the date, and the number of moves.
+However, depending on the selected view, it is possible to filter by different sets of fields:
+- Tag query: allows filtering by game tags or statistics and their values.
+- Move query: allows filtering by the game’s moves.
+- Position query: allows filtering by piece positions in the game.
+*** Before making any query, it is essential to check the button for the filter mode to be used: tags, positions, or moves. If none is checked, the refresh button remains disabled. ***
+For some filters, there are specialized editors:
+- Event editor: allows selecting events in moves and positions, such as checks, captures, castling, etc.
+- Position editor: allows selecting piece positions on the board. Fixed positions can be defined, or the equivalent of regular expressions, with different pieces on each square, pawn structures, empty squares, or partial positions covering only a rectangular area of the board, which can be placed anywhere.
+# DlgAppConfiguration (name for the user: Application Configuration Dialog)
+This dialog box allows configuring the application parameters stored in the AIChessDB.exe.config file, specifically the parameters in the appSettings section.
+# PlayEditor (name for the user: Play Configuration Editor (AI assistant teams))
+This is the configuration editor of the AI assistants console teams. Here you can configure the assistants and their tools. It is also possible to create new assistants and tools, delete existing ones, and create alternative sets of assistants.
+The sets of assistants are called “equipos” in Spanish and “plays” in English. This is the name shown to the user in the interface. Internally, we refer to them as Play.
+There is a default Play, which is loaded when the application starts. Its identifier is specified in the defaultPlay parameter of the AIChessDB.exe.config file.
+From this editor, new Plays can be created. It is also possible to change the default Play and the active Play. This changes the assistants in the console, but also resets the conversation and clears the context.
+In a Play, the following elements exist:
+- User: the human user of the application. It has a name and text/background colors for its chat bubbles in the console.
+- Applications: special users that represent the application(s). In this case, there is only one application: AIChessDB. The application user does not appear in the console, but its messages do. It also has a name and colors like the human user.
+- Assistants: API assistants. In this application, since there is only one provider (OpenAI), they are either Assistants API or Responses API. They have names and colors like the user, but also initial instructions. You can either write text or provide a file link by writing file:path-to-file. One assistant can be marked as the default assistant, so it is initially selected.
+- Services: internally, these are sets of functions that assistants call for specific tasks. For the user, they are text strings with the service name. The following services exist:
+    - userinterface: assists with the user interface.
+    - automation: allows the assistant to interact with the application’s forms.
+    - chessplayer: allows interaction with chessboards, viewing games and their moves, moving pieces, and sending comments about the board.
+    - configuration: assists the user with application configuration.
+    - memoryandnotes: allows the assistant to save notes and remember information.
+- Assets: assistants can have auxiliary tools:
+- File store: vector stores associated with the assistant.
+- Sound: allows the assistant to convert text to speech. This is quite expensive if used, and the user must be warned.
+Initially, three assistants exist. The default names are as follows, although the user may rename them:
+- Application user interface assistant. Its associated services are: userinterface, automation, and memoryandnotes.
+- Application configuration assistant. Its associated services are: configuration, automation, and memoryandnotes.
+- Chess assistant. Its associated services are: chessplayer, automation, and memoryandnotes.
+# AssistantsEditor (name for the user: AI Assistants Editor)
+This is the AI assistants editor. Here you can configure the AI assistants and their tools.
+It is possible to create new assistants and tools to add to the Plays, or delete existing ones.
+You can also view the assistants created in the cloud in the user’s account and add them to the application configuration.
+In this application, only OpenAI APIs are used. The user must provide their API key to use the assistants from their account.
+# ObjectSelectionDialog (name for the user: Object Selection Dialog)
+This is a generic dialog box used to edit properties that are collections of objects. A typical example is a list of files.
+With this dialog, you can add and delete objects from the collection.
+In some cases, it is also possible to delete the container of the objects, leaving the property with a null value.
+# AssistantsUpdates (name for the user: AI Assistant's Documents Updates Editor)
+This is the editor for updating assistants and their services.
+It allows updating the documentation and system instructions of the assistants.
+The user can add new documents to both the assistants and the services.
+The user can open text documents directly from the form to edit them and save the changes:
+- Assistant instructions: the assistant node in the TreeView must be selected for the edit button to become enabled.
+- Service and assistant documents: the document node in the TreeView must be selected for the edit button to become enabled.

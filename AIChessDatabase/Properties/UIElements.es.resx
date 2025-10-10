@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtBlack_Description" xml:space="preserve">
+    <value>TextBox para escribir el nombre del jugador que juega con las negras</value>
+  </data>
+  <data name="txtBlack_Name" xml:space="preserve">
+    <value>Jugador Negras</value>
+  </data>
+  <data name="txtWhite_Name" xml:space="preserve">
+    <value>Jugador Blancas</value>
+  </data>
+  <data name="txtDate_Description" xml:space="preserve">
+    <value>TextBox para introducir la fecha de la partida. El formato es libre, ya que se almacena como texto en la base de datos.</value>
+  </data>
+  <data name="txtDate_Name" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="txtWhite_Description" xml:space="preserve">
+    <value>TextBox para escribir el nombre del jugador que juega con las blancas</value>
+  </data>
+  <data name="txtMatch_Name" xml:space="preserve">
+    <value>Descripción de la partida</value>
+  </data>
+  <data name="txtMatch_Description" xml:space="preserve">
+    <value>TetxBox para introducir un texto con una descripción de la partida</value>
+  </data>
+  <data name="bCancel_Name" xml:space="preserve">
+    <value>Botón cancelar</value>
+  </data>
+  <data name="bCancel_Description" xml:space="preserve">
+    <value>Botón para cerrar el cuadro de diálogo y cancelar la operación</value>
+  </data>
+  <data name="bOK_Name" xml:space="preserve">
+    <value>Botón aceptar</value>
+  </data>
+  <data name="bOK_Description" xml:space="preserve">
+    <value>Botón para aceptar los datos introducidos y continuar con la operación.</value>
+  </data>
+  <data name="cbResult_Name" xml:space="preserve">
+    <value>Resultado de la partida</value>
+  </data>
+  <data name="cbResult_Description" xml:space="preserve">
+    <value>ComboBox para seleccionar el resultado de la partida en formato de texto</value>
+  </data>
+  <data name="DlgNewMatch_Name" xml:space="preserve">
+    <value>Información de partida</value>
+  </data>
+  <data name="DlgNewMatch_Description" xml:space="preserve">
+    <value>Cuadro de diálogo para introducir información básica para la nueva partida</value>
+  </data>
+  <data name="cbDestinationDB_Name" xml:space="preserve">
+    <value>Base de datos destino</value>
+  </data>
+  <data name="cbDestinationDB_Description" xml:space="preserve">
+    <value>Selecciona un proveedor de base de datos de destino para copiar las partidas</value>
+  </data>
+  <data name="txtSize_Name" xml:space="preserve">
+    <value>Tamaño de bloque</value>
+  </data>
+  <data name="txtSize_Description" xml:space="preserve">
+    <value>Número de partidas a copiar como un bloque, antes de validar los cambios</value>
+  </data>
+  <data name="cbDuplicates_Name" xml:space="preserve">
+    <value>Permitir duplicados</value>
+  </data>
+  <data name="cbDuplicates_Description" xml:space="preserve">
+    <value>Permitir copiar partidas que se consideran duplicadas en la base de datos de destino</value>
+  </data>
+  <data name="pbCopy_Name" xml:space="preserve">
+    <value>Progreso de la copia</value>
+  </data>
+  <data name="pbCopy_Description" xml:space="preserve">
+    <value>Barra indicadora del progreso de la copia</value>
+  </data>
+  <data name="bExport_Name" xml:space="preserve">
+    <value>Botón exportar</value>
+  </data>
+  <data name="bExport_Description" xml:space="preserve">
+    <value>Empezar a copiar partidas a la base de datos de destino</value>
+  </data>
+  <data name="cbDelete_Name" xml:space="preserve">
+    <value>Eliminar archivos</value>
+  </data>
+  <data name="cbDelete_Description" xml:space="preserve">
+    <value>Marcar para eliminar los archivos PGN al terminar</value>
+  </data>
+  <data name="pbFiles_Name" xml:space="preserve">
+    <value>Progreso de archivos</value>
+  </data>
+  <data name="pbFiles_Description" xml:space="preserve">
+    <value>Barra de progreso para el número de archivos procesados</value>
+  </data>
+  <data name="bFiles_Name" xml:space="preserve">
+    <value>Botón seleccionar archivos</value>
+  </data>
+  <data name="bFiles_Description" xml:space="preserve">
+    <value>Pulsa este botón para abrir un cuadro de diálogo con selección múltiple para seleccionar los archivos PGN de origen</value>
+  </data>
+  <data name="bImport_Name" xml:space="preserve">
+    <value>Botón importar</value>
+  </data>
+  <data name="bImport_Description" xml:space="preserve">
+    <value>Pulsa este botón para comenzar a importar las partidas</value>
+  </data>
+  <data name="pbMatches_Name" xml:space="preserve">
+    <value>Barra de progreso de partidas</value>
+  </data>
+  <data name="pbMatches_Description" xml:space="preserve">
+    <value>Barra de progreso para el número de partidas importadas desde el archivo actual</value>
+  </data>
+  <data name="cbKeyword_Name" xml:space="preserve">
+    <value>Etiquetas</value>
+  </data>
+  <data name="cbKeyword_Description" xml:space="preserve">
+    <value>Lista desplegable de etiquetas. Selecciona una para consolidar sus valores.</value>
+  </data>
+  <data name="lbValues_Name" xml:space="preserve">
+    <value>LIsta de valores</value>
+  </data>
+  <data name="lbValues_Description" xml:space="preserve">
+    <value>Lista con todos los valores diferentes para la etiqueta seleccionada</value>
+  </data>
+  <data name="txtFilter_Name" xml:space="preserve">
+    <value>Filtro de valores</value>
+  </data>
+  <data name="txtFilter_Description" xml:space="preserve">
+    <value>Texto para filtrar los valores de la lista. Es posible usar expresiones regulares</value>
+  </data>
+  <data name="bFilter_Name" xml:space="preserve">
+    <value>Botón aplicar filtro</value>
+  </data>
+  <data name="bFilter_Description" xml:space="preserve">
+    <value>Pulsa este botón para aplicar el filtro actual a la lista de valores</value>
+  </data>
+  <data name="bFilterEq_Description" xml:space="preserve">
+    <value>Pulsa este botón para aplicar el filtro actual a la lista de equivalencias de valores</value>
+  </data>
+  <data name="txtFilterEq_Name" xml:space="preserve">
+    <value>Filtro de equivalencias</value>
+  </data>
+  <data name="txtFilterEq_Description" xml:space="preserve">
+    <value>Texto para filtrar las equivalencias de valores de la lista. Es posible usar expresiones regulares</value>
+  </data>
+  <data name="lbEquivalences_Name" xml:space="preserve">
+    <value>Lista de equivalencias</value>
+  </data>
+  <data name="lbEquivalences_Description" xml:space="preserve">
+    <value>Lista de posibles valores equivalentes aL seleccionado; selecciona aquellos que lo son realmente</value>
+  </data>
+  <data name="bConsolidate_Name" xml:space="preserve">
+    <value>Botón consolidar</value>
+  </data>
+  <data name="bConsolidate_Description" xml:space="preserve">
+    <value>Convertir todos los valores equivalentes seleccionados al valor canónico</value>
+  </data>
+  <data name="bClose_Name" xml:space="preserve">
+    <value>Botón cerrar</value>
+  </data>
+  <data name="bClose_Description" xml:space="preserve">
+    <value>Cerrar el cuadro de diálogo</value>
+  </data>
+  <data name="txtCanonical_Name" xml:space="preserve">
+    <value>Texto canónico</value>
+  </data>
+  <data name="txtCanonical_Description" xml:space="preserve">
+    <value>Texto con el que se reemplazarán todos los valores equivalentes seleccionados</value>
+  </data>
+  <data name="bRefresh_Name" xml:space="preserve">
+    <value>Botón refrescar</value>
+  </data>
+  <data name="bRefresh_Description" xml:space="preserve">
+    <value>Refrescar la lista de valores</value>
+  </data>
+  <data name="bRefreshEq_Description" xml:space="preserve">
+    <value>Refrescar la lista de valores equivalentes</value>
+  </data>
+  <data name="txtNewKey_Name" xml:space="preserve">
+    <value>Nueva etiqueta</value>
+  </data>
+  <data name="txtNewKey_Description" xml:space="preserve">
+    <value>Escribe el nombre de una nueva etiqueta, o el de una etiqueta existente</value>
+  </data>
+  <data name="bNewKey_Name" xml:space="preserve">
+    <value>Botón añadir etiqueta</value>
+  </data>
+  <data name="bNewKey_Description" xml:space="preserve">
+    <value>Añadir una nueva etiqueta a la lista desplegable</value>
+  </data>
+  <data name="cbKeywords_Name" xml:space="preserve">
+    <value>Etiquetas disponibles</value>
+  </data>
+  <data name="cbKeywords_Description" xml:space="preserve">
+    <value>Lista desplegable de etiquetas disponibles. Es posible añadir nuevos nombres de etiqueta.</value>
+  </data>
+  <data name="cPlayer_Name" xml:space="preserve">
+    <value>Visor de partida</value>
+  </data>
+  <data name="cPlayer_Description" xml:space="preserve">
+    <value>Tablero de ajedrez. Los usuarios pueden navegar hacia delante y atrás por los movimientos, viendo las posiciones y los comentarios añadidos a la partida.</value>
+  </data>
+  <data name="mmDisplay_Name" xml:space="preserve">
+    <value>Lista de movimientos</value>
+  </data>
+  <data name="mmDisplay_Description" xml:space="preserve">
+    <value>Lista de movimientos. Pulsa en cualquier jugada para ver la posición del tablero correspondiente.</value>
+  </data>
+  <data name="txtComments_Name" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="txtComments_Description" xml:space="preserve">
+    <value>Cuadro de texto de comentarios sobre el movimiento actual</value>
+  </data>
+  <data name="lvKeys_Name" xml:space="preserve">
+    <value>Lista de etiquetas</value>
+  </data>
+  <data name="lvKeys_Description" xml:space="preserve">
+    <value>Lista de etiquetas agrupadas por categoría. (información de partida, estadísticas de movimiento, etc.)</value>
+  </data>
+  <data name="board_Name" xml:space="preserve">
+    <value>Tablero</value>
+  </data>
+  <data name="board_Description" xml:space="preserve">
+    <value>Tablero que muestra las posiciones de las piezas</value>
+  </data>
+  <data name="ChessPlayer_bCancel_Description" xml:space="preserve">
+    <value>Cancelar cambios en los comentarios</value>
+  </data>
+  <data name="ChessPlayer_bOK_Description" xml:space="preserve">
+    <value>Aceptar los cambios en los comentarios</value>
+  </data>
+  <data name="ChessPlayer_bNew_Name" xml:space="preserve">
+    <value>Nuevo comentario</value>
+  </data>
+  <data name="ChessPlayer_bNew_Description" xml:space="preserve">
+    <value>Añadir un nuevo comentario a la lista de comentarios del movimiento.</value>
+  </data>
+  <data name="Board_toolStrip1_Name" xml:space="preserve">
+    <value>Barra de herramientas del tablero</value>
+  </data>
+  <data name="Board_toolStrip1_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones de comando para interactuar con el tablero</value>
+  </data>
+  <data name="bReset_Name" xml:space="preserve">
+    <value>Reiniciar parida</value>
+  </data>
+  <data name="bReset_Description" xml:space="preserve">
+    <value>Pulsa este botón para volver a la posición inicial de la partida</value>
+  </data>
+  <data name="bBack_Name" xml:space="preserve">
+    <value>Botón retroceder</value>
+  </data>
+  <data name="bBack_Description" xml:space="preserve">
+    <value>Botón para retroceder un movimiento en la partida</value>
+  </data>
+  <data name="bNext_Name" xml:space="preserve">
+    <value>Botón avanzar</value>
+  </data>
+  <data name="bNext_Description" xml:space="preserve">
+    <value>Botón para avanzar un movimiento en la partida</value>
+  </data>
+  <data name="txtMove_Name" xml:space="preserve">
+    <value>Texto del movimiento</value>
+  </data>
+  <data name="txtMove_Description" xml:space="preserve">
+    <value>Jugada actual en notación algebraica (AN)</value>
+  </data>
+  <data name="bRotateView_Name" xml:space="preserve">
+    <value>Botón rotar vista</value>
+  </data>
+  <data name="bRotateView_Description" xml:space="preserve">
+    <value>Cambiar la perspectiva del tablero: :negras arriba, o blancas arriba</value>
+  </data>
+  <data name="bInitialPos_Name" xml:space="preserve">
+    <value>Botón posición inicial</value>
+  </data>
+  <data name="bInitialPos_Description" xml:space="preserve">
+    <value>Cuando el control está en modo edición, este botón muestra un cuadro de diálogo para componer la posición iniicial</value>
+  </data>
+  <data name="bMarkMoves_Name" xml:space="preserve">
+    <value>Botón marcar movimientos</value>
+  </data>
+  <data name="bMarkMoves_Description" xml:space="preserve">
+    <value>Activar o desactivar marcado de los escaques inicial y final de los movimientos.</value>
+  </data>
+  <data name="pbBoard_Name" xml:space="preserve">
+    <value>Imagen del tablero</value>
+  </data>
+  <data name="pbBoard_Description" xml:space="preserve">
+    <value>Imagen de la posición actual en el tablero</value>
+  </data>
+  <data name="MatchMoveDisplay_toolStrip1_Name" xml:space="preserve">
+    <value>Barra de herramientas de movimientos</value>
+  </data>
+  <data name="MatchMoveDisplay_toolStrip1_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones de comando para interactuar con el panel de movimientos</value>
+  </data>
+  <data name="bTopDown_Name" xml:space="preserve">
+    <value>Botón arriba /abajo</value>
+  </data>
+  <data name="bTopDown_Description" xml:space="preserve">
+    <value>Muestra los movimientos en columnas, llenándolas de arriba a abajo y de izquierda a derecha</value>
+  </data>
+  <data name="bLeftRight_Name" xml:space="preserve">
+    <value>Botón izquerda / derecha</value>
+  </data>
+  <data name="bLeftRight_Description" xml:space="preserve">
+    <value>Muestra los movimientos en filas, llenándolas de izquierda a derecha y de arriba a abajo</value>
+  </data>
+  <data name="txtAddMove_Name" xml:space="preserve">
+    <value>Editor nuevo movimiento</value>
+  </data>
+  <data name="txtAddMove_Description" xml:space="preserve">
+    <value>En modo edición, escribe aquí el siguiente movimiento en notación algebraica estándar</value>
+  </data>
+  <data name="bAddMove_Name" xml:space="preserve">
+    <value>Botón añadir movimiento</value>
+  </data>
+  <data name="bAddMove_Description" xml:space="preserve">
+    <value>Pulsa este botón para añadir un nuevo movimiento al final de la partida</value>
+  </data>
+  <data name="bDelMove_Name" xml:space="preserve">
+    <value>Botón eliminar movimiento</value>
+  </data>
+  <data name="bDelMove_Description" xml:space="preserve">
+    <value>Eliminar el último movimiento de la partida</value>
+  </data>
+  <data name="pbMatch_Name" xml:space="preserve">
+    <value>Lista de movimientos</value>
+  </data>
+  <data name="pbMatch_Description" xml:space="preserve">
+    <value>Lista de movimientos de la partida</value>
+  </data>
+  <data name="PositionViewer_toolStrip1_Name" xml:space="preserve">
+    <value>Barra de herramientas del visor de partidas</value>
+  </data>
+  <data name="PositionViewer_toolStrip1_Description" xml:space="preserve">
+    <value>Barra de herramientas con comandos para gestionar la lista de partidas que comparten la posición actual</value>
+  </data>
+  <data name="bFind_Name" xml:space="preserve">
+    <value>Botón buscar</value>
+  </data>
+  <data name="bFind_Description" xml:space="preserve">
+    <value>Busca partidas que contienen la posición actual y muestra los primeros N movimientos desde esa posición.</value>
+  </data>
+  <data name="txtMoves_Name" xml:space="preserve">
+    <value>Movimientos desde posición</value>
+  </data>
+  <data name="txtMoves_Description" xml:space="preserve">
+    <value>Escribe el número de movimientos a mostrar desde la posición actual en las partidas encontradas</value>
+  </data>
+  <data name="bShow_Name" xml:space="preserve">
+    <value>Botón mostrar partida</value>
+  </data>
+  <data name="bShow_Description" xml:space="preserve">
+    <value>Botón para mostrar la partida seleccionada</value>
+  </data>
+  <data name="pBoards_Name" xml:space="preserve">
+    <value>Panel de tableros</value>
+  </data>
+  <data name="pBoards_Description" xml:space="preserve">
+    <value>Lista de tableros miniatura con las posiciones de la partida seleccionada</value>
+  </data>
+  <data name="dgMatches_Name" xml:space="preserve">
+    <value>Listado de partidas</value>
+  </data>
+  <data name="dgMatches_Description" xml:space="preserve">
+    <value>Listado de partidas que cumplen con los criterios actuales del filtro</value>
+  </data>
+  <data name="ColumnManagerUI_lvColumns_Name" xml:space="preserve">
+    <value>Lista de columnas adicionales</value>
+  </data>
+  <data name="ColumnManagerUI_lvColumns_Description" xml:space="preserve">
+    <value>Puedes usar cualquiera de estas columnas para filtrar la consulta y obtener resultados más precisos</value>
+  </data>
+  <data name="ColumnManagerUI_ctxMenu_Name" xml:space="preserve">
+    <value>Menú contextual</value>
+  </data>
+  <data name="ColumnManagerUI_ctxMenu_Description" xml:space="preserve">
+    <value>Menú con opciones para utilizar las columnas de la lista</value>
+  </data>
+  <data name="cbDraw_Name" xml:space="preserve">
+    <value>Oferta de tablas</value>
+  </data>
+  <data name="cbDraw_Description" xml:space="preserve">
+    <value>Seleccionar partidas con una o más ofertas de tablas</value>
+  </data>
+  <data name="cbCastling_Name" xml:space="preserve">
+    <value>Tipo de enroque</value>
+  </data>
+  <data name="cbCastling_Description" xml:space="preserve">
+    <value>Seleccionar partidas con este tipo de enroque</value>
+  </data>
+  <data name="cbCheck_Name" xml:space="preserve">
+    <value>Tipo de jaque</value>
+  </data>
+  <data name="cbCheck_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que se produjo este tipo de jaque</value>
+  </data>
+  <data name="cbBBishopP_Name" xml:space="preserve">
+    <value>Peón promovido a alfil</value>
+  </data>
+  <data name="cbBBishopP_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un peón fue promovido a alfil</value>
+  </data>
+  <data name="cbKnightP_Name" xml:space="preserve">
+    <value>Peón promovido a caballo</value>
+  </data>
+  <data name="cbKnightP_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un peón fue promovido a caballo</value>
+  </data>
+  <data name="cbRookP_Name" xml:space="preserve">
+    <value>Peón promovido a torre</value>
+  </data>
+  <data name="cbRookP_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un peón ha sido promovido a torre</value>
+  </data>
+  <data name="cbQueenP_Name" xml:space="preserve">
+    <value>Peón promovido a Dama</value>
+  </data>
+  <data name="cbQueenP_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un peón ha sido promovido a dama</value>
+  </data>
+  <data name="cbBBishopC_Name" xml:space="preserve">
+    <value>Alfil de casillas oscuras capturado</value>
+  </data>
+  <data name="cbBBishopC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un alfil de casillas oscuras ha sido capturado</value>
+  </data>
+  <data name="cbEnPassant_Name" xml:space="preserve">
+    <value>Peón capturado al paso</value>
+  </data>
+  <data name="cbEnPassant_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que un peón ha sido capturado al paso</value>
+  </data>
+  <data name="cbKnightC_Name" xml:space="preserve">
+    <value>Caballo capturado</value>
+  </data>
+  <data name="cbKnightC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que se ha capturado un caballo</value>
+  </data>
+  <data name="cbQueenC_Name" xml:space="preserve">
+    <value>Dama capturada</value>
+  </data>
+  <data name="cbQueenC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que una dama ha sido capturada</value>
+  </data>
+  <data name="cbRookC_Name" xml:space="preserve">
+    <value>Torre capturada</value>
+  </data>
+  <data name="cbRookC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que se ha capturado una torre</value>
+  </data>
+  <data name="cbWBishopC_Name" xml:space="preserve">
+    <value>Alfil de casillas claras capturado</value>
+  </data>
+  <data name="cbWBishopC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que se ha capturado un alfil de casillas claras</value>
+  </data>
+  <data name="cbPawnC_Name" xml:space="preserve">
+    <value>Peón capturado</value>
+  </data>
+  <data name="cbPawnC_Description" xml:space="preserve">
+    <value>Seleccionar partidas en las que se haya capturado un peón</value>
+  </data>
+  <data name="cbBBishopM_Name" xml:space="preserve">
+    <value>Alfil de casillas oscuras movido</value>
+  </data>
+  <data name="cbBBishopM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es un alfil de casillas oscuras</value>
+  </data>
+  <data name="cbKnightM_Name" xml:space="preserve">
+    <value>Caballo movido</value>
+  </data>
+  <data name="cbKnightM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es un caballo</value>
+  </data>
+  <data name="cbKingM_Name" xml:space="preserve">
+    <value>Rey movido</value>
+  </data>
+  <data name="cbKingM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es el rey</value>
+  </data>
+  <data name="cbQueenM_Name" xml:space="preserve">
+    <value>Dama movida</value>
+  </data>
+  <data name="cbQueenM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es una dama</value>
+  </data>
+  <data name="cbRookM_Name" xml:space="preserve">
+    <value>Torre movida</value>
+  </data>
+  <data name="cbRookM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es una torre</value>
+  </data>
+  <data name="cbWBishopM_Name" xml:space="preserve">
+    <value>Alfil de casillas claras movido</value>
+  </data>
+  <data name="cbWBishopM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es un alfil de casillas claras</value>
+  </data>
+  <data name="cbPawnM_Name" xml:space="preserve">
+    <value>Peón movido</value>
+  </data>
+  <data name="cbPawnM_Description" xml:space="preserve">
+    <value>La pieza movida para generar el evento es un peón</value>
+  </data>
+  <data name="squareMenu_Name" xml:space="preserve">
+    <value>Menú contextual de escaque</value>
+  </data>
+  <data name="squareMenu_Description" xml:space="preserve">
+    <value>Muestra opciones para realizar operaciones en este escaque</value>
+  </data>
+  <data name="OPT_NOCOLOR_DESCRIPTION" xml:space="preserve">
+    <value>Marcar este escaque como de color indeterminado, de manera que coincida tanto con escaques claros como oscuros</value>
+  </data>
+  <data name="OPT_COLORBLACK_DESCRIPTION" xml:space="preserve">
+    <value>Marcar este escaque como de color oscuro, de manera que coincida solo con escaques oscuros</value>
+  </data>
+  <data name="OPT_COLORWHITE_DESCRIPTION" xml:space="preserve">
+    <value>Marcar este escaque como de color claro, de manera que coincida solo con escaques claros</value>
+  </data>
+  <data name="OPT_CLEAR_DESCRIPTION" xml:space="preserve">
+    <value>Marcar este escaque como de color indiferente</value>
+  </data>
+  <data name="OPT_CLEARALL_DESCRIPTION" xml:space="preserve">
+    <value>Marcar todos los escaques vacíos como de color indiferente</value>
+  </data>
+  <data name="OPT_EMPTY_DESCRIPTION" xml:space="preserve">
+    <value>Marcar este escaque como específicamente vacío. Solo los escaques vacíos coincidirán con él.</value>
+  </data>
+  <data name="OPT_EMPTYALL_DESCRIPTION" xml:space="preserve">
+    <value>Marcar todos los escaques sin asignar como específicamente vacíos. Solo los escaques vacíos coincidirán con ellos.</value>
+  </data>
+  <data name="txtCustom_Name" xml:space="preserve">
+    <value>Expresión regular personalizada</value>
+  </data>
+  <data name="txtCustom_Description" xml:space="preserve">
+    <value>Escribe una configuración de tablero o una expresión regular para las posiciones que quieres encontrar en la base de datos</value>
+  </data>
+  <data name="bSave_Name" xml:space="preserve">
+    <value>Guardar posición del tablero</value>
+  </data>
+  <data name="bSave_Description" xml:space="preserve">
+    <value>Añadir la disposición de piezas actual a la lista desplegable para poder reutilizarla más adelante</value>
+  </data>
+  <data name="bUse_Name" xml:space="preserve">
+    <value>Usar la posición seleccionada</value>
+  </data>
+  <data name="bUse_Description" xml:space="preserve">
+    <value>Recuperar la posición seleccionada en la lista desplegable y configurar el tablero con ella</value>
+  </data>
+  <data name="cbBoards_Name" xml:space="preserve">
+    <value>Lista de posiciones guardadas</value>
+  </data>
+  <data name="cbBoards_Description" xml:space="preserve">
+    <value>Lista desplegable de disposiciones de piezas en el tablero almacenadas que pueden reutilizarse</value>
+  </data>
+  <data name="PositionFilter_bReset_Name" xml:space="preserve">
+    <value>Reiniciar tablero</value>
+  </data>
+  <data name="PositionFilter_bReset_Description" xml:space="preserve">
+    <value>Volver a configurar el tablero con la disposición de piezas inicial</value>
+  </data>
+  <data name="bClear_Name" xml:space="preserve">
+    <value>Vaciar tablero</value>
+  </data>
+  <data name="bClear_Description" xml:space="preserve">
+    <value>Borrar todas las piezas y configuraciones de escaque del tablero</value>
+  </data>
+  <data name="cbSimple_Name" xml:space="preserve">
+    <value>Tablero simple</value>
+  </data>
+  <data name="cbSimple_Description" xml:space="preserve">
+    <value>Usar una configuración normal de tablero, sin expresiones regulares ni configuraciones parciales de escaques</value>
+  </data>
+  <data name="cbSimpleBoard_Name" xml:space="preserve">
+    <value>Panel de tablero simple</value>
+  </data>
+  <data name="cbSimpleBoard_Description" xml:space="preserve">
+    <value>Controles para configurar un filtro de tablero simple</value>
+  </data>
+  <data name="txtDescription_Name" xml:space="preserve">
+    <value>Descripción de la posición almacenada</value>
+  </data>
+  <data name="txtDescription_Description" xml:space="preserve">
+    <value>Escribe una descripción para la disposición de piezas del tablero a añadir a la lista desplegable de posiciones</value>
+  </data>
+  <data name="cbBoard_Name" xml:space="preserve">
+    <value>Editor de tablero complejo</value>
+  </data>
+  <data name="cbBoard_Description" xml:space="preserve">
+    <value>Controles para editar configuraciones de tablero complejas, con expresiones regulares, configuración de escaques, y tableros parciales</value>
+  </data>
+  <data name="cbOperators_Name" xml:space="preserve">
+    <value>Operadores de filtro</value>
+  </data>
+  <data name="cbOperators_Description" xml:space="preserve">
+    <value>Lista desplegable de operadores lógicos para aplicar a los escaques seleccionados en una condición de filtro</value>
+  </data>
+  <data name="bAddCom_Name" xml:space="preserve">
+    <value>Botón añadir comentario</value>
+  </data>
+  <data name="bAddCom_Description" xml:space="preserve">
+    <value>Añadir un nuevo comentario a la lista</value>
+  </data>
+  <data name="bCancelChg_Name" xml:space="preserve">
+    <value>Botón cancelar cambios</value>
+  </data>
+  <data name="bCancelChg_Description" xml:space="preserve">
+    <value>Cancelar todos los cambios no aceptados y recuperar los valores anteriores</value>
+  </data>
+  <data name="bUpdate_Name" xml:space="preserve">
+    <value>Botón actualizar cambios</value>
+  </data>
+  <data name="bUpdate_Description" xml:space="preserve">
+    <value>Aceptar todos los cambios y guardarlos en la base de datos</value>
+  </data>
+  <data name="bDeleteCom_Name" xml:space="preserve">
+    <value>Botón eliminar comentario</value>
+  </data>
+  <data name="bDeleteCom_Description" xml:space="preserve">
+    <value>Eliminar el comentario seleccionado de la lista</value>
+  </data>
+  <data name="bChangeCom_Name" xml:space="preserve">
+    <value>Botón cambiar comentario</value>
+  </data>
+  <data name="bChangeCom_Description" xml:space="preserve">
+    <value>Cambiar el texto del comentario seleccionado por el del editor de comentarios</value>
+  </data>
+  <data name="txtComment_Name" xml:space="preserve">
+    <value>Editor de comentarios</value>
+  </data>
+  <data name="txtComment_Description" xml:space="preserve">
+    <value>Escribe el texto para los nuevos comentarios o para modificar los existentes</value>
+  </data>
+  <data name="lbComments_Name" xml:space="preserve">
+    <value>Lista de comentarios</value>
+  </data>
+  <data name="lbComments_Description" xml:space="preserve">
+    <value>Lista de comentarios de partida o de movimientos</value>
+  </data>
+  <data name="bMatchNewKey_Description" xml:space="preserve">
+    <value>Añadir una nueva etiqueta a la partida</value>
+  </data>
+  <data name="bDelete_Name" xml:space="preserve">
+    <value>Botón eliminar etiqueta</value>
+  </data>
+  <data name="bDelete_Description" xml:space="preserve">
+    <value>Eliminar la etiqueta seleccionada de esta partida</value>
+  </data>
+  <data name="bChangeValue_Name" xml:space="preserve">
+    <value>Botón cambiar valor de etiqueta</value>
+  </data>
+  <data name="bChangeValue_Description" xml:space="preserve">
+    <value>Cambiar el valor de la etiqueta seleccionada para esta partida</value>
+  </data>
+  <data name="txtKeyValue_Name" xml:space="preserve">
+    <value>Valor de la etiqueta</value>
+  </data>
+  <data name="txtKeyValue_Description" xml:space="preserve">
+    <value>Escribe un valor para la etiqueta seleccionada para esta partida</value>
+  </data>
+  <data name="PGNdgMatches_Description" xml:space="preserve">
+    <value>Listado de partidas contenidas en el archivo PGN</value>
+  </data>
+  <data name="PGN_toolStrip1_Name" xml:space="preserve">
+    <value>Barra de herramientas del listado de partidas</value>
+  </data>
+  <data name="PGN_toolStrip1_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones para gestionar partidas importadas desde archivos PGN</value>
+  </data>
+  <data name="bView_Name" xml:space="preserve">
+    <value>Botón ver partida</value>
+  </data>
+  <data name="bView_Description" xml:space="preserve">
+    <value>Mostrar la partida en el tablero, donde puedes recorrer sus movimientos y ver las distintas posiciones.</value>
+  </data>
+  <data name="bCheck_Name" xml:space="preserve">
+    <value>Botón marcar seleccionadas</value>
+  </data>
+  <data name="bCheck_Description" xml:space="preserve">
+    <value>Marcar las filas seleccionadas en el listado. Algunos comandos solo actúan sobre las partidas marcadas,</value>
+  </data>
+  <data name="bSelAll_Name" xml:space="preserve">
+    <value>Botón marcar todas</value>
+  </data>
+  <data name="bSelAll_Description" xml:space="preserve">
+    <value>Marcar todas las partidas del listado</value>
+  </data>
+  <data name="bUncheck_Name" xml:space="preserve">
+    <value>Botón desmarcar</value>
+  </data>
+  <data name="bUncheck_Description" xml:space="preserve">
+    <value>Quitar la marca de todas las filas seleccionadas en el listado</value>
+  </data>
+  <data name="bInsert_Name" xml:space="preserve">
+    <value>Botón insertar partidas</value>
+  </data>
+  <data name="bInsert_Description" xml:space="preserve">
+    <value>Insertar todas las partidas seleccionadas en la base de datos</value>
+  </data>
+  <data name="pgInsert_Name" xml:space="preserve">
+    <value>Barra de progreso</value>
+  </data>
+  <data name="pgInsert_Description" xml:space="preserve">
+    <value>Barra de progreso de la operación en curso</value>
+  </data>
+  <data name="QueryWindow_toolStrip1_Name" xml:space="preserve">
+    <value>Barra de herramientas del formulario de consultas</value>
+  </data>
+  <data name="QueryWindow_toolStrip1_Description" xml:space="preserve">
+    <value>Barra de herramientas con comandos para gestionar la lista de partidas obtenidas con la consulta actual</value>
+  </data>
+  <data name="bFilterByTag_Name" xml:space="preserve">
+    <value>Botón filtrar por etiquetas</value>
+  </data>
+  <data name="bFilterByTag_Description" xml:space="preserve">
+    <value>Seleccionar una consulta para buscar partidas usando los valores de sus etiquetas o estadísticas.</value>
+  </data>
+  <data name="bFilterByPos_Name" xml:space="preserve">
+    <value>Botón filtrar por posiciones</value>
+  </data>
+  <data name="bFilterByPos_Description" xml:space="preserve">
+    <value>Seleccionar una consulta para buscar partidas usando posiciones de piezas en el tablero.</value>
+  </data>
+  <data name="bFilterByMov_Name" xml:space="preserve">
+    <value>Botón filtrar por movimientos</value>
+  </data>
+  <data name="bFilterByMov_Description" xml:space="preserve">
+    <value>Seleccionar una consulta para buscar partidas usando los movimientos de las piezas en el tablero.</value>
+  </data>
+  <data name="QueryWindow_bDelete_Name" xml:space="preserve">
+    <value>Botón eliminar resultados</value>
+  </data>
+  <data name="QueryWindow_bDelete_Description" xml:space="preserve">
+    <value>Eliminar las partidas seleccionadas del listado (no se eliminarán de la base de datos)</value>
+  </data>
+  <data name="bTagSel_Name" xml:space="preserve">
+    <value>Botón etiquetar partidas</value>
+  </data>
+  <data name="bTagSel_Description" xml:space="preserve">
+    <value>Añadir etiquetas de partida a todas las partidas seleccionadas.</value>
+  </data>
+  <data name="bEditMatch_Name" xml:space="preserve">
+    <value>Botón editar partida</value>
+  </data>
+  <data name="bEditMatch_Description" xml:space="preserve">
+    <value>Editar la partida seleccionada</value>
+  </data>
+  <data name="bPlay_Name" xml:space="preserve">
+    <value>Botón jugar partida</value>
+  </data>
+  <data name="bPlay_Description" xml:space="preserve">
+    <value>Abrir la ventana de ejecución de partida y búsqueda de partidas con posiciones compartidas.</value>
+  </data>
+  <data name="bDelMatch_Name" xml:space="preserve">
+    <value>Botón eliminar partdas</value>
+  </data>
+  <data name="bDelMatch_Description" xml:space="preserve">
+    <value>Eliminar las partidas seleccionadas de la base de datos</value>
+  </data>
+  <data name="bExportPGN_Name" xml:space="preserve">
+    <value>Botón exportar a PGN</value>
+  </data>
+  <data name="bExportPGN_Description" xml:space="preserve">
+    <value>Exportar las partidas seleccionadas a un archivo en formato PGN</value>
+  </data>
+  <data name="cbDatabases_Name" xml:space="preserve">
+    <value>Base de datos destino</value>
+  </data>
+  <data name="cbDatabases_Description" xml:space="preserve">
+    <value>Seleccionar la base de datos destino para exportar las partidas</value>
+  </data>
+  <data name="pbExport_Name" xml:space="preserve">
+    <value>Barra de progreso de exportación</value>
+  </data>
+  <data name="pbExport_Description" xml:space="preserve">
+    <value>Barra de progreso para la exportación de partidas a otra base de datos o a un archivo</value>
+  </data>
+  <data name="mDisplay_Name" xml:space="preserve">
+    <value>Panel de movimientos de partida</value>
+  </data>
+  <data name="mDisplay_Description" xml:space="preserve">
+    <value>Panel que muestra los movimientos de la partida seleccionada actualmente</value>
+  </data>
+  <data name="cbNever_Name" xml:space="preserve">
+    <value>Nunca ocurre</value>
+  </data>
+  <data name="cbNever_Description" xml:space="preserve">
+    <value>Incluir solo partidas donde el/los evento(s) seleccionados no aparecen en ningún momento.</value>
+  </data>
+  <data name="cfPlay_ToolStrip_Name" xml:space="preserve">
+    <value>Barra de herramientas del editor de Plays</value>
+  </data>
+  <data name="cfPlay_ToolStrip_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones de comando y otros controles para gestionar el editor de plays</value>
+  </data>
+  <data name="bFont_Name" xml:space="preserve">
+    <value>Botón cambiar fuente</value>
+  </data>
+  <data name="bFont_Description" xml:space="preserve">
+    <value>Seleccione y configure un nuevo tipo de letra para aplicar a todos los controles de este formulario</value>
+  </data>
+  <data name="cbPlays_Name" xml:space="preserve">
+    <value>Lista desplegable de equipos</value>
+  </data>
+  <data name="cbPlays_Description" xml:space="preserve">
+    <value>Selecciona el equipo que quieres editar en esta lista. Los nuevos equipos también se añadirán aquí</value>
+  </data>
+  <data name="bPlayFromList_Name" xml:space="preserve">
+    <value>Botón editar play seleccionada</value>
+  </data>
+  <data name="bPlayFromList_Description" xml:space="preserve">
+    <value>Una vez seleccionada una play en la lista, pulsa este botón para cargarla y editarla</value>
+  </data>
+  <data name="bRemovePlay_Name" xml:space="preserve">
+    <value>Botón eliminar play</value>
+  </data>
+  <data name="bRemovePlay_Description" xml:space="preserve">
+    <value>Eliminar la play seleccionada de la lista de plays</value>
+  </data>
+  <data name="bSaveConfiguration_Name" xml:space="preserve">
+    <value>Botón guardar lista de plays</value>
+  </data>
+  <data name="bSaveConfiguration_Description" xml:space="preserve">
+    <value>Guardar la lista de plays en el archivo de configuración</value>
+  </data>
+  <data name="cbAddItem_Name" xml:space="preserve">
+    <value>Lista de items disponibles</value>
+  </data>
+  <data name="cbAddItem_Description" xml:space="preserve">
+    <value>Lista de items disponibles para añadir al nodo seleccionado en el control de árbol de la play</value>
+  </data>
+  <data name="tsbAddItem_Name" xml:space="preserve">
+    <value>Botón añadir item</value>
+  </data>
+  <data name="tsbAddItem_Description" xml:space="preserve">
+    <value>Añadir el item seleccionado al nodo seleccionado en el control de árbol del equipo</value>
+  </data>
+  <data name="tsbRemoveItem_Name" xml:space="preserve">
+    <value>Botón eliminar item</value>
+  </data>
+  <data name="tsbRemoveItem_Description" xml:space="preserve">
+    <value>Eliminar el item seleccionado actualmente en el control de árbol del equipo</value>
+  </data>
+  <data name="rtvPlay_Name" xml:space="preserve">
+    <value>Vista de árbol del equipo</value>
+  </data>
+  <data name="rtvPlay_Description" xml:space="preserve">
+    <value>Vista de árbol con la estructura del equipo que se está editando</value>
+  </data>
+  <data name="flpPlay_Name" xml:space="preserve">
+    <value>Panel de editores de propiedades</value>
+  </data>
+  <data name="flpPlay_Description" xml:space="preserve">
+    <value>Cuando seleccionas un nodo editable en la vista de árbol del equipo, los controles de edición se muestran aquí.</value>
+  </data>
+  <data name="AEditor_Toolbar_Name" xml:space="preserve">
+    <value>Barra de herramientas del editor de asistentes</value>
+  </data>
+  <data name="AEditor_Toolbar_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones de comando y controles para editar asistentes y sus herramientas</value>
+  </data>
+  <data name="rtvStructure_Name" xml:space="preserve">
+    <value>Árbol de estructura del elemento</value>
+  </data>
+  <data name="rtvStructure_Description" xml:space="preserve">
+    <value>Vista de árbol con la estructura de datos de la instancia del elemento seleccionado.</value>
+  </data>
+  <data name="flpEditor_Name" xml:space="preserve">
+    <value>Panel de editores de propiedades</value>
+  </data>
+  <data name="flpEditor_Description" xml:space="preserve">
+    <value>Cuando seleccionas un nodo editable en la vista de árbol de la estructura, los controles de edición se muestran aquí.</value>
+  </data>
+  <data name="cbAPIManager_Name" xml:space="preserve">
+    <value>Lista de gestores de APIs</value>
+  </data>
+  <data name="cbAPIManager_Description" xml:space="preserve">
+    <value>Lista desplegable con todos los gestores de APIs disponibles en la aplicación</value>
+  </data>
+  <data name="cbItemType_Name" xml:space="preserve">
+    <value>Lista de tipos de elemento disponibles</value>
+  </data>
+  <data name="cbItemType_Description" xml:space="preserve">
+    <value>Selecciona un tipo de elemento de la lista para crear instancias de ese tipo</value>
+  </data>
+  <data name="bNewItem_Name" xml:space="preserve">
+    <value>Botón crear nueva instancia</value>
+  </data>
+  <data name="bNewItem_Description" xml:space="preserve">
+    <value>Pulsa este botón para crear una nueva instancia del tipo de objeto seleccionado</value>
+  </data>
+  <data name="cbInstance_Name" xml:space="preserve">
+    <value>Lista de instancias de elementos</value>
+  </data>
+  <data name="cbInstance_Description" xml:space="preserve">
+    <value>Lista desplegable con todas las instancias de los elementos del tipo seleccionado en el archivo de configuración</value>
+  </data>
+  <data name="bDelItem_Name" xml:space="preserve">
+    <value>Botón eliminar instancia</value>
+  </data>
+  <data name="bDelItem_Description" xml:space="preserve">
+    <value>Eliminar la instancia de elemento seleccionada</value>
+  </data>
+  <data name="bSaveItem_Name" xml:space="preserve">
+    <value>Botón guardar cambios</value>
+  </data>
+  <data name="bSaveItem_Description" xml:space="preserve">
+    <value>Guardar todos los cambios en la nube del proveedor y los archivos de configuración</value>
+  </data>
+  <data name="cbOtherInstance_Name" xml:space="preserve">
+    <value>Lista de instancias no registradas</value>
+  </data>
+  <data name="cbOtherInstance_Description" xml:space="preserve">
+    <value>Lista desplegable con todas las instancias de los elementos del tipo seleccionado que no están en el archivo de configuración</value>
+  </data>
+  <data name="AUpdates_Toolbar_Description" xml:space="preserve">
+    <value>Barra de herramientas con botones de comando y controles para editar las actualizaciones de los asistentes</value>
+  </data>
+  <data name="AUpdates_Toolbar_Name" xml:space="preserve">
+    <value>Barra de herramientas del editor de actualizaciones</value>
+  </data>
+  <data name="bEditDoc_Name" xml:space="preserve">
+    <value>Botón editar documento</value>
+  </data>
+  <data name="bEditDoc_Description" xml:space="preserve">
+    <value>Abre un editor apropiado para editar el archivo seleccionado</value>
+  </data>
+  <data name="bAddDoc_Name" xml:space="preserve">
+    <value>Botón añadir documentos</value>
+  </data>
+  <data name="bAddDoc_Description" xml:space="preserve">
+    <value>Seleccionar documentos para añadir a la lista seleccionada</value>
+  </data>
+  <data name="bApplyUpdates_Name" xml:space="preserve">
+    <value>Botón aplicar actualizaciones</value>
+  </data>
+  <data name="bApplyUpdates_Description" xml:space="preserve">
+    <value>Aplicar todas las actualizaciones seleccionadas (documentos e instrucciones de los asistentes)</value>
+  </data>
+  <data name="pgUpdates_Name" xml:space="preserve">
+    <value>Barra de progreso de actualizaciones</value>
+  </data>
+  <data name="pgUpdates_Description" xml:space="preserve">
+    <value>Esta barra de progreso muestra el avance de las operaciones de actualización de archivos</value>
+  </data>
+  <data name="bAddPlay_Name" xml:space="preserve">
+    <value>Botón añadir nuevo equipo</value>
+  </data>
+  <data name="bAddPlay_Description" xml:space="preserve">
+    <value>Añadir un nuevo equipo a la colección de equipos</value>
+  </data>
+  <data name="bDefaultPlay_Name" xml:space="preserve">
+    <value>Botón equipo por defecto</value>
+  </data>
+  <data name="bDefaultPlay_Description" xml:space="preserve">
+    <value>Establecer este equipo como el equipo por defecto al iniciar la aplicación</value>
+  </data>
+  <data name="bConsole_Name" xml:space="preserve">
+    <value>Botón establecer equipo activo</value>
+  </data>
+  <data name="bConsole_Description" xml:space="preserve">
+    <value>Establecer este equipo como el equipo activo en la consola. Nota: el contexto actual de la conversación se perderá.</value>
+  </data>
+  <data name="lMatchCount_Name" xml:space="preserve">
+    <value>Cuenta total de partidas</value>
+  </data>
+  <data name="lMatchCount_Description" xml:space="preserve">
+    <value>{0} Partidas en esta base de datos</value>
+  </data>
+  <data name="bAddComments_Description" xml:space="preserve">
+    <value>Los comentarios enviados por los asistentes se añadirán al movimiento actual</value>
+  </data>
+  <data name="bAddComments_Name" xml:space="preserve">
+    <value>Botón añadir comentarios de asistente</value>
+  </data>
+  <data name="cbAllTogether_Name" xml:space="preserve">
+    <value>Todos los eventos a la vez</value>
+  </data>
+  <data name="cbAllTogether_Description" xml:space="preserve">
+    <value>Marcar para encontrar movimientos en los que todos los eventos seleccionados se dan a la vez. No se comprueba completamente la incompatibilidad de eventos.</value>
+  </data>
+  <data name="DetailFiltersHeader" xml:space="preserve">
+    <value>Filtros detalle</value>
+  </data>
+</root>

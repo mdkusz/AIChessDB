@@ -1,0 +1,7 @@
+These binaries are part of the AIChessDB application.
+
+- They may only be executed together with AIChessDB.exe.
+- They may not be used from external programs, redistributed separately, or modified.
+- You may build extensions or integrations as long as they run inside AIChessDB.
+
+Full terms: see EULA-Proprietary.md

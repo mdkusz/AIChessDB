@@ -1,0 +1,24 @@
+# Database Query Service
+This service allows you to perform queries on the database using the **QueryWindow** query form.  
+It is possible to open, or to already have open, multiple windows of this type. Each window may also point to a different database.  
+The database structure is the same across all servers and is documented in your documents in the file **database.txt**, based on the Oracle model. Always read this document before building filters.  
+Always take into account the type of database server of the window you are working on, since filters are built using SQL expressions.  
+All queries are executed on one of three predefined views in the database.  
+Each of these views provides you with a different set of fields. You can select the most appropriate one for your query.  
+The fields shown to the user are only those related to the match (code, description, white, black, result, and number of moves and plies) so that only one record per match appears.  
+You can also use the other fields to build filters.  
+These are the three available views (you can check the SQL of the views in the file **database.txt**):  
+- **VW_MATCH_KEYWORDS**: this view is appropriate when you need to search for matches based on tags and their values. Moves and positions do not appear here.  
+- **VW_MATCH_MOVES**: this view shows both positions and move data, including SAN text. It is also the heaviest of the three views.  
+- **VW_MATCH_POSITIONS**: this view is more focused on positions and the number of pieces they contain. The moves leading to those positions do not appear.  
+Boards always have 64 characters, from square *a8* to *h1*, in sequence. Empty squares are represented by `'0'` and pieces by `['p','b','n','r','q','k']`, lowercase for black and uppercase for white.  
+You have these functions available to perform queries:  
+- **list_open_query_forms**: you will receive a list of the open query windows, including their identifier, server type, and connection string name.  
+- **open_new_querywindow**: with this function you can open a new query window.  
+- **set_query_view**: sets the view you are going to use in the query. You can change it at any time, but existing filters will be lost. Queries cannot be performed without having selected a view, although the selection remains until changed. You will receive a list of available fields with their data types each time you change the view.  
+- **add_filter_expression**: adds an SQL expression, which will be joined to the existing ones in the WHERE clause using the AND operator. Only the expression is needed; do not add the WHERE keyword.  
+- **get_current_filters**: retrieves a list of existing filter expressions and their indexes.  
+- **remove_filter_expressions**: removes one or more filter expressions, based on a list of indexes.  
+- **set_order_by_list**: you can provide a list of fields to build the ORDER BY clause. If the server type allows it, you can use modifiers such as `desc` or `nulls last`. The list always replaces the previous one. An empty list removes the ordering.  
+- **get_order_by_list**: retrieves the list of fields in the ORDER BY clause.  
+- **refresh_query_data**: the automatic refresh option (each time you add a filter) is usually disabled (there are millions of records in the database). Call this function to execute the query.

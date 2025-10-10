@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FA921CC-C1DC-46A3-9929-F96E453FE0A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AIChessDatabase</RootNamespace>
+    <AssemblyName>AIChessDatabase</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AIAssistants, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AIChessDB\AIAssistants.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BaseClassesAndInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AIChessDB\BaseClassesAndInterfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DesktopAIAssistants, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AIChessDB\DesktopAIAssistants.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OpenAIAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AIChessDB\OpenAIAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="QueryDesktopControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AIChessDB\QueryDesktopControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIAssistantConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIAssistantConsole.Designer.cs">
+      <DependentUpon>AIAssistantConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AI\APIPlayerData.cs" />
+    <Compile Include="AI\ApplicationAPIElement.cs" />
+    <Compile Include="AI\EditPlayerData.cs" />
+    <Compile Include="AI\FileManagerData.cs" />
+    <Compile Include="AI\FilePackageManagerData.cs" />
+    <Compile Include="AI\SpeechManagerData.cs" />
+    <Compile Include="AI\WindowID.cs" />
+    <Compile Include="AssistantsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssistantsEditor.Designer.cs">
+      <DependentUpon>AssistantsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssistantsUpdates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssistantsUpdates.Designer.cs">
+      <DependentUpon>AssistantsUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DatabaseFieldInfo.cs" />
+    <Compile Include="Data\DatabaseFilterInfo.cs" />
+    <Compile Include="Data\RepositoryInfo.cs" />
+    <Compile Include="PGNParser\PGNFormatter.cs" />
+    <Compile Include="PlayEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayEditor.Designer.cs">
+      <DependentUpon>PlayEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chess\ChessBoard.cs" />
+    <Compile Include="Chess\Pieces.cs" />
+    <Compile Include="Controls\Board.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Board.Designer.cs">
+      <DependentUpon>Board.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChessPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ChessPlayer.Designer.cs">
+      <DependentUpon>ChessPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColumnManagerUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ColumnManagerUI.Designer.cs">
+      <DependentUpon>ColumnManagerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComparableRectangle.cs" />
+    <Compile Include="Controls\ConfigurableBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ConfigurableBoard.Designer.cs">
+      <DependentUpon>ConfigurableBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditMatchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EditMatchPanel.Designer.cs">
+      <DependentUpon>EditMatchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EventsFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EventsFilter.Designer.cs">
+      <DependentUpon>EventsFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MatchMoveDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MatchMoveDisplay.Designer.cs">
+      <DependentUpon>MatchMoveDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MoveData.cs" />
+    <Compile Include="Controls\PositionFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PositionFilter.Designer.cs">
+      <DependentUpon>PositionFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PositionViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PositionViewer.Designer.cs">
+      <DependentUpon>PositionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SimpleConfigurableBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SimpleConfigurableBoard.Designer.cs">
+      <DependentUpon>SimpleConfigurableBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SquareFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SquareFilter.Designer.cs">
+      <DependentUpon>SquareFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TinyBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TinyBoard.Designer.cs">
+      <DependentUpon>TinyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AIChessObjectRepository.cs" />
+    <Compile Include="Data\Keyword.cs" />
+    <Compile Include="Data\Match.cs" />
+    <Compile Include="Data\MatchEvent.cs" />
+    <Compile Include="Data\MatchKeyword.cs" />
+    <Compile Include="Data\MatchMove.cs" />
+    <Compile Include="Data\MatchPosition.cs" />
+    <Compile Include="Data\MatchPositionConverter.cs" />
+    <Compile Include="Data\MatchStatistic.cs" />
+    <Compile Include="Data\MoveComment.cs" />
+    <Compile Include="Data\NonStandardQueries.cs" />
+    <Compile Include="Data\ObjectBase.cs" />
+    <Compile Include="Data\Position.cs" />
+    <Compile Include="Data\PositionStatistic.cs" />
+    <Compile Include="AI\UpdateAssistantsConfiguration.cs" />
+    <Compile Include="Dialogs\DlgAppConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgAppConfiguration.Designer.cs">
+      <DependentUpon>DlgAppConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgBulkCopyDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgBulkCopyDB.Designer.cs">
+      <DependentUpon>DlgBulkCopyDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgBulkImportPGN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgBulkImportPGN.Designer.cs">
+      <DependentUpon>DlgBulkImportPGN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgCredits.Designer.cs">
+      <DependentUpon>DlgCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgInitialPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgInitialPosition.Designer.cs">
+      <DependentUpon>DlgInitialPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgKeywordConsolidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgKeywordConsolidation.Designer.cs">
+      <DependentUpon>DlgKeywordConsolidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgLabelMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgLabelMatch.Designer.cs">
+      <DependentUpon>DlgLabelMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgMatch.Designer.cs">
+      <DependentUpon>DlgMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DlgNewMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgNewMatch.Designer.cs">
+      <DependentUpon>DlgNewMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMatchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMatchWindow.Designer.cs">
+      <DependentUpon>EditMatchWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IAIChessPlayer.cs" />
+    <Compile Include="Interfaces\IAppServiceProvider.cs" />
+    <Compile Include="Interfaces\IChessDBWindow.cs" />
+    <Compile Include="Interfaces\IObjectRepository.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PGNParser\ParallelPGNFile.cs" />
+    <Compile Include="PGNParser\PGNFile.cs" />
+    <Compile Include="PGNParser\PGNMatch.cs" />
+    <Compile Include="PGNParser\SANMove.cs" />
+    <Compile Include="PGNWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PGNWindow.Designer.cs">
+      <DependentUpon>PGNWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayMatchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayMatchWindow.Designer.cs">
+      <DependentUpon>PlayMatchWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\UIElements.es.Designer.cs">
+      <DependentUpon>UIElements.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\UIElements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIElements.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\UIResources.es.Designer.cs">
+      <DependentUpon>UIResources.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\UIResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryWindow.Designer.cs">
+      <DependentUpon>QueryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query\ChessDBQuery.cs" />
+    <Compile Include="Query\DataFilter.cs" />
+    <Compile Include="Query\KeywordNameProvider.cs" />
+    <Compile Include="Query\MasterDetailQuery.cs" />
+    <Compile Include="Query\MatchDataImportManager.cs" />
+    <Compile Include="Query\MatchFormatter.cs" />
+    <Compile Include="Query\PlayerValueProvider.cs" />
+    <Compile Include="Setup\APIKeySetup.cs" />
+    <Compile Include="Setup\AssistantsSetup.cs" />
+    <Compile Include="Setup\ConfigurationSettingsDataSheet.cs" />
+    <Compile Include="Setup\ConnectionStringEdition.cs" />
+    <Compile Include="Setup\ConnectionStringSetup.cs" />
+    <Compile Include="Setup\CredentialStoreSelector.cs" />
+    <Compile Include="Setup\PlayerSetupDataSheet.cs" />
+    <EmbeddedResource Include="AIAssistantConsole.resx">
+      <DependentUpon>AIAssistantConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssistantsEditor.resx">
+      <DependentUpon>AssistantsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssistantsUpdates.resx">
+      <DependentUpon>AssistantsUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayEditor.resx">
+      <DependentUpon>PlayEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Board.resx">
+      <DependentUpon>Board.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ChessPlayer.resx">
+      <DependentUpon>ChessPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ColumnManagerUI.resx">
+      <DependentUpon>ColumnManagerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ConfigurableBoard.resx">
+      <DependentUpon>ConfigurableBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EditMatchPanel.resx">
+      <DependentUpon>EditMatchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EventsFilter.resx">
+      <DependentUpon>EventsFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MatchMoveDisplay.resx">
+      <DependentUpon>MatchMoveDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PositionFilter.resx">
+      <DependentUpon>PositionFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PositionViewer.resx">
+      <DependentUpon>PositionViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SimpleConfigurableBoard.resx">
+      <DependentUpon>SimpleConfigurableBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SquareFilter.resx">
+      <DependentUpon>SquareFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TinyBoard.resx">
+      <DependentUpon>TinyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgAppConfiguration.resx">
+      <DependentUpon>DlgAppConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgBulkCopyDB.resx">
+      <DependentUpon>DlgBulkCopyDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgBulkImportPGN.resx">
+      <DependentUpon>DlgBulkImportPGN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgCredits.resx">
+      <DependentUpon>DlgCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgInitialPosition.resx">
+      <DependentUpon>DlgInitialPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgKeywordConsolidation.resx">
+      <DependentUpon>DlgKeywordConsolidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgLabelMatch.resx">
+      <DependentUpon>DlgLabelMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgMatch.resx">
+      <DependentUpon>DlgMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DlgNewMatch.resx">
+      <DependentUpon>DlgNewMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMatchWindow.resx">
+      <DependentUpon>EditMatchWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PGNWindow.resx">
+      <DependentUpon>PGNWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayMatchWindow.resx">
+      <DependentUpon>PlayMatchWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Properties\UIElements.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIElements.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIElements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIElements.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIResources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\UIResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryWindow.resx">
+      <DependentUpon>QueryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopControls\DesktopControls.csproj">
+      <Project>{23c722d6-4fc4-4bdd-bf8e-45b120cc91da}</Project>
+      <Name>DesktopControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalCommonEntities\GlobalCommonEntities.csproj">
+      <Project>{d4f57be5-fad7-4eb2-a1b0-6b57853dc628}</Project>
+      <Name>GlobalCommonEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{ce734a28-4531-4095-a95e-0fb7bc98262d}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Board.png" />
+    <None Include="Resources\ChessPiecesArray.png" />
+    <None Include="Resources\ChessPiecesArraySmall.png" />
+    <None Include="Resources\bbishop.cur" />
+    <None Include="Resources\bking.cur" />
+    <None Include="Resources\bknight.cur" />
+    <None Include="Resources\bpawn.cur" />
+    <None Include="Resources\bqueen.cur" />
+    <None Include="Resources\brook.cur" />
+    <None Include="Resources\bwbishop.cur" />
+    <None Include="Resources\bwking.cur" />
+    <None Include="Resources\bwknight.cur" />
+    <None Include="Resources\bwpawn.cur" />
+    <None Include="Resources\bwqueen.cur" />
+    <None Include="Resources\bwrook.cur" />
+    <None Include="Resources\wbishop.cur" />
+    <None Include="Resources\wking.cur" />
+    <None Include="Resources\wknight.cur" />
+    <None Include="Resources\wpawn.cur" />
+    <None Include="Resources\wqueen.cur" />
+    <None Include="Resources\wrook.cur" />
+    <None Include="Resources\40.ico" />
+    <None Include="Resources\FileSearch.png" />
+    <None Include="Resources\CodeInterpreter.png" />
+    <None Include="Resources\CallFunction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caspov_instructions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChessMate_instructions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MorFix_instructions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caspov_instrucciones.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChessMate_instrucciones.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MorFix_instrucciones.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play_presentation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Presentacion_play.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\181.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userinterface-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userinterface-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\automation-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\automation-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chessplayer-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chessplayer-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuration-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memoryandnotes-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memoryandnotes-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\querydatabase-en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\querydatabase-es.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetDir)*.dll $(SolutionDir)$(SolutionName) /Y /D
+xcopy $(TargetDir)es\*.dll $(SolutionDir)$(SolutionName)\es /Y /D
+
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

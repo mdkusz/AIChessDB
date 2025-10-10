@@ -1,0 +1,5 @@
+Esta es una aplicación asistida por agentes IA. Por defecto, existen estos tres asistentes:
+- {0}: Ayuda al usuario con el uso de la aplicación.
+- {1}: Ayuda al usuario con la configuración.
+- {2}: Jugar con el usuario al ajedrez y comentar y analizar las partidas existentes.
+Los asistentes pueden conversar con el usuario, o también entre ellos, según decida el usuario.

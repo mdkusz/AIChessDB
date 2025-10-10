@@ -1,0 +1,423 @@
+﻿# AIChessDB Application Configuration File
+The application is configured through the AIChessDB.exe.config file, located in the same directory as the executable.
+## There are three custom sections to define libraries related to dependency injection:
+<configSections>
+    <section name="dbProviders" type="System.Configuration.DictionarySectionHandler"/>
+    <section name="dependencyProviders" type="System.Configuration.DictionarySectionHandler"/>
+</configSections>
+### In the dbProviders section, the libraries that implement the database access providers are defined:
+<dbProviders>
+    <add key="Oracle" value="Oracle"/>
+    <add key="Sql Server" value="SqlServer"/>
+    <add key="MySQL" value="MySQL"/>
+</dbProviders>
+There are providers for Oracle, SQL Server, and MySQL databases.
+You can get a list of the *key* entries through the 'get_available_database_providers' function.
+Those are the only supported databases.
+### The dependencyProviders section defines the libraries that implement the dependency injection providers for database objects.
+The database access providers are also dependency injection providers.
+<dependencyProviders>
+    <add key="Oracle" value="OracleLibrary.ObjectProvider, OracleLibrary"/>
+    <add key="SqlServer" value="SqlServerLibrary.ObjectProvider, SqlServerLibrary"/>
+    <add key="MySQL" value="MySQLLibrary.ObjectProvider, MySQLLibrary"/>
+    <add key="Controls" value="DesktopControls.ObjectProvider, DesktopControls"/>
+    <add key="QueryControls" value="QueryDesktopControls.ObjectProvider, QueryDesktopControls"/>
+    <add key="AIControls" value="DesktopAIAssistants.ObjectProvider, DesktopAIAssistants"/>
+    <add key="Base" value="BaseClassesAndInterfaces.ServiceProvider, BaseClassesAndInterfaces"/>
+    <add key="Global" value="GlobalCommonEntities.ObjectProvider, GlobalCommonEntities"/>
+    <add key="OpenAI" value="OpenAIAPI.ObjectProvider, OpenAIAPI"/>
+</dependencyProviders>
+- *QueryControls*: a library that provides desktop controls specialized in databases.
+- *AIControls*: a library that provides desktop controls specialized in AI assistants.
+- *Controls*: a library that provides generic desktop controls.
+- *Base*: a base class library for SQL query management and other common services.
+- *Global*: a library that provides common classes and services for the application and its libraries.
+- *OpenAI*: a library that provides classes and services for managing OpenAI AI assistants.
+These configurations must not be modified.
+## Connection Strings  
+The standard *connectionStrings* section contains the connection strings available for the application.  
+The *name* attribute is arbitrary.  
+The *connectionString* attribute depends on the local database installation and must be provided correctly in order to establish the connection.  
+The connection string will be stored in the selected credential store (see configuration parameters below).  
+Only the credential name will be saved in *connectionString*. This name does not need to match the *name* tag.  
+The *providerName* attribute is mandatory and must match the *value* field of the corresponding database entry in the *dbProviders* section.  
+You have the 'get_database_connections' function to list those connections.
+## Configuration Parameters  
+The standard *appSettings* section contains the configuration parameters of the application.  
+- *dbconstring*: the database connection string that will be used by default when the application starts (*name* tag).  
+- *dbconnections*: the number of independent database connections that can be opened simultaneously. **0** means that only one connection can be open at a time. Multiple connections allow heavy jobs to run in parallel with other database operations.  
+- *dataPath*: path where data files are stored.  
+- *ConfigPath*: path where configuration files are stored.  
+- *playCollection*: file that defines the configurations of the application’s interactive AI assistants. More than one configuration may exist.  
+- *defaultPlay*: name of the default configuration from the *playCollection* file.  
+- *appFunctions*: file containing the application functions. These functions are called by the AI assistants to perform specific operations within the application, interacting with it.  
+- *nsQueries*: file containing definitions of non-standard SQL queries used in some forms of the application.  
+- *updateConfiguration*: file containing the update configuration of the application. This file is used to update the assistants’ instructions and documents.  
+- *LogPathBase*: directory for the application’s general trace log files. If left empty, no trace files will be generated.
+- *PGNdir*: default directory where PGN files are stored.
+- *FunctionCallLog*: name of the trace file for internal function calls made by the AI assistants within the application. The purpose is debugging, and it is a very technical file. If left empty, no trace file will be generated.  
+- *tokenUsageLog*: name of the file where token usage per API call of the AI assistants is recorded. If left empty, no trace file will be generated.  
+- *CredentialStore*: name of the class that implements the *ICredentialStore* interface, used to retrieve credentials for accessing AI services.  
+- *CredentialStoreKeyData*: extra data required to access the credential store. Normally this will be empty, but for example, in the case of Azure Key Vault, it will contain the secret name and the URI to retrieve, separated by semicolons.  
+### Types of Credential Stores:  
+- **Windows Credential Manager**: Windows credential store. There is a default implementation in the *CredentialManager* library.  
+  The value for the *CredentialStore* parameter is `"GlobalCommonEntities.Security.WindowsCredentialManager, GlobalCommonEntities"`.  
+  The value for *CredentialStoreKeyType* is `"GlobalCommonEntities.Interfaces.CredentialStoreKey, GlobalCommonEntities"`.  
+- **Configuration file**: the credential is stored in a configuration file.  
+  The value for the *CredentialStore* parameter is `"GlobalCommonEntities.Security.ConfigFileCredentialStore, GlobalCommonEntities"`.  
+  The value for *CredentialStoreKeyType* is `"GlobalCommonEntities.Security.CredentialStoreKey, GlobalCommonEntities"`.  
+- **Environment variable**: the credential is stored in a system environment variable.  
+  The value for the *CredentialStore* parameter is `"GlobalCommonEntities.Security.EnvironmentVariableCredential, GlobalCommonEntities"`.  
+  The value for *CredentialStoreKeyType* is `"GlobalCommonEntities.Security.CredentialStoreKey, GlobalCommonEntities"`.  
+- **Azure Key Vault**: the credential is stored in an Azure Key Vault.  
+  The value for the *CredentialStore* parameter is `"GlobalCommonEntities.Security.AzureKeyVaultStore, GlobalCommonEntities"`.  
+  The value for *CredentialStoreKeyType* is `"GlobalCommonEntities.Security.AzureKeyVaultStoreKey, GlobalCommonEntities"`.  
+The **CredentialStoreKey** class has only one member: *Name*, which identifies the entry in the credential store (*key* in appSettings, environment variable, key name in Azure Key Vault, etc.).  
+The **AzureKeyVaultStoreKey** class adds *SecretName*, which is the name of the secret inside the Azure Key Vault.  
+This data is provided in the configuration files that define access keys for APIs, for example.  
+In the case of this application, only the access key for the OpenAI APIs is used. It is declared at the beginning of the *OpenAIAPIConfiguration.json* file, as follows:  
+```json
+{
+  "apiManager": [
+    {
+      "key": "ChessDB_API_Key",
+      ...
+```
+ OpenAI API Configuration File  
+The *OpenAIAPIConfiguration.json* file contains the access configuration for the OpenAI APIs.  
+By default, it is located in the *Config* subdirectory. It can be moved to another directory, but the path must be updated in the *AIChessDB.exe.config* file (*appSettings* key = *ConfigPath*).  
+Other configuration files must also be moved accordingly.  
+
+You can consult the JSON Schema in this file, located among your documents: *openai_api_config_schema.txt*.  
+
+Below is a guide to understand and edit this configuration file safely and effectively.  
+This guide helps you understand the configuration file and assist the user in editing it, validating it, and resolving questions. Use it to explain what each section does, how endpoints are inherited, and how to add or modify elements safely.  
+
+---
+
+## 1) Top-Level Sections  
+- **apiManager**: API manager definitions. Normally there will be one entry, and the one with `default: true` provides the list of general **endpoints** (e.g., models, responses, files).  
+- **players**: Executable actors (e.g., `IAssistant`, `IChat`, `IResponse`/`IResponseChat`, `IImageGenerator`). A default *player* defines the canonical endpoints for its type; non-default instances represent specific configurations (IDs, models, voices).  
+- **playerAssets**: Shared assets for *players*, such as `ISpeechManager` (TTS/STT) or `IFilePackageManager` (Vector Stores). The default element defines the endpoints for that asset type.  
+- **tools**: Low-level APIs such as `IFileManager` (files), `IEmbedding` (embeddings), `ITuningJob` (fine-tuning). The default element sets the endpoints; the rest are instances.  
+- **functions**: Shared *function calling* definitions (OpenAI style). These can be reused among assistants/chats.  
+
+> **Key idea:** For each *type* there should be **at most one** element with `default: true`. That element provides the list of `endpoints` for that type; the rest reuse that definition and only provide identity/configuration.  
+
+---
+
+## 2) Common Structure of Each Element  
+All elements (managers, players, assets, and tools) share this structure:  
+- `id` (**required**): unique identifier to reference the element.  
+- `type` (**required**): interface/type key (e.g., `IAPIManager`, `IAssistant`, `IChat`, `IResponse`, `IImageGenerator`, `ISpeechManager`, `IFilePackageManager`, `IEmbedding`, `IFileManager`, `ITuningJob`).  
+- `default` (optional): if `true`, this element defines the list of `endpoints` for the type.  
+- `name`, `description` (optional): name and description for UI.  
+- `model`, `voice` (optional): default values applicable to the element.  
+- `maxRequestRatePerMinute`, `maxRequestRatePerDay` (optional): soft limits the app may enforce.  
+- `key` (only for `IAPIManager`): name of the credential in **Windows Credential Manager** (Generic Credentials).  
+
+### Endpoints (only in default elements)  
+`endpoints` is a list of HTTP-like operations that the app knows how to invoke:  
+- `name`, `description`, `section`: metadata for grouping and labeling.  
+- `method`: `GET | POST | PUT | PATCH | DELETE`.  
+- `url`: HTTPS URL. May include placeholders `{0}`, `{1}`, … filled with `pathParams` in that order.  
+- `pathParams`, `queryParams`: parameters documented with `name`, `type`, `description`, `optional`, and possible lists of values (`values`/`enum`).  
+- `requestType`, `returnType`: full .NET types (e.g., `OpenAIAPI.JSON.RunRequest, OpenAIAPI`) for serialization/deserialization.  
+
+**Runtime inheritance:** a non-default element of the same `type` reuses the `endpoints` from the default element of that `type`. This avoids duplicating the endpoint definition.  
+
+---
+
+## 3) Common Usage Patterns  
+- **Assistant (Assistants API)**: create `thread` → send `messages` → create `run` → query `run`/`run steps` → read `messages`. Endpoints grouped under `assistantthreads`.  
+- **Responses API**: POST to `/v1/responses` with `ResponseRequest` → retrieve by ID → list entries if applicable.  
+- **Vector stores**: managed as `playerAssets` (`IFilePackageManager`) with endpoints under `vectorstores`; create, add/list/retrieve/delete files.  
+- **Files**: under `tools` (`IFileManager`): list, upload, metadata, and content download.  
+- **Embeddings**: `IEmbedding` with `/v1/embeddings`.  
+- **Fine-tuning**: `ITuningJob` with `/v1/fine_tuning/jobs` and related endpoints.  
+
+---
+
+## 4) URL Placeholder Substitution  
+If `url` contains `{0}`, `{1}`, etc., they correspond to `pathParams` in the same order.  
+`queryParams` are only appended if provided.  
+Avoid inconsistencies between the number of placeholders and parameters.  
+
+---
+
+## 5) Models and Voices  
+- `model` in the element sets a default value that the app may override when invoking.  
+- `voice` applies to `ISpeechManager` (TTS) and to speaking players. Ensure the voice exists for the chosen TTS model.  
+
+---
+
+## 6) Rate Limits (Local Throttling)  
+`maxRequestRatePerMinute` and `maxRequestRatePerDay` do not configure OpenAI; they are enforced by the application to avoid provider rate limiting.  
+Adjust these values according to expected usage.  
+
+---
+
+## 7) Keys and Secrets  
+When an `IAPIManager` element includes `key`, the app will read the secret from **Windows Credential Manager** (Generic Credentials) using that name.  
+Secrets are not stored in plain text inside the JSON.  
+
+---
+
+## 8) File Validation  
+Validate the JSON with the provided **JSON Schema**.  
+It will detect invalid types, missing properties, unsupported methods, or URLs without HTTPS.  
+The schema supports both `values` and `enum` in parameters to maximize compatibility.  
+
+---
+
+## 9) Frequently Asked Questions You Can Answer  
+- **“Where do I put my API key?”** → In Windows Credential Manager with the name specified in `apiManager[...].key`.  
+- **“How do I add an Assistant?”** → In `players`, create an entry with `type: IAssistant` and `id` (the `assistant_id`) and optionally `name`, `model`, `voice`. Do not repeat endpoints: they are already defined by the default element of that type.  
+- **“What is a vector store here?”** → A resource managed by `IFilePackageManager` in `playerAssets`. Use its endpoints to create/load/query. Then reference its `id` where appropriate.  
+- **“Why does a ‘default’ exist per type?”** → To centralize endpoints and avoid duplication; instances only provide identity and configuration.  
+
+---
+
+## 10) Checklist Before Saving  
+1. For each `type`, there are **0 or 1** elements with `default: true`.  
+2. Every endpoint has correct `name`, `method`, and `url` (HTTPS) with consistent placeholders.  
+3. `requestType`/`returnType` match the .NET types used by the application.  
+4. `functions` are concise and well described; avoid ambiguous parameters.  
+5. If you use `key` in `IAPIManager`, verify that the credential exists in Windows Credential Manager.  
+
+---
+
+## 11) Common Errors  
+- Placing `endpoints` in non-default elements (they will have no effect).  
+- Misaligning `{n}` in `url` with `pathParams`.  
+- Repeating multiple `default: true` for the same `type`.  
+- Using `http://` instead of `https://`.  
+- Incorrectly written .NET types or missing the assembly name.  
+
+---
+
+## 12) Safe Editing Procedure (Recommended)  
+1. Validate the JSON against the schema.  
+2. Create/edit the non-default element (players/assets/tools) without touching endpoints.  
+3. If you need new endpoints, add them **only** in the default element of the affected type.  
+4. Save and validate again.  
+5. Test a simple operation (e.g., list models or create a thread) to confirm.  
+
+---
+
+## 13) Minimum Terminology  
+- **Default element**: provides the canonical endpoints of its *type*.  
+- **Instance**: element of the same *type* that reuses those endpoints with its own identity/config.  
+- **Asset**: shared resource reusable by multiple players (voice, vector store, etc.).  
+- **Tool**: low-level functional API (files, embeddings, fine-tuning).  
+- **Function calling**: JSON contract (schema) that models can invoke with validated arguments.  
+
+---
+
+With this guide you can explain the configuration file, suggest safe changes, and answer common questions without needing to inspect internal code.  
+
+# JSON Configuration File for Plays  
+A Play is a configuration of interactive assistants that work together in the same console.  
+The name *Play* was chosen for its similarity to a theater play with its actors. The actors are called *Players*, and they are the AI assistants that interact with the user.  
+
+The file that stores this configuration is *PlayConfig.json*. It contains a list of **PlaySchema** elements, each representing a different Play.  
+In this application only one is used, but more can be added.  
+
+By default, it is located in the *Config* subdirectory. It can be moved to another directory, but the path must be updated in the *AIChessDB.exe.config* file (*appSettings* key = *ConfigPath*). Other configuration files must also be moved.  
+
+You can consult the JSON Schema in this file, located among your documents: *play_config.schema.txt*.  
+
+In the configuration file, the key *playCollection* indicates the name of the Play configuration file. The default value is *PlayConfig.json*.  
+The key *defaultPlay* indicates the name of the Play that will be used by default when the application starts. The default value is *AIChessDatabase_play*.  
+
+Below is a guide to understand and safely edit this configuration file.  
+This guide explains how to read and edit the configuration file that defines **sets of assistants (Players) working together** in a console (*Play*).  
+Most of the endpoints and API details are in **OpenAIAPIConfiguration.json** (already described); here we store **references** to those elements and **visual options**.  
+
+## 1) General Structure  
+- The JSON contains `plays`: a list of **Play** objects.  
+- Each **Play** describes:  
+  - `id`, `name`, `description`.  
+  - `presentation`: introduction message (supports `file:` to load from a file).  
+  - `user`: user colors/name.  
+  - `applications` (optional): list of apps with colors/name for the UI.  
+  - `cast`: the **list of Players** (assistants) collaborating in the console.  
+
+> The database model is defined by the classes `PlaySchema`, `PlayUser`, `PlayPlayer`, `CastElement`, `APIRef`. See the internal documentation for their exact field names.  
+
+## 2) Users and Applications  
+- **`user`**: alias and colors of the user (bubble/header).  
+- **`applications`**: same structure as `user`, but used to display multiple applications with visual identity.  
+
+**Colors (`backColor`, `foreColor`)**: integers in ARGB format (0–4294967295) or `#RRGGBB` / `#AARRGGBB` are supported.  
+
+---
+
+## 3) Cast of Assistants  
+Each entry in `cast` is a **Player** with:  
+- `id`: unique identifier (e.g., `assistant_id` or alias).  
+- `type`: Player interface (`IAssistant`, `IChat`, `IResponseChat`, etc.).  
+- `instructions`: initial *prompt* to define the role. May begin with `file:` to load from a file.  
+- `reminder`: message **injected into each request** to enforce rules/guidelines.  
+- `backColor` / `foreColor`: header/bubble colors of the Player.  
+- `default`: if `true`, this will be the Player selected when opening the console.  
+- `allowed_services`: whitelist of app services the Player can call (e.g., `userinterface`, `automation`, `configuration`, `chessplayer`).  
+- `app_roles`: specific roles that the app interprets in its own way (authorizations, filters, etc.).  
+- `api`: **APIRef** that indicates **which API Manager** to use. Normally this is `"OpenAIAPI.OpenAIAPIManager, OpenAIAPI"` and an empty `id` when using the *default manager* from the main file.  
+- `assets`: list of **CastElement** (for example, a vector store or voice manager) with its own `api` (APIRef).  
+
+**Important**: the actual types, endpoints, and models are **not** repeated here; they reside in the main configuration file. This file only points to them.  
+
+## 4) `file:` Prefix (Load from File)  
+- `presentation` (Play) and `instructions` (Player) accept **`file:`** at the beginning to indicate that the text should be **read from a file** before starting the console or creating the Player.  
+- Valid JSON examples:  
+  - `"presentation": "file:/Scripts/Intro.txt"`  
+  - `"instructions": "file:\\Scripts\\Caspov_instructions.txt"`  ← JSON with escaped backslashes  
+
+---
+
+## 5) Rules and Validation  
+- Each Play must have **at least one Player** in `cast`; one may be marked as `default: true`.  
+- `api.type` must be a valid **.NET type** of the API Manager (e.g., `OpenAIAPI.OpenAIAPIManager, OpenAIAPI`). If `api.id` is empty, the app will use the **default manager** from the main file.  
+- `assets` must exist in the main file. Here they are only referenced by `id` and `type`.  
+- Validate the JSON with the attached **JSON Schema** to catch type errors, unknown properties, or incorrectly formatted colors.  
+
+---
+
+## 6) Frequently Asked Questions  
+- **Where are the endpoints, models, and keys?** → In the main configuration file. Here you only have references (`api`, `assets`) and UI.  
+- **Can I use hex colors?** → Yes: `#RRGGBB` or `#AARRGGBB`. ARGB integers are also supported.  
+- **How do I select the Player at startup?** → Set `default: true` on the desired Player.  
+- **What does `allowed_services` do?** → Restricts which application services that Player can invoke (attack surface and UX control).  
+
+---
+
+## 7) Checklist Before Saving  
+1. `plays` is not empty; each Play has `id`, `name`, `description`, `user`, and `cast`.  
+2. At most **one** `default: true` per Play.  
+3. `api.type` are valid .NET types; `api.id` is empty if you want the default manager.  
+4. Referenced `assets` exist in the main configuration.  
+5. `presentation`/`instructions` with `file:` point to accessible paths for the app.  
+6. Colors are valid (integer 0–4294967295 or `#RRGGBB`/`#AARRGGBB`).  
+
+## 8) Minimal example
+```json
+{
+  "plays": [
+    {
+      "id": "AIChessDatabase_play",
+      "name": "Chess Database cast",
+      "description": "AI assistants configuration",
+      "presentation": "",
+      "user": { "name": "Honcho", "backColor": 4282811060, "foreColor": 4294967295 },
+      "cast": [
+        {
+          "id": "asst_123",
+          "type": "IAssistant",
+          "default": true,
+          "backColor": 4286578816,
+          "foreColor": 4294967295,
+          "reminder": "",
+          "api": { "id": "", "type": "OpenAIAPI.OpenAIAPIManager, OpenAIAPI" },
+          "assets": []
+        }
+      ]
+    }
+  ]
+}
+```
+With this guide you can add, review, and explain a console (Play) without touching the low-level API configuration.  
+
+# Assistant Guide – Instruction and Document Updates Configuration  
+The *UpdateAssistantsConfiguration.json* file contains the configuration for file and instruction updates.  
+By default, it is located in the *Config* subdirectory. It can be moved to another directory, but the path must be updated in the *AIChessDB.exe.config* file (*appSettings* key = *ConfigPath*). Other configuration files must also be moved.  
+
+You can consult the JSON Schema in this file, located among your documents: *assistant_updates_schema.txt*.  
+
+This configuration allows the user to **update the main instructions of the assistants** and **synchronize private documents**, both for the assistant itself and for the **services** that the assistant has enabled.  
+The application form writes this JSON, and the update process executes it.  
+
+---
+
+## 1) File Structure  
+- **`assistants`**: list of assistants to update.  
+- **`services`**: list of services with documents to update (only applied if the assistant has that service assigned in the Play).  
+
+### 1.1 AssistantUpdates (`assistants[]`)  
+- `assistant_name` *(required)*: **visible name** of the assistant.  
+- `instructions` *(optional)*: **relative file path** to `DataPath` with the new main instructions. *Do not* use `file:`; only the name/path.  
+- `update_instructions` *(bool, optional)*: set to `true` to upload the new instructions.  
+- `documents` *(optional)*: list of the assistant’s private documents.  
+
+### 1.2 ServiceUpdates (`services[]`)  
+- `service_id` *(required)*: identifier of the service (must match the identifier of the service defined by the application).  
+- `documents` *(optional)*: private documents of the service.  
+
+### 1.3 ApplicationDocument  
+- `file_name` *(required)*: name or relative path of the document inside the application repository (combined with `DataPath`).  
+- `update` *(bool, optional; default `false`)*: if `true`, refreshes the document with the local content.  
+- `remove` *(bool, optional; default `false`)*: if `true`, **removes** the document from the assistant’s store. **Takes precedence over** `update` if both are `true`.  
+
+---
+
+## 2) How the Process Works (Summary)  
+1. **Instructions**: if `update_instructions` is `true` and `instructions` points to an existing file, and the *player* is `IAssistant`, the file is read and `ChangeInstructions(...)` is called.  
+   If successful, the app **sets `update_instructions` to `false`** to mark it as processed. {ref: code}  
+2. **Assistant documents**: for each document with `update` or `remove`:  
+   - If it exists in the provider’s *file manager*, it is added to an update list and **deleted from the assistant’s store** to avoid conflicting versions (with a small safety delay).  
+   - If it **does not** exist in the *file manager* and is **not** a `remove`, it is uploaded first.  
+3. **Update versions**: for those marked with `update`, the previous version in the *file manager* (if any) is **deleted**, the local version is **uploaded**, and then it is **linked** to the assistant’s store.  
+4. **Service documents**: applied **only** for services present in the assistant’s `AllowedServices`; the same steps as above are followed.  
+5. **Cleanup**: at the end, `update` in `services[].documents[]` is set to `false`. {ref: code}  
+
+> **`remove` vs `update` priority**: if both are `true`, the document is **removed** and will **not** be re-uploaded. {ref: code}  
+
+---
+
+## 3) Best Practices and Common Mistakes  
+- Use **relative paths** (without `file:`) for `instructions` and `file_name`; the app performs `Path.Combine(DataPath, ...)`.  
+- `assistant_name` must **exactly** match the name of the *Player* shown in the app.  
+- `service_id` not present in `AllowedServices` is **ignored** (not an error).  
+- Avoid duplicates of the same `file_name` for a single provider; the app uses **case-insensitive** comparisons. {ref: code}  
+- It is valid to leave `documents` empty or missing if there are no changes.  
+
+---
+
+## 4) Validation with JSON Schema  
+Validate your file with the included **schema** to ensure that types and properties are correct. The schema:  
+- Requires `assistants` and `services` (they may be empty).  
+- Requires `assistant_name` in each assistant and `service_id` in each service.  
+- Requires `file_name` in each document.  
+
+---
+
+## 5) Minimal Example  
+
+```json
+{
+  "assistants": [
+    {
+      "assistant_name": "Caspov",
+      "instructions": "Caspov_instructions.txt",
+      "update_instructions": true,
+      "documents": [
+        { "update": true, "file_name": "Caspov_notes.txt" },
+        { "remove": true, "file_name": "legacy_doc.txt" }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "service_id": "automation",
+      "documents": [
+        { "update": true, "file_name": "AIChessDB_automation.txt" }
+      ]
+    },
+    { "service_id": "chessplayer" }
+  ]
+}
+```
+
+With this guide you can explain to the user how to mark what gets updated, what gets removed, and how new versions are uploaded from local files.  
+
+

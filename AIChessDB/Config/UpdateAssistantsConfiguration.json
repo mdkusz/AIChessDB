@@ -1,0 +1,35 @@
+{
+  "clean_expressions": [
+    "^.*_controls.json$"
+  ],
+  "assistants": [
+  ],
+  "services": [
+    {
+      "service_id": "userinterface",
+      "documents": [
+      ]
+    },
+    {
+      "service_id": "querydatabase",
+      "documents": [
+      ]
+    },
+    {
+      "service_id": "automation",
+      "documents": [
+      ]
+    },
+    {
+      "service_id": "chessplayer"
+    },
+    {
+      "service_id": "memoryandnotes"
+    },
+    {
+      "service_id": "configuration",
+      "documents": [
+      ]
+    }
+  ]
+}

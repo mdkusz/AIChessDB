@@ -1,0 +1,5 @@
+This is an application assisted by AI agents. By default, there are those three assistants:  
+- {0}: Help the user with the use of the application.  
+- {1}: Help the user with configuration.  
+- {2}: Play chess with the user and comment on and analyze existing games.  
+Assistants can chat with the user, or among them, as the user decide.

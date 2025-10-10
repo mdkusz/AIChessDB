@@ -1,0 +1,1740 @@
+{
+  "apiManager": [
+    {
+      "key": "",
+      "id": "default_APIManager",
+      "default": true,
+      "type": "IAPIManager",
+      "name": "OpenAI API Manager",
+      "description": "OpenAI API manager default configuration",
+      "voice": null,
+      "model": null,
+      "endpoints": [
+        {
+          "name": "Model List",
+          "description": "Endpoint to get the available model list",
+          "section": "models",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/models",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ModelList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Model",
+          "description": "Endpoint to delete a fine-tuned model",
+          "section": "models",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/models/{0}",
+          "pathParams": [
+            {
+              "name": "model",
+              "type": "string",
+              "description": "Model unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ModelDeletion, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    }
+  ],
+  "players": [
+    {
+      "id": "default_Assistant",
+      "default": true,
+      "type": "IAssistant",
+      "name": "Assistant",
+      "description": "OpenAI API assistant default configuration",
+      "voice": "alloy",
+      "model": "gpt-4o-mini",
+      "maxRequestRatePerMinute": 100,
+      "maxRequestRatePerDay": 1000,
+      "endpoints": [
+        {
+          "name": "Assistants",
+          "description": "Endpoint to get the available assistant list",
+          "section": "assistantlist",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/assistants?limit=100\u0026order=asc{0}",
+          "pathParams": null,
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.AssistantsResponse, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Create Assistant",
+          "description": "Endpoint to create assistants",
+          "section": "assistantlist",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/assistants",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.CreateAssistant, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Assistant, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Assistant",
+          "description": "Endpoint to get a given assistant information",
+          "section": "assistantlist",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/assistants/{0}",
+          "pathParams": [
+            {
+              "name": "assistant_id",
+              "type": "string",
+              "description": "Assistant unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Assistant, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Modify Assistant",
+          "description": "Endpoint to modify a given assistant",
+          "section": "assistantlist",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/assistants/{0}",
+          "pathParams": [
+            {
+              "name": "assistant_id",
+              "type": "string",
+              "description": "Assistant unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.CreateAssistant, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Assistant, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Assistant",
+          "description": "Endpoint to remove a given assistant",
+          "section": "assistantlist",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/assistants/{0}",
+          "pathParams": [
+            {
+              "name": "assistant_id",
+              "type": "string",
+              "description": "Assistant unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "Create Thread",
+          "description": "Create thread endpoint",
+          "section": "assistantthreads",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ThreadRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ThreadObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Send Message",
+          "description": "Send a message to a thread",
+          "section": "assistantthreads",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/messages",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ThreadMessageRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ThreadMessage, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Message",
+          "description": "Delete a message from a thread",
+          "section": "assistantthreads",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/messages/{1}",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "message_id",
+              "type": "string",
+              "description": "Message unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "Run",
+          "description": "Create thread run endpoint",
+          "section": "assistantthreads",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.RunRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Run, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Run",
+          "description": "Retrieve thread run endpoint",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs/{1}",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Run, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Run List",
+          "description": "Retrieve thread runs endpoint",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs?limit=100\u0026order=asc",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.RunList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Thread",
+          "description": "Retrieve thread endpoint",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ThreadObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Run Steps",
+          "description": "Retrieve run steps endpoint",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs/{1}/steps?limit=100\u0026order=asc\u0026include[]=step_details.tool_calls[*].file_search.results[*].content",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "include[]",
+              "type": "array",
+              "description": "A list of additional fields to include in the response. Currently the only supported value is step_details.tool_calls[*].file_search.results[*].content to fetch the file search result content.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.RunStepList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Run Step",
+          "description": "Retrieve thread run step endpoint",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs/{1}/steps/{2}",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "step_id",
+              "type": "string",
+              "description": "Run Step unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.RunStep, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Submit Tool Outputs",
+          "description": "Submit output of requested tool calls to run",
+          "section": "assistantthreads",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs/{1}/submit_tool_outputs",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ToolOutputs, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Run, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Cancel a Run",
+          "description": "Cancel the current run",
+          "section": "assistantthreads",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/runs/{1}/cancel",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Run, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Run Messages",
+          "description": "Get next messages from a run",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/messages?run_id={1}\u0026order=asc\u0026limit=100",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "run_id",
+              "type": "string",
+              "description": "Run unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.MessageList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Thread Messages",
+          "description": "Get all messages from a thread",
+          "section": "assistantthreads",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/threads/{0}/messages?order=asc\u0026limit=100",
+          "pathParams": [
+            {
+              "name": "thread_id",
+              "type": "string",
+              "description": "Thread unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.MessageList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    },
+    {
+      "id": "default_Chat",
+      "default": true,
+      "type": "IChat",
+      "name": "Chat",
+      "description": "OpenAI API chat default configuration",
+      "voice": "nova",
+      "model": "gpt-4o",
+      "maxRequestRatePerMinute": 500,
+      "maxRequestRatePerDay": 50000,
+      "endpoints": [
+        {
+          "name": "Chat",
+          "description": "Endpoint to chat with GPT",
+          "section": "chat",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ChatRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ChatObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Chat Completion",
+          "description": "Endpoint to get an stored chat completion",
+          "section": "chat",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions/{0}",
+          "pathParams": [
+            {
+              "name": "completion_id",
+              "type": "string",
+              "description": "Chat unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ChatObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Update Chat Completion",
+          "description": "Endpoint to update some chat completion parameters. Currently, the only supported modification is to update the metadata field.",
+          "section": "chat",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions/{0}",
+          "pathParams": [
+            {
+              "name": "completion_id",
+              "type": "string",
+              "description": "Chat completion unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ChatUpdate, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ChatObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Chat Completion",
+          "description": "Endpoint to remove a given chat completion.",
+          "section": "chat",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions/{0}",
+          "pathParams": [
+            {
+              "name": "completion_id",
+              "type": "string",
+              "description": "Chat completion unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "Get Chat Messages",
+          "description": "Endpoint to get the chat messages list of a given chat",
+          "section": "chat",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions/{0}/messages?limit=100\u0026order=asc",
+          "pathParams": [
+            {
+              "name": "completion_id",
+              "type": "string",
+              "description": "Response unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ChatMessagesList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "List Chat Completions",
+          "description": "Endpoint to get a filtered list of chats",
+          "section": "chat",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/chat/completions?limit=100\u0026order=asc",
+          "pathParams": null,
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "model",
+              "type": "string",
+              "description": "The model used to generate the Chat Completions.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "metadata[{0}]",
+              "type": "string",
+              "description": "A list of metadata keys to filter the Chat Completions by. Example: metadata[key1]=value1\u0026metadata[key2]=value2",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ChatCompletionList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    },
+    {
+      "id": "default_Response",
+      "default": true,
+      "type": "IResponseChat",
+      "name": "Response",
+      "description": "OpenAI API responses default configuration",
+      "voice": "nova",
+      "model": "gpt-4o",
+      "maxRequestRatePerMinute": 500,
+      "maxRequestRatePerDay": 50000,
+      "endpoints": [
+        {
+          "name": "Create Response",
+          "description": "Endpoint to create a new response chat",
+          "section": "responses",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/responses",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ResponseRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ResponseObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Response",
+          "description": "Endpoint to get a given response information",
+          "section": "responses",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/responses/{0}",
+          "pathParams": [
+            {
+              "name": "response_id",
+              "type": "string",
+              "description": "Response unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "include",
+              "type": "array[string]",
+              "description": "Array of optional fields to include in the response. Valid values are: \u0027file_search_call.results\u0027, \u0027message.input_image.image_url\u0027, and \u0027computer_call_output.output.image_url\u0027.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ResponseObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Response",
+          "description": "Endpoint to remove a given response",
+          "section": "responses",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/responses/{0}",
+          "pathParams": [
+            {
+              "name": "response_id",
+              "type": "string",
+              "description": "Response unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "List Response Items",
+          "description": "Endpoint to get a given response input item list",
+          "section": "responses",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/responses/{0}/input_items?limit=100\u0026order=asc",
+          "pathParams": [
+            {
+              "name": "response_id",
+              "type": "string",
+              "description": "Response unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "include",
+              "type": "array[string]",
+              "description": "Array of optional fields to include in the response. Valid values are: \u0027code_interpreter_call.outputs\u0027, \u0027file_search_call.results\u0027, \u0027message.output_text.logprobs\u0027, \u0027reasoning.encrypted_content\u0027, \u0027message.input_image.image_url\u0027, and \u0027computer_call_output.output.image_url\u0027.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ResponseItemList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Create Conversation",
+          "description": "Endpoint to create a new conversation",
+          "section": "conversations",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ConversationRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Conversation, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Conversation",
+          "description": "Endpoint to get a given conversation",
+          "section": "conversations",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Conversation, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Update Conversation",
+          "description": "Endpoint to update a given conversation",
+          "section": "conversations",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ConversationUpdate, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.Conversation, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Conversation",
+          "description": "Endpoint to remove a given conversation",
+          "section": "conversations",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "List Conversation Items",
+          "description": "Endpoint to get a given conversation item list",
+          "section": "conversations",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}/items?limit=100\u0026order=asc",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "include",
+              "type": "array[string]",
+              "description": "Array of optional fields to include in the response. Valid values are: \u0027code_interpreter_call.outputs\u0027, \u0027file_search_call.results\u0027, \u0027message.output_text.logprobs\u0027, \u0027reasoning.encrypted_content\u0027, \u0027message.input_image.image_url\u0027, and \u0027computer_call_output.output.image_url\u0027.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.ResponseItemList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Create Conversation Items",
+          "description": "Endpoint to add items to a given conversation",
+          "section": "conversations",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}/items",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "include",
+              "type": "array[string]",
+              "description": "Array of optional fields to include in the response. Valid values are: \u0027code_interpreter_call.outputs\u0027, \u0027file_search_call.results\u0027, \u0027message.output_text.logprobs\u0027, \u0027reasoning.encrypted_content\u0027, \u0027message.input_image.image_url\u0027, and \u0027computer_call_output.output.image_url\u0027.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": "OpenAIAPI.JSON.ConversationItems, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.ResponseItemList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Conversation Item",
+          "description": "Endpoint to get a given conversation item",
+          "section": "conversations",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}/items{1}",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "item_id",
+              "type": "string",
+              "description": "Item unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "include",
+              "type": "array[string]",
+              "description": "Array of optional fields to include in the response. Valid values are: \u0027code_interpreter_call.outputs\u0027, \u0027file_search_call.results\u0027, \u0027message.output_text.logprobs\u0027, \u0027reasoning.encrypted_content\u0027, \u0027message.input_image.image_url\u0027, and \u0027computer_call_output.output.image_url\u0027.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.InputMessage, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete Conversation Item",
+          "description": "Endpoint to remove an item of a given conversation",
+          "section": "conversations",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/conversations/{0}/items{1}",
+          "pathParams": [
+            {
+              "name": "conversation_id",
+              "type": "string",
+              "description": "Conversation unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "item_id",
+              "type": "string",
+              "description": "Item unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Conversation, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    },
+    {
+      "id": "default_ImageManager",
+      "default": true,
+      "type": "IImageGenerator",
+      "name": "DALL-E Image generation",
+      "description": "OpenAI API to generate images",
+      "voice": null,
+      "model": "dall-e-3",
+      "endpoints": [
+        {
+          "name": "Create Image",
+          "description": "Endpoint to create images",
+          "section": "images",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/images/generations",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.ImageRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.AIImageList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Modify Image",
+          "description": "Endpoint to modify images",
+          "section": "images",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/images/edits",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.AIImageList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Image Variations",
+          "description": "Endpoint to create image variations",
+          "section": "images",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/images/variations",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.AIImageList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    }
+  ],
+  "playerAssets": [
+    {
+      "id": "default_SpeechManager",
+      "default": true,
+      "type": "ISpeechManager",
+      "name": "Voice Manager",
+      "description": "OpenAI voice manager default configuration",
+      "voice": null,
+      "model": "tts-1",
+      "endpoints": [
+        {
+          "name": "Text to Speech",
+          "description": "Endpoint to create audio from text",
+          "section": "speech",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/audio/speech",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "byte[]"
+        },
+        {
+          "name": "Speech to Text",
+          "description": "Endpoint to create text from audio",
+          "section": "speech",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/audio/trasncriptions",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Transcription, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Translate",
+          "description": "Endpoint to create english speech from audio",
+          "section": "speech",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/audio/translations",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.Transcription, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    },
+    {
+      "id": "default_VectorStore",
+      "default": true,
+      "type": "IFilePackageManager",
+      "name": "Vector Store",
+      "description": "OpenAI Vector Store API default configuration",
+      "voice": null,
+      "model": null,
+      "endpoints": [
+        {
+          "name": "VectorStore List",
+          "description": "Endpoint to get all vector stores",
+          "section": "vectorstores",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores",
+          "pathParams": null,
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.VectorStoreList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Create VectorStore",
+          "description": "Endpoint to create a vector store",
+          "section": "vectorstores",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.VectorStoreRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.VectorStore, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve VectorStore",
+          "description": "Endpoint to retrieve a vector store",
+          "section": "vectorstores",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.VectorStore, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Modify VectorStore",
+          "description": "Endpoint to modify a vector store",
+          "section": "vectorstores",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.VectorStoreRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.VectorStore, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete VectorStore",
+          "description": "Endpoint to delete a vector store",
+          "section": "vectorstores",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "Add File to VectorStore",
+          "description": "Endpoint to add a file to a vector store",
+          "section": "vectorstores",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}/files",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.VectorStoreFileRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.VectorStoreFile, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "VectorStore File List",
+          "description": "Endpoint to list all files in a vector store",
+          "section": "vectorstores",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}/files",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "before",
+              "type": "string",
+              "description": "A cursor for use in pagination. before is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include before=obj_foo in order to fetch the previous page of the list.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "filter",
+              "type": "string",
+              "description": "Filter by file status. One of in_progress, completed, failed, cancelled",
+              "optional": true,
+              "values": [
+                "in_progress",
+                "completed",
+                "failed",
+                "cancelled"
+              ]
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.VectorStoreFileList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve VectorStore File",
+          "description": "Endpoint to retrieve a vector store",
+          "section": "vectorstores",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}/files/{1}",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "Vector store file unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.VectorStoreFile, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Delete VectorStore File",
+          "description": "Endpoint to delete a vector store",
+          "section": "vectorstores",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/vector_stores/{0}/files/{1}",
+          "pathParams": [
+            {
+              "name": "vector_store_id",
+              "type": "string",
+              "description": "Vector store unique identifier",
+              "optional": null,
+              "values": null
+            },
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "Vector store file unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        }
+      ]
+    },
+    {
+      "id": "default_Embedding",
+      "default": true,
+      "type": "IEmbedding",
+      "name": "Embedding Manager",
+      "description": "OpenAI Embedding manager default configuration",
+      "voice": null,
+      "model": "text-embedding-3-small",
+      "endpoints": [
+        {
+          "name": "Create Embedding",
+          "description": "Endpoint to get embeddings from text",
+          "section": "embeddings",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/embeddings",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.EmbeddingRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.EmbeddingList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "default_FileManager",
+      "default": true,
+      "type": "IFileManager",
+      "name": "File Manager",
+      "description": "OpenAI File Manager API default configuration",
+      "voice": null,
+      "model": null,
+      "endpoints": [
+        {
+          "name": "File List",
+          "description": "Endpoint to get all files",
+          "section": "files",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/files",
+          "pathParams": null,
+          "queryParams": [
+            {
+              "name": "purpose",
+              "type": "string",
+              "description": "Only return files with the given purpose.",
+              "optional": true,
+              "values": [
+                "assistants",
+                "fine-tune",
+                "batch",
+                "vision"
+              ]
+            },
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "order",
+              "type": "string",
+              "description": "Sort order by the created_at timestamp of the objects. asc for ascending order and desc for descending order.",
+              "optional": true,
+              "values": [
+                "asc",
+                "desc"
+              ]
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FileList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Upload File",
+          "description": "Endpoint to upload a file",
+          "section": "files",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/files",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FileObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve File",
+          "description": "Endpoint to retrieve a file",
+          "section": "files",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/files/{0}",
+          "pathParams": [
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "File unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FileObject, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "File Content",
+          "description": "Endpoint to get the content of a file",
+          "section": "files",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/files/{0}/content",
+          "pathParams": [
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "File unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        },
+        {
+          "name": "Delete File",
+          "description": "Endpoint to delete a file",
+          "section": "files",
+          "method": "DELETE",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/files/{0}",
+          "pathParams": [
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "File unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": null
+        }
+      ]
+    },
+    {
+      "id": "default_TuningJob",
+      "default": true,
+      "type": "ITuningJob",
+      "name": "Fine-tuning Job",
+      "description": "OpenAI Fine-tuning job API default configuration",
+      "voice": null,
+      "model": "gpt-4o",
+      "endpoints": [
+        {
+          "name": "Job List",
+          "description": "Endpoint to get all fine-tuning jobs",
+          "section": "tuningjobs",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs",
+          "pathParams": null,
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FineTuningJobList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Create Tuning Job",
+          "description": "Endpoint to create a tuning job",
+          "section": "tuningjobs",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs",
+          "pathParams": null,
+          "queryParams": null,
+          "requestType": "OpenAIAPI.JSON.FineTuningJobRequest, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "returnType": "OpenAIAPI.JSON.FineTuningJob, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Retrieve Tuning Job",
+          "description": "Endpoint to retrieve a fine-tuning job",
+          "section": "tuningjobs",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs/{0}",
+          "pathParams": [
+            {
+              "name": "file_id",
+              "type": "string",
+              "description": "File unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FineTuningJob, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Tuning Job Events",
+          "description": "Endpoint to get the events of a fine-tuning job",
+          "section": "tuningjobs",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs/{0}/events",
+          "pathParams": [
+            {
+              "name": "fine_tuning_job_id",
+              "type": "string",
+              "description": "Fine-tuning job unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FineTuningJobEventList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Get Tuning Job Checkpoints",
+          "description": "Endpoint to get the checkpoints of a fine-tuning job",
+          "section": "tuningjobs",
+          "method": "GET",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs/{0}/checkpoints",
+          "pathParams": [
+            {
+              "name": "fine_tuning_job_id",
+              "type": "string",
+              "description": "Fine-tuning job unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": [
+            {
+              "name": "limit",
+              "type": "int",
+              "description": "A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.",
+              "optional": true,
+              "values": null
+            },
+            {
+              "name": "after",
+              "type": "string",
+              "description": "A cursor for use in pagination. after is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with obj_foo, your subsequent call can include after=obj_foo in order to fetch the next page of the list.",
+              "optional": true,
+              "values": null
+            }
+          ],
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FineTuningJobCPList, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        },
+        {
+          "name": "Cancel Tuning Job",
+          "description": "Endpoint to cancel a running fine-tuning job",
+          "section": "tuningjobs",
+          "method": "POST",
+          "timeout": 0,
+          "url": "https://api.openai.com/v1/fine_tuning/jobs/{0}/cancel",
+          "pathParams": [
+            {
+              "name": "fine_tuning_job_id",
+              "type": "string",
+              "description": "Fine-tuning job unique identifier",
+              "optional": null,
+              "values": null
+            }
+          ],
+          "queryParams": null,
+          "requestType": null,
+          "returnType": "OpenAIAPI.JSON.FineTuningJob, OpenAIAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

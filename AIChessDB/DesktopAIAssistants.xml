@@ -1,0 +1,1000 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DesktopAIAssistants</name>
+  </assembly>
+  <members>
+    <!-- Badly formed XML comment ignored for member "T:DesktopAIAssistants.Console.APIConsole" -->
+    <member name="P:DesktopAIAssistants.Console.APIConsole.UID">
+      <summary>
+            IUIRemoteControlElement: Unique identifier for the UI container.
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.FriendlyName">
+      <summary>
+            IUIRemoteControlElement: Form friendly name.
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.GetUIElements">
+      <summary>
+            IUIRemoteControlElement: Get first-level UI elements.
+            </summary>
+      <returns>
+            List of first-level UI elements. Can be empty or null if there are no elements.
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.GetAllUIElements">
+      <summary>
+            IUIRemoteControlElement: Get all-level UI elements.
+            </summary>
+      <returns>
+            List of all UI elements. Can be empty or null if there are no elements.
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.GetUIElementChildren(System.String)">
+      <summary>
+            IUIRemoteControlElement: Get the child UI elements of that on a specific path.
+            </summary>
+      <param name="path">
+            Path to the parent UI element.
+            </param>
+      <returns>
+            List of child UI elements. Can be empty or null if there are no child elements.
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.HighlightUIElement(System.String,System.Int32,System.String)">
+      <summary>
+            IUIRemoteControlElement: Highlight a UI element for a specified number of seconds.
+            </summary>
+      <param name="path">
+            Path to the UI element to highlight.
+            </param>
+      <param name="seconds">
+            Duration in seconds to highlight the element.
+            </param>
+      <param name="mode">
+            Implementation-dependant mode of highlighting.
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.CommentUIElement(System.String,System.String,System.String,System.String,System.Int32)">
+      <summary>
+            IUIRemoteControlElement: Show a tooltip for a UI element with a comment for a specified number of seconds.
+            </summary>
+      <param name="path">
+            Path to the UI element to comment.
+            </param>
+      <param name="title">
+            The title of the notification balloon.
+            </param>
+      <param name="comment">
+            Comment to display in the tooltip.
+            </param>
+      <param name="mode">
+            Implementation-dependant mode of highlighting.
+            </param>
+      <param name="seconds">
+            Seconds to display the tooltip.
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.InvokeElementAction(System.String,System.String)">
+      <summary>
+            IUIRemoteControlElement: Invoke an action on a UI element at the specified path.
+            </summary>
+      <param name="path">
+            Path to the UI element to invoke the action on.
+            </param>
+      <param name="action">
+            Action name to invoke on the UI element, such as "click", "double-click", etc.
+            </param>
+      <returns>
+            String value or null
+            </returns>
+      <remarks>
+            The format for action is: action[:param]
+            </remarks>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.Options">
+      <summary>
+            IHelpConsole: Get or set the console options to enable or disable features
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.EnableUserInput">
+      <summary>
+            IHelpConsole: Enable or disable the console user input
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.AppAutomation">
+      <summary>
+            IHelpConsole: Application automation interface
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.UpdateAppServices">
+      <summary>
+            IHelpConsole: Update the application services list and assign them to the players
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.AvailableExtensions">
+      <summary>
+            IHelpConsole: List of available console extension names, with friendly name and description.
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.GetExtension(System.String)">
+      <summary>
+            IHelpConsole: Get a console extension by its name
+            </summary>
+      <param name="extensionname">
+            Console extension name
+            </param>
+      <returns>
+            IConsoleExtension object or null if not found
+            </returns>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.PlayerInteraction">
+      <summary>
+            IHelpConsole: Player interaction interface
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.UserPromptUI">
+      <summary>
+            IHelpConsole: Set the user prompt control
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.LogPath">
+      <summary>
+            IHelpConsole: Log directory to save audio, images and all files generated by the AI players
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.CurrentConversationLog">
+      <summary>
+            IHelpConsole: Current conversation log with the messages exchanged between players
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.Play">
+      <summary>
+            IHelpConsole: Interface to keep all players and elements together
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.StopConversation">
+      <summary>
+            IHelpConsole: This function is used by assistant players to avoid infinite loops of courtesy responses.
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.ShowActivityFeedback(System.String)">
+      <summary>
+            IHelpConsole: Show a message in the user prompt with background activity information.
+            </summary>
+      <param name="message">
+            Message to show.
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.SetListenerName(System.String)">
+      <summary>
+            Set the listener for the current player interaction, selected by its name
+            </summary>
+      <param name="listenername">
+            Name of the new _listener
+            </param>
+      <returns>
+            True if succeeded
+            </returns>
+      <remarks>
+            This function is intended to use throgh a player function call request.
+            Players have a standardized set of console functions to interact with the console.
+            Usually, the player response is addressed to the player that made the request.
+            Players must know the list of participants in the conversation and their roles to make a good use of this function.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.AddPlayer(AIAssistants.Interfaces.IAPIPlayer,System.Boolean)">
+      <summary>
+            IHelpConsole: Add a player to the play
+            </summary>
+      <param name="player">
+            New player to add
+            </param>
+      <param name="addtocast">
+            Add player to cast too
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.RemovePlayer(AIAssistants.Interfaces.IAPIPlayer,System.Boolean)">
+      <summary>
+            IHelpConsole: Remove a player from the play
+            </summary>
+      <param name="player">
+            Player to remove
+            </param>
+      <param name="removefromcast">
+            Remove player from cast too
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.AskUserForData(AIAssistants.Interfaces.IAPIUIDataSheet)">
+      <summary>
+            IHelpConsole: Ask the user for data when needed
+            </summary>
+      <param name="data">
+            Generic data description sheet
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.ApplicationMessageAsync(AIAssistants.Interfaces.IPlayer,AIAssistants.Data.ContextMessage)">
+      <summary>
+            IHelpConsole: Add a message from the application to the chat
+            </summary>
+      <param name="application">
+            Application sending the message
+            </param>
+      <param name="message">
+            Application message
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.SendImageToUserAsync(AIAssistants.Interfaces.IPlayer,System.Drawing.Bitmap,System.String)">
+      <summary>
+            IHelpConsole: Add an image from the application to the chat
+            </summary>
+      <param name="application">
+            Application sending the message
+            </param>
+      <param name="image">
+            Bitmap image to show
+            </param>
+      <param name="message">
+            Optional application message
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.SendMessageToPlayerAsync(AIAssistants.Interfaces.IAPIPlayer,AIAssistants.Data.ContextMessage)">
+      <summary>
+            IHelpConsole: Send a message to a player
+            </summary>
+      <param name="player">
+            Player to receive the message
+            </param>
+      <param name="msg">
+            Message to send
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.AddAppMenuItems(System.Collections.Generic.List{AIAssistants.Interfaces.CommandMenuItem})">
+      <summary>
+            IHelpConsole: Update the application commands menu
+            </summary>
+      <param name="menuItems">
+            List of application menu items
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.AddAssistantMenuItems(System.Collections.Generic.List{AIAssistants.Interfaces.CommandMenuItem})">
+      <summary>
+            IHelpConsole: Update the assistant commands menu
+            </summary>
+      <param name="menuItems">
+            List of assistant menu items
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.AddForceToolSelection(System.Collections.Generic.List{AIAssistants.Data.ToolUI})">
+      <summary>
+            IHelpConsole: Add a list of tools for the user to force use in responses
+            </summary>
+      <param name="tools">
+            List of allowed tools or null if none.
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.SetInitialLayout">
+      <summary>
+            IHelpConsole: Initialize the console layout with the default values
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.StdUID">
+      <summary>
+            IStandardObject: Unique identifier
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.StdName">
+      <summary>
+            IStandardObject: Element name
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.StdDescription">
+      <summary>
+            IStandardObject: Element description
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.APIConsole.DataSheet">
+      <summary>
+            IStandardObject: Information to edit the object
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.SaveToStream(System.IO.Stream,System.Boolean)">
+      <summary>
+            IStreamReadWriter: Save the element to a stream
+            </summary>
+      <param name="stream">
+            Target Stream
+            </param>
+      <param name="formatted">
+            Save formatted data
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.LoadFromStream(System.IO.Stream)">
+      <summary>
+            IStreamReadWriter: Load the element from a stream
+            </summary>
+      <param name="stream">
+            Source Stream
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.APIConsole.Dispose(System.Boolean)">
+      <summary> 
+            Limpiar los recursos que se estén usando.
+            </summary>
+      <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+    </member>
+    <member name="T:DesktopAIAssistants.Console.ConsoleCanvasExtension">
+      <summary>
+            Console extension to add a canvas page to the console
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.StdUID">
+      <summary>
+            IStandardObject: Unique identifier
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.StdName">
+      <summary>
+            IStandardObject: Element name
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.StdDescription">
+      <summary>
+            IStandardObject: Element description
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.DataSheet">
+      <summary>
+            IStandardObject: Information to edit the object
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.ConsoleCanvasExtension.SaveToStream(System.IO.Stream,System.Boolean)">
+      <summary>
+            IStreamReadWriter: Save the element to a stream
+            </summary>
+      <param name="stream">
+            Target Stream
+            </param>
+      <param name="formatted">
+            Save formatted data
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.ConsoleCanvasExtension.LoadFromStream(System.IO.Stream)">
+      <summary>
+            IStreamReadWriter: Load the element from a stream
+            </summary>
+      <param name="stream">
+            Source Stream
+            </param>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.EnableLog">
+      <summary>
+            IAppAutomationExtension: Enable or disable logging if the extension has a log file
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.ConsoleCanvasExtension.AppAutomation">
+      <summary>
+            IAppAutomationExtension: Application automation interface
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.ConsoleCanvasExtension.GetServices(AIAssistants.Interfaces.IAppAutomation)">
+      <summary>
+            IAppAutomationExtension: List of extension automation services
+            </summary>
+      <param name="owner">
+            Main IAppAutomation object (represents the application)
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.ConsoleCanvasExtension.CallFunction(AIAssistants.Interfaces.IPlayer,AIAssistants.JSON.FunctionBatch)">
+      <summary>
+            IAppAutomationExtension: Make a call to a function
+            </summary>
+      <param name="caller">
+            Function caller
+            </param>
+      <param name="calls">
+            Block of function calls
+            </param>
+      <returns>
+            FunctionBatch with the call results
+            </returns>
+      <remarks>
+            Use this method to call service functions in the extension.
+            Extensions must return null if they do not manage the function call.
+            </remarks>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayBackgroundPage.Play">
+      <summary>
+            IMessagesConsole: Current play configuration
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayBackgroundPage.CancelTokenSource">
+      <summary>
+            IMessagesConsole: Allow cancellation for independent tasks
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayBackgroundPage.Owner">
+      <summary>
+            Background chat owner
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayBackgroundPage.ChatInteraction">
+      <summary>
+            Current play interaction creator
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayBackgroundPage.BgChat">
+      <summary>
+            Panel to show the chat messages
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.PlayBackgroundPage.ProcessPendingMessages(System.Object,System.EventArgs)">
+      <summary>
+            Process all pending messages and show them in the chat panel
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.PlayBackgroundPage.AddMessage(AIAssistants.Data.ContextMessage)">
+      <summary>
+            IMessagesConsole: Add a single message to the console
+            </summary>
+      <param name="message">
+            Standard message to show
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.PlayBackgroundPage.AddMessages(System.Collections.Generic.List{AIAssistants.Data.ContextMessage})">
+      <summary>
+            IMessagesConsole: Add a list of messages to the console
+            </summary>
+      <param name="messages">
+            List of standard messages to show
+            </param>
+    </member>
+    <member name="T:DesktopAIAssistants.Console.PlayCanvasPage">
+      <summary>
+            Working page in the console to write long documents
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayCanvasPage.Play">
+      <summary>
+            IMessagesConsole: Current play configuration
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayCanvasPage.CancelTokenSource">
+      <summary>
+            IMessagesConsole: Allow cancellation for independent tasks
+            </summary>
+      <remarks>
+            Not used, for this is not an interactive page.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.PlayCanvasPage.AddMessage(AIAssistants.Data.ContextMessage)">
+      <summary>
+            IMessagesConsole: Add a single message to the console
+            </summary>
+      <param name="message">
+            Standard message to show
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.PlayCanvasPage.AddMessages(System.Collections.Generic.List{AIAssistants.Data.ContextMessage})">
+      <summary>
+            IMessagesConsole: Add a list of messages to the console
+            </summary>
+      <param name="messages">
+            List of standard messages to show
+            </param>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.PlayCanvasPage.CurrentContent">
+      <summary>
+            IConsoleExtension: Page content in the form of a list of messages
+            </summary>
+    </member>
+    <member name="T:DesktopAIAssistants.Console.RichTextChatInteraction">
+      <summary>
+            Speech bubble for chat interactions
+            </summary>
+      <remarks>
+            This is the default interaction manager implementation for Windows Desktop applications.
+            </remarks>
+      <seealso cref="T:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction" />
+      <seealso cref="T:AIAssistants.Interfaces.IPlayer" />
+      <seealso cref="T:AIAssistants.Interfaces.IPlayerInteraction" />
+      <seealso cref="T:DesktopAIAssistants.Interactions.RTFTextBox" />
+      <seealso cref="T:DesktopAIAssistants.Console.APIConsole" />
+      <seealso cref="T:AIAssistants.Interfaces.IHelpConsole" />
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.Text">
+      <summary>
+            IPlayerInteraction: Interaction text message
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.Who">
+      <summary>
+            IPlayerInteraction: Player who is talking
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.ToWhom">
+      <summary>
+            IPlayerInteraction: Player who is listening
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.Speak">
+      <summary>
+            IPlayerInteraction: Read the prompt using voice generator
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.Thinking">
+      <summary>
+            IPlayerInteraction: Thinking bubble mode
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.NewInteractionInstance(AIAssistants.Interfaces.IPlayer,AIAssistants.Interfaces.IPlayer,System.Boolean)">
+      <summary>
+            IPlayerInteraction: Create a new interaction instance
+            </summary>
+      <param name="who">
+            Player who is talking
+            </param>
+      <param name="toWhom">
+            Player who is listening
+            </param>
+      <param name="speak">
+            Read the prompt using voice generator
+            </param>
+      <returns>
+            New interaction instance
+            </returns>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.RichTextChatInteraction.BubbleMargin">
+      <summary>
+            IDesktopPlayerInteraction: Margin for the bubble in the container
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.CreateSpeechBubble(System.String,System.Windows.Forms.ScrollableControl,System.String@)">
+      <summary>
+            IDesktopPlayerInteraction: Create a speech bubble in the chat
+            </summary>
+      <param name="speech">
+            Text to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <param name="code">
+            Code if the speech contains some code example.
+            </param>
+      <returns>
+            RoundedPanel containing the speech bubble
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.CreateMessageBubble(System.String,System.Windows.Forms.ScrollableControl,System.String@)">
+      <summary>
+            IDesktopPlayerInteraction: Create a message bubble in the chat
+            </summary>
+      <param name="speech">
+            Text to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <param name="code">
+            Code if the speech contains some code example.
+            </param>
+      <returns>
+            RoundedPanel containing the message bubble
+            </returns>
+      <example>
+            Messages from the applications are shown as message bubbles.
+            </example>
+      <remarks>
+            Message bubbles contain messages that are not added immediately to the chat. The user can delete or send them as a request to an assistant.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.CreateDrawingBubble(System.String,System.Drawing.Bitmap,System.Windows.Forms.ScrollableControl)">
+      <summary>
+            IDesktopPlayerInteraction: Create a drawing bubble in the chat
+            </summary>
+      <param name="prompt">
+            Text to show in the bubble
+            </param>
+      <param name="image">
+            Data to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <returns>
+            RoundedPanel containing the drawing bubble
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.CreateImageBubble(System.Drawing.Bitmap,System.Windows.Forms.ScrollableControl)">
+      <summary>
+            IDesktopPlayerInteraction: Create a image bubble in the chat
+            </summary>
+      <param name="image">
+            Data to Draw
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <returns>
+            Control containing the image bubble
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.RichTextChatInteraction.ResizeBubble(System.Windows.Forms.Control,System.String)">
+      <summary>
+            IDesktopPlayerInteraction: Call this when the bubble size needs to be recalculated because of a property change
+            </summary>
+      <param name="bubble">
+            Bubble control
+            </param>
+      <param name="propertyChanged">
+            Name of the property that changed
+            </param>
+    </member>
+    <member name="E:DesktopAIAssistants.Console.RichTextChatInteraction.SendMessage">
+      <summary>
+            IDesktopPlayerInteraction: Events to send or remove a message at user request
+            </summary>
+    </member>
+    <member name="T:DesktopAIAssistants.Console.UserPromptBubble">
+      <summary>
+            Speech bubble for user prompts
+            </summary>
+      <remarks>
+            Use this control to show a speech bubble for user prompts in a chat.
+            This is intended as a default control. You can provide new implementations for different chat styles.
+            </remarks>
+      <seealso cref="T:AIAssistants.Data.ContextMessage" />
+      <seealso cref="T:AIAssistants.Interfaces.IPlayer" />
+      <seealso cref="T:DesktopAIAssistants.Interactions.RTFTextBox" />
+      <seealso cref="T:AIAssistants.Data.ToolUI" />
+    </member>
+    <member name="P:DesktopAIAssistants.Console.UserPromptBubble.User">
+      <summary>
+            IUserPrompt: Current user settings
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.UserPromptBubble.Model">
+      <summary>
+            IUserPrompt: Currently selected model
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.UserPromptBubble.Tools">
+      <summary>
+            IUserPrompt: Create buttons to show tools to force in the prompt
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.UserPromptBubble.Prompt">
+      <summary>
+            IUserPrompt: Editor text
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.Clear">
+      <summary>
+            IUserPrompt: Clear editor text
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.ResetTools(AIAssistants.Interfaces.ToolTypes)">
+      <summary>
+            IUserPrompt: Free all forced tool options
+            </summary>
+      <param name="types">
+            Tool types to reset
+            </param>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.SetFocus">
+      <summary>
+            IUserPrompt: Set input focus to the editor
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.AddToParent(System.Windows.Forms.Control,AIAssistants.Interfaces.IPlayer)">
+      <summary>
+            IDesktopUserPrompt: Create the prompt controls and add them to the given parent control
+            </summary>
+      <param name="parent">
+            Parent container for the prompt controls
+            </param>
+      <param name="user">
+            User data
+            </param>
+    </member>
+    <member name="P:DesktopAIAssistants.Console.UserPromptBubble.SendUserPrompt">
+      <summary>
+            IUserPrompt: Execute prompt handler
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.RepeatLastPrompt(System.Object,System.EventArgs)">
+      <summary>
+            Send the last prompt again
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Console.UserPromptBubble.OnFontChanged(System.EventArgs)">
+      <summary>
+            Resize the bubble for the text to fit the editor without vertical scorll bars
+            </summary>
+    </member>
+    <member name="T:DesktopAIAssistants.Dialogs.ElementEditor">
+      <summary>
+            Generic dialog box to edit IAPIElement objects
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Dialogs.ElementEditor.Element">
+      <summary>
+            Element to edit
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Dialogs.ElementEditor.Data">
+      <summary>
+            IUIDataSheet with the information to edit the element
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Dialogs.ElementEditor.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:DesktopAIAssistants.Dialogs.ToolForm">
+      <summary>
+            Auxiliary form for tools
+            </summary>
+      <remarks>
+            This is just an empty Form to add user controls and manage them as a dialog box.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Dialogs.ToolForm.CloseForm">
+      <summary>
+            Close the form 
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Dialogs.ToolForm.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:DesktopAIAssistants.Interactions.RTFTextBox">
+      <summary>
+            RichTextBox that keeps the format when changing the font. Works with RTF.
+            </summary>
+      <remarks>
+            The RTF text in this textbox is created from a string of text formatted with arbitrary symbols, depending on the AI provider.
+            Keeping the RTF formatted text, you can make changes without losing the format.
+            This control is not associated with the original text source, so you cannot recover the text fromatter even having the original text.
+            It is easier to store the final RTF string.
+            </remarks>
+    </member>
+    <member name="P:DesktopAIAssistants.Interactions.RTFTextBox.FixedRtf">
+      <summary>
+            This porperty keeps the RTF formatted string.
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Interactions.RTFTextBox.OriginalText">
+      <summary>
+            Original text written in the control.
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.Interactions.RTFTextBox.Bold">
+      <summary>
+            This property stores the bold lines count, to compute the control height to fit the text without vertical scrolling.
+            In this solution, IObjectToFormattedString objets are used to format text in RTF. They provide the bold lines count.
+            </summary>
+      <seealso cref="!:IObjectToFormattedString.BoldLines" />
+    </member>
+    <member name="T:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction">
+      <summary>
+            IPlayerInteration extension for Windows Desktop applications
+            </summary>
+      <example>
+            The class RichTextChatInteraction is an implementation of this interface. It uses RTF text boxes to show formatted chat bubbles.
+            </example>
+      <remarks>
+            This interface extends the IPlayerInteraction interface to add methods and properties for Windows Desktop applications.
+            Set the IHelpConsole.PlayerInteraction property to an instance of this interface to use it in a Windows Desktop application.
+            </remarks>
+      <seealso cref="T:AIAssistants.Interfaces.IPlayerInteraction" />
+      <seealso cref="P:AIAssistants.Interfaces.IHelpConsole.PlayerInteraction" />
+      <seealso cref="!:RichTextChatInteraction" />
+    </member>
+    <member name="P:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.BubbleMargin">
+      <summary>
+            Margin for the bubble in the container
+            </summary>
+      <remarks>
+            This allow to create a standard effect of separation between user and response bubbles.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.CreateSpeechBubble(System.String,System.Windows.Forms.ScrollableControl,System.String@)">
+      <summary>
+            Create a speech bubble in the chat
+            </summary>
+      <param name="speech">
+            Text to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <param name="code">
+            Code if the speech contains some code example.
+            </param>
+      <returns>
+            RoundedPanel containing the speech bubble
+            </returns>
+      <remarks>
+            This kind of bubble is used to show text messages in the chat.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.CreateDrawingBubble(System.String,System.Drawing.Bitmap,System.Windows.Forms.ScrollableControl)">
+      <summary>
+            Create a drawing bubble in the chat
+            </summary>
+      <param name="prompt">
+            Text to show in the bubble
+            </param>
+      <param name="image">
+            Data to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <returns>
+            RoundedPanel containing the drawing bubble
+            </returns>
+      <remarks>
+            This kind of bubble is used to show player-generated images in the chat.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.CreateImageBubble(System.Drawing.Bitmap,System.Windows.Forms.ScrollableControl)">
+      <summary>
+            Create a image bubble in the chat
+            </summary>
+      <param name="image">
+            Data to Draw
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <returns>
+            Control containing the image bubble
+            </returns>
+      <remarks>
+            Use this kind of bubble for image attachments.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.CreateMessageBubble(System.String,System.Windows.Forms.ScrollableControl,System.String@)">
+      <summary>
+            Create a message bubble in the chat
+            </summary>
+      <param name="speech">
+            Text to show in the bubble
+            </param>
+      <param name="chat">
+            Chat container
+            </param>
+      <param name="code">
+            Code if the speech contains some code example.
+            </param>
+      <returns>
+            RoundedPanel containing the message bubble
+            </returns>
+      <example>
+            Messages from the applications are shown as message bubbles.
+            </example>
+      <remarks>
+            Message bubbles contain messages that are not added immediately to the chat. The user can delete or send them as a request to an assistant.
+            </remarks>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.ResizeBubble(System.Windows.Forms.Control,System.String)">
+      <summary>
+            Call this when the bubble size needs to be recalculated because of a property change
+            </summary>
+      <param name="bubble">
+            Bubble to resize
+            </param>
+      <param name="propertyChanged">
+            Name of the property that changed
+            </param>
+      <remarks>
+            Users can change, for instance, the Font property of the bubbles.
+            This method allows resizing the bubble height to fit all text lines without showing scroll bars.
+            </remarks>
+    </member>
+    <member name="E:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.SendMessage">
+      <summary>
+            Events to send or remove a message at user request
+            </summary>
+      <seealso cref="M:DesktopAIAssistants.Interfaces.IDesktopPlayerInteraction.CreateMessageBubble(System.String,System.Windows.Forms.ScrollableControl,System.String@)" />
+    </member>
+    <member name="T:DesktopAIAssistants.Interfaces.IDesktopUserPrompt">
+      <summary>
+            Extension of IUserPrompt for desktop applications
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Interfaces.IDesktopUserPrompt.AddToParent(System.Windows.Forms.Control,AIAssistants.Interfaces.IPlayer)">
+      <summary>
+            Create the prompt controls and add them to the given parent control
+            </summary>
+      <param name="parent">
+            Parent container for the prompt controls
+            </param>
+      <param name="user">
+            User data
+            </param>
+    </member>
+    <member name="T:DesktopAIAssistants.ObjectProvider">
+      <summary>
+            Dependency provider for GlobalCommonEntities
+            </summary>
+    </member>
+    <member name="P:DesktopAIAssistants.ObjectProvider.AllResources">
+      <summary>
+            IDependencyProvider: Central repository of embedded resources
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.ObjectProvider.QueryClassOrInterface(System.String)">
+      <summary>
+            IDependencyProvider: Check if a given class or interface is supported
+            </summary>
+      <param type="services">
+            Type names separated by semicolon
+            </param>
+      <returns>
+            True if can instantiante objets of at least one of the given types
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.ObjectProvider.GetObjects(System.String,System.Object)">
+      <summary>
+            IDependencyProvider: Get all the instances of all the rquested types or interfaces
+            </summary>
+      <param type="services">
+            Semicolon separated type type list
+            </param>
+      <param type="filter">
+            Object containing a filter to select elements
+            </param>
+      <returns>
+            Enumeration of objects implementing the types as IUIIdentifier objects
+            </returns>
+    </member>
+    <member name="T:DesktopAIAssistants.Tools.ControlCollector">
+      <summary>
+            Helper to collect UI elements from a root control
+            </summary>
+    </member>
+    <member name="M:DesktopAIAssistants.Tools.ControlCollector.CollectUIElements(System.Object,System.String,AIAssistants.Interfaces.IAppAutomation)">
+      <summary>
+            IUIElementCollector: Recursively collects UI elements from a root UI element
+            </summary>
+      <param name="root">
+            root element
+            </param>
+      <param name="pname">
+            Parent name
+            </param>
+      <param name="app">
+            Application to check whether process an assembly.
+            </param>
+      <returns>
+            List of UI elements
+            </returns>
+    </member>
+    <member name="M:DesktopAIAssistants.Tools.ControlCollector.CollectUIElements(System.Windows.Forms.Control,System.String,AIAssistants.Interfaces.IAppAutomation)">
+      <summary>
+            Recursively collects UI elements from a root control
+            </summary>
+      <param name="root">
+            root control
+            </param>
+      <param name="pname">
+            Parent name
+            </param>
+      <param name="app">
+            Application to check whether process an assembly.
+            </param>
+      <returns>
+            List of UI elements
+            </returns>
+    </member>
+  </members>
+</doc>

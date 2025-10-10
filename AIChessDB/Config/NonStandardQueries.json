@@ -1,0 +1,17 @@
+[
+  {
+    "server": "Oracle",
+    "name": "MatchBulkCopy",
+    "query": "select * from (select m.cod_match,floor(rownum / :bsize) fid from matches m order by m.cod_match) where fid = :bindex"
+  },
+  {
+    "server": "SqlServer",
+    "name": "MatchBulkCopy",
+    "query": "select * from (select m.cod_match,FLOOR(ROW_NUMBER() OVER(ORDER BY m.cod_match ASC) / @bsize) fid from matches m) m where m.fid = @bindex"
+  },
+  {
+    "server": "MySQL",
+    "name": "MatchBulkCopy",
+    "query": "select * from (select m.cod_match,FLOOR(ROW_NUMBER() OVER w / @bsize) fid from matches m window w as (ORDER BY m.cod_match)) m where m.fid = @bindex"
+  }
+]
