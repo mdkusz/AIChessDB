@@ -1,12 +1,11 @@
-﻿CREATE TABLESPACE tbs_chess_pgn
-  ADD DATAFILE 'tbs_chess_pgn.ibd';
+﻿CREATE TABLESPACE `tbs_chess_pgn` ADD DATAFILE 'tbs_chess_pgn.ibd' ENGINE=InnoDB;
 
-create schema chess_pgn;
+CREATE DATABASE `chess_pgn` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
-create user chess_pgn
-identified with mysql_native_password by 'chesspgn'
-PASSWORD EXPIRE NEVER;
+CREATE USER 'chess_pgn'@'%' IDENTIFIED BY 'chesspgn' PASSWORD EXPIRE NEVER;
 
-grant all on chess_pgn.* to chess_pgn;
+GRANT ALL PRIVILEGES ON `chess_pgn`.* TO 'chess_pgn'@'%';
 
-SET GLOBAL event_scheduler = ON;
+FLUSH PRIVILEGES;
+
+SET PERSIST event_scheduler = ON;
