@@ -384,9 +384,6 @@
     <None Include="Logs\fcall.log">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Logs\ThreadLog.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Logs\TokenUsage.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -408,7 +405,6 @@
     <None Include="QueryDesktopControls.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Scripts\MySQL_chess_db.zip" />
     <None Include="SqlServerLibrary.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
