@@ -118,7 +118,7 @@ namespace GlobalCommonEntities.DependencyInjection
             }
         }
         /// <summary>
-        /// Get the inner object
+        /// IUIIdentifier: Get the inner object
         /// </summary>
         /// <remarks>
         /// This method does not return a new instance of the object, but the same object that was passed to the constructor. It can be null.
@@ -131,7 +131,7 @@ namespace GlobalCommonEntities.DependencyInjection
             return _object;
         }
         /// <summary>
-        /// Get a new instance of the inner object using the provided parameters
+        /// IUIIdentifier: Get a new instance of the inner object using the provided parameters
         /// </summary>
         /// <param name="p">
         /// Parameters to initialize the object
