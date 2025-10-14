@@ -59,7 +59,7 @@ namespace GlobalCommonEntities.Interfaces
         /// <seealso cref="PropertyEditorInfo"/>
         IInputEditorBase CreateEditor(PropertyEditorInfo pinfo, object instance, Control container);
         /// <summary>
-        /// Populate a list of proerty editors in a container
+        /// Populate a list of property editors in a container
         /// </summary>
         /// <param name="ds">
         /// IUIDataSheet object with properties
