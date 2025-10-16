@@ -265,12 +265,6 @@
     <Compile Include="Dialogs\DlgBulkImportPGN.Designer.cs">
       <DependentUpon>DlgBulkImportPGN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DlgCredits.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\DlgCredits.Designer.cs">
-      <DependentUpon>DlgCredits.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\DlgInitialPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,9 +424,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DlgBulkImportPGN.resx">
       <DependentUpon>DlgBulkImportPGN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DlgCredits.resx">
-      <DependentUpon>DlgCredits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DlgInitialPosition.resx">
       <DependentUpon>DlgInitialPosition.cs</DependentUpon>
