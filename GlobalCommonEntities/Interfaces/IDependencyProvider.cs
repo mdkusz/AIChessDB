@@ -26,7 +26,7 @@ namespace GlobalCommonEntities.Interfaces
         /// Get all the instances of all the rquested types or interfaces 
         /// </summary>
         /// <param type="services">
-        /// Semicolon separated type type list
+        /// Semicolon separated type list
         /// </param>
         /// <param type="filter">
         /// Object containing an application-defined filter to select elements
