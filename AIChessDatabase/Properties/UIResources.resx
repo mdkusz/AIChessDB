@@ -3119,4 +3119,10 @@ Type your first request in the console, for example: **"Import a PGN file"** or 
   <data name="LAB_BADMOVE14" xml:space="preserve">
     <value>There are other pieces that obstruct the move</value>
   </data>
+  <data name="NAME_FilePackageFile_FileId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="NAME_FilePackageFile_FileName" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

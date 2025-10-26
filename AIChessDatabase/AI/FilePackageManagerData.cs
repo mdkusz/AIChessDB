@@ -392,10 +392,14 @@ namespace AIChessDatabase.AI
         /// <summary>
         /// File unique identifier
         /// </summary>
+        [Browsable(true)]
+        [DILocalizedDisplayName(nameof(NAME_FilePackageFile_FileId), typeof(UIResources))]
         public string FileId { get; set; }
         /// <summary>
         /// File name
         /// </summary>
+        [Browsable(true)]
+        [DILocalizedDisplayName(nameof(NAME_FilePackageFile_FileName), typeof(UIResources))]
         public string FileName { get; set; }
     }
 }

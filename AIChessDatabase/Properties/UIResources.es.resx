@@ -3121,4 +3121,10 @@ Escribe tu primera petición en la consola, por ejemplo: **"Importar un archivo 
   <data name="LAB_BADMOVE14" xml:space="preserve">
     <value>Otras piezas obstruyen el movimiento</value>
   </data>
+  <data name="NAME_FilePackageFile_FileId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="NAME_FilePackageFile_FileName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
 </root>

@@ -6930,6 +6930,24 @@ namespace AIChessDatabase.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Id.
+        /// </summary>
+        public static string NAME_FilePackageFile_FileId {
+            get {
+                return ResourceManager.GetString("NAME_FilePackageFile_FileId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Name.
+        /// </summary>
+        public static string NAME_FilePackageFile_FileName {
+            get {
+                return ResourceManager.GetString("NAME_FilePackageFile_FileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File Package Description.
         /// </summary>
         public static string NAME_FIlePackageManagerData_Description {
